@@ -1,0 +1,232 @@
+$background: #222221;
+$container-background: #403f40;
+$container-border: #717271;
+$font: #a7a7a8;
+$radius: 3px;
+$active: #7eb357;
+$not-active: #242424;
+$selected: #f19747;
+$control-height: 1.2em;
+
+@import 'input-range.scss';
+@import 'checkbox.scss';
+
+
+body {
+    background: $background;
+    color: $font;
+    font-family: Arial;
+}
+
+.logo {
+    position: absolute;
+    top: 3px;
+    right: 10px;
+    z-index: -5;
+    width: 32px;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.dashboard-list {
+    margin: 0;
+    padding: 0;
+
+    li {
+        display: inline-block;
+        padding: 5px;
+        font-size: 0.7em;
+        background: $container-background;
+        border-radius: $radius;
+        cursor: pointer;
+    }
+}
+
+h1 {
+    font-size: 1em;
+}
+
+.container.no-bottom-padding{
+    padding-bottom: 1px;
+}
+.container {
+    background: $container-background;
+    border: 1px solid $container-border;
+    border-radius: $radius;
+    margin: 5px 0;
+    padding: 5px;
+    min-height: 1.1em;
+
+    label {
+        display: block;
+        float: left;
+        font-size: 0.8em;
+        font-weight: bold;
+        max-width: 100px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: clip;
+        float: left;
+        margin-left: 3px;
+    }
+
+    .secondary-container {
+        float: right;
+
+        button {
+            font-size: 0.75em;
+            margin: 0;
+            padding: 1px 2px;
+            margin-left: 5px;
+        }
+    }
+
+    input {
+        outline: none;
+    }
+
+    input:focus, button:focus, input[type="color"]:focus {
+        box-shadow: 0px 0px 0px 1px $selected;
+    }
+
+    input::-moz-selection { background: $background; }
+    input::selection { background: $background; }
+
+    input.secondary {
+        width: 50px;
+        background: #4e4e4e;
+        color: $font;
+        border: none;
+        text-align: center;
+        border-radius: $radius;
+        font-size: 0.75em;
+        margin-top: 0px;
+        display: inline-block;
+        margin-left: 10px;
+    }
+
+    input.secondary.time {
+        width: 150px;
+    }
+
+    input[type="range"] {
+        display: block;
+        box-sizing: border-box;
+        width: 100%;
+        margin-top: 1.3em;
+        cursor: ew-resize;
+    }
+    input[type="range"].no-top-margin {
+        margin-top: 5px;
+    }
+    input[type="range"]:focus {
+        box-shadow: 0px 0px 1px 0px $selected !important;
+    }
+
+
+    input[type="color"] {
+        margin: 0;
+        padding: 0;
+        border: none;
+        border-radius: $radius;
+        height: $control-height;
+        background: none;
+        margin-top: 3px;
+
+        &, &::-webkit-color-swatch-wrapper {
+            padding: 0;
+            height: $control-height;
+        }
+
+        &, &::-webkit-color-swatch {
+            border: none;
+            border-radius: $radius;
+            height: $control-height;
+        }
+    }
+
+    .string-input {
+        width: 100%;
+        height: $control-height;
+        background: $not-active;
+        color: $active;
+        border: none;
+        text-align: left;
+        border-radius: $radius;
+        font-size: 1em;
+        margin-top: 0px;
+        display: block;
+        margin-right: 10px;
+        box-sizing: border-box;
+        padding-left: 5px;
+        margin-top: 0.3em;
+    }
+
+    input.string-input::-moz-selection { background: silver !important; }
+    input.string-input::selection { background: silver !important; }
+
+    button {
+        background: $container-border;
+        border-radius: $radius;
+        border: none;
+        padding: 2px 5px;
+        margin-top: 0.3em;
+        outline: none;
+    }
+
+    button.triggered {
+        background: orange;
+    }
+
+    .canvas {
+        background: $not-active;
+        margin-top: 5px;
+        overflow: hidden;
+
+        .point {
+            //border-radius: 50%;
+            background: $active;
+            height: 5px;
+            width: 5px;
+            position: relative;
+            top: 100px;
+            left: 100px;
+            box-sizing: border-box;
+            z-index: 1;
+        }
+
+        .crosshair {
+            background: $active;
+            position: relative;
+            z-index: 0;
+        }
+        .crosshair.x {
+            width: 100%;
+            height: 1px;
+        }
+        .crosshair.y {
+            height: 100%;
+            width: 1px;
+            top: -5px;
+        }
+    }
+    
+    .unselectable {
+        -moz-user-select: -moz-none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+     
+        /*
+          Introduced in IE 10.
+          See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+        */
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+
+}
+
+.clear {
+    clear: both;
+}

@@ -1,0 +1,15 @@
+<ControlContainer @control={{@control}}>
+    <div class="secondary-container">
+        {{#if this.isTime }}
+            <Input value={{this.time}} {{on "change" (fn this.input "time") }} {{on "change" this.update}} class="secondary time" />
+        {{else}}
+            <Input value={{this.roundedValue}} {{on "change" this.input}} {{on "change" this.update}} class="secondary" />
+        {{/if}}
+    </div>
+    
+    {{#if @control.hasRange}}
+        <Input name={{@control.id}} value={{@control.value}} {{on "input" this.input}} {{on "input" this.update}} type="range" min={{@control.minVal}} max={{@control.maxVal}} step={{this.step}} style="--min: {{@control.minVal}}; --max: {{@control.maxVal}}; --val: {{@control.value}};"/>
+    {{/if}}
+    
+    {{yield}}
+</ControlContainer>

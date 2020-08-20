@@ -1,0 +1,885 @@
+{
+  "metaData": {
+    "version": "1.7.5b8",
+    "versionNumber": 67333
+  },
+  "projectSettings": {
+    "containers": {
+      "dashboardSettings": {
+        "parameters": [
+          {
+            "value": true,
+            "controlAddress": "/enableDashboardServer"
+          },
+          {
+            "value": 9999,
+            "hexMode": false,
+            "controlAddress": "/serverPort"
+          }
+        ]
+      }
+    }
+  },
+  "dashboardManager": {
+    "parameters": [
+      {
+        "value": true,
+        "controlAddress": "/editMode"
+      }
+    ],
+    "items": [
+      {
+        "niceName": "Dashboard",
+        "type": "BaseItem",
+        "itemManager": {
+          "parameters": [
+            {
+              "value": [
+                800.0,
+                400.0
+              ],
+              "controlAddress": "/canvasSize",
+              "enabled": true
+            },
+            {
+              "value": "",
+              "controlAddress": "/backroundImage"
+            },
+            {
+              "value": 1.956722617149353,
+              "controlAddress": "/backgroundImageScale"
+            }
+          ],
+          "items": [
+            {
+              "parameters": [
+                {
+                  "value": [
+                    -373.0,
+                    -106.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    200.0,
+                    50.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": [
+                    0.9215686274509803,
+                    0,
+                    0,
+                    1
+                  ],
+                  "controlAddress": "/foregroundColor",
+                  "enabled": false
+                },
+                {
+                  "value": "",
+                  "controlAddress": "/toggleImage"
+                }
+              ],
+              "niceName": "Dashboard Item",
+              "type": "DashboardParameterItem",
+              "ghostAddress": "/modules/oSCQuery/values/my_effect/Controls/Myfloat",
+              "controllable": "/modules/oSCQuery/values/my_effect/Controls/Myfloat"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    -373.0,
+                    -183.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    200.0,
+                    50.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                }
+              ],
+              "niceName": "Dashboard Item 4",
+              "type": "DashboardTriggerItem",
+              "ghostAddress": "/modules/oSCQuery/values/my_effect/Controls/Mypulse",
+              "controllable": "/modules/oSCQuery/values/my_effect/Controls/Mypulse"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    42.0,
+                    -183.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    200.0,
+                    50.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                }
+              ],
+              "niceName": "Dashboard Item 7",
+              "type": "DashboardParameterItem",
+              "ghostAddress": "/modules/oSCQuery/values/my_effect/Controls/Mycolor",
+              "controllable": "/modules/oSCQuery/values/my_effect/Controls/Mycolor"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    194.0,
+                    140.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    200.0,
+                    50.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                }
+              ],
+              "niceName": "Dashboard Item 1",
+              "type": "DashboardParameterItem",
+              "ghostAddress": "/modules/oSCQuery/values/my_effect/Controls/Mymenu",
+              "controllable": "/modules/oSCQuery/values/my_effect/Controls/Mymenu"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    128.0,
+                    -21.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    200.0,
+                    50.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                }
+              ],
+              "niceName": "Dashboard Item 2",
+              "type": "DashboardParameterItem",
+              "ghostAddress": "/modules/osc/values/_example",
+              "controllable": "/modules/osc/values/_example"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    -68.0,
+                    119.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    200.0,
+                    50.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                }
+              ],
+              "niceName": "Dashboard Item 3",
+              "type": "DashboardParameterItem",
+              "ghostAddress": "/modules/oSCQuery/values/my_effect/Controls/Myxy",
+              "controllable": "/modules/oSCQuery/values/my_effect/Controls/Myxy"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    -357.0,
+                    119.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    200.0,
+                    44.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                }
+              ],
+              "niceName": "Dashboard Item 5",
+              "type": "DashboardParameterItem",
+              "ghostAddress": "/modules/oSCQuery/values/my_effect/Controls/My3d",
+              "controllable": "/modules/oSCQuery/values/my_effect/Controls/My3d"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    -211.0,
+                    -21.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    200.0,
+                    50.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                }
+              ],
+              "niceName": "Dashboard Item 6",
+              "type": "DashboardParameterItem",
+              "ghostAddress": "/modules/oSCQuery/values/my_effect/Controls/Mytoggle",
+              "controllable": "/modules/oSCQuery/values/my_effect/Controls/Mytoggle"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    42.0,
+                    -106.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    200.0,
+                    50.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                }
+              ],
+              "niceName": "Dashboard Item 8",
+              "type": "DashboardParameterItem",
+              "ghostAddress": "/modules/oSCQuery/values/my_effect/Controls/Mystring",
+              "controllable": "/modules/oSCQuery/values/my_effect/Controls/Mystring"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    200.0,
+                    50.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                }
+              ],
+              "niceName": "Dashboard Item 9",
+              "type": "DashboardTriggerItem",
+              "ghostAddress": "/sequences/sequence/play",
+              "controllable": "/sequences/sequence/play"
+            }
+          ]
+        }
+      },
+      {
+        "niceName": "Dashboard 1",
+        "type": "BaseItem",
+        "itemManager": {
+          "parameters": [
+            {
+              "value": [
+                800.0,
+                400.0
+              ],
+              "controlAddress": "/canvasSize",
+              "enabled": true
+            },
+            {
+              "value": "",
+              "controlAddress": "/backroundImage"
+            }
+          ],
+          "items": [
+            {
+              "parameters": [
+                {
+                  "value": [
+                    -141.0,
+                    -86.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    200.0,
+                    50.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": true,
+                  "controlAddress": "/showLabel"
+                },
+                {
+                  "value": "",
+                  "controlAddress": "/toggleImage"
+                }
+              ],
+              "niceName": "Dashboard Item",
+              "type": "DashboardParameterItem",
+              "ghostAddress": "/sequences/sequence/currentTime",
+              "controllable": "/sequences/sequence/currentTime"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    -371.0,
+                    -175.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    200.0,
+                    50.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                }
+              ],
+              "niceName": "Dashboard Item 2",
+              "type": "DashboardTriggerItem",
+              "ghostAddress": "/sequences/sequence/togglePlay",
+              "controllable": "/sequences/sequence/togglePlay"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    -141.0,
+                    -175.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    200.0,
+                    50.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                }
+              ],
+              "niceName": "Dashboard Item 1",
+              "type": "DashboardTriggerItem",
+              "ghostAddress": "/sequences/sequence/stop",
+              "controllable": "/sequences/sequence/stop"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "layout": {
+    "mainLayout": {
+      "type": 1,
+      "width": 1200,
+      "height": 1005,
+      "direction": 2,
+      "shifters": [
+        {
+          "type": 1,
+          "width": 1200,
+          "height": 1005,
+          "direction": 2,
+          "shifters": [
+            {
+              "type": 1,
+              "width": 1200,
+              "height": 599,
+              "direction": 1,
+              "shifters": [
+                {
+                  "type": 1,
+                  "width": 150,
+                  "height": 599,
+                  "direction": 2,
+                  "shifters": [
+                    {
+                      "type": 0,
+                      "width": 150,
+                      "height": 298,
+                      "currentContent": "Modules",
+                      "tabs": [
+                        {
+                          "name": "Modules"
+                        }
+                      ]
+                    },
+                    {
+                      "type": 0,
+                      "width": 150,
+                      "height": 295,
+                      "currentContent": "Custom Variables",
+                      "tabs": [
+                        {
+                          "name": "Custom Variables"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": 0,
+                  "width": 662,
+                  "height": 599,
+                  "currentContent": "Dashboard",
+                  "tabs": [
+                    {
+                      "name": "State Machine"
+                    },
+                    {
+                      "name": "Dashboard"
+                    },
+                    {
+                      "name": "Module Router"
+                    },
+                    {
+                      "name": "Morpher"
+                    }
+                  ]
+                },
+                {
+                  "type": 0,
+                  "width": 376,
+                  "height": 599,
+                  "currentContent": "Inspector",
+                  "tabs": [
+                    {
+                      "name": "Inspector"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": 1,
+              "width": 1200,
+              "height": 399,
+              "direction": 1,
+              "shifters": [
+                {
+                  "type": 0,
+                  "width": 150,
+                  "height": 399,
+                  "currentContent": "Sequences",
+                  "tabs": [
+                    {
+                      "name": "Sequences"
+                    }
+                  ]
+                },
+                {
+                  "type": 0,
+                  "width": 888,
+                  "height": 399,
+                  "currentContent": "Sequence Editor",
+                  "tabs": [
+                    {
+                      "name": "Sequence Editor"
+                    }
+                  ]
+                },
+                {
+                  "type": 0,
+                  "width": 150,
+                  "height": 399,
+                  "currentContent": "Logger",
+                  "tabs": [
+                    {
+                      "name": "Help"
+                    },
+                    {
+                      "name": "Logger"
+                    },
+                    {
+                      "name": "Warnings"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "windows": null
+  },
+  "modules": {
+    "items": [
+      {
+        "niceName": "OSCQuery",
+        "type": "OSCQuery",
+        "scripts": {
+        },
+        "params": {
+          "containers": {
+            "output": {
+              "parameters": [
+                {
+                  "value": "127.0.0.1",
+                  "controlAddress": "/remoteHost"
+                },
+                {
+                  "value": 9000,
+                  "hexMode": false,
+                  "controlAddress": "/remotePort"
+                },
+                {
+                  "value": 5678,
+                  "hexMode": false,
+                  "controlAddress": "/customOSCPort",
+                  "enabled": false
+                }
+              ]
+            }
+          }
+        },
+        "values": {
+          "containers": {
+            "my_effect": {
+              "containers": {
+                "Controls": {
+                  "parameters": [
+                    {
+                      "value": 0.4600000083446503,
+                      "controlAddress": "/Myfloat"
+                    },
+                    {
+                      "value": [
+                        45.66666666666666,
+                        15.9468438538206
+                      ],
+                      "controlAddress": "/Myxy"
+                    },
+                    {
+                      "value": [
+                        1,
+                        "10.592",
+                        1
+                      ],
+                      "controlAddress": "/My3d"
+                    },
+                    {
+                      "value": false,
+                      "controlAddress": "/Mytoggle"
+                    },
+                    {
+                      "value": "asdf",
+                      "controlAddress": "/Mystring"
+                    },
+                    {
+                      "value": "Label 2",
+                      "controlAddress": "/Mymenu"
+                    },
+                    {
+                      "value": [
+                        1,
+                        0.9176470588235294,
+                        0,
+                        1
+                      ],
+                      "controlAddress": "/Mycolor"
+                    }
+                  ],
+                  "owned": true,
+                  "niceName": "Controls"
+                },
+                "Setup": {
+                  "editorIsCollapsed": true,
+                  "owned": true,
+                  "niceName": "Setup"
+                }
+              },
+              "owned": true,
+              "niceName": "my_effect"
+            }
+          }
+        },
+        "treeData": {
+          "DESCRIPTION": "TD OSC Query Server",
+          "CONTENTS": {
+            "my_effect": {
+              "CONTENTS": {
+                "Controls": {
+                  "CONTENTS": {
+                    "Myfloat": {
+                      "TYPE": "f",
+                      "DESCRIPTION": "Myfloat",
+                      "FULL_PATH": "/my_effect/Controls/Myfloat",
+                      "VALUE": [
+                        0.372671
+                      ],
+                      "RANGE": [
+                        {
+                          "MAX": 1.0,
+                          "MIN": 0.0
+                        }
+                      ],
+                      "ACCESS": 3
+                    },
+                    "Myint": {
+                      "TYPE": "i",
+                      "DESCRIPTION": "Myint",
+                      "FULL_PATH": "/my_effect/Controls/Myint",
+                      "VALUE": [
+                        66
+                      ],
+                      "RANGE": [
+                        {
+                          "MAX": 100.0,
+                          "MIN": 0.0
+                        }
+                      ],
+                      "ACCESS": 3
+                    },
+                    "Myxy": {
+                      "TYPE": "ff",
+                      "DESCRIPTION": "Myxy",
+                      "FULL_PATH": "/my_effect/Controls/Myxy",
+                      "VALUE": [
+                        0.701,
+                        29.742
+                      ],
+                      "RANGE": [
+                        {
+                          "MAX": 100.0,
+                          "MIN": 0.0
+                        },
+                        {
+                          "MAX": 100.0,
+                          "MIN": 0.0
+                        }
+                      ],
+                      "ACCESS": 3
+                    },
+                    "My3d": {
+                      "TYPE": "fff",
+                      "DESCRIPTION": "My3d",
+                      "FULL_PATH": "/my_effect/Controls/My3d",
+                      "VALUE": [
+                        1.0,
+                        78.831,
+                        0.53
+                      ],
+                      "RANGE": [
+                        {
+                          "MAX": 1.0,
+                          "MIN": 0.0
+                        },
+                        {
+                          "MAX": 100.0,
+                          "MIN": 0.0
+                        },
+                        {
+                          "MAX": 1.0,
+                          "MIN": 0.0
+                        }
+                      ],
+                      "ACCESS": 3
+                    },
+                    "Mytoggle": {
+                      "TYPE": "T",
+                      "DESCRIPTION": "Mytoggle",
+                      "FULL_PATH": "/my_effect/Controls/Mytoggle",
+                      "VALUE": [
+                        false
+                      ],
+                      "RANGE": [
+                        {
+                          "MAX": 1,
+                          "MIN": 0
+                        }
+                      ],
+                      "ACCESS": 3
+                    },
+                    "Mystring": {
+                      "TYPE": "s",
+                      "DESCRIPTION": "Mystring",
+                      "FULL_PATH": "/my_effect/Controls/Mystring",
+                      "VALUE": [
+                        "xx"
+                      ],
+                      "ACCESS": 3
+                    },
+                    "Mymenu": {
+                      "TYPE": "s",
+                      "DESCRIPTION": "Mymenu",
+                      "FULL_PATH": "/my_effect/Controls/Mymenu",
+                      "VALUE": [
+                        "Label 2"
+                      ],
+                      "RANGE": [
+                        {
+                          "VALS": [
+                            "Label 1",
+                            "Label 2",
+                            "Label 3"
+                          ]
+                        }
+                      ],
+                      "ACCESS": 3
+                    },
+                    "Mycolor": {
+                      "TYPE": "r",
+                      "DESCRIPTION": "Mycolor",
+                      "FULL_PATH": "/my_effect/Controls/Mycolor",
+                      "VALUE": [
+                        "#ff3d00ff"
+                      ],
+                      "ACCESS": 3
+                    },
+                    "Mytop": {
+                      "TYPE": "s",
+                      "DESCRIPTION": "Mytop",
+                      "FULL_PATH": "/my_effect/Controls/Mytop",
+                      "VALUE": [
+                        "moviefilein1"
+                      ],
+                      "ACCESS": 3
+                    },
+                    "Mypulse": {
+                      "TYPE": "N",
+                      "DESCRIPTION": "Mypulse",
+                      "FULL_PATH": "/my_effect/Controls/Mypulse",
+                      "ACCESS": 3
+                    }
+                  }
+                },
+                "Setup": {
+                  "CONTENTS": {
+                    "Something": {
+                      "TYPE": "s",
+                      "DESCRIPTION": "Something",
+                      "FULL_PATH": "/my_effect/Setup/Something",
+                      "VALUE": [
+                        "xxx"
+                      ],
+                      "ACCESS": 3
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "niceName": "OSC",
+        "type": "OSC",
+        "scripts": {
+        },
+        "params": {
+          "containers": {
+            "oscInput": {
+            },
+            "oscOutputs": {
+              "items": [
+                {
+                  "parameters": [
+                    {
+                      "value": "127.0.0.1",
+                      "controlAddress": "/remoteHost"
+                    },
+                    {
+                      "value": 12000,
+                      "hexMode": false,
+                      "controlAddress": "/remotePort"
+                    }
+                  ],
+                  "niceName": "OSC Output",
+                  "type": "BaseItem"
+                }
+              ]
+            },
+            "pass_through": {
+            }
+          }
+        },
+        "values": {
+          "parameters": [
+            {
+              "value": 5.0,
+              "controlAddress": "/_example",
+              "type": "Float",
+              "niceName": "/example",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_example"
+            },
+            {
+              "value": [
+                "81.716",
+                0
+              ],
+              "controlAddress": "/_example2d",
+              "type": "Point2D",
+              "niceName": "/example2d",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_example2d"
+            },
+            {
+              "value": [
+                0,
+                0,
+                0
+              ],
+              "controlAddress": "/_example3d",
+              "type": "Point3D",
+              "niceName": "/example3d",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_example3d"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "sequences": {
+    "items": [
+      {
+        "parameters": [
+          {
+            "value": 5.0,
+            "controlAddress": "/listSize"
+          },
+          {
+            "value": 30.0,
+            "controlAddress": "/totalTime"
+          },
+          {
+            "value": 30.0,
+            "controlAddress": "/viewEndTime"
+          }
+        ],
+        "niceName": "Sequence",
+        "type": "Sequence",
+        "layers": {
+        },
+        "cues": {
+        },
+        "editing": true
+      }
+    ]
+  }
+}

@@ -1,5 +1,24 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
+<div class="menu">
+    <a {{on "click" (fn this.reloadDashboards "0") }}><img src="chataigne-icon.png" class="logo"></a>
+</div>
 
-{{outlet}}
+{{#if isConnected }}
+    <ul class="dashboard-list">
+        <li {{on "click" (fn this.selectDashboard)}}>Show All</li>
+        {{#each @model as |dashboard|}}
+            <li {{on "click" (fn this.selectDashboard dashboard)}}>{{dashboard.name}}</li>
+        {{/each}}
+    </ul>
+
+    {{#if selectedDashboard }}
+        <Dashboard @dashboard={{selectedDashboard}} />
+    {{else}}
+        {{#each @model as |dashboard|}}
+            <Dashboard @dashboard={{dashboard}} />
+        {{/each}}
+    {{/if}}
+
+    {{outlet}}
+{{else}}
+    Connecting to Chataigne
+{{/if}}

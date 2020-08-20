@@ -1,0 +1,5 @@
+<ControlContainer @control={{@control}}>
+    <div class="clear"></div>
+    <button {{on "click" this.update}} class="{{ if @control.triggered "triggered" }}">{{@control.label}}</button>
+    {{yield}}
+</ControlContainer>

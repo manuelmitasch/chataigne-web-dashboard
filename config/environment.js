@@ -20,7 +20,8 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-    }
+    },
+    websocket: {}
   };
 
   if (environment === 'development') {
@@ -29,6 +30,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.websocket.address = 'ws://192.168.0.4:9999/ws';
   }
 
   if (environment === 'test') {

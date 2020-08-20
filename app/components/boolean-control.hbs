@@ -1,0 +1,5 @@
+<ControlContainer @control={{@control}}>
+    <div class="clear"></div>
+    <Input @type="checkbox" @checked={{@control.value}} {{on "input" (fn this.update @control.value)}} class="switch" />
+    {{yield}}
+</ControlContainer>

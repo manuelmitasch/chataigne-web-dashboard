@@ -1,0 +1,113 @@
+@supports(-webkit-appearance: none) or (-moz-appearance: none) {
+    input[type='checkbox'],
+    input[type='radio'] {
+      --active: #7eb357;
+      --active-inner: #fff;
+      --focus: 0px rgba(39, 94, 254, .3);
+      --border: #BBC1E1;
+      --border-hover: #275EFE;
+      --background: #242424;
+      --disabled: #F6F8FF;
+      --disabled-inner: #E1E6F9;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      height: $control-height;
+      outline: none;
+      display: inline-block;
+      vertical-align: top;
+      position: relative;
+      margin: 0;
+      margin-top: 0.3em;
+      cursor: pointer;
+      border: 1px solid $not-active;
+      background: var(--b, var(--background));
+      transition: background .3s, border-color .3s, box-shadow .2s;
+      &:after {
+        content: '';
+        display: block;
+        left: 0;
+        top: 0;
+        position: absolute;
+        transition: transform var(--d-t, .3s) var(--d-t-e, ease), opacity var(--d-o, .2s);
+      }
+      &:checked {
+        --b: var(--active);
+        --bc: var(--active);
+        --d-o: .3s;
+        --d-t: .6s;
+        --d-t-e: cubic-bezier(.2, .85, .32, 1.2);
+      }
+      &:disabled {
+        --b: var(--disabled);
+        cursor: not-allowed;
+        opacity: .9;
+        &:checked {
+          --b: var(--disabled-inner);
+          --bc: var(--border);
+        }
+        & + label {
+          cursor: not-allowed;
+        }
+      }
+      &:not(.switch) {
+        width: 21px;
+        &:after {
+          opacity: var(--o, 0);
+        }
+        &:checked {
+          --o: 1;
+        }
+      }
+      & + label {
+        font-size: 14px;
+        line-height: 21px;
+        display: inline-block;
+        vertical-align: top;
+        cursor: pointer;
+        margin-left: 4px;
+      }
+    }
+    input[type='checkbox'] {
+      &:not(.switch) {
+        border-radius: 7px;
+        &:after {
+          width: 5px;
+          height: 9px;
+          border: 2px solid var(--active-inner);
+          border-top: 0;
+          border-left: 0;
+          left: 7px;
+          top: 4px;
+          transform: rotate(var(--r, 20deg));
+        }
+        &:checked {
+          --r: 43deg;
+        }
+      }
+      &.switch {
+        width: 35px;
+        border-radius: 3px;
+        &:after {
+          left: 1px;
+          top: 0px;
+          border-radius: 50%;
+          width: 1em;
+          height: 1em;
+          background: var(--ab, #717271);
+          transform: translateX(var(--x, 0));
+        }
+        &:checked {
+          --ab: var(--active-inner);
+          --x: 17px;
+        }
+        &:disabled {
+          &:not(:checked) {
+            &:after {
+              opacity: .6;
+            }
+          }
+        }
+      }
+    }
+  }
+  

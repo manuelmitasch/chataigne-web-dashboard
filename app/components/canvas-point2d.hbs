@@ -1,0 +1,15 @@
+<div class="canvas" style="width: {{this.canvasWidth}}px; height: {{this.canvasHeight}}px"
+    {{on "click" this.updatePosition}} 
+    {{on "mousedown" (fn this.updateEditing true)}}
+    {{on "touchstart" (fn this.updateEditing true)}}
+    {{on "mouseup" (fn this.updateEditing false)}}
+    {{on "touchend" (fn this.updateEditing false)}}
+    {{did-insert this.registerListener}}
+    {{will-destroy this.unregisterListener}}
+>
+    <div class="point" style="left: {{this.pointX}}px; top: {{this.pointY}}px"></div>
+    <div class="crosshair x" style="top: {{this.crosshairY}}px"></div>
+    <div class="crosshair y" style="left: {{this.crosshairX}}px"></div>
+</div>
+
+{{yield}}
