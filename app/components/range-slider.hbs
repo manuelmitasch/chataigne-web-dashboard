@@ -15,5 +15,10 @@
     {{on "input" this.update}} 
 />
 
-
+<label for={{ @name }} class="range-slider-label">
+    {{#if @showLabel}}
+        {{ @label }}: 
+    {{/if}}
+    {{ this.roundedValue }}
+</label>
 {{yield}}
