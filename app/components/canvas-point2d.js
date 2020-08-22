@@ -15,7 +15,7 @@ export default class CanvasPoint2dComponent extends ControlComponent {
 
     get pointY () {
         const control = this.args.control;
-        const result = this.remapValue(control.value2, control.minVal2, control.maxVal2, -1.5, this.canvasHeight-2.5); 
+        const result = this.remapValue(control.value2, control.minVal2, control.maxVal2, -2.5, this.canvasHeight-3.5); 
         return result;
     }
 
@@ -34,21 +34,19 @@ export default class CanvasPoint2dComponent extends ControlComponent {
 
     @action
     updatePosition(event) {
-        let offsetTop = event.target.offsetTop;
-        let offsetLeft = event.target.offsetLeft;
         let pageX = event.pageX;
         let pageY = event.pageY;
-
         let srcElement = event.srcElement;
-
-        if (srcElement.classList.contains("canvas")) {
-            this.calculateXY(pageX, pageY, offsetLeft, offsetTop, srcElement);
-        } else {
-            let canvasElement = srcElement.parentElement;
-            offsetTop = canvasElement.offsetTop;
-            offsetLeft = canvasElement.offsetLeft;
-            this.calculateXY(pageX, pageY, offsetLeft, offsetTop, canvasElement);
+        
+        if (!srcElement.classList.contains("canvas")) {
+            srcElement = srcElement.parentElement;
         }
+        
+        let offsetTop = srcElement.getBoundingClientRect().top + window.scrollY;
+        let offsetLeft = srcElement.getBoundingClientRect().left + window.scrollX;
+     
+        this.calculateXY(pageX, pageY, offsetLeft, offsetTop, srcElement);
+
     }
 
     calculateXY(pageX, pageY, offsetLeft, offsetTop, canvasElement) {
@@ -89,42 +87,36 @@ export default class CanvasPoint2dComponent extends ControlComponent {
     @action
     moveListener(event) {
         if (this.editing) {
-            let offsetTop = event.target.offsetTop;
-            let offsetLeft = event.target.offsetLeft;
             let pageX = event.pageX;
             let pageY = event.pageY;
-            
             let srcElement = event.srcElement;
-
-            if (srcElement.classList.contains("canvas")) {
-                this.calculateXY(pageX, pageY, offsetLeft, offsetTop, srcElement);
-            } else {
-                let canvasElement = srcElement.parentElement;
-                offsetTop = canvasElement.offsetTop;
-                offsetLeft = canvasElement.offsetLeft;
-                this.calculateXY(pageX, pageY, offsetLeft, offsetTop, canvasElement);
+            
+            if (!srcElement.classList.contains("canvas")) {
+                srcElement = srcElement.parentElement;
             }
+            
+            let offsetTop = srcElement.getBoundingClientRect().top + window.scrollY;
+            let offsetLeft = srcElement.getBoundingClientRect().left + window.scrollX;
+         
+            this.calculateXY(pageX, pageY, offsetLeft, offsetTop, srcElement);
         }
     }
 
     @action
     touchListener(event) {
         if (this.editing) {
-            let offsetTop = event.target.offsetTop;
-            let offsetLeft = event.target.offsetLeft;
             let pageX = event.changedTouches[0].pageX;
             let pageY = event.changedTouches[0].pageY;
-            
             let srcElement = event.srcElement;
-
-            if (srcElement.classList.contains("canvas")) {
-                this.calculateXY(pageX, pageY, offsetLeft, offsetTop, srcElement);
-            } else {
-                let canvasElement = srcElement.parentElement;
-                offsetTop = canvasElement.offsetTop;
-                offsetLeft = canvasElement.offsetLeft;
-                this.calculateXY(pageX, pageY, offsetLeft, offsetTop, canvasElement);
+            
+            if (!srcElement.classList.contains("canvas")) {
+                srcElement = srcElement.parentElement;
             }
+            
+            let offsetTop = srcElement.getBoundingClientRect().top + window.scrollY;
+            let offsetLeft = srcElement.getBoundingClientRect().left + window.scrollX;
+         
+            this.calculateXY(pageX, pageY, offsetLeft, offsetTop, srcElement);
 
             event.preventDefault();
         }

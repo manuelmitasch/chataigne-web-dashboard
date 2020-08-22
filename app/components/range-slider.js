@@ -2,6 +2,11 @@ import Component from '@glimmer/component';
 import { action } from '@ember/object';
 
 export default class RangeSliderComponent extends Component {
+    get roundedValue() {
+        let rounded = Number.parseFloat(this.args.value).toFixed(3);
+        return parseFloat(rounded);
+    }
+
     @action 
     input(event) {
         if (this.args.onInput) {

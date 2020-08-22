@@ -42,6 +42,7 @@ $thumb-d: 0em;
 	--sx: calc(.5*#{$thumb-d} + var(--ratio)*(100% - #{$thumb-d}));
 	margin: 0;
 	padding: 0;
+	margin-bottom: 3px;
 	width: $track-w; 
 	height: $control-height;
 	border-radius: 0;

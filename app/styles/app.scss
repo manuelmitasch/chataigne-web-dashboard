@@ -12,6 +12,10 @@ $control-height: 1.2em;
 @import 'checkbox.scss';
 
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     background: $background;
     color: $font;
@@ -55,9 +59,10 @@ h1 {
     border-radius: $radius;
     margin: 5px 0;
     padding: 5px;
-    min-height: 1.1em;
+    min-height: 1.7em;
+    position: relative;
 
-    label {
+    label.control-label {
         display: block;
         float: left;
         font-size: 0.8em;
@@ -72,6 +77,7 @@ h1 {
 
     .secondary-container {
         float: right;
+        margin-top: -2px;
 
         button {
             font-size: 0.75em;
@@ -121,6 +127,26 @@ h1 {
     }
     input[type="range"]:focus {
         box-shadow: 0px 0px 1px 0px $selected !important;
+    }
+    
+    .range-slider-label {
+        margin-top: -18px;
+        margin-bottom: 3px;
+        color: #b6d69f;
+        font-size: 0.7em;
+        pointer-events: none;
+        margin-left: auto;
+        width: 100%;
+        text-align: center;
+        display: block;
+        mix-blend-mode: color-dodge;
+
+        .value {
+            font-weight: bold;
+            min-width: 35px;
+            text-align: left;
+            display: inline-block;
+        }
     }
 
 
