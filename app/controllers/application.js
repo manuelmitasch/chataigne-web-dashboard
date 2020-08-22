@@ -22,6 +22,7 @@ export default class ApplicationController extends Controller {
 
     @action
     reloadDashboards() {
+        this.selectedDashboard = null;
         this.socket.reconnect(0);
     }
 

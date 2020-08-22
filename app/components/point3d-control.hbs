@@ -6,15 +6,50 @@
     </div>
 
     {{#if @control.hasRange}}
-        <Input name={{ @control.id}} value={{@control.value}} {{on "input" this.input}} {{on "input" this.update}} type="range" min={{@control.minVal}} max={{@control.maxVal}} step={{this.step}} style="--min: {{@control.minVal}}; --max: {{@control.maxVal}}; --val: {{@control.value}};" />
+        <RangeSlider 
+            @name={{ @control.id }}
+            @value={{ @control.value }}
+
+            @min={{ @control.minVal }}
+            @max={{ @control.maxVal }}
+            
+            @step={{ this.step }} 
+            
+            @onInput={{ this.input }} 
+            @onUpdate={{ this.update }} 
+        />
     {{/if}}
 
     {{#if @control.hasRange2}}
-        <Input name={{ concat @control.id "2" }} value={{ @control.value2 }} {{ on "input" (fn this.input "2") }} {{ on "input" (fn this.update "2") }} type="range" min={{@control.minVal2}} max={{@control.maxVal2}} step={{this.step}} style="--min: {{@control.minVal2}}; --max: {{@control.maxVal2}}; --val: {{@control.value2}};"  class="no-top-margin" />
+        <RangeSlider 
+            @name={{ concat @control.id "2" }}
+            @value={{ @control.value2 }}
+
+            @min={{ @control.minVal2 }}
+            @max={{ @control.maxVal2 }}
+            
+            @step={{ this.step }} 
+            @class="no-top-margin"
+            
+            @onInput={{ fn this.input "2" }} 
+            @onUpdate={{ fn this.update "2" }} 
+        />
     {{/if}}
 
     {{#if @control.hasRange3}}
-        <Input name={{ concat @control.id "3" }} value={{ @control.value2 }} {{ on "input" (fn this.input "3") }} {{ on "input" (fn this.update "3") }} type="range" min={{@control.minVal3}} max={{@control.maxVal3}} step={{this.step}} style="--min: {{@control.minVal3}}; --max: {{@control.maxVal3}}; --val: {{@control.value3}};"  class="no-top-margin" />
+        <RangeSlider 
+            @name={{ concat @control.id "3" }}
+            @value={{ @control.value3 }}
+
+            @min={{ @control.minVal3 }}
+            @max={{ @control.maxVal3 }}
+            
+            @step={{ this.step }} 
+            @class="no-top-margin"
+            
+            @onInput={{ fn this.input "3" }} 
+            @onUpdate={{ fn this.update "3" }} 
+        />
     {{/if}}
     
     {{yield}}

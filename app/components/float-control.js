@@ -18,7 +18,6 @@ export default class FloatControlComponent extends ControlComponent {
     if (type == "time") {
       let time = event.target.value;
       time = time.split(".");
-      debugger;
       let ms = time.length > 1 ? time[1] : "0";
       if (ms.length < 2) {
         ms = parseInt(ms + "00");
@@ -45,7 +44,6 @@ export default class FloatControlComponent extends ControlComponent {
         seconds = time[0] ? parseInt(time[0]) : 0;
       }
       const result = hours*60*60 + minutes*60 + seconds + ms/1000;
-      debugger;
       control.value = result;
     } else {
       event = type;

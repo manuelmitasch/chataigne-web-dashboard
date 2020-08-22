@@ -1,0 +1,17 @@
+<Input 
+    type="range" 
+    name={{@name}} 
+    
+    value={{@value}} 
+    step={{@step}} 
+
+    min={{@min}} 
+    max={{@max}} 
+    
+    style="--min: {{@min}}; --max: {{@max}}; --val: {{@value}};"
+    class={{ @class }}
+    
+    {{on "input" this.input}} 
+    {{on "input" this.update}} 
+/>
+{{yield}}

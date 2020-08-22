@@ -262,21 +262,6 @@
               "type": "DashboardParameterItem",
               "ghostAddress": "/modules/oSCQuery/values/my_effect/Controls/Mystring",
               "controllable": "/modules/oSCQuery/values/my_effect/Controls/Mystring"
-            },
-            {
-              "parameters": [
-                {
-                  "value": [
-                    200.0,
-                    50.0
-                  ],
-                  "controlAddress": "/viewUISize"
-                }
-              ],
-              "niceName": "Dashboard Item 9",
-              "type": "DashboardTriggerItem",
-              "ghostAddress": "/sequences/sequence/play",
-              "controllable": "/sequences/sequence/play"
             }
           ]
         }
@@ -382,19 +367,19 @@
   "layout": {
     "mainLayout": {
       "type": 1,
-      "width": 1200,
+      "width": 1680,
       "height": 1005,
       "direction": 2,
       "shifters": [
         {
           "type": 1,
-          "width": 1200,
+          "width": 1680,
           "height": 1005,
           "direction": 2,
           "shifters": [
             {
               "type": 1,
-              "width": 1200,
+              "width": 1680,
               "height": 599,
               "direction": 1,
               "shifters": [
@@ -430,7 +415,7 @@
                 },
                 {
                   "type": 0,
-                  "width": 662,
+                  "width": 1142,
                   "height": 599,
                   "currentContent": "Dashboard",
                   "tabs": [
@@ -463,7 +448,7 @@
             },
             {
               "type": 1,
-              "width": 1200,
+              "width": 1680,
               "height": 399,
               "direction": 1,
               "shifters": [
@@ -480,7 +465,7 @@
                 },
                 {
                   "type": 0,
-                  "width": 888,
+                  "width": 1368,
                   "height": 399,
                   "currentContent": "Sequence Editor",
                   "tabs": [
@@ -547,25 +532,26 @@
         "values": {
           "containers": {
             "my_effect": {
+              "editorIsCollapsed": true,
               "containers": {
                 "Controls": {
                   "parameters": [
                     {
-                      "value": 0.4600000083446503,
+                      "value": 0.7099999785423279,
                       "controlAddress": "/Myfloat"
                     },
                     {
                       "value": [
-                        45.66666666666666,
-                        15.9468438538206
+                        "71.808",
+                        "71.055"
                       ],
                       "controlAddress": "/Myxy"
                     },
                     {
                       "value": [
-                        1,
-                        "10.592",
-                        1
+                        1.0,
+                        50.0,
+                        1.0
                       ],
                       "controlAddress": "/My3d"
                     },
@@ -583,14 +569,15 @@
                     },
                     {
                       "value": [
-                        1,
-                        0.9176470588235294,
                         0,
+                        1,
+                        1,
                         1
                       ],
                       "controlAddress": "/Mycolor"
                     }
                   ],
+                  "editorIsCollapsed": true,
                   "owned": true,
                   "niceName": "Controls"
                 },

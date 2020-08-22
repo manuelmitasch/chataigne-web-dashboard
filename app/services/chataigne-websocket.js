@@ -34,7 +34,6 @@ export default class WebsocketService extends Service {
     }
 
     reconnect(time) {
-        debugger;
         time = (time != undefined) ? time : 5000;
 
         this.store.unloadAll();
