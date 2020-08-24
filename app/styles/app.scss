@@ -1,6 +1,7 @@
 $background: #222221;
 $container-background: #403f40;
 $container-border: #717271;
+$control-background: #333333;
 $font: #a7a7a8;
 $radius: 3px;
 $active: #7eb357;
@@ -22,14 +23,21 @@ body {
     font-family: Arial;
 }
 
-.logo {
-    position: absolute;
-    top: 3px;
-    right: 10px;
-    z-index: -5;
-    width: 32px;
-    cursor: pointer;
-    z-index: 3;
+.menu {
+    .logo {
+        position: absolute;
+        top: 3px;
+        right: 10px;
+        z-index: -5;
+        width: 32px;
+        cursor: pointer;
+        z-index: 3;
+    }
+
+    input[type='checkbox'] {
+        border: 1px solid $container-border;
+        position: absolute;
+    }
 }
 
 .dashboard-list {
@@ -53,7 +61,208 @@ h1 {
 .container.no-bottom-padding{
     padding-bottom: 1px;
 }
-.container {
+
+.dashboard.layout {
+    overflow: hidden;
+    position: relative;
+    box-sizing: content-box;
+
+    background: $container-background;
+    border: 1px solid $container-border;
+    border-radius: $radius;
+
+    .control {
+        position: absolute;
+        background: $control-background;
+        border: none;
+    }
+
+    input[type=range] {
+        margin-top: 0;
+        width: 100%;
+    }
+
+
+    button {
+        width: 100%;
+        height: 100%;
+    }
+
+    .clear {
+        clear: none;
+    }
+
+    .secondary-container {
+        display: none;
+    }
+
+    .float-control {
+        background: none;
+        padding: 0;
+        border: none;
+
+        label.control-label {
+            position: absolute;
+            mix-blend-mode: color-dodge;
+            padding: 2px;
+        }
+
+        input[type=range] {
+            height: 100%;
+
+            &::-webkit-slider-runnable-track {
+                height: 100%;
+            }
+        }
+
+        .main-input {
+            width: 100%;
+            height: 100%;
+        }
+        
+        input.secondary {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding-left: 60px;
+            background: $control-background;
+
+            color: $active;
+            font-size: 1em;
+        }
+    }
+
+    .point2d-control {
+        label.control-label {
+            position: absolute;
+            mix-blend-mode: color-dodge;
+            padding: 2px;
+        }
+
+        input[type=range] {
+            height: 50%;
+
+            &::-webkit-slider-runnable-track {
+                height: 100%;
+            }
+        }
+
+        .main-input {
+            width: 100%;
+            height: 100%;
+        }
+        
+        input.secondary {
+            width: 100%;
+            height: 50%;
+            margin: 0;
+            padding-left: 60px;
+        }
+    }
+
+    .point3d-control {
+        label.control-label {
+            position: absolute;
+            mix-blend-mode: color-dodge;
+            padding: 2px;
+        }
+
+        input[type=range] {
+            height: 33.3%;
+
+            &::-webkit-slider-runnable-track {
+                height: 100%;
+            }
+        }
+
+        .main-input {
+            width: 100%;
+            height: 100%;
+        }
+        
+        input.secondary {
+            width: 100%;
+            height: 33.3%;
+            margin: 0;
+            padding-left: 60px;
+        }
+    }
+
+    .color-control {
+        background: none;
+        padding: 0;
+        border: none;
+
+        label.control-label {
+            position: absolute;
+            text-shadow: 0px 0px 3px #ffffff;
+            color: black;
+            padding: 2px;
+        }
+
+        .main-input {
+            width: 100%;
+            height: 100%;
+
+
+            input[type=color] {
+                width: 100%;
+                height: 100%;
+
+                &, &::-webkit-color-swatch-wrapper {
+                    padding: 0;
+                    height: 100%;
+                }
+            
+                &, &::-webkit-color-swatch {
+                    border: none;
+                    height: 100%;
+                }
+            }
+
+        }
+    }
+
+    .string-control {
+        background: none;
+        padding: 0;
+        border: none;
+
+        label.control-label {
+            position: absolute;
+        }
+
+        input.string-input {
+            width: 100%;
+            height: 100%;
+            padding-left: 60px;
+            text-align: center;
+            background: $control-background;
+        }
+    }
+
+    .trigger-control {
+        background: none;
+        padding: 0;
+        border: none;
+    }
+
+}
+
+.dashboard.responsive {
+    .clear {
+        clear: both;
+    }
+
+    .float-control {
+        .secondary-container {
+            display: none;
+        }
+    }
+    
+}
+
+.control {
     background: $container-background;
     border: 1px solid $container-border;
     border-radius: $radius;
@@ -61,198 +270,205 @@ h1 {
     padding: 5px;
     min-height: 1.7em;
     position: relative;
-
-    label.control-label {
-        display: block;
-        float: left;
-        font-size: 0.8em;
-        font-weight: bold;
-        max-width: 100px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: clip;
-        float: left;
-        margin-left: 3px;
-    }
-
-    .secondary-container {
-        float: right;
-        margin-top: -2px;
-
-        button {
-            font-size: 0.75em;
-            margin: 0;
-            padding: 1px 2px;
-            margin-left: 5px;
-        }
-    }
-
-    input {
-        outline: none;
-    }
-
-    input:focus, button:focus, input[type="color"]:focus {
-        box-shadow: 0px 0px 0px 1px $selected;
-    }
-
-    input::-moz-selection { background: $background; }
-    input::selection { background: $background; }
-
-    input.secondary {
-        width: 50px;
-        background: #4e4e4e;
-        color: $font;
-        border: none;
-        text-align: center;
-        border-radius: $radius;
-        font-size: 0.75em;
-        margin-top: 0px;
-        display: inline-block;
-        margin-left: 10px;
-    }
-
-    input.secondary.time {
-        width: 150px;
-    }
-
-    input[type="range"] {
-        display: block;
-        box-sizing: border-box;
-        width: 100%;
-        margin-top: 1.3em;
-        cursor: ew-resize;
-    }
-    input[type="range"].no-top-margin {
-        margin-top: 5px;
-    }
-    input[type="range"]:focus {
-        box-shadow: 0px 0px 1px 0px $selected !important;
-    }
-    
-    .range-slider-label {
-        margin-top: -18px;
-        margin-bottom: 3px;
-        color: #b6d69f;
-        font-size: 0.7em;
-        pointer-events: none;
-        margin-left: auto;
-        width: 100%;
-        text-align: center;
-        display: block;
-        mix-blend-mode: color-dodge;
-
-        .value {
-            font-weight: bold;
-            min-width: 35px;
-            text-align: left;
-            display: inline-block;
-        }
-    }
-
-
-    input[type="color"] {
-        margin: 0;
-        padding: 0;
-        border: none;
-        border-radius: $radius;
-        height: $control-height;
-        background: none;
-        margin-top: 3px;
-
-        &, &::-webkit-color-swatch-wrapper {
-            padding: 0;
-            height: $control-height;
-        }
-
-        &, &::-webkit-color-swatch {
-            border: none;
-            border-radius: $radius;
-            height: $control-height;
-        }
-    }
-
-    .string-input {
-        width: 100%;
-        height: $control-height;
-        background: $not-active;
-        color: $active;
-        border: none;
-        text-align: left;
-        border-radius: $radius;
-        font-size: 1em;
-        margin-top: 0px;
-        display: block;
-        margin-right: 10px;
-        box-sizing: border-box;
-        padding-left: 5px;
-        margin-top: 0.3em;
-    }
-
-    input.string-input::-moz-selection { background: silver !important; }
-    input.string-input::selection { background: silver !important; }
-
-    button {
-        background: $container-border;
-        border-radius: $radius;
-        border: none;
-        padding: 2px 5px;
-        margin-top: 0.3em;
-        outline: none;
-    }
-
-    button.triggered {
-        background: orange;
-    }
-
-    .canvas {
-        background: $not-active;
-        margin-top: 5px;
-        overflow: hidden;
-
-        .point {
-            //border-radius: 50%;
-            background: $active;
-            height: 5px;
-            width: 5px;
-            position: relative;
-            top: 100px;
-            left: 100px;
-            box-sizing: border-box;
-            z-index: 1;
-        }
-
-        .crosshair {
-            background: $active;
-            position: relative;
-            z-index: 0;
-        }
-        .crosshair.x {
-            width: 100%;
-            height: 1px;
-        }
-        .crosshair.y {
-            height: 100%;
-            width: 1px;
-            top: -5px;
-        }
-    }
-    
-    .unselectable {
-        -moz-user-select: -moz-none;
-        -khtml-user-select: none;
-        -webkit-user-select: none;
-     
-        /*
-          Introduced in IE 10.
-          See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
-        */
-        -ms-user-select: none;
-        user-select: none;
-    }
-
-
 }
 
-.clear {
-    clear: both;
+label.control-label {
+    display: block;
+    float: left;
+    font-size: 0.8em;
+    font-weight: bold;
+    max-width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
+    float: left;
+    margin-left: 3px;
+    margin-bottom: 0.3em;
+    margin-right: 1em;
+    pointer-events: none;
+}
+
+.secondary-container {
+    float: right;
+    margin-top: -2px;
+
+    button {
+        font-size: 0.75em;
+        margin: 0;
+        padding: 1px 2px;
+        margin-left: 5px;
+    }
+}
+
+input {
+    outline: none;
+}
+
+input:focus, button:focus, input[type="color"]:focus {
+    box-shadow: 0px 0px 0px 1px $selected;
+}
+
+input::-moz-selection { background: $background; }
+input::selection { background: $background; }
+
+input.secondary {
+    width: 50px;
+    background: #4e4e4e;
+    color: $font;
+    border: none;
+    text-align: center;
+    border-radius: $radius;
+    font-size: 0.75em;
+    margin-top: 0px;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+input.secondary.time {
+    width: 150px;
+}
+
+input[type="range"] {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: 1.3em;
+    cursor: ew-resize;
+}
+input[type="range"].no-top-margin {
+    margin-top: 5px;
+}
+input[type="range"]:focus {
+    box-shadow: 0px 0px 1px 0px $selected !important;
+}
+
+.range-slider-label {
+    margin-top: -18px;
+    margin-bottom: 3px;
+    color: #b6d69f;
+    font-size: 0.7em;
+    pointer-events: none;
+    margin-left: auto;
+    width: 100%;
+    text-align: center;
+    display: block;
+    mix-blend-mode: color-dodge;
+
+    .value {
+        font-weight: bold;
+        min-width: 35px;
+        text-align: left;
+        display: inline-block;
+    }
+}
+
+
+input[type="color"] {
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: $radius;
+    height: $control-height;
+    background: none;
+
+    &, &::-webkit-color-swatch-wrapper {
+        padding: 0;
+        height: $control-height;
+    }
+
+    &, &::-webkit-color-swatch {
+        border: none;
+        border-radius: $radius;
+        height: $control-height;
+    }
+}
+
+.string-input {
+    width: 100%;
+    height: $control-height;
+    background: $not-active;
+    color: $active;
+    border: none;
+    text-align: left;
+    border-radius: $radius;
+    font-size: 1em;
+    margin-top: 0px;
+    display: block;
+    margin-right: 10px;
+    box-sizing: border-box;
+    padding-left: 5px;
+}
+
+input.string-input::-moz-selection { background: silver !important; }
+input.string-input::selection { background: silver !important; }
+
+button {
+    background: $container-border;
+    border-radius: $radius;
+    border: none;
+    padding: 2px 5px;
+    outline: none;
+}
+
+button.triggered {
+    background: orange;
+}
+
+.canvas {
+    z-index: 5;
+    background: $not-active;
+    margin-top: 5px;
+    overflow: hidden;
+
+    .point {
+        //border-radius: 50%;
+        background: $active;
+        height: 5px;
+        width: 5px;
+        position: relative;
+        top: 100px;
+        left: 100px;
+        box-sizing: border-box;
+        z-index: 1;
+    }
+
+    .crosshair {
+        background: $active;
+        position: relative;
+        z-index: 0;
+    }
+    .crosshair.x {
+        width: 100%;
+        height: 1px;
+    }
+    .crosshair.y {
+        height: 100%;
+        width: 1px;
+        top: -5px;
+    }
+}
+
+.unselectable {
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    
+    /*
+        Introduced in IE 10.
+        See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+    */
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.layout-toggle {
+    position: absolute;
+    top: 10px;
+    right: 50px;
+    z-index: -5;
+    width: 100px;
+    cursor: pointer;
+    z-index: 3;
+    text-align: right;
+    font-size: 0.8em;
 }

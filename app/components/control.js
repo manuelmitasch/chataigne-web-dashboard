@@ -17,5 +17,4 @@ export default class ControlComponent extends Component {
     this.socket.sendFeedback(control.controlAddress, control.value);
     // control.save();
   }
-
 }

@@ -55,17 +55,56 @@
               "parameters": [
                 {
                   "value": [
-                    -373.0,
-                    -106.0
+                    -399.0,
+                    0.0
                   ],
                   "controlAddress": "/viewUIPosition"
                 },
                 {
                   "value": [
-                    200.0,
+                    400.0,
                     50.0
                   ],
                   "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": true,
+                  "controlAddress": "/showLabel"
+                },
+                {
+                  "value": [
+                    0.800000011920929,
+                    0.800000011920929,
+                    0.800000011920929,
+                    1.0
+                  ],
+                  "controlAddress": "/textColor",
+                  "enabled": false
+                },
+                {
+                  "value": [
+                    0.3803921639919281,
+                    0.3803921639919281,
+                    0.3803921639919281,
+                    1.0
+                  ],
+                  "controlAddress": "/contourColor",
+                  "enabled": false
+                },
+                {
+                  "value": "",
+                  "controlAddress": "/customText",
+                  "enabled": false
+                },
+                {
+                  "value": [
+                    0.1333333402872086,
+                    0.1333333402872086,
+                    0.1333333402872086,
+                    1.0
+                  ],
+                  "controlAddress": "/backgroundColor",
+                  "enabled": false
                 },
                 {
                   "value": [
@@ -102,6 +141,10 @@
                     50.0
                   ],
                   "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": true,
+                  "controlAddress": "/showLabel"
                 }
               ],
               "niceName": "Dashboard Item 4",
@@ -113,7 +156,7 @@
               "parameters": [
                 {
                   "value": [
-                    42.0,
+                    181.0,
                     -183.0
                   ],
                   "controlAddress": "/viewUIPosition"
@@ -124,6 +167,10 @@
                     50.0
                   ],
                   "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": true,
+                  "controlAddress": "/showLabel"
                 }
               ],
               "niceName": "Dashboard Item 7",
@@ -157,17 +204,40 @@
               "parameters": [
                 {
                   "value": [
-                    128.0,
-                    -21.0
+                    222.0,
+                    0.0
                   ],
                   "controlAddress": "/viewUIPosition"
                 },
                 {
                   "value": [
-                    200.0,
-                    50.0
+                    178.0,
+                    53.0
                   ],
                   "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": true,
+                  "controlAddress": "/showLabel"
+                },
+                {
+                  "value": "asdf",
+                  "controlAddress": "/customText",
+                  "enabled": false
+                },
+                {
+                  "value": true,
+                  "controlAddress": "/showValue"
+                },
+                {
+                  "value": [
+                    0.7058823704719543,
+                    0.0,
+                    0.0,
+                    1.0
+                  ],
+                  "controlAddress": "/foregroundColor",
+                  "enabled": false
                 }
               ],
               "niceName": "Dashboard Item 2",
@@ -179,15 +249,15 @@
               "parameters": [
                 {
                   "value": [
-                    -68.0,
-                    119.0
+                    -373.0,
+                    80.0
                   ],
                   "controlAddress": "/viewUIPosition"
                 },
                 {
                   "value": [
                     200.0,
-                    50.0
+                    106.0
                   ],
                   "controlAddress": "/viewUISize"
                 }
@@ -201,17 +271,21 @@
               "parameters": [
                 {
                   "value": [
-                    -357.0,
-                    119.0
+                    -114.0,
+                    80.0
                   ],
                   "controlAddress": "/viewUIPosition"
                 },
                 {
                   "value": [
-                    200.0,
-                    44.0
+                    483.0,
+                    51.0
                   ],
                   "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": true,
+                  "controlAddress": "/showLabel"
                 }
               ],
               "niceName": "Dashboard Item 5",
@@ -223,17 +297,25 @@
               "parameters": [
                 {
                   "value": [
-                    -211.0,
-                    -21.0
+                    -95.0,
+                    -183.0
                   ],
                   "controlAddress": "/viewUIPosition"
                 },
                 {
                   "value": [
                     200.0,
-                    50.0
+                    25.0
                   ],
                   "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": true,
+                  "controlAddress": "/showLabel"
+                },
+                {
+                  "value": true,
+                  "controlAddress": "/showValue"
                 }
               ],
               "niceName": "Dashboard Item 6",
@@ -245,15 +327,15 @@
               "parameters": [
                 {
                   "value": [
-                    42.0,
-                    -106.0
+                    -95.0,
+                    -90.0
                   ],
                   "controlAddress": "/viewUIPosition"
                 },
                 {
                   "value": [
                     200.0,
-                    50.0
+                    40.0
                   ],
                   "controlAddress": "/viewUISize"
                 }
@@ -289,14 +371,14 @@
               "parameters": [
                 {
                   "value": [
-                    -141.0,
+                    -371.0,
                     -86.0
                   ],
                   "controlAddress": "/viewUIPosition"
                 },
                 {
                   "value": [
-                    200.0,
+                    741.0,
                     50.0
                   ],
                   "controlAddress": "/viewUISize"
@@ -367,32 +449,32 @@
   "layout": {
     "mainLayout": {
       "type": 1,
-      "width": 1680,
+      "width": 1266,
       "height": 1005,
       "direction": 2,
       "shifters": [
         {
           "type": 1,
-          "width": 1680,
+          "width": 1266,
           "height": 1005,
           "direction": 2,
           "shifters": [
             {
               "type": 1,
-              "width": 1680,
-              "height": 599,
+              "width": 1266,
+              "height": 600,
               "direction": 1,
               "shifters": [
                 {
                   "type": 1,
                   "width": 150,
-                  "height": 599,
+                  "height": 600,
                   "direction": 2,
                   "shifters": [
                     {
                       "type": 0,
                       "width": 150,
-                      "height": 298,
+                      "height": 299,
                       "currentContent": "Modules",
                       "tabs": [
                         {
@@ -415,8 +497,8 @@
                 },
                 {
                   "type": 0,
-                  "width": 1142,
-                  "height": 599,
+                  "width": 899,
+                  "height": 600,
                   "currentContent": "Dashboard",
                   "tabs": [
                     {
@@ -435,8 +517,8 @@
                 },
                 {
                   "type": 0,
-                  "width": 376,
-                  "height": 599,
+                  "width": 205,
+                  "height": 600,
                   "currentContent": "Inspector",
                   "tabs": [
                     {
@@ -448,7 +530,7 @@
             },
             {
               "type": 1,
-              "width": 1680,
+              "width": 1266,
               "height": 399,
               "direction": 1,
               "shifters": [
@@ -465,7 +547,7 @@
                 },
                 {
                   "type": 0,
-                  "width": 1368,
+                  "width": 954,
                   "height": 399,
                   "currentContent": "Sequence Editor",
                   "tabs": [
@@ -537,21 +619,21 @@
                 "Controls": {
                   "parameters": [
                     {
-                      "value": 0.7099999785423279,
+                      "value": 0.6240000128746033,
                       "controlAddress": "/Myfloat"
                     },
                     {
                       "value": [
-                        "71.808",
-                        "71.055"
+                        "74.698",
+                        "80.746"
                       ],
                       "controlAddress": "/Myxy"
                     },
                     {
                       "value": [
-                        1.0,
-                        50.0,
-                        1.0
+                        1,
+                        "82.856",
+                        1
                       ],
                       "controlAddress": "/My3d"
                     },
@@ -560,7 +642,7 @@
                       "controlAddress": "/Mytoggle"
                     },
                     {
-                      "value": "asdf",
+                      "value": "xxx",
                       "controlAddress": "/Mystring"
                     },
                     {
@@ -569,9 +651,9 @@
                     },
                     {
                       "value": [
+                        1,
                         0,
-                        1,
-                        1,
+                        0,
                         1
                       ],
                       "controlAddress": "/Mycolor"
@@ -795,7 +877,7 @@
         "values": {
           "parameters": [
             {
-              "value": 5.0,
+              "value": 20.0,
               "controlAddress": "/_example",
               "type": "Float",
               "niceName": "/example",

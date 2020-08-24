@@ -1,4 +1,8 @@
-<ControlContainer @control={{@control}}>
+<ControlContainer 
+    @control={{@control}} 
+    @displayLayout={{@displayLayout}}
+    @showLabel={{ false }}
+>
     <div class="clear"></div>
     <button {{on "click" this.update}} class="{{ if @control.triggered "triggered" }}">{{@control.label}}</button>
     {{yield}}

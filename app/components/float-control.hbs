@@ -1,4 +1,9 @@
-<ControlContainer @control={{@control}}>
+<ControlContainer 
+    @control={{@control}} 
+    @displayLayout={{@displayLayout}}
+    @showLabel={{ true }}
+>
+
     <div class="secondary-container">
         {{#if this.isTime }}
             <Input 
@@ -17,22 +22,41 @@
         {{/if}}
     </div>
     
-    {{#if @control.hasRange}}
-        <RangeSlider 
-            @name={{ @control.id }}
-            @value={{ @control.value }}
+    <div class="main-input">
+        {{#if @control.hasRange}}
+            <RangeSlider 
+                @name={{ @control.id }}
+                @value={{ @control.value }}
 
-            @label={{ @control.label }}
-            
-            @min={{ @control.minVal }}
-            @max={{ @control.maxVal }}
-            
-            @step={{ this.step }} 
-            
-            @onInput={{ this.input }} 
-            @onUpdate={{ this.update }} 
-        />
-    {{/if}}
+                @label={{ @control.label }}
+                
+                @min={{ @control.minVal }}
+                @max={{ @control.maxVal }}
+                
+                @step={{ this.step }} 
+                
+                @onInput={{ this.input }} 
+                @onUpdate={{ this.update }} 
+            />
+        {{else}}
+            {{#if this.isTime }}
+                <Input 
+                    value={{ this.time }} 
+                    class="secondary time"
+                    {{on "change" (fn this.input "time") }} 
+                    {{on "change" this.update}} 
+                />
+            {{else}}
+                <Input 
+                    value={{ this.roundedValue }} 
+                    class="secondary" 
+                    {{ on "change" this.input }} 
+                    {{ on "change" this.update }} 
+                />
+            {{/if}}
+        {{/if}}
+    </div>
+
     
     {{yield}}
 </ControlContainer>

@@ -1,4 +1,8 @@
-<ControlContainer @control={{@control}}>
+<ControlContainer 
+    @control={{@control}} 
+    @displayLayout={{@displayLayout}}
+    @showLabel={{ true }}
+>
     <div class="clear"></div>
     <Input value={{@control.value}} {{on "change" this.input}} {{on "change" this.update}} class="string-input" />
     {{yield}}

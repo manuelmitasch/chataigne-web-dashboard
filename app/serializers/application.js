@@ -20,7 +20,9 @@ export default class ApplicationSerializer extends Serializer {
             "type": "dashboard",
             "id": dashboard.id,
             "attributes": {
-              "name": dashboard.name
+              "name": dashboard.name,
+              "width": dashboard.size[0],
+              "height": dashboard.size[1]
             },
             "relationships": {
                 "controls": {
@@ -66,10 +68,10 @@ export default class ApplicationSerializer extends Serializer {
                     "minVal": item.minVal, 
                     "maxVal": item.maxVal,
                     "controlAddress": item.controlAddress,
-                    "positionX": item.position[0],
-                    "positionY": item.position[1],
-                    "sizeX": item.size[0],
-                    "sizeY": item.size[1],
+                    "positionX": convertCoordinate(item.position[0], dashboard.size[0]),
+                    "positionY": convertCoordinate(item.position[1], dashboard.size[1]),
+                    "width": item.size[0],
+                    "height": item.size[1],
                     "defaultUI": item.defaultUI,
                 }
               }
@@ -117,3 +119,9 @@ export default class ApplicationSerializer extends Serializer {
         return result;
     }
 }
+
+
+function convertCoordinate(value, max) {
+  value = value + (max/2);
+  return value;
+};

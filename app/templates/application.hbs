@@ -1,5 +1,6 @@
 <div class="menu">
     <a {{on "click" (fn this.reloadDashboards "0") }}><img src="chataigne-icon.png" class="logo"></a>
+    <Input @type="checkbox" @checked={{ displayLayout }} {{on "change" this.toggleDisplayLayout}} class="switch layout-toggle" />
 </div>
 
 {{#if isConnected }}
@@ -11,10 +12,16 @@
     </ul>
 
     {{#if selectedDashboard }}
-        <Dashboard @dashboard={{selectedDashboard}} />
+        <Dashboard 
+            @dashboard={{ selectedDashboard }} 
+            @displayLayout={{ this.displayLayout }} 
+        />
     {{else}}
         {{#each @model as |dashboard|}}
-            <Dashboard @dashboard={{dashboard}} />
+            <Dashboard 
+                @dashboard={{ dashboard }} 
+                @displayLayout={{ this.displayLayout }} 
+            />
         {{/each}}
     {{/if}}
 

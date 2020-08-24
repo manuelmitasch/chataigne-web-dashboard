@@ -6,6 +6,7 @@ import { action } from '@ember/object';
 export default class ApplicationController extends Controller {
     @service('chataigne-websocket') socket
     @tracked selectedDashboard
+    @tracked displayLayout = false;
 
     get isConnected() {
         return this.socket.isConnected;
@@ -25,5 +26,10 @@ export default class ApplicationController extends Controller {
         this.selectedDashboard = null;
         this.socket.reconnect(0);
     }
+
+   @action
+   toggleDisplayLayout() {
+       this.displayLayout = !this.displayLayout;
+   } 
 
 }

@@ -6,8 +6,8 @@ export default class ControlModel extends Model {
 
     @attr("number") positionX
     @attr("number") positionY
-    @attr("number") sizeX
-    @attr("number") sizeY
+    @attr("number") width
+    @attr("number") height
 
     @attr("string") defaultUI
 
@@ -15,5 +15,9 @@ export default class ControlModel extends Model {
 
     get hasRange() {
         return this.maxVal != undefined && this.minVal != undefined;
+    }
+
+    get modelName() {
+        return this.constructor.modelName;
     }
 }

@@ -1,4 +1,9 @@
-<ControlContainer @control={{@control}} @extraClass="no-bottom-padding">
+<ControlContainer 
+    @control={{@control}} 
+    @displayLayout={{@displayLayout}}
+    @showLabel={{ true }}
+    @extraClass="no-bottom-padding"
+>
     <div class="secondary-container">
         <Input value={{ this.roundedRed }} {{on "change" (fn this.input "red") }} {{on "change" this.update }} class="secondary" />
         <Input value={{ this.roundedGreen }} {{on "change" (fn this.input "green") }} {{on "change" this.update }} class="secondary" />
@@ -7,6 +12,10 @@
     </div>
     
     <div class="clear"></div>
-    <Input value={{ @control.hex }} {{on "input" this.input }} {{on "input" this.update}} type="color" />
+
+    <div class="main-input">
+        <Input value={{ @control.hex }} {{on "input" this.input }} {{on "input" this.update}} type="color" />
+    </div>
+    
     {{yield}}
 </ControlContainer>

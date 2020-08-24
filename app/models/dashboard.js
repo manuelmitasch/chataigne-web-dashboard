@@ -3,6 +3,10 @@ import { sort } from '@ember/object/computed';
 
 export default class DashboardModel extends Model {
     @attr('string') name
+
+    @attr('number') width
+    @attr('number') height
+    
     @hasMany('control', { polymorphic: true }) controls
 
     controlSorting = ['positionY', 'positionX']

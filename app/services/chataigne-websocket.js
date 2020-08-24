@@ -16,8 +16,8 @@ export default class WebsocketService extends Service {
     init() {
         super.init(...arguments);
 
-        if (ENV.environment == "development") {
-            this.address = ENV.websocket.address;
+        if (ENV.environment == 'development') {
+            this.address = this.devAddress();
         }
 
         const socket = this.websockets.socketFor(this.address);
@@ -27,6 +27,14 @@ export default class WebsocketService extends Service {
         socket.on('message', this.handleMessage, this);
     
         this.set('socket', socket);
+    }
+
+    devAddress() {
+        let address = location.host;
+        address = address.split(':')[0];
+        let port = 9999;
+
+        return 'ws://' + address + ':' + port + '/ws';
     }
 
     open() {
@@ -48,67 +56,67 @@ export default class WebsocketService extends Service {
         const payload = JSON.parse(msg.data);
 
         switch(payload.dataType) {
-            case "all":
+            case 'all':
                 this.store.pushPayload(payload);
                 break;
 
-            case "feedback":
+            case 'feedback':
                 this.handleFeedback(payload);
                 break;
 
             default:
-                console.log("Data type not handled : "+payload.dataType);
+                console.log('Data type not handled : '+payload.dataType);
                 break;
       }
     }
 
     sendFeedback(address, value) {
-        const data = { "controlAddress" : address, "value": value };
-        console.log("Sending feedback for " + address + ": " + value);
+        const data = { 'controlAddress' : address, 'value': value };
+        console.log('Sending feedback for ' + address + ': ' + value);
         this.socket.send(JSON.stringify(data));
     }
 
     handleFeedback(payload) {
-        console.log("Updating " + payload.controlAddress + ": " + payload.value);
+        console.log('Updating ' + payload.controlAddress + ': ' + payload.value);
         
-        this.store.peekAll("float-control").forEach(function(item) {
+        this.store.peekAll('float-control').forEach(function(item) {
             if (item.controlAddress == payload.controlAddress) {
                 item.value = payload.value;
             }
         });
 
-        this.store.peekAll("integer-control").forEach(function(item) {
+        this.store.peekAll('integer-control').forEach(function(item) {
             if (item.controlAddress == payload.controlAddress) {
                 item.value = payload.value;
             }
         });
 
-        this.store.peekAll("boolean-control").forEach(function(item) {
+        this.store.peekAll('boolean-control').forEach(function(item) {
             if (item.controlAddress == payload.controlAddress) {
                 item.value = payload.value;
             }
         });
 
-        this.store.peekAll("string-control").forEach(function(item) {
+        this.store.peekAll('string-control').forEach(function(item) {
             if (item.controlAddress == payload.controlAddress) {
                 item.value = payload.value;
             }
         });
 
-        this.store.peekAll("trigger-control").forEach(function(item) {
+        this.store.peekAll('trigger-control').forEach(function(item) {
             if (item.controlAddress == payload.controlAddress) {
                 item.triggered = true;
             }
         });
 
-        this.store.peekAll("point2d-control").forEach(function(item) {
+        this.store.peekAll('point2d-control').forEach(function(item) {
             if (item.controlAddress == payload.controlAddress) {
                 item.value = payload.value[0];
                 item.value2 = payload.value[1];
             }
         });
 
-        this.store.peekAll("point3d-control").forEach(function(item) {
+        this.store.peekAll('point3d-control').forEach(function(item) {
             if (item.controlAddress == payload.controlAddress) {
                 item.value = payload.value[0];
                 item.value2 = payload.value[1];
@@ -116,7 +124,7 @@ export default class WebsocketService extends Service {
             }
         });
 
-        this.store.peekAll("color-control").forEach(function(item) {
+        this.store.peekAll('color-control').forEach(function(item) {
             if (item.controlAddress == payload.controlAddress) {
                 item.red = payload.value[0];
                 item.green = payload.value[1];

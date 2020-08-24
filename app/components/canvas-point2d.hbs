@@ -1,4 +1,4 @@
-<div class="canvas" style="width: {{this.canvasWidth}}px; height: {{this.canvasHeight}}px"
+<div class="canvas unselectable" style="width: {{this.canvasWidth}}px; height: {{this.canvasHeight}}px"
     {{on "click" this.updatePosition}} 
     {{on "mousedown" (fn this.updateEditing true)}}
     {{on "touchstart" (fn this.updateEditing true)}}

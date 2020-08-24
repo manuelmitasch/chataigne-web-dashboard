@@ -1,4 +1,8 @@
-<ControlContainer @control={{@control}}>
+<ControlContainer 
+    @control={{@control}} 
+    @displayLayout={{@displayLayout}}
+    @showLabel={{ true }}
+>
     <div class="secondary-container">
         <Input value={{this.roundedValue}} {{on "change" this.input}} {{on "change" this.update}} class="secondary" />
         <Input value={{ this.roundedValue2 }} {{on "change" (fn this.input "2") }} {{ on "change" this.update }} class="secondary" />
