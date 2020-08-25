@@ -204,15 +204,15 @@
               "parameters": [
                 {
                   "value": [
-                    222.0,
-                    0.0
+                    -141.0,
+                    -102.0
                   ],
                   "controlAddress": "/viewUIPosition"
                 },
                 {
                   "value": [
-                    178.0,
-                    53.0
+                    142.0,
+                    45.0
                   ],
                   "controlAddress": "/viewUISize"
                 },
@@ -271,15 +271,15 @@
               "parameters": [
                 {
                   "value": [
-                    -114.0,
-                    80.0
+                    3.0,
+                    0.0
                   ],
                   "controlAddress": "/viewUIPosition"
                 },
                 {
                   "value": [
-                    483.0,
-                    51.0
+                    378.0,
+                    50.0
                   ],
                   "controlAddress": "/viewUISize"
                 },
@@ -305,7 +305,7 @@
                 {
                   "value": [
                     200.0,
-                    25.0
+                    30.0
                   ],
                   "controlAddress": "/viewUISize"
                 },
@@ -327,8 +327,8 @@
               "parameters": [
                 {
                   "value": [
-                    -95.0,
-                    -90.0
+                    -373.0,
+                    -102.0
                   ],
                   "controlAddress": "/viewUIPosition"
                 },
@@ -344,6 +344,76 @@
               "type": "DashboardParameterItem",
               "ghostAddress": "/modules/oSCQuery/values/my_effect/Controls/Mystring",
               "controllable": "/modules/oSCQuery/values/my_effect/Controls/Mystring"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    83.0,
+                    -123.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    298.0,
+                    34.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                }
+              ],
+              "niceName": "Dashboard Item 9",
+              "type": "DashboardParameterItem",
+              "ghostAddress": "/modules/osc/values/_example2d",
+              "controllable": "/modules/osc/values/_example2d"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    83.0,
+                    -79.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    298.0,
+                    56.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                }
+              ],
+              "niceName": "Dashboard Item 10",
+              "type": "DashboardParameterItem",
+              "ghostAddress": "/modules/osc/values/_example2d",
+              "controllable": "/modules/osc/values/_example2d"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    1.0,
+                    60.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    380.0,
+                    66.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": true,
+                  "controlAddress": "/showLabel"
+                }
+              ],
+              "niceName": "Dashboard Item 11",
+              "type": "DashboardParameterItem",
+              "ghostAddress": "/modules/oSCQuery/values/my_effect/Controls/My3d",
+              "controllable": "/modules/oSCQuery/values/my_effect/Controls/My3d"
             }
           ]
         }
@@ -449,19 +519,19 @@
   "layout": {
     "mainLayout": {
       "type": 1,
-      "width": 1266,
+      "width": 1680,
       "height": 1005,
       "direction": 2,
       "shifters": [
         {
           "type": 1,
-          "width": 1266,
+          "width": 1680,
           "height": 1005,
           "direction": 2,
           "shifters": [
             {
               "type": 1,
-              "width": 1266,
+              "width": 1680,
               "height": 600,
               "direction": 1,
               "shifters": [
@@ -497,7 +567,7 @@
                 },
                 {
                   "type": 0,
-                  "width": 899,
+                  "width": 1183,
                   "height": 600,
                   "currentContent": "Dashboard",
                   "tabs": [
@@ -517,7 +587,7 @@
                 },
                 {
                   "type": 0,
-                  "width": 205,
+                  "width": 335,
                   "height": 600,
                   "currentContent": "Inspector",
                   "tabs": [
@@ -530,7 +600,7 @@
             },
             {
               "type": 1,
-              "width": 1266,
+              "width": 1680,
               "height": 399,
               "direction": 1,
               "shifters": [
@@ -547,7 +617,7 @@
                 },
                 {
                   "type": 0,
-                  "width": 954,
+                  "width": 1368,
                   "height": 399,
                   "currentContent": "Sequence Editor",
                   "tabs": [
@@ -619,20 +689,20 @@
                 "Controls": {
                   "parameters": [
                     {
-                      "value": 0.6240000128746033,
+                      "value": 0.5820000171661377,
                       "controlAddress": "/Myfloat"
                     },
                     {
                       "value": [
-                        "74.698",
-                        "80.746"
+                        "85.879",
+                        "85.364"
                       ],
                       "controlAddress": "/Myxy"
                     },
                     {
                       "value": [
                         1,
-                        "82.856",
+                        "64.002",
                         1
                       ],
                       "controlAddress": "/My3d"
@@ -651,9 +721,9 @@
                     },
                     {
                       "value": [
+                        0,
+                        0.1647058823529412,
                         1,
-                        0,
-                        0,
                         1
                       ],
                       "controlAddress": "/Mycolor"
@@ -890,8 +960,8 @@
             },
             {
               "value": [
-                "81.716",
-                0
+                "85.53",
+                "72.337"
               ],
               "controlAddress": "/_example2d",
               "type": "Point2D",

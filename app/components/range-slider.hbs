@@ -1,24 +1,26 @@
-<Input 
-    type="range" 
-    name={{@name}}
-    
-    value={{@value}} 
-    step={{@step}} 
+<div class="range-slider-container">
+    <Input 
+        type="range" 
+        name={{@name}}
+        
+        value={{@value}} 
+        step={{@step}} 
 
-    min={{@min}} 
-    max={{@max}} 
-    
-    style="--min: {{@min}}; --max: {{@max}}; --val: {{@value}};"
-    class={{ @class }}
-    
-    {{on "input" this.input}} 
-    {{on "input" this.update}} 
-/>
+        min={{@min}} 
+        max={{@max}} 
+        
+        style="--min: {{@min}}; --max: {{@max}}; --val: {{@value}};"
+        class={{ @class }}
+        
+        {{on "input" this.input}} 
+        {{on "input" this.update}} 
+    />
 
-<label for={{ @name }} class="range-slider-label">
-    {{#if @showLabel}}
-        {{ @label }}: 
-    {{/if}}
-    {{ this.roundedValue }}
-</label>
-{{yield}}
+    <label for={{ @name }} class="range-slider-label">
+        {{#if @showLabel}}
+            {{ @label }}: 
+        {{/if}}
+        {{ this.roundedValue }}
+    </label>
+    {{yield}}
+</div>

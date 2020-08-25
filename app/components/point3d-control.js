@@ -21,6 +21,10 @@ export default class Point2DControlComponent extends ControlComponent {
     return parseFloat(rounded);
   }
 
+  get useWidthSplit() {
+    return this.args.control.height < 55;
+  }
+
   @action
   input(position, event) {
     const control = this.args.control;

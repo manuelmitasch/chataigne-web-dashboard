@@ -8,6 +8,11 @@ export default class ApplicationController extends Controller {
     @tracked selectedDashboard
     @tracked displayLayout = false;
 
+    init() {
+        super.init();
+        this.displayLayout = localStorage.getItem('showLayout') == 'true';
+    }
+
     get isConnected() {
         return this.socket.isConnected;
     }
@@ -30,6 +35,7 @@ export default class ApplicationController extends Controller {
    @action
    toggleDisplayLayout() {
        this.displayLayout = !this.displayLayout;
+       localStorage.setItem('showLayout', this.displayLayout);
    } 
 
 }

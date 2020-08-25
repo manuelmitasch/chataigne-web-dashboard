@@ -2,6 +2,7 @@
     @control={{@control}} 
     @displayLayout={{@displayLayout}}
     @showLabel={{ true }}
+    @useWidthSplit={{ this.useWidthSplit }}
 >
     <div class="secondary-container">
         <Input value={{this.roundedValue}} {{on "change" this.input}} {{on "change" this.update}} class="secondary" />
