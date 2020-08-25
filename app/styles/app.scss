@@ -557,13 +557,11 @@ button.triggered {
 }
 
 .layout-toggle {
-    position: absolute;
-    top: 10px;
-    right: 50px;
     z-index: -5;
-    width: 100px;
+    width: 30px !important;
     cursor: pointer;
     z-index: 3;
     text-align: right;
-    font-size: 0.8em;
+    font-size: 0.9em;
+    margin-left: 5px !important;
 }
