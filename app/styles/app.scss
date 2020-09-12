@@ -110,7 +110,7 @@ h1 {
         display: none;
     }
 
-    .float-control {
+    .float-control, .integer-control {
         background: none;
         background: linear-gradient(#464646, #333333) 0 100% no-repeat #242424;
         border: none;
@@ -125,6 +125,11 @@ h1 {
             height: 100%;
 
             &::-webkit-slider-runnable-track {
+                height: 100%;
+            }
+
+            &::-moz-range-track, 
+            &::-moz-range-progress {
                 height: 100%;
             }
         }
@@ -167,6 +172,10 @@ h1 {
 
             &::-webkit-slider-runnable-track {
                 height: 100%;
+            }            
+            &::-moz-range-track, 
+            &::-moz-range-progress {
+                height: 100%;
             }
         }
 
@@ -196,6 +205,15 @@ h1 {
             &::-webkit-slider-runnable-track {
                 height: 100%;
                 width: 50%;
+            }            
+            
+            &::-moz-range-progress {
+                height: 100%;
+                width: 50%;
+            }
+
+            &::-moz-range-track {
+                height: 100%;
             }
         }
 
@@ -233,6 +251,11 @@ h1 {
             &::-webkit-slider-runnable-track {
                 height: 100%;
             }
+
+            &::-moz-range-track, 
+            &::-moz-range-progress {
+                height: 100%;
+            }
         }
 
         .range-slider-container {
@@ -258,9 +281,18 @@ h1 {
             height: 100%;
             width: 100%;
 
-            &::-webkit-slider-runnable-track {
+            &::-webkit-slider-runnable-track { 
                 height: 100%;
                 width: 33.3%;
+            }
+
+            &::-moz-range-progress {
+                height: 100%;
+                width: 33.3%;
+            }
+
+            &::-moz-range-track {
+                height: 100%;
             }
         }
 

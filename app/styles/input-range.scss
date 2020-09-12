@@ -1,4 +1,4 @@
-$track-w: 30em;
+$track-w: 100%;
 $thumb-d: 0em;
 
 
@@ -45,7 +45,8 @@ $thumb-d: 0em;
 	margin-bottom: 3px;
 	width: $track-w; 
 	height: $control-height;
-	border-radius: 0;
+	border-radius: 3px;
+	border: 1px solid $control-background;
 	background: transparent;
 	font: 1em/1 arial, sans-serif;
 	box-sizing: border-box;
@@ -56,10 +57,16 @@ $thumb-d: 0em;
 		border: 1px solid $not-active;
 		border-radius: 3px;
 	}
-	&::-moz-range-track { @include track }
+	&::-moz-range-track { 
+		@include track;
+		border-radius: 3px;
+	}
 	&::-ms-track { @include track }
 	
-	&::-moz-range-progress { @include fill }
+	&::-moz-range-progress { 
+		@include fill;
+		border-radius: 3px 0px 0px 3px;
+	}
 	&::-ms-fill-lower { @include fill }
 	
 	&::-webkit-slider-thumb {
