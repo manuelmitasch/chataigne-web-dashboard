@@ -1,9 +1,20 @@
-# chataigne-web-dashboard
+# Chataigne Web Dashboard
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+This project is a web dashboard for [Chataigne](http://benjamin.kuperberg.fr/chataigne).
+It's a Ember.js based javascript client that connects to the Chataigne dashboard websocket. 
 
-## Prerequisites
+## How to use this with Chataigne
+* Copy the "dist" folder into your Chataigne Document folder (on Windows: %USERPROFILE%\Documents\Chataigne)
+* Rename the "dist" folder to "dashboard". 
+* Start Chataigne
+* Enable the Dashboard Server in the Chataigne "Project Settings"
+* Create a Dashboard and add some parameters to it (right-click "Send to Dashboard"). 
+* Open a browser and navigate to "http://localhost:9999"
+
+
+## Contributing and Building on your own
+
+### Prerequisites
 
 You will need the following things properly installed on your computer.
 
@@ -12,46 +23,21 @@ You will need the following things properly installed on your computer.
 * [Ember CLI](https://ember-cli.com/)
 * [Google Chrome](https://google.com/chrome/)
 
-## Installation
+### Installation
 
 * `git clone <repository-url>` this repository
 * `cd chataigne-web-dashboard`
 * `npm install`
 
-## Running / Development
+### Running / Development
 
 * `ember serve`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
-* Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
-
-### Code Generators
-
-Make use of the many generators for code, try `ember help generate` for more details
-
-### Running Tests
-
-* `ember test`
-* `ember test --server`
-
-### Linting
-
-* `npm run lint:hbs`
-* `npm run lint:js`
-* `npm run lint:js -- --fix`
+* The dev server expects that the chataigne web socket is running on port 9999.
 
 ### Building
 
 * `ember build` (development)
 * `ember build --environment production` (production)
 
-### Deploying
 
-Specify what it takes to deploy your app.
-
-## Further Reading / Useful Links
-
-* [ember.js](https://emberjs.com/)
-* [ember-cli](https://ember-cli.com/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
