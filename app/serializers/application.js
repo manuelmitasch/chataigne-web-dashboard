@@ -33,7 +33,8 @@ export default class ApplicationSerializer extends Serializer {
           
           var relationshipData = [];
 
-          dashboard.items.forEach(function(item) {
+          if (dashboard.items) {
+            dashboard.items.forEach(function(item) {
               let type = item.type;
 
               switch (type) {
@@ -78,12 +79,12 @@ export default class ApplicationSerializer extends Serializer {
 
               if (type == "point2d-control") {
                 controlHash.attributes.value = item.value[0];
-                controlHash.attributes.minVal = 0;
-                controlHash.attributes.maxVal = 100;
+                controlHash.attributes.minVal = -1;
+                controlHash.attributes.maxVal = 1;
 
                 controlHash.attributes.value2 = item.value[1];
-                controlHash.attributes.minVal2 = 0;
-                controlHash.attributes.maxVal2 = 100;
+                controlHash.attributes.minVal2 = -1;
+                controlHash.attributes.maxVal2 = 1;
               }
 
               if (type == "point3d-control") {
@@ -108,7 +109,8 @@ export default class ApplicationSerializer extends Serializer {
               }
 
               includedData.push(controlHash);
-          });
+            });
+          }
           
           dashboardHash.relationships.controls.data = relationshipData;
           result.data.push(dashboardHash);
