@@ -15,7 +15,7 @@ export default class CanvasPoint2dComponent extends ControlComponent {
 
     get pointY () {
         const control = this.args.control;
-        const result = this.remapValue(control.value2, control.minVal2, control.maxVal2, -2.5, this.canvasHeight-3.5); 
+        const result = this.remapValue(control.value2, control.minVal2, control.maxVal2, this.canvasHeight-3.5, -2.5); 
         return result;
     }
 
@@ -56,7 +56,7 @@ export default class CanvasPoint2dComponent extends ControlComponent {
         let clickY = pageY - offsetTop;
 
         let valueX = this.remapValue(clickX, 0, this.canvasWidth, control.minVal, control.maxVal); 
-        let valueY = this.remapValue(clickY, 0, this.canvasHeight+1, control.minVal2, control.maxVal2); 
+        let valueY = this.remapValue(clickY, 0, this.canvasHeight+1, control.maxVal2, control.minVal2); 
 
         control.value = valueX;
         control.value2 = valueY;
