@@ -458,6 +458,28 @@
               "type": "DashboardParameterItem",
               "ghostAddress": "/modules/osc/values/_example3donly2ranges",
               "controllable": "/modules/osc/values/_example3donly2ranges"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    -373.0,
+                    -243.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    200.0,
+                    50.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                }
+              ],
+              "niceName": "Dashboard Item 14",
+              "type": "DashboardParameterItem",
+              "ghostAddress": "/sequences/sequence/layers/mapping/recordSendMode",
+              "controllable": "/sequences/sequence/layers/mapping/recordSendMode"
             }
           ]
         }
@@ -1093,6 +1115,96 @@
         "niceName": "Sequence",
         "type": "Sequence",
         "layers": {
+          "items": [
+            {
+              "parameters": [
+                {
+                  "value": 88.0,
+                  "controlAddress": "/listSize"
+                },
+                {
+                  "value": 120,
+                  "hexMode": false,
+                  "controlAddress": "/uiHeight"
+                },
+                {
+                  "value": [
+                    0.2117647081613541,
+                    0.2117647081613541,
+                    0.2117647081613541,
+                    1.0
+                  ],
+                  "controlAddress": "/layerColor"
+                },
+                {
+                  "value": 0.0,
+                  "controlAddress": "/value"
+                }
+              ],
+              "niceName": "Mapping",
+              "containers": {
+                "automation": {
+                  "parameters": [
+                    {
+                      "value": 30.0,
+                      "controlAddress": "/length"
+                    },
+                    {
+                      "value": 0.0,
+                      "controlAddress": "/value"
+                    },
+                    {
+                      "value": [
+                        0.0,
+                        1.0
+                      ],
+                      "controlAddress": "/viewValueRange"
+                    },
+                    {
+                      "value": [
+                        0.0,
+                        1.0
+                      ],
+                      "controlAddress": "/range",
+                      "enabled": true
+                    }
+                  ]
+                },
+                "recorder": {
+                  "parameters": [
+                    {
+                      "value": false,
+                      "controlAddress": "/isRecording"
+                    }
+                  ],
+                  "editorIsCollapsed": true
+                },
+                "mapping": {
+                  "niceName": "Mapping",
+                  "type": "Mapping",
+                  "im": {
+                    "items": [
+                      {
+                        "parameters": [
+                          {
+                            "value": "",
+                            "controlAddress": "/inputValue"
+                          }
+                        ],
+                        "niceName": "Input",
+                        "type": "BaseItem"
+                      }
+                    ]
+                  },
+                  "filters": {
+                  },
+                  "outputs": {
+                  }
+                }
+              },
+              "type": "Mapping"
+            }
+          ]
         },
         "cues": {
         },
