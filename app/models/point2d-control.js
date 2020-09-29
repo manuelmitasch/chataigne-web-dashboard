@@ -10,6 +10,10 @@ export default class FloatControlModel extends Control {
     @attr("number") maxVal2
 
     get hasRange2() {
-        return this.maxVal2 != undefined && this.minVal2 != undefined;
+        return (this.maxVal2 != undefined && this.minVal2 != undefined) && (this.maxVal2 != 2147483648 && this.minVal2 != -2147483648);
+    }
+
+    get hasAllRanges() {
+        return (this.hasRange && this.hasRange2);
     }
 }

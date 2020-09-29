@@ -5,41 +5,59 @@
     @useWidthSplit={{ this.useWidthSplit }}
 >
     <div class="secondary-container">
-        <button {{on "click" this.toggleCanvas}}>2D Canvas</button>
+        {{#if @control.hasAllRanges }}
+            <button {{on "click" this.toggleCanvas}}>2D Canvas</button>
+        {{/if}}
         <Input value={{this.roundedValue}} {{on "change" this.input}} {{on "change" this.update}} class="secondary" />
         <Input value={{ this.roundedValue2 }} {{on "change" (fn this.input "2") }} {{ on "change" this.update }} class="secondary" />
     </div>
 
-    {{#if @control.hasRange}}
-        <RangeSlider 
-            @name={{ @control.id }}
-            @value={{ @control.value }}
+    <div class="main-input">
+        {{#if @control.hasRange}}
+            <RangeSlider 
+                @name={{ @control.id }}
+                @value={{ @control.value }}
 
-            @min={{ @control.minVal }}
-            @max={{ @control.maxVal }}
-            
-            @step={{ this.step }} 
-            
-            @onInput={{ this.input }} 
-            @onUpdate={{ this.update }} 
-        />
-    {{/if}}
-    
-    {{#if @control.hasRange2}}
-        <RangeSlider 
-            @name={{ concat @control.id "2" }}
-            @value={{ @control.value2 }}
+                @min={{ @control.minVal }}
+                @max={{ @control.maxVal }}
+                
+                @step={{ this.step }} 
+                
+                @onInput={{ this.input }} 
+                @onUpdate={{ this.update }} 
+            />
+        {{else}}
+            <Input 
+                value={{ this.roundedValue }} 
+                class="secondary" 
+                {{ on "change" this.input }} 
+                {{ on "change" this.update }} 
+            />
+        {{/if}}
+        
+        {{#if @control.hasRange2}}
+            <RangeSlider 
+                @name={{ concat @control.id "2" }}
+                @value={{ @control.value2 }}
 
-            @min={{ @control.minVal2 }}
-            @max={{ @control.maxVal2 }}
-            
-            @step={{ this.step }} 
-            @class="no-top-margin"
-            
-            @onInput={{ fn this.input "2" }} 
-            @onUpdate={{ fn this.update "2" }} 
-        />
-    {{/if}}
+                @min={{ @control.minVal2 }}
+                @max={{ @control.maxVal2 }}
+                
+                @step={{ this.step }} 
+                @class="no-top-margin"
+                
+                @onInput={{ fn this.input "2" }} 
+                @onUpdate={{ fn this.update "2" }} 
+            />
+        {{else}}
+            <Input 
+                value={{ this.roundedValue2 }} 
+                class="secondary" 
+                {{ on "change" (fn this.input "2") }} 
+                {{ on "change" (fn this.update "2") }} 
+            />
+        {{/if}}
+    </div>
 
     {{#if this.showCanvas}}
         <CanvasPoint2d @control={{@control}}></CanvasPoint2d>

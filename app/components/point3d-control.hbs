@@ -10,52 +10,77 @@
         <Input value={{ this.roundedValue3 }} {{on "change" (fn this.input "3") }} {{ on "change" this.update }} class="secondary" />
     </div>
 
-    {{#if @control.hasRange}}
-        <RangeSlider 
-            @name={{ @control.id }}
-            @value={{ @control.value }}
+    <div class="main-input">
+        {{#if @control.hasRange}}
+            <RangeSlider 
+                @name={{ @control.id }}
+                @value={{ @control.value }}
 
-            @min={{ @control.minVal }}
-            @max={{ @control.maxVal }}
-            
-            @step={{ this.step }} 
-            
-            @onInput={{ this.input }} 
-            @onUpdate={{ this.update }} 
-        />
-    {{/if}}
+                @min={{ @control.minVal }}
+                @max={{ @control.maxVal }}
+                
+                @step={{ this.step }} 
+                
+                @onInput={{ this.input }} 
+                @onUpdate={{ this.update }} 
+            />
+        {{else}}
+            <Input 
+                value={{ this.roundedValue }} 
+                class="secondary" 
+                {{ on "change" this.input }} 
+                {{ on "change" this.update }} 
+            />
+        {{/if}}
 
-    {{#if @control.hasRange2}}
-        <RangeSlider 
-            @name={{ concat @control.id "2" }}
-            @value={{ @control.value2 }}
+        {{#if @control.hasRange2}}
+            <RangeSlider 
+                @name={{ concat @control.id "2" }}
+                @value={{ @control.value2 }}
 
-            @min={{ @control.minVal2 }}
-            @max={{ @control.maxVal2 }}
-            
-            @step={{ this.step }} 
-            @class="no-top-margin"
-            
-            @onInput={{ fn this.input "2" }} 
-            @onUpdate={{ fn this.update "2" }} 
-        />
-    {{/if}}
+                @min={{ @control.minVal2 }}
+                @max={{ @control.maxVal2 }}
+                
+                @step={{ this.step }} 
+                @class="no-top-margin"
+                
+                @onInput={{ fn this.input "2" }} 
+                @onUpdate={{ fn this.update "2" }} 
+            />
 
-    {{#if @control.hasRange3}}
-        <RangeSlider 
-            @name={{ concat @control.id "3" }}
-            @value={{ @control.value3 }}
+        {{else}}
+            <Input 
+                value={{ this.roundedValue2 }} 
+                class="secondary" 
+                {{ on "change" (fn this.input "2") }} 
+                {{ on "change" (fn this.update "2") }} 
+            />
+        {{/if}}
 
-            @min={{ @control.minVal3 }}
-            @max={{ @control.maxVal3 }}
-            
-            @step={{ this.step }} 
-            @class="no-top-margin"
-            
-            @onInput={{ fn this.input "3" }} 
-            @onUpdate={{ fn this.update "3" }} 
-        />
-    {{/if}}
+        {{#if @control.hasRange3}}
+            <RangeSlider 
+                @name={{ concat @control.id "3" }}
+                @value={{ @control.value3 }}
+
+                @min={{ @control.minVal3 }}
+                @max={{ @control.maxVal3 }}
+                
+                @step={{ this.step }} 
+                @class="no-top-margin"
+                
+                @onInput={{ fn this.input "3" }} 
+                @onUpdate={{ fn this.update "3" }} 
+            />
+
+        {{else}}
+            <Input 
+                value={{ this.roundedValue3 }} 
+                class="secondary" 
+                {{ on "change" (fn this.input "3") }} 
+                {{ on "change" (fn this.update "3") }} 
+            />
+        {{/if}}
+    </div>
     
     {{yield}}
 </ControlContainer>

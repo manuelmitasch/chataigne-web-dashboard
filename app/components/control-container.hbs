@@ -1,4 +1,4 @@
-<div class="control {{ @extraClass }} {{ @control.modelName }} {{ if @control.hasRange "" "no-range"}} {{ if @useWidthSplit "width-split" "" }}" {{ style this.positionStyles }}>
+<div class="control {{ @extraClass }} {{ @control.modelName }} {{ if @control.hasAllRanges "" "no-range"}} {{ if @useWidthSplit "width-split" "" }}" {{ style this.positionStyles }}>
     {{#if this.showLabel }}
         <label for={{@control.id}} class="control-label unselectable">
             {{@control.label}}

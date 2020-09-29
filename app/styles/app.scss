@@ -158,6 +158,10 @@ h1 {
         input.secondary {
             background: linear-gradient(#464646, #333333) 0 100% no-repeat #242424;
         }
+
+        .secondary-container {
+            display: none;
+        }
     }
 
     .point2d-control {
@@ -194,6 +198,10 @@ h1 {
             height: 50%;
             margin: 0;
             padding-left: 60px;
+            float: left;
+            background: none;
+            color: $active;
+            font-size: 1em;
         }
     }
 
@@ -273,6 +281,10 @@ h1 {
             height: 33.3%;
             margin: 0;
             padding-left: 60px;
+            float: left;
+            background: none;
+            color: $active;
+            font-size: 1em;
         }
     }
 
@@ -381,7 +393,7 @@ h1 {
         clear: both;
     }
 
-    .float-control {
+    .float-control.no-range, .point2d-control.no-range,  .point3d-control.no-range {
         .secondary-container {
             display: none;
         }
@@ -403,7 +415,8 @@ label.control-label {
     float: left;
     font-size: 0.8em;
     font-weight: bold;
-    max-width: 100px;
+    min-width: 80px;
+    max-width: 150px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: clip;
