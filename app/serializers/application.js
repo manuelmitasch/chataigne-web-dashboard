@@ -79,26 +79,26 @@ export default class ApplicationSerializer extends Serializer {
 
               if (type == "point2d-control") {
                 controlHash.attributes.value = item.value[0];
-                controlHash.attributes.minVal = -1;
-                controlHash.attributes.maxVal = 1;
+                controlHash.attributes.minVal = item.minVal[0];
+                controlHash.attributes.maxVal = item.maxVal[0];
 
                 controlHash.attributes.value2 = item.value[1];
-                controlHash.attributes.minVal2 = -1;
-                controlHash.attributes.maxVal2 = 1;
+                controlHash.attributes.minVal2 = item.minVal[1];
+                controlHash.attributes.maxVal2 = item.maxVal[1];
               }
 
               if (type == "point3d-control") {
                 controlHash.attributes.value = item.value[0];
-                controlHash.attributes.minVal = 0;
-                controlHash.attributes.maxVal = 100;
+                controlHash.attributes.minVal = item.minVal[0];
+                controlHash.attributes.maxVal = item.maxVal[0];
                 
                 controlHash.attributes.value2 = item.value[1];
-                controlHash.attributes.minVal2 = 0;
-                controlHash.attributes.maxVal2 = 100;
+                controlHash.attributes.minVal2 = item.minVal[1];
+                controlHash.attributes.maxVal2 = item.maxVal[1];
                                 
                 controlHash.attributes.value3 = item.value[2];
-                controlHash.attributes.minVal3 = 0;
-                controlHash.attributes.maxVal3 = 100;
+                controlHash.attributes.minVal3 = item.minVal[2];
+                controlHash.attributes.maxVal3 = item.maxVal[2];
               }
 
               if (type == "color-control") {

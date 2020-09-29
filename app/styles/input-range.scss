@@ -61,8 +61,10 @@ $thumb-d: 0em;
 		@include track;
 		border-radius: 3px;
 	}
-	&::-ms-track { @include track }
-	
+	&::-ms-track { 
+		@include track;
+	}
+
 	&::-moz-range-progress { 
 		@include fill;
 		border-radius: 3px 0px 0px 3px;
