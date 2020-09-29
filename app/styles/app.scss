@@ -550,6 +550,13 @@ button {
     outline: none;
 }
 
+select {
+    background: $not-active;
+    border-radius: 3px;
+    color: $active;
+    border: none;
+}
+
 button.triggered {
     background: orange;
 }

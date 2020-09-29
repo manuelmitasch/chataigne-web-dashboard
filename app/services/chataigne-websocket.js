@@ -97,6 +97,12 @@ export default class WebsocketService extends Service {
             }
         });
 
+        this.store.peekAll('enum-control').forEach(function(item) {
+            if (item.controlAddress == payload.controlAddress) {
+                item.value = payload.value;
+            }
+        });
+
         this.store.peekAll('string-control').forEach(function(item) {
             if (item.controlAddress == payload.controlAddress) {
                 item.value = payload.value;

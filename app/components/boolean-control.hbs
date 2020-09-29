@@ -3,7 +3,6 @@
     @displayLayout={{@displayLayout}}
     @showLabel={{ true }}
 >
-    {{log @control.type}}
     <div class="clear"></div>
     <div class="main-input">
         <Input @type="checkbox" @checked={{@control.value}} {{on "input" (fn this.update @control.value)}} class="switch" />

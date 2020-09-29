@@ -1,0 +1,15 @@
+<ControlContainer 
+    @control={{@control}} 
+    @displayLayout={{@displayLayout}}
+    @showLabel={{ true }}
+>
+    <div class="clear"></div>
+    <div class="main-input">
+        <select {{on "change" this.update}}>
+            {{#each @control.options as |optionValue| }}
+                <option value={{optionValue}} selected={{ eq @control.value optionValue }}>{{optionValue}}</option>
+            {{/each}}
+        </select>
+    </div>
+    {{yield}}
+</ControlContainer>

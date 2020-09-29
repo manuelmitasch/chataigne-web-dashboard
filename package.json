@@ -46,6 +46,7 @@
     "ember-source": "~3.20.2",
     "ember-style-modifier": "^0.6.0",
     "ember-template-lint": "^2.9.1",
+    "ember-truth-helpers": "^2.1.0",
     "ember-websockets": "^7.2.0",
     "eslint": "^7.5.0",
     "eslint-plugin-ember": "^8.9.1",

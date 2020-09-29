@@ -54,6 +54,8 @@ export default class ApplicationSerializer extends Serializer {
                     type = "point3d-control"; break;
                 case "Color":
                       type = "color-control"; break;
+                case "Enum":
+                      type = "enum-control"; break;
                 default:
                   type = "control";
               }
@@ -110,6 +112,16 @@ export default class ApplicationSerializer extends Serializer {
                 controlHash.attributes.green = item.value[1];
                 controlHash.attributes.blue = item.value[2];
                 controlHash.attributes.alpha = item.value[3];
+              }
+
+              if (type == "enum-control") {
+                controlHash.attributes.value = item.value
+
+                var options = item.options.map(function(o) {
+                  return o.key;
+                });
+
+                controlHash.attributes.options = options;
               }
 
               includedData.push(controlHash);
