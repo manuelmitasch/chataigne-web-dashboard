@@ -386,6 +386,23 @@ h1 {
         padding: 0;
         border: none;
     }
+
+    .enum-control {
+        padding: 0; 
+
+        label {
+            display: none;
+        }
+        .main-input {
+            height: 100%;
+            width: 100%;
+
+            select {
+                height: 100%;
+                width: 100%;
+            }
+        }
+    }
 }
 
 .dashboard.responsive {
@@ -555,6 +572,20 @@ select {
     border-radius: 3px;
     color: $active;
     border: none;
+    padding: 2px;
+    
+    option {
+        color: $font;
+    }
+    option:checked {
+        color: $active;
+        font-weight: bold;
+    }
+}
+
+select:focus{
+    outline:none;
+    box-shadow: 0px 0px 2px 0px $selected !important;
 }
 
 button.triggered {
