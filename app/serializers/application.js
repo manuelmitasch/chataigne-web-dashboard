@@ -76,6 +76,7 @@ export default class ApplicationSerializer extends Serializer {
                     "width": item.size[0],
                     "height": item.size[1],
                     "defaultUI": item.defaultUI,
+                    "style": item.style,
                 }
               }
 

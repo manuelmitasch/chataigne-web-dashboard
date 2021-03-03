@@ -1,7 +1,7 @@
 {
   "metaData": {
-    "version": "1.7.5b10",
-    "versionNumber": 67333
+    "version": "1.8.0b15",
+    "versionNumber": 67584
   },
   "projectSettings": {
     "containers": {
@@ -35,8 +35,8 @@
           "parameters": [
             {
               "value": [
-                800.0,
-                500.0
+                800,
+                500
               ],
               "controlAddress": "/canvasSize",
               "enabled": true
@@ -50,20 +50,21 @@
               "controlAddress": "/backgroundImageScale"
             }
           ],
+          "editorIsCollapsed": true,
           "items": [
             {
               "parameters": [
                 {
                   "value": [
                     -399.0,
-                    0.0
+                    -47.0
                   ],
                   "controlAddress": "/viewUIPosition"
                 },
                 {
                   "value": [
-                    400.0,
-                    50.0
+                    400,
+                    50
                   ],
                   "controlAddress": "/viewUISize"
                 },
@@ -76,7 +77,7 @@
                     0.800000011920929,
                     0.800000011920929,
                     0.800000011920929,
-                    1.0
+                    1
                   ],
                   "controlAddress": "/textColor",
                   "enabled": false
@@ -86,7 +87,7 @@
                     0.3803921639919281,
                     0.3803921639919281,
                     0.3803921639919281,
-                    1.0
+                    1
                   ],
                   "controlAddress": "/contourColor",
                   "enabled": false
@@ -98,23 +99,27 @@
                 },
                 {
                   "value": [
-                    0.1333333402872086,
-                    0.1333333402872086,
-                    0.1333333402872086,
+                    1.0,
+                    0.0,
+                    0.0,
                     1.0
                   ],
                   "controlAddress": "/backgroundColor",
-                  "enabled": false
+                  "enabled": true
                 },
                 {
                   "value": [
-                    0.9215686274509803,
-                    0,
-                    0,
-                    1
+                    0.9215686321258545,
+                    0.9215686321258545,
+                    0.9215686321258545,
+                    1.0
                   ],
                   "controlAddress": "/foregroundColor",
-                  "enabled": false
+                  "enabled": true
+                },
+                {
+                  "value": "Default",
+                  "controlAddress": "/style"
                 },
                 {
                   "value": "",
@@ -130,15 +135,15 @@
               "parameters": [
                 {
                   "value": [
-                    -373.0,
-                    -183.0
+                    -373,
+                    -183
                   ],
                   "controlAddress": "/viewUIPosition"
                 },
                 {
                   "value": [
-                    200.0,
-                    50.0
+                    200,
+                    50
                   ],
                   "controlAddress": "/viewUISize"
                 },
@@ -156,15 +161,15 @@
               "parameters": [
                 {
                   "value": [
-                    181.0,
-                    -183.0
+                    181,
+                    -183
                   ],
                   "controlAddress": "/viewUIPosition"
                 },
                 {
                   "value": [
-                    200.0,
-                    50.0
+                    200,
+                    50
                   ],
                   "controlAddress": "/viewUISize"
                 },
@@ -182,15 +187,15 @@
               "parameters": [
                 {
                   "value": [
-                    194.0,
-                    140.0
+                    194,
+                    140
                   ],
                   "controlAddress": "/viewUIPosition"
                 },
                 {
                   "value": [
-                    200.0,
-                    50.0
+                    172,
+                    66
                   ],
                   "controlAddress": "/viewUISize"
                 }
@@ -204,15 +209,15 @@
               "parameters": [
                 {
                   "value": [
-                    -141.0,
-                    -102.0
+                    -141,
+                    -102
                   ],
                   "controlAddress": "/viewUIPosition"
                 },
                 {
                   "value": [
-                    142.0,
-                    45.0
+                    142,
+                    45
                   ],
                   "controlAddress": "/viewUISize"
                 },
@@ -232,9 +237,9 @@
                 {
                   "value": [
                     0.7058823704719543,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    1
                   ],
                   "controlAddress": "/foregroundColor",
                   "enabled": false
@@ -249,15 +254,15 @@
               "parameters": [
                 {
                   "value": [
-                    -373.0,
+                    -389.0,
                     80.0
                   ],
                   "controlAddress": "/viewUIPosition"
                 },
                 {
                   "value": [
-                    200.0,
-                    106.0
+                    200,
+                    106
                   ],
                   "controlAddress": "/viewUISize"
                 }
@@ -271,15 +276,15 @@
               "parameters": [
                 {
                   "value": [
-                    3.0,
-                    0.0
+                    3,
+                    0
                   ],
                   "controlAddress": "/viewUIPosition"
                 },
                 {
                   "value": [
-                    378.0,
-                    50.0
+                    378,
+                    50
                   ],
                   "controlAddress": "/viewUISize"
                 },
@@ -297,15 +302,15 @@
               "parameters": [
                 {
                   "value": [
-                    -95.0,
-                    -183.0
+                    -95,
+                    -183
                   ],
                   "controlAddress": "/viewUIPosition"
                 },
                 {
                   "value": [
-                    200.0,
-                    30.0
+                    157.0,
+                    51.0
                   ],
                   "controlAddress": "/viewUISize"
                 },
@@ -327,15 +332,15 @@
               "parameters": [
                 {
                   "value": [
-                    -373.0,
-                    -102.0
+                    -373,
+                    -102
                   ],
                   "controlAddress": "/viewUIPosition"
                 },
                 {
                   "value": [
-                    200.0,
-                    40.0
+                    200,
+                    40
                   ],
                   "controlAddress": "/viewUISize"
                 }
@@ -349,15 +354,15 @@
               "parameters": [
                 {
                   "value": [
-                    83.0,
-                    -123.0
+                    83,
+                    -123
                   ],
                   "controlAddress": "/viewUIPosition"
                 },
                 {
                   "value": [
-                    298.0,
-                    34.0
+                    298,
+                    34
                   ],
                   "controlAddress": "/viewUISize"
                 }
@@ -371,15 +376,15 @@
               "parameters": [
                 {
                   "value": [
-                    83.0,
-                    -79.0
+                    83,
+                    -79
                   ],
                   "controlAddress": "/viewUIPosition"
                 },
                 {
                   "value": [
-                    298.0,
-                    56.0
+                    298,
+                    56
                   ],
                   "controlAddress": "/viewUISize"
                 }
@@ -393,15 +398,15 @@
               "parameters": [
                 {
                   "value": [
-                    1.0,
-                    60.0
+                    1,
+                    60
                   ],
                   "controlAddress": "/viewUIPosition"
                 },
                 {
                   "value": [
-                    380.0,
-                    66.0
+                    380,
+                    66
                   ],
                   "controlAddress": "/viewUISize"
                 },
@@ -419,15 +424,15 @@
               "parameters": [
                 {
                   "value": [
-                    -95.0,
-                    136.0
+                    -95,
+                    136
                   ],
                   "controlAddress": "/viewUIPosition"
                 },
                 {
                   "value": [
-                    200.0,
-                    50.0
+                    200,
+                    50
                   ],
                   "controlAddress": "/viewUISize"
                 }
@@ -442,14 +447,14 @@
                 {
                   "value": [
                     -373.0,
-                    200.0
+                    215.0
                   ],
                   "controlAddress": "/viewUIPosition"
                 },
                 {
                   "value": [
-                    407.0,
-                    50.0
+                    422.0,
+                    35.0
                   ],
                   "controlAddress": "/viewUISize"
                 }
@@ -463,15 +468,15 @@
               "parameters": [
                 {
                   "value": [
-                    -373.0,
-                    -243.0
+                    -373,
+                    -243
                   ],
                   "controlAddress": "/viewUIPosition"
                 },
                 {
                   "value": [
-                    200.0,
-                    50.0
+                    277,
+                    43
                   ],
                   "controlAddress": "/viewUISize"
                 }
@@ -480,9 +485,92 @@
               "type": "DashboardParameterItem",
               "ghostAddress": "/sequences/sequence/layers/mapping/recordSendMode",
               "controllable": "/sequences/sequence/layers/mapping/recordSendMode"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    -163.0,
+                    20.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    40.0,
+                    160.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": true,
+                  "controlAddress": "/showLabel"
+                },
+                {
+                  "value": [
+                    0.800000011920929,
+                    0.800000011920929,
+                    0.800000011920929,
+                    1
+                  ],
+                  "controlAddress": "/textColor",
+                  "enabled": false
+                },
+                {
+                  "value": [
+                    0.3803921639919281,
+                    0.3803921639919281,
+                    0.3803921639919281,
+                    1
+                  ],
+                  "controlAddress": "/contourColor",
+                  "enabled": false
+                },
+                {
+                  "value": "",
+                  "controlAddress": "/customText",
+                  "enabled": false
+                },
+                {
+                  "value": [
+                    0.1333333402872086,
+                    0.1333333402872086,
+                    0.1333333402872086,
+                    1
+                  ],
+                  "controlAddress": "/backgroundColor",
+                  "enabled": false
+                },
+                {
+                  "value": [
+                    0.9215686274509803,
+                    0,
+                    0,
+                    1
+                  ],
+                  "controlAddress": "/foregroundColor",
+                  "enabled": false
+                },
+                {
+                  "value": "Vertical Slider",
+                  "controlAddress": "/style"
+                },
+                {
+                  "value": "",
+                  "controlAddress": "/toggleImage"
+                }
+              ],
+              "niceName": "Dashboard Item 15",
+              "type": "DashboardParameterItem",
+              "ghostAddress": "/modules/oSCQuery/values/my_effect/Controls/Myfloat",
+              "controllable": "/modules/oSCQuery/values/my_effect/Controls/Myfloat"
             }
-          ]
-        }
+          ],
+          "commentManager": {
+            "hideInEditor": true
+          }
+        },
+        "editing": true
       },
       {
         "niceName": "Dashboard 1",
@@ -491,8 +579,8 @@
           "parameters": [
             {
               "value": [
-                800.0,
-                400.0
+                800,
+                400
               ],
               "controlAddress": "/canvasSize",
               "enabled": true
@@ -502,26 +590,31 @@
               "controlAddress": "/backroundImage"
             }
           ],
+          "editorIsCollapsed": true,
           "items": [
             {
               "parameters": [
                 {
                   "value": [
-                    -371.0,
-                    -86.0
+                    -371,
+                    -86
                   ],
                   "controlAddress": "/viewUIPosition"
                 },
                 {
                   "value": [
-                    741.0,
-                    50.0
+                    741,
+                    50
                   ],
                   "controlAddress": "/viewUISize"
                 },
                 {
                   "value": true,
                   "controlAddress": "/showLabel"
+                },
+                {
+                  "value": "Default",
+                  "controlAddress": "/style"
                 },
                 {
                   "value": "",
@@ -537,15 +630,15 @@
               "parameters": [
                 {
                   "value": [
-                    -371.0,
-                    -175.0
+                    -371,
+                    -175
                   ],
                   "controlAddress": "/viewUIPosition"
                 },
                 {
                   "value": [
-                    200.0,
-                    50.0
+                    200,
+                    50
                   ],
                   "controlAddress": "/viewUISize"
                 }
@@ -559,15 +652,15 @@
               "parameters": [
                 {
                   "value": [
-                    -141.0,
-                    -175.0
+                    -141,
+                    -175
                   ],
                   "controlAddress": "/viewUIPosition"
                 },
                 {
                   "value": [
-                    200.0,
-                    50.0
+                    200,
+                    50
                   ],
                   "controlAddress": "/viewUISize"
                 }
@@ -577,7 +670,10 @@
               "ghostAddress": "/sequences/sequence/stop",
               "controllable": "/sequences/sequence/stop"
             }
-          ]
+          ],
+          "commentManager": {
+            "hideInEditor": true
+          }
         }
       }
     ]
@@ -585,32 +681,32 @@
   "layout": {
     "mainLayout": {
       "type": 1,
-      "width": 1920,
-      "height": 997,
+      "width": 1278,
+      "height": 988,
       "direction": 2,
       "shifters": [
         {
           "type": 1,
-          "width": 1920,
-          "height": 997,
+          "width": 1278,
+          "height": 988,
           "direction": 2,
           "shifters": [
             {
               "type": 1,
-              "width": 1920,
-              "height": 596,
+              "width": 1278,
+              "height": 592,
               "direction": 1,
               "shifters": [
                 {
                   "type": 1,
                   "width": 150,
-                  "height": 596,
+                  "height": 592,
                   "direction": 2,
                   "shifters": [
                     {
                       "type": 0,
                       "width": 150,
-                      "height": 297,
+                      "height": 295,
                       "currentContent": "Modules",
                       "tabs": [
                         {
@@ -621,7 +717,7 @@
                     {
                       "type": 0,
                       "width": 150,
-                      "height": 293,
+                      "height": 291,
                       "currentContent": "Custom Variables",
                       "tabs": [
                         {
@@ -633,8 +729,8 @@
                 },
                 {
                   "type": 0,
-                  "width": 1423,
-                  "height": 596,
+                  "width": 872,
+                  "height": 592,
                   "currentContent": "Dashboard",
                   "tabs": [
                     {
@@ -653,8 +749,8 @@
                 },
                 {
                   "type": 0,
-                  "width": 335,
-                  "height": 596,
+                  "width": 244,
+                  "height": 592,
                   "currentContent": "Inspector",
                   "tabs": [
                     {
@@ -666,14 +762,14 @@
             },
             {
               "type": 1,
-              "width": 1920,
-              "height": 395,
+              "width": 1278,
+              "height": 390,
               "direction": 1,
               "shifters": [
                 {
                   "type": 0,
                   "width": 150,
-                  "height": 395,
+                  "height": 390,
                   "currentContent": "Sequences",
                   "tabs": [
                     {
@@ -683,8 +779,8 @@
                 },
                 {
                   "type": 0,
-                  "width": 1608,
-                  "height": 395,
+                  "width": 592,
+                  "height": 390,
                   "currentContent": "Sequence Editor",
                   "tabs": [
                     {
@@ -694,8 +790,8 @@
                 },
                 {
                   "type": 0,
-                  "width": 150,
-                  "height": 395,
+                  "width": 524,
+                  "height": 390,
                   "currentContent": "Logger",
                   "tabs": [
                     {
@@ -755,26 +851,26 @@
                 "Controls": {
                   "parameters": [
                     {
-                      "value": 0.781000018119812,
+                      "value": 0.1909999996423721,
                       "controlAddress": "/Myfloat"
                     },
                     {
                       "value": [
-                        0.8733333333333333,
-                        91.51716263983337
+                        "0.189",
+                        "38.265"
                       ],
                       "controlAddress": "/Myxy"
                     },
                     {
                       "value": [
-                        "0.369",
-                        "81.148",
-                        "0.173"
+                        0.7229999899864197,
+                        79.49600219726563,
+                        0.5360000133514404
                       ],
                       "controlAddress": "/My3d"
                     },
                     {
-                      "value": false,
+                      "value": true,
                       "controlAddress": "/Mytoggle"
                     },
                     {
@@ -787,9 +883,9 @@
                     },
                     {
                       "value": [
-                        0,
-                        0.4823529411764706,
                         1,
+                        0,
+                        0.02352941176470588,
                         1
                       ],
                       "controlAddress": "/Mycolor"
@@ -826,8 +922,8 @@
                       ],
                       "RANGE": [
                         {
-                          "MAX": 1.0,
-                          "MIN": 0.0
+                          "MAX": 1,
+                          "MIN": 0
                         }
                       ],
                       "ACCESS": 3
@@ -841,8 +937,8 @@
                       ],
                       "RANGE": [
                         {
-                          "MAX": 100.0,
-                          "MIN": 0.0
+                          "MAX": 100,
+                          "MIN": 0
                         }
                       ],
                       "ACCESS": 3
@@ -857,12 +953,12 @@
                       ],
                       "RANGE": [
                         {
-                          "MAX": 1.0,
-                          "MIN": 0.0
+                          "MAX": 1,
+                          "MIN": 0
                         },
                         {
-                          "MAX": 100.0,
-                          "MIN": 0.0
+                          "MAX": 100,
+                          "MIN": 0
                         }
                       ],
                       "ACCESS": 3
@@ -872,22 +968,22 @@
                       "DESCRIPTION": "My3d",
                       "FULL_PATH": "/my_effect/Controls/My3d",
                       "VALUE": [
-                        1.0,
+                        1,
                         78.831,
                         0.53
                       ],
                       "RANGE": [
                         {
-                          "MAX": 1.0,
-                          "MIN": 0.0
+                          "MAX": 1,
+                          "MIN": 0
                         },
                         {
-                          "MAX": 100.0,
-                          "MIN": 0.0
+                          "MAX": 100,
+                          "MIN": 0
                         },
                         {
-                          "MAX": 1.0,
-                          "MIN": 0.0
+                          "MAX": 1,
+                          "MIN": 0
                         }
                       ],
                       "ACCESS": 3
@@ -1029,14 +1125,6 @@
                 "20000",
                 "100000"
               ],
-              "minValue": [
-                -2.147483648e9,
-                -2.147483648e9
-              ],
-              "maxValue": [
-                2.147483648e9,
-                2.147483648e9
-              ],
               "controlAddress": "/_example2d",
               "type": "Point2D",
               "niceName": "/example2d",
@@ -1049,9 +1137,9 @@
             },
             {
               "value": [
-                0,
-                0,
-                0
+                0.0,
+                0.0,
+                0.0
               ],
               "controlAddress": "/_example3d",
               "type": "Point3D",
@@ -1065,9 +1153,9 @@
             },
             {
               "value": [
-                "2",
-                "3",
-                "5"
+                2.0,
+                3.0,
+                5.0
               ],
               "controlAddress": "/_example3donly2ranges",
               "type": "Point3D",
@@ -1084,6 +1172,14 @@
       }
     ]
   },
+  "states": {
+    "transitions": {
+      "hideInEditor": true
+    },
+    "comments": {
+      "hideInEditor": true
+    }
+  },
   "sequences": {
     "parameters": [
       {
@@ -1095,15 +1191,11 @@
       {
         "parameters": [
           {
-            "value": 5.0,
-            "controlAddress": "/listSize"
-          },
-          {
             "value": 30.0,
             "controlAddress": "/totalTime"
           },
           {
-            "value": 433,
+            "value": 44,
             "hexMode": false,
             "controlAddress": "/fps"
           },
@@ -1115,11 +1207,12 @@
         "niceName": "Sequence",
         "type": "Sequence",
         "layers": {
+          "hideInEditor": true,
           "items": [
             {
               "parameters": [
                 {
-                  "value": 88.0,
+                  "value": 120.0,
                   "controlAddress": "/listSize"
                 },
                 {
@@ -1132,13 +1225,13 @@
                     0.2117647081613541,
                     0.2117647081613541,
                     0.2117647081613541,
-                    1.0
+                    1
                   ],
                   "controlAddress": "/layerColor"
                 },
                 {
-                  "value": 0.0,
-                  "controlAddress": "/value"
+                  "value": "Send original value",
+                  "controlAddress": "/recordSendMode"
                 }
               ],
               "niceName": "Mapping",
@@ -1146,43 +1239,35 @@
                 "automation": {
                   "parameters": [
                     {
-                      "value": 30.0,
-                      "controlAddress": "/length"
-                    },
-                    {
-                      "value": 0.0,
-                      "controlAddress": "/value"
+                      "value": 22.20454597473145,
+                      "controlAddress": "/position"
                     },
                     {
                       "value": [
-                        0.0,
-                        1.0
+                        0,
+                        1
                       ],
                       "controlAddress": "/viewValueRange"
                     },
                     {
                       "value": [
-                        0.0,
-                        1.0
+                        0,
+                        1
                       ],
                       "controlAddress": "/range",
                       "enabled": true
                     }
-                  ]
+                  ],
+                  "hideInEditor": true
                 },
                 "recorder": {
-                  "parameters": [
-                    {
-                      "value": false,
-                      "controlAddress": "/isRecording"
-                    }
-                  ],
                   "editorIsCollapsed": true
                 },
                 "mapping": {
                   "niceName": "Mapping",
                   "type": "Mapping",
                   "im": {
+                    "hideInEditor": true,
                     "items": [
                       {
                         "parameters": [
@@ -1191,10 +1276,20 @@
                             "controlAddress": "/inputValue"
                           }
                         ],
-                        "niceName": "Input",
-                        "type": "BaseItem"
+                        "niceName": "Input Value",
+                        "type": "Input Value"
                       }
                     ]
+                  },
+                  "params": {
+                    "parameters": [
+                      {
+                        "value": 50,
+                        "hexMode": false,
+                        "controlAddress": "/updateRate"
+                      }
+                    ],
+                    "editorIsCollapsed": true
                   },
                   "filters": {
                   },
@@ -1207,6 +1302,7 @@
           ]
         },
         "cues": {
+          "hideInEditor": true
         },
         "editing": true
       }

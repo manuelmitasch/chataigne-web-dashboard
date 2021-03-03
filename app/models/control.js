@@ -9,7 +9,8 @@ export default class ControlModel extends Model {
     @attr("number") width
     @attr("number") height
 
-    @attr("string") defaultUI
+    @attr("number") defaultUI
+    @attr("number") style
 
     @belongsTo('dashboard') dashboard
 

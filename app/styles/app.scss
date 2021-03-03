@@ -78,8 +78,15 @@ h1 {
     .control {
         position: absolute;
         background: $control-background;
-        background: linear-gradient(#464646, #333333) 0 100% no-repeat #242424;
         border: none;
+        margin: 0;
+    }
+
+    label.control-label {
+        padding: 5px;
+        min-width: auto;
+        max-width: none;
+        margin-right: 0px;
     }
 
     input[type=range] {
@@ -92,14 +99,18 @@ h1 {
         height: 100%;
     }
 
+    .range-slider-label {
+        margin-top: -20px;
+    }
+
     button {
         width: 100%;
         height: 100%;
-        background: linear-gradient(#a9a9a9, $container-border) 0 100% no-repeat #242424;
+        background: #909090;
     }
 
     button.triggered {
-        background: linear-gradient(orange, #b17200) 0 100% no-repeat #242424;
+        background: orange;
     }
 
     .clear {
@@ -111,14 +122,12 @@ h1 {
     }
 
     .float-control, .integer-control {
-        background: none;
-        background: linear-gradient(#464646, #333333) 0 100% no-repeat #242424;
         border: none;
+        padding: 0;
 
         label.control-label {
             position: absolute;
             mix-blend-mode: color-dodge;
-            padding: 2px;
         }
 
         input[type=range] {
@@ -151,12 +160,18 @@ h1 {
         }
     }
 
+    .float-control.vertical {
+        input[type=range] {
+            cursor: ns-resize;
+        }
+    }
+
     .float-control.no-range {
         background: none;
         padding: 0;
 
         input.secondary {
-            background: linear-gradient(#464646, #333333) 0 100% no-repeat #242424;
+            background: $control-background;
         }
 
         .secondary-container {
@@ -165,10 +180,11 @@ h1 {
     }
 
     .point2d-control {
+        padding: 0;
+
         label.control-label {
             position: absolute;
             mix-blend-mode: color-dodge;
-            padding: 2px;
         }
 
         input[type=range] {
@@ -247,10 +263,11 @@ h1 {
     }
 
     .point3d-control {
+        padding: 0;
+
         label.control-label {
             position: absolute;
             mix-blend-mode: color-dodge;
-            padding: 2px;
         }
 
         input[type=range] {
@@ -329,13 +346,13 @@ h1 {
 
     .color-control {
         border: none;
-        padding: 5px;
+        padding: 0px;
 
         label.control-label {
             position: absolute;
             text-shadow: 0px 0px 3px #ffffff;
             color: black;
-            padding: 2px;
+            padding-left: 3px;
         }
 
         .main-input {
@@ -377,7 +394,6 @@ h1 {
             padding-left: 60px;
             text-align: center;
             background: $control-background;
-            background: linear-gradient(#464646, #333333) 0 100% no-repeat #242424;
         }
     }
 
@@ -385,6 +401,14 @@ h1 {
         background: none;
         padding: 0;
         border: none;
+    }
+
+    .boolean-control {
+        padding: 0;
+
+        .main-input {
+            margin: 5px;
+        }
     }
 
     .enum-control {
