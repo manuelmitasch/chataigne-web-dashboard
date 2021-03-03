@@ -6,6 +6,9 @@ export default class TriggerControlComponent extends ControlComponent {
   update(value, event) {
     const control = this.args.control;
     this.socket.sendFeedback(control.controlAddress, true);
+
+    event = (event) ? event : value;
+    event.preventDefault();
     // control.save();
   }
 }

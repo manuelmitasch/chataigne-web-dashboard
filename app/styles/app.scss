@@ -565,6 +565,7 @@ button {
     border: none;
     padding: 2px 5px;
     outline: none;
+    touch-action: manipulation;
 }
 
 select {
