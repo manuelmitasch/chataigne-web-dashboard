@@ -93,7 +93,7 @@ h1 {
     input[type=range] {
         margin-top: 0;
         width: 100%;
-        touch-action: none;
+        touch-action: pan-y;
     }
 
     .range-slider-container {
@@ -165,6 +165,7 @@ h1 {
     .float-control.vertical {
         input[type=range] {
             cursor: ns-resize;
+            touch-action: none;
         }
     }
 
