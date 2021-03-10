@@ -1,8 +1,11 @@
 import Component from '@glimmer/component';
+import { inject as service } from '@ember/service';
 
 export default class GroupComponent extends Component {
+    @service('settings') settings
+
     get positionStyles() {
-        if (this.args.displayLayout) {
+        if (this.settings.displayLayout) {
             return {
                 width: this.args.control.width + 'px',
                 height: this.args.control.height + 'px',
@@ -12,7 +15,10 @@ export default class GroupComponent extends Component {
                 background: this.backgroundColor
             }
         } else {
-            return {}
+            return {
+                border: this.args.control.borderWidth + 'px solid ' + this.borderColor,
+                background: this.backgroundColor
+            }
         }
     }
 

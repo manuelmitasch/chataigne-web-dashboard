@@ -1,11 +1,13 @@
 import Component from '@glimmer/component';
-import { action } from '@ember/object';
+import { inject as service } from '@ember/service';
 
 export default class DashboardComponent extends Component {
+    @service('settings') settings
+
     get sizeStyle() {
-        if (this.args.displayLayout) {
-            let scaleWidth = this.args.viewWidth / (this.args.dashboard.width);
-            let scaleHeight = (this.args.viewHeight - 37) / (this.args.dashboard.height);
+        if (this.settings.displayLayout) {
+            let scaleWidth = this.settings.viewWidth / (this.args.dashboard.width);
+            let scaleHeight = (this.settings.viewHeight - 37) / (this.args.dashboard.height);
 
             let scale = (scaleWidth > scaleHeight) ? scaleHeight : scaleWidth;
 

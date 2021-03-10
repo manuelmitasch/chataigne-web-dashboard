@@ -11,7 +11,6 @@ $selected: #f19747;
 $control-height: 1.2em;
 
 @import 'input-range.scss';
-@import 'checkbox.scss';
 
 
 * {
@@ -54,17 +53,30 @@ body {
 
     li {
         display: inline-block;
-        padding: 5px;
         margin-bottom: 5px;
         font-size: 0.7em;
-        background: $container-background;
-        border-radius: $radius;
-        cursor: pointer;
-    }
 
-    .enabled {
-        background: $active !important;
-        color: $background !important;
+        a {
+            padding: 5px;
+            display: inline-block;
+            color: $font;
+            text-decoration: none;
+            background: $container-background;
+            border-radius: $radius;
+        }
+
+        a.active {
+            background: $active;
+            color: $background !important;
+        }
+
+    }
+    
+    li.enabled {
+        a {
+            background: $active !important;
+            color: $background !important;
+        }
     }
 }
 
@@ -96,6 +108,7 @@ h1 {
             border-radius: 5px;
             width: 20px;
             height: 20px;
+            touch-action: manipulation;
         }
     }
 
@@ -150,6 +163,7 @@ h1 {
 
     .comment {
         position: absolute;
+        background: none;
     }
 
     input[type=range] {
@@ -174,7 +188,7 @@ h1 {
     }
 
     button:active {
-        background: rgb(219, 177, 98) !important;
+        background: rgb(219, 177, 98);
     }
 
     button.triggered {
@@ -515,6 +529,10 @@ h1 {
             display: none;
         }
     }
+
+    .group {
+        padding: 5px 10px;
+    }
 }
 
 .control {
@@ -690,7 +708,7 @@ select:focus{
 }
 
 button.triggered {
-    background: orange;
+    background: orange !important;
 }
 
 .canvas {

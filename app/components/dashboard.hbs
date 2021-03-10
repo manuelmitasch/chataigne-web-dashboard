@@ -1,4 +1,4 @@
-<div class="dashboard {{ if @displayLayout "layout" "responsive" }}" {{ style this.sizeStyle }}>
+<div class="dashboard {{ if this.settings.displayLayout "layout" "responsive" }}" {{ style this.sizeStyle }}>
     {{#if @dashboard.name }}
         <h1 class="unselectable">{{@dashboard.name}}</h1>
     {{/if}}
@@ -7,7 +7,6 @@
         {{#let (component control.constructor.modelName) as |TheComponent|}}
             <TheComponent 
                 @control={{control}} 
-                @displayLayout={{ @displayLayout }}
             />
         {{/let}}
     {{/each}}

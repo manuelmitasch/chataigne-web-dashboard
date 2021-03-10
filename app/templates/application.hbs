@@ -1,45 +1,24 @@
-<div class="wrapper-main {{ if this.displayLayout "layout" "responsive" }}" {{did-resize this.onResize debounce=100}} {{did-update this.modelCount}}>
+<div class="wrapper-main {{ if this.settings.displayLayout "layout" "responsive" }}" {{did-resize this.onResize debounce=10}} {{did-insert this.onResize}}>
     <div class="menu">
-        <a {{on "click" (fn this.reloadDashboards "0") }}><img src="icon.png" class="logo"></a>
+        <img src="icon.png" class="logo">
     </div>
 
-    {{#if isConnected }}
-        <ul class="dashboard-list">
-            {{#each @model as |dashboard|}}
-                <li class="unselectable"
-                    {{on "click" (fn this.selectDashboard dashboard)}}
-                >
-                    {{dashboard.name}}
-                </li>
-            {{/each}}
-        </ul>
-
-        <ul class="layout-options">
-            <li class="unselectable {{ if displayLayout "enabled" "" }}" 
-                {{on "click" this.toggleDisplayLayout}}
-            >    
-                Layout
+    <ul class="dashboard-list">
+        {{#each @model as |dashboard|}}
+            <li class="unselectable">
+                <LinkTo @route="dashboard" @model={{dashboard}}>{{dashboard.name}}</LinkTo>
             </li>
-            <li class="unselectable {{ if this.fullscreen.isEnabled "enabled" "" }}" 
-                {{on "click" this.toggleFullscreen}}
-            >    
-                Fullscreen
-            </li>
-        </ul>
+        {{/each}}
+    </ul>
 
-        {{#if selectedDashboard }}
-            <Dashboard 
-                @dashboard={{ selectedDashboard }} 
-                @displayLayout={{ this.displayLayout }} 
-                @viewWidth={{ this.viewWidth }}
-                @viewHeight={{ this.viewHeight }}
-            />
-        {{else}}
-            Select dashboard.
-        {{/if}}
+    <ul class="layout-options">
+        <li class="unselectable {{ if this.settings.displayLayout "enabled" "" }}">    
+            <a {{on "click" this.toggleDisplayLayout}}>Layout</a>
+        </li>
+        <li class="unselectable {{ if this.fullscreen.isEnabled "enabled" "" }}">    
+             <a {{on "click" this.toggleFullscreen}}>Fullscreen</a>
+        </li>
+    </ul>
 
-        {{outlet}}
-    {{else}}
-        Connecting to Chataigne
-    {{/if}}
+    {{outlet}}
 </div>

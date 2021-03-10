@@ -4,6 +4,7 @@ import { inject as service } from '@ember/service';
 
 export default class ControlComponent extends Component {
   @service('chataigne-websocket') socket
+  @service('settings') settings
 
   @action
   input(event) {

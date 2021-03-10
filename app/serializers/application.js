@@ -158,7 +158,6 @@ function getGroupHash(group, dashboard, index, fromGroup) {
   
   groupHash.relationships.controls.data = controlRelationshipData;
 
-  debugger;
   return {
     hash: groupHash,
     included: includedData

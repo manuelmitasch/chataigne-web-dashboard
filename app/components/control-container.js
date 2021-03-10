@@ -1,6 +1,9 @@
 import Component from '@glimmer/component';
+import { inject as service } from '@ember/service';
 
 export default class ControlContainerComponent extends Component {
+  @service('settings') settings
+
   get width() {
     return (this.args.control.isVertical) ? this.args.control.height : this.args.control.width;
   }
@@ -19,7 +22,7 @@ export default class ControlContainerComponent extends Component {
   }
 
   get positionStyles() {
-    if (this.args.displayLayout) {
+    if (this.settings.displayLayout) {
       return {
         width: this.width + 'px',
         height: this.height + 'px',
@@ -34,6 +37,6 @@ export default class ControlContainerComponent extends Component {
   }
 
   get showLabel() {
-    return this.args.showLabel || !this.args.displayLayout;
+    return this.args.showLabel || !this.settings.displayLayout;
   }
 }

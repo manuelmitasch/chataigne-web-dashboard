@@ -1,8 +1,11 @@
 import Component from '@glimmer/component';
+import { inject as service } from '@ember/service';
 
 export default class CommentComponent extends Component {
+    @service('settings') settings
+
     get positionStyles() {
-        if (this.args.displayLayout) {
+        if (this.settings.displayLayout) {
             return {
                 left: this.args.control.positionX + 'px',
                 top: this.args.control.positionY + 'px'

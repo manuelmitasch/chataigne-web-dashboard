@@ -44,7 +44,7 @@ export default class WebsocketService extends Service {
     reconnect(time) {
         time = (time != undefined) ? time : 5000;
 
-        this.store.unloadAll();
+        // this.store.unloadAll();
         this.isConnected = false;
 
         Ember.run.later(this, () => {

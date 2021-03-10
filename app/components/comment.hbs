@@ -1,5 +1,5 @@
-{{#if @displayLayout }}
-    <div class="comment {{ if @displayLayout "layout" "responsive" }}" {{ style this.positionStyles }}  {{ style this.colorStyles }}>
+{{#if this.settings.displayLayout }}
+    <div class="comment {{ if this.settings.displayLayout "layout" "responsive" }}" {{ style this.positionStyles }}  {{ style this.colorStyles }}>
         {{ @control.text }}
     </div>
 {{else}}

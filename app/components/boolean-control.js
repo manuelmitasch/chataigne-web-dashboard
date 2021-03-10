@@ -11,10 +11,13 @@ export default class BooleanControlComponent extends ControlComponent {
     const control = this.args.control;
     this.socket.sendFeedback(control.controlAddress, !control.value);
     // control.save();
+
+    event = (event) ? event : value;
+    event.preventDefault();
   }
 
   get sizeStyles() {
-    if (this.args.displayLayout) {
+    if (this.settings.displayLayout) {
       return {
         width: this.args.control.height + 'px',
         height: this.args.control.height + 'px',

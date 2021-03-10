@@ -1,9 +1,8 @@
-<div class="group {{ if @displayLayout "layout" "responsive" }}" {{ style this.positionStyles }}>
+<div class="group {{ if this.settings.displayLayout "layout" "responsive" }}" {{ style this.positionStyles }}>
     {{#each @control.sortedControls as |c|}}
         {{#let (component c.constructor.modelName) as |TheComponent|}}
             <TheComponent 
                 @control={{c}} 
-                @displayLayout={{ @displayLayout }}
             />
         {{/let}}
     {{/each}}
