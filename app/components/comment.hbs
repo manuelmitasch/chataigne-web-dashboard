@@ -1,0 +1,11 @@
+{{#if @displayLayout }}
+    <div class="comment {{ if @displayLayout "layout" "responsive" }}" {{ style this.positionStyles }}  {{ style this.colorStyles }}>
+        {{ @control.text }}
+    </div>
+{{else}}
+    <div class="control comment" {{ style this.colorStyles }}>
+        {{ @control.text}}
+    </div>
+{{/if}}
+
+{{yield}}

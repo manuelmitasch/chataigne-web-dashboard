@@ -1,6 +1,6 @@
 {
   "metaData": {
-    "version": "1.8.0b15",
+    "version": "1.8.0b16",
     "versionNumber": 67584
   },
   "projectSettings": {
@@ -23,7 +23,7 @@
   "dashboardManager": {
     "parameters": [
       {
-        "value": true,
+        "value": false,
         "controlAddress": "/editMode"
       }
     ],
@@ -302,8 +302,8 @@
               "parameters": [
                 {
                   "value": [
-                    -95,
-                    -183
+                    -73.0,
+                    -243.0
                   ],
                   "controlAddress": "/viewUIPosition"
                 },
@@ -564,13 +564,99 @@
               "type": "DashboardParameterItem",
               "ghostAddress": "/modules/oSCQuery/values/my_effect/Controls/Myfloat",
               "controllable": "/modules/oSCQuery/values/my_effect/Controls/Myfloat"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    94.0,
+                    -243.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    96.0,
+                    26.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": true,
+                  "controlAddress": "/showLabel"
+                },
+                {
+                  "value": true,
+                  "controlAddress": "/showValue"
+                }
+              ],
+              "niceName": "Dashboard Item 16",
+              "type": "DashboardParameterItem",
+              "ghostAddress": "/modules/oSCQuery/values/my_effect/Controls/Mytoggle",
+              "controllable": "/modules/oSCQuery/values/my_effect/Controls/Mytoggle"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    211.0,
+                    -243.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    45.0,
+                    26.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": true,
+                  "controlAddress": "/showLabel"
+                },
+                {
+                  "value": true,
+                  "controlAddress": "/showValue"
+                }
+              ],
+              "niceName": "Dashboard Item 17",
+              "type": "DashboardParameterItem",
+              "ghostAddress": "/modules/oSCQuery/values/my_effect/Controls/Mytoggle",
+              "controllable": "/modules/oSCQuery/values/my_effect/Controls/Mytoggle"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    -52.0,
+                    -183.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    71.0,
+                    51.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": true,
+                  "controlAddress": "/showLabel"
+                },
+                {
+                  "value": true,
+                  "controlAddress": "/showValue"
+                }
+              ],
+              "niceName": "Dashboard Item 18",
+              "type": "DashboardParameterItem",
+              "ghostAddress": "/modules/oSCQuery/values/my_effect/Controls/Mytoggle",
+              "controllable": "/modules/oSCQuery/values/my_effect/Controls/Mytoggle"
             }
-          ],
-          "commentManager": {
-            "hideInEditor": true
-          }
-        },
-        "editing": true
+          ]
+        }
       },
       {
         "niceName": "Dashboard 1",
@@ -670,43 +756,219 @@
               "ghostAddress": "/sequences/sequence/stop",
               "controllable": "/sequences/sequence/stop"
             }
-          ],
-          "commentManager": {
-            "hideInEditor": true
-          }
+          ]
         }
+      },
+      {
+        "niceName": "Dashboard 2",
+        "type": "BaseItem",
+        "itemManager": {
+          "parameters": [
+            {
+              "value": [
+                600.0,
+                400.0
+              ],
+              "controlAddress": "/canvasSize",
+              "enabled": true
+            }
+          ],
+          "editorIsCollapsed": true,
+          "items": [
+            {
+              "parameters": [
+                {
+                  "value": [
+                    -59.0,
+                    -189.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    98.0,
+                    21.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": 21.0,
+                  "customUI": 3,
+                  "controlAddress": "/size"
+                },
+                {
+                  "value": [
+                    0.800000011920929,
+                    0.0,
+                    0.0,
+                    1.0
+                  ],
+                  "controlAddress": "/color"
+                },
+                {
+                  "value": 0.0,
+                  "controlAddress": "/backgroundAlpha"
+                }
+              ],
+              "niceName": "Comment",
+              "type": "DashboardCommentItem"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    -267.0,
+                    -129.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    554.0,
+                    300.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": 2.900000095367432,
+                  "controlAddress": "/borderWidth"
+                },
+                {
+                  "value": [
+                    0.01568627543747425,
+                    0.0,
+                    1.0,
+                    1.0
+                  ],
+                  "controlAddress": "/borderColor"
+                },
+                {
+                  "value": [
+                    1.0,
+                    0.0,
+                    0.0,
+                    0.2117647081613541
+                  ],
+                  "controlAddress": "/backgroundColor",
+                  "enabled": true
+                }
+              ],
+              "niceName": "Group",
+              "type": "DashboardGroupItem",
+              "itemManager": {
+                "parameters": [
+                  {
+                    "value": [
+                      546.0,
+                      292.0
+                    ],
+                    "controlAddress": "/canvasSize",
+                    "enabled": false
+                  }
+                ],
+                "items": [
+                  {
+                    "parameters": [
+                      {
+                        "value": [
+                          19.0,
+                          18.0
+                        ],
+                        "controlAddress": "/viewUIPosition"
+                      },
+                      {
+                        "value": [
+                          100.0,
+                          20.0
+                        ],
+                        "controlAddress": "/viewUISize"
+                      }
+                    ],
+                    "niceName": "Comment",
+                    "type": "DashboardCommentItem"
+                  },
+                  {
+                    "parameters": [
+                      {
+                        "value": [
+                          116.0,
+                          120.0
+                        ],
+                        "controlAddress": "/viewUIPosition"
+                      },
+                      {
+                        "value": [
+                          299.0,
+                          50.0
+                        ],
+                        "controlAddress": "/viewUISize"
+                      }
+                    ],
+                    "niceName": "Item",
+                    "type": "DashboardTriggerItem",
+                    "ghostAddress": "/sequences/playAll",
+                    "controllable": "/sequences/playAll"
+                  },
+                  {
+                    "parameters": [
+                      {
+                        "value": [
+                          46.0,
+                          60.0
+                        ],
+                        "controlAddress": "/viewUIPosition"
+                      },
+                      {
+                        "value": [
+                          200.0,
+                          50.0
+                        ],
+                        "controlAddress": "/viewUISize"
+                      }
+                    ],
+                    "niceName": "Item 1",
+                    "type": "DashboardParameterItem",
+                    "ghostAddress": "/modules/oSCQuery/values/my_effect/Controls/Myfloat",
+                    "controllable": "/modules/oSCQuery/values/my_effect/Controls/Myfloat"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "editing": true
       }
     ]
   },
   "layout": {
     "mainLayout": {
       "type": 1,
-      "width": 1278,
-      "height": 988,
+      "width": 1920,
+      "height": 997,
       "direction": 2,
       "shifters": [
         {
           "type": 1,
-          "width": 1278,
-          "height": 988,
+          "width": 1920,
+          "height": 997,
           "direction": 2,
           "shifters": [
             {
               "type": 1,
-              "width": 1278,
-              "height": 592,
+              "width": 1920,
+              "height": 596,
               "direction": 1,
               "shifters": [
                 {
                   "type": 1,
                   "width": 150,
-                  "height": 592,
+                  "height": 596,
                   "direction": 2,
                   "shifters": [
                     {
                       "type": 0,
                       "width": 150,
-                      "height": 295,
+                      "height": 297,
                       "currentContent": "Modules",
                       "tabs": [
                         {
@@ -717,7 +979,7 @@
                     {
                       "type": 0,
                       "width": 150,
-                      "height": 291,
+                      "height": 293,
                       "currentContent": "Custom Variables",
                       "tabs": [
                         {
@@ -729,8 +991,8 @@
                 },
                 {
                   "type": 0,
-                  "width": 872,
-                  "height": 592,
+                  "width": 1405,
+                  "height": 596,
                   "currentContent": "Dashboard",
                   "tabs": [
                     {
@@ -749,8 +1011,8 @@
                 },
                 {
                   "type": 0,
-                  "width": 244,
-                  "height": 592,
+                  "width": 353,
+                  "height": 596,
                   "currentContent": "Inspector",
                   "tabs": [
                     {
@@ -762,14 +1024,14 @@
             },
             {
               "type": 1,
-              "width": 1278,
-              "height": 390,
+              "width": 1920,
+              "height": 394,
               "direction": 1,
               "shifters": [
                 {
                   "type": 0,
                   "width": 150,
-                  "height": 390,
+                  "height": 394,
                   "currentContent": "Sequences",
                   "tabs": [
                     {
@@ -779,8 +1041,8 @@
                 },
                 {
                   "type": 0,
-                  "width": 592,
-                  "height": 390,
+                  "width": 1234,
+                  "height": 394,
                   "currentContent": "Sequence Editor",
                   "tabs": [
                     {
@@ -791,7 +1053,7 @@
                 {
                   "type": 0,
                   "width": 524,
-                  "height": 390,
+                  "height": 394,
                   "currentContent": "Logger",
                   "tabs": [
                     {
@@ -851,26 +1113,26 @@
                 "Controls": {
                   "parameters": [
                     {
-                      "value": 0.1909999996423721,
+                      "value": 0.6520000100135803,
                       "controlAddress": "/Myfloat"
                     },
                     {
                       "value": [
-                        "0.189",
-                        "38.265"
+                        "0.789",
+                        "37.755"
                       ],
                       "controlAddress": "/Myxy"
                     },
                     {
                       "value": [
-                        0.7229999899864197,
-                        79.49600219726563,
-                        0.5360000133514404
+                        0.4339999854564667,
+                        64.56099700927734,
+                        0.7739999890327454
                       ],
                       "controlAddress": "/My3d"
                     },
                     {
-                      "value": true,
+                      "value": false,
                       "controlAddress": "/Mytoggle"
                     },
                     {
@@ -878,14 +1140,14 @@
                       "controlAddress": "/Mystring"
                     },
                     {
-                      "value": "Label 2",
+                      "value": "Label 1",
                       "controlAddress": "/Mymenu"
                     },
                     {
                       "value": [
-                        1,
+                        0.6,
                         0,
-                        0.02352941176470588,
+                        1,
                         1
                       ],
                       "controlAddress": "/Mycolor"
@@ -1195,7 +1457,7 @@
             "controlAddress": "/totalTime"
           },
           {
-            "value": 44,
+            "value": 60,
             "hexMode": false,
             "controlAddress": "/fps"
           },
@@ -1230,7 +1492,7 @@
                   "controlAddress": "/layerColor"
                 },
                 {
-                  "value": "Send original value",
+                  "value": "Do not send",
                   "controlAddress": "/recordSendMode"
                 }
               ],
@@ -1239,7 +1501,7 @@
                 "automation": {
                   "parameters": [
                     {
-                      "value": 22.20454597473145,
+                      "value": 0.0,
                       "controlAddress": "/position"
                     },
                     {

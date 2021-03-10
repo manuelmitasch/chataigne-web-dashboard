@@ -12,4 +12,16 @@ export default class BooleanControlComponent extends ControlComponent {
     this.socket.sendFeedback(control.controlAddress, !control.value);
     // control.save();
   }
+
+  get sizeStyles() {
+    if (this.args.displayLayout) {
+      return {
+        width: this.args.control.height + 'px',
+        height: this.args.control.height + 'px',
+        right: '0px'
+      }
+    } else {
+      return {}
+    }
+  }
 }

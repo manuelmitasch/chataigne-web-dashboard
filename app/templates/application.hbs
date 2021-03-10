@@ -1,33 +1,45 @@
-<div class="menu">
-    <a {{on "click" (fn this.reloadDashboards "0") }}><img src="chataigne-icon.png" class="logo"></a>
-</div>
+<div class="wrapper-main {{ if this.displayLayout "layout" "responsive" }}" {{did-resize this.onResize debounce=100}} {{did-update this.modelCount}}>
+    <div class="menu">
+        <a {{on "click" (fn this.reloadDashboards "0") }}><img src="icon.png" class="logo"></a>
+    </div>
 
-{{#if isConnected }}
-    <ul class="dashboard-list">
-        <li {{on "click" (fn this.selectDashboard)}}>Show All</li>
-        {{#each @model as |dashboard|}}
-            <li {{on "click" (fn this.selectDashboard dashboard)}}>{{dashboard.name}}</li>
-        {{/each}}
-        <li>    
-            <span {{on "click" this.toggleDisplayLayout}}>Layout </span><Input @type="checkbox" @checked={{ displayLayout }} {{on "change" this.toggleDisplayLayout}} class="switch layout-toggle" />
-        </li>
-    </ul>
+    {{#if isConnected }}
+        <ul class="dashboard-list">
+            {{#each @model as |dashboard|}}
+                <li class="unselectable"
+                    {{on "click" (fn this.selectDashboard dashboard)}}
+                >
+                    {{dashboard.name}}
+                </li>
+            {{/each}}
+        </ul>
 
-    {{#if selectedDashboard }}
-        <Dashboard 
-            @dashboard={{ selectedDashboard }} 
-            @displayLayout={{ this.displayLayout }} 
-        />
-    {{else}}
-        {{#each @model as |dashboard|}}
+        <ul class="layout-options">
+            <li class="unselectable {{ if displayLayout "enabled" "" }}" 
+                {{on "click" this.toggleDisplayLayout}}
+            >    
+                Layout
+            </li>
+            <li class="unselectable {{ if this.fullscreen.isEnabled "enabled" "" }}" 
+                {{on "click" this.toggleFullscreen}}
+            >    
+                Fullscreen
+            </li>
+        </ul>
+
+        {{#if selectedDashboard }}
             <Dashboard 
-                @dashboard={{ dashboard }} 
+                @dashboard={{ selectedDashboard }} 
                 @displayLayout={{ this.displayLayout }} 
+                @viewWidth={{ this.viewWidth }}
+                @viewHeight={{ this.viewHeight }}
             />
-        {{/each}}
-    {{/if}}
+        {{else}}
+            Select dashboard.
+        {{/if}}
 
-    {{outlet}}
-{{else}}
-    Connecting to Chataigne
-{{/if}}
+        {{outlet}}
+    {{else}}
+        Connecting to Chataigne
+    {{/if}}
+</div>

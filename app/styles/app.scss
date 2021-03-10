@@ -6,6 +6,7 @@ $font: #a7a7a8;
 $radius: 3px;
 $active: #7eb357;
 $not-active: #242424;
+$bool: #1abc9c;
 $selected: #f19747;
 $control-height: 1.2em;
 
@@ -21,17 +22,23 @@ body {
     background: $background;
     color: $font;
     font-family: Arial;
+    margin: 0;
+}
+
+.wrapper-main.layout {
+    max-height: 100vh;
 }
 
 .menu {
     .logo {
         position: absolute;
-        top: 3px;
-        right: 10px;
+        top: 5px;
+        right: 0px;
         z-index: -5;
         width: 32px;
         cursor: pointer;
         z-index: 3;
+        margin-right: 5px;
     }
 
     input[type='checkbox'] {
@@ -40,9 +47,10 @@ body {
     }
 }
 
-.dashboard-list {
-    margin: 0;
+.dashboard-list, .layout-options {
+    margin: 5px;
     padding: 0;
+    display: inline-block;
 
     li {
         display: inline-block;
@@ -52,6 +60,11 @@ body {
         background: $container-background;
         border-radius: $radius;
         cursor: pointer;
+    }
+
+    .enabled {
+        background: $active !important;
+        color: $background !important;
     }
 }
 
@@ -67,20 +80,60 @@ h1 {
     margin-bottom: 40px;
 }
 
+.boolean-control {
+    padding: 0;
+
+    .main-input {
+        margin: 0;
+        width: 20px;
+        height: 20px;
+        margin-top: 20px;
+        
+        .checkbox {
+            margin: 0;
+            position: absolute;
+            border: 2px solid $bool;
+            border-radius: 5px;
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    .main-input.enabled {
+        .checkbox {
+            background-color: $bool !important;
+            background-image: url(/tick.png) !important;
+            background-size: contain !important;
+        }
+    }
+}
+
+.comment {
+    font-family: Verdana, sans-serif;
+}
+
 .dashboard.layout {
     overflow: hidden;
     position: relative;
     box-sizing: content-box;
+    margin-bottom: 0;
 
     background: $container-background;
     border-radius: $radius;
     box-shadow: 0px 0px 10px #191919;
+
+    h1 {
+        text-align: right;
+        margin: 5px;
+        color: #c0c0c029;
+    }
 
     .control {
         position: absolute;
         background: $control-background;
         border: none;
         margin: 0;
+        overflow: hidden;
     }
 
     label.control-label {
@@ -88,6 +141,15 @@ h1 {
         min-width: auto;
         max-width: none;
         margin-right: 0px;
+    }
+
+    .group {
+        position: absolute;
+        overflow: hidden;
+    }
+
+    .comment {
+        position: absolute;
     }
 
     input[type=range] {
@@ -109,6 +171,10 @@ h1 {
         width: 100%;
         height: 100%;
         background: #909090;
+    }
+
+    button:active {
+        background: rgb(219, 177, 98) !important;
     }
 
     button.triggered {
@@ -408,9 +474,14 @@ h1 {
 
     .boolean-control {
         padding: 0;
-
+        
         .main-input {
-            margin: 5px;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            right: 0;
         }
     }
 
@@ -433,6 +504,8 @@ h1 {
 }
 
 .dashboard.responsive {
+    margin: 5px 5px 25px 5px;
+
     .clear {
         clear: both;
     }
@@ -515,7 +588,7 @@ input[type="range"] {
     display: block;
     box-sizing: border-box;
     width: 100%;
-    margin-top: 1.3em;
+    margin-top: 7px;
     cursor: ew-resize;
 }
 
@@ -675,4 +748,8 @@ button.triggered {
     text-align: right;
     font-size: 0.9em;
     margin-left: 5px !important;
+}
+
+.hidden {
+    display: none;
 }

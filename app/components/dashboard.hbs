@@ -1,6 +1,8 @@
-<h1>{{@dashboard.name}}</h1>
-
 <div class="dashboard {{ if @displayLayout "layout" "responsive" }}" {{ style this.sizeStyle }}>
+    {{#if @dashboard.name }}
+        <h1 class="unselectable">{{@dashboard.name}}</h1>
+    {{/if}}
+
     {{#each @dashboard.sortedControls as |control|}}
         {{#let (component control.constructor.modelName) as |TheComponent|}}
             <TheComponent 

@@ -3,9 +3,8 @@
     @displayLayout={{@displayLayout}}
     @showLabel={{ true }}
 >
-    <div class="clear"></div>
-    <div class="main-input">
-        <Input @type="checkbox" @checked={{@control.value}} {{on "input" (fn this.update @control.value)}} class="switch" />
+    <div class="main-input {{ if @control.value "enabled" "disabled"}}"  {{on "touchstart" this.update}} {{on "mousedown" this.update}}  >
+        <div class="checkbox" {{ style this.sizeStyles }} ></div>
     </div>
     {{yield}}
 </ControlContainer>
