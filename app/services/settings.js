@@ -5,8 +5,10 @@ const displayLayoutKey = "displayLayout"
 
 export default class SettingsService extends Service {
     @tracked displayLayout = false;
+    @tracked menuOpen = false;
     @tracked viewWidth = 1920;
     @tracked viewHeight = 1080;    
+    @tracked appName = "Chataigne";
 
     init() {
         super.init(...arguments);

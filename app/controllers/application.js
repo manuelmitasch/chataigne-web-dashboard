@@ -19,20 +19,33 @@ export default class ApplicationController extends Controller {
     }
 
     @action
-    toggleDisplayLayout() {
+    toggleDisplayLayout(e) {
         this.settings.toggleDisplayLayout();
+        e.stopPropagation();
     } 
 
     @action
-    toggleFullscreen() {
+    toggleFullscreen(e) {
         this.fullscreen.toggle();
         this.onResize();
+
+        e.stopPropagation();
     } 
 
     @action
     onResize(element) {
         this.settings.viewWidth = document.documentElement.clientWidth;
         this.settings.viewHeight = document.documentElement.clientHeight;
+    }
+
+    @action
+    hideMenu() {
+        this.settings.menuOpen = false;
+    }
+
+    @action
+    openMenu() {
+        this.settings.menuOpen = true;
     }
 
 }

@@ -11,6 +11,8 @@ $selected: #f19747;
 $control-height: 1.2em;
 
 @import 'input-range.scss';
+@import 'menu.scss';
+
 
 * {
     box-sizing: border-box;
@@ -36,11 +38,6 @@ body {
         width: 32px;
         z-index: 3;
         margin-right: 5px;
-    }
-
-    input[type='checkbox'] {
-        border: 1px solid $container-border;
-        position: absolute;
     }
 }
 

@@ -1,23 +1,35 @@
-<div class="wrapper-main {{ if this.settings.displayLayout "layout" "responsive" }}" {{did-resize this.onResize debounce=10}} {{did-insert this.onResize}}>
+<div class="menu-wrapper {{ if this.settings.menuOpen "open" "" }}" {{ on "click" this.hideMenu}}>
     <div class="menu">
-        <img src="icon.png" class="logo">
-    </div>
+        <button class="menu-close" {{ on "click" this.hideMenu}}></button>
+        <h1>Settings</h1>
+        <ul class="settings">
+            <li class="unselectable {{ if this.settings.displayLayout "enabled" "" }}">    
+                <a {{on "click" this.toggleDisplayLayout}}>Layout</a>
+            </li>
+            <li class="unselectable {{ if this.fullscreen.isEnabled "enabled" "" }}">    
+                <a {{on "click" this.toggleFullscreen}}>Fullscreen</a>
+            </li>
+        </ul>
 
+        <ul class="version">
+            <li><span>App</span> {{ this.settings.appName}}</li>
+            <li><span>Web Dashboard</span> {{app-version versionOnly=true}}</li>
+        </ul>
+    </div>
+</div>
+
+<div class="open-menu">
+    <button {{ on "click" this.openMenu }}></button>
+</div>
+
+
+<div class="wrapper-main {{ if this.settings.displayLayout "layout" "responsive" }}" {{did-resize this.onResize debounce=10}} {{did-insert this.onResize}}>
     <ul class="dashboard-list">
         {{#each @model as |dashboard|}}
             <li class="unselectable">
                 <LinkTo @route="dashboard" @model={{dashboard}}>{{dashboard.name}}</LinkTo>
             </li>
         {{/each}}
-    </ul>
-
-    <ul class="layout-options">
-        <li class="unselectable {{ if this.settings.displayLayout "enabled" "" }}">    
-            <a {{on "click" this.toggleDisplayLayout}}>Layout</a>
-        </li>
-        <li class="unselectable {{ if this.fullscreen.isEnabled "enabled" "" }}">    
-             <a {{on "click" this.toggleFullscreen}}>Fullscreen</a>
-        </li>
     </ul>
 
     {{outlet}}

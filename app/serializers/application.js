@@ -1,7 +1,10 @@
 import Serializer from '@ember-data/serializer';
 import {uuid} from 'ember-cli-uuid';
+import { inject as service } from '@ember/service';
 
 export default class ApplicationSerializer extends Serializer {
+    @service('settings') settings
+
     pushPayload(store, payload) {
         let normalizedPayload = this.normalizeResponse(store, "dashboard", payload);
         store.push(normalizedPayload);
@@ -15,6 +18,7 @@ export default class ApplicationSerializer extends Serializer {
 
         var includedData = [];
 
+        this.settings.appName = payload.appName;
         
         payload.items.forEach(function(dashboard) {
           let dashboardHash = {
