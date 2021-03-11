@@ -21,22 +21,27 @@ export default class SettingsService extends Service {
 
     toggleDisplayLayout() {
         this.displayLayout = !this.displayLayout;
-        localStorage.setItem(displayLayoutKey, this.displayLayout);
+        this.setLocalStorage(displayLayoutKey, this.displayLayout);
     } 
     
     toggleScaleLayout() {
         this.scaleLayout = !this.scaleLayout;
-        localStorage.setItem(scaleLayoutKey, this.scaleLayout);
+        this.setLocalStorage(scaleLayoutKey, this.scaleLayout);
     } 
 
     getLocalStorage(key, defaultValue) {
         let value = localStorage.getItem(key);
 
         if (value == null) {
-            localStorage.setItem(key, defaultValue);
+            this.setLocalStorage(key, defaultValue);
             return defaultValue;
         } 
 
-        return value;
+        return value == 1;
+    }
+
+    setLocalStorage(key, value) {
+        value = (value) ? 1 : 0;
+        localStorage.setItem(key, value);
     }
 }
