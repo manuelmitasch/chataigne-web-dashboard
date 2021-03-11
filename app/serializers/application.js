@@ -56,7 +56,6 @@ export default class ApplicationSerializer extends Serializer {
 
         result.included = includedData;
 
-        debugger;
         return result;
     }
 }
