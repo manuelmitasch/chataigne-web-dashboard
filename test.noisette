@@ -1,6 +1,6 @@
 {
   "metaData": {
-    "version": "1.8.0b16",
+    "version": "1.8.0b17",
     "versionNumber": 67584
   },
   "projectSettings": {
@@ -656,7 +656,8 @@
               "controllable": "/modules/oSCQuery/values/my_effect/Controls/Mytoggle"
             }
           ]
-        }
+        },
+        "editing": true
       },
       {
         "niceName": "Dashboard 1",
@@ -779,8 +780,8 @@
               "parameters": [
                 {
                   "value": [
-                    -59.0,
-                    -189.0
+                    -45.0,
+                    -180.0
                   ],
                   "controlAddress": "/viewUIPosition"
                 },
@@ -817,8 +818,8 @@
               "parameters": [
                 {
                   "value": [
-                    -267.0,
-                    -129.0
+                    -264.0,
+                    -123.0
                   ],
                   "controlAddress": "/viewUIPosition"
                 },
@@ -866,6 +867,7 @@
                     "enabled": false
                   }
                 ],
+                "editorIsCollapsed": true,
                 "items": [
                   {
                     "parameters": [
@@ -935,8 +937,7 @@
               }
             }
           ]
-        },
-        "editing": true
+        }
       }
     ]
   },
@@ -1113,21 +1114,21 @@
                 "Controls": {
                   "parameters": [
                     {
-                      "value": 0.6520000100135803,
+                      "value": 0.7039999961853027,
                       "controlAddress": "/Myfloat"
                     },
                     {
                       "value": [
-                        "0.789",
-                        "37.755"
+                        "0.536",
+                        "59.833"
                       ],
                       "controlAddress": "/Myxy"
                     },
                     {
                       "value": [
-                        0.4339999854564667,
-                        64.56099700927734,
-                        0.7739999890327454
+                        0.2220000028610229,
+                        85.18499755859375,
+                        1.0
                       ],
                       "controlAddress": "/My3d"
                     },
@@ -1136,7 +1137,7 @@
                       "controlAddress": "/Mytoggle"
                     },
                     {
-                      "value": "ycxv",
+                      "value": "asdf",
                       "controlAddress": "/Mystring"
                     },
                     {
@@ -1145,9 +1146,9 @@
                     },
                     {
                       "value": [
-                        0.6,
-                        0,
-                        1,
+                        0.6745098039215687,
+                        0.3607843137254902,
+                        0.2235294117647059,
                         1
                       ],
                       "controlAddress": "/Mycolor"
@@ -1457,7 +1458,7 @@
             "controlAddress": "/totalTime"
           },
           {
-            "value": 60,
+            "value": 35,
             "hexMode": false,
             "controlAddress": "/fps"
           },

@@ -43,7 +43,7 @@
         ul.settings {
             margin: 0;
             padding: 0;
-            border-top: 1px solid #484848;
+            border-top: 1px solid #232323;
 
             li {
                 display: block;
@@ -62,7 +62,7 @@
                     background: $control-background;
                 }
 
-                border-bottom: 1px solid #484848;
+                border-bottom: 1px solid #232323;
             }
 
             li.enabled {
@@ -109,7 +109,7 @@
     z-index: 20;
 
     button {
-        background: $container-background;
+        background: $control-background;
         padding: 0;
         width: 22px;
         height: 22px;
