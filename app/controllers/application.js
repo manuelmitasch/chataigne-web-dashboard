@@ -25,6 +25,12 @@ export default class ApplicationController extends Controller {
     } 
 
     @action
+    toggleScaleLayout(e) {
+        this.settings.toggleScaleLayout();
+        e.stopPropagation();
+    } 
+
+    @action
     toggleFullscreen(e) {
         this.fullscreen.toggle();
         this.onResize();

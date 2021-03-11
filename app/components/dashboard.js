@@ -11,11 +11,18 @@ export default class DashboardComponent extends Component {
 
             let scale = (scaleWidth > scaleHeight) ? scaleHeight : scaleWidth;
 
-            return {
-                width: this.args.dashboard.width + 'px',
-                height: this.args.dashboard.height + 'px',
-                transformOrigin: 'top left',
-                transform: 'scale(' + scale + ')'
+            if (this.settings.scaleLayout) {
+                return {
+                    width: this.args.dashboard.width + 'px',
+                    height: this.args.dashboard.height + 'px',
+                    transformOrigin: 'top left',
+                    transform: 'scale(' + scale + ')'
+                }
+            } else {
+                return {
+                    width: this.args.dashboard.width + 'px',
+                    height: this.args.dashboard.height + 'px'
+                }
             }
         } else {
             return {}
