@@ -40,31 +40,13 @@ export default class ApplicationSerializer extends Serializer {
 
           if (dashboard.items) {
             dashboard.items.forEach(function(item, index) {
-              let type = item.type;
-              let isGroup = (item.items != undefined);
-              let isComment = (item.text != undefined);
-              let hash = {};
+              let { data, included } = getHash(item, dashboard, index);
+              controlRelationshipData.push({ "id": data.id, "type": data.type });
+              includedData.push(data);
 
-              if (isGroup) {
-                let group = getGroupHash(item, dashboard, index);
-
-                controlRelationshipData.push({ "id": group.hash.id, "type": group.hash.type });
-                includedData.push(group.hash);
-
-                group.included.forEach(function(item) {
-                  includedData.push(item);
-                });
-              } else if (isComment) {
-                hash = getCommentHash(item, dashboard, index);
-                
-                controlRelationshipData.push({ "id": hash.id, "type": hash.type });
-                includedData.push(hash);
-              } else {
-                hash = getControlHash(item, dashboard);
-
-                controlRelationshipData.push({ "id": hash.id, "type": hash.type });
-                includedData.push(hash);
-              }
+              included.forEach(function(i) {
+                includedData.push(i);
+              });
             });
           }
           
@@ -73,6 +55,8 @@ export default class ApplicationSerializer extends Serializer {
         });
 
         result.included = includedData;
+
+        debugger;
         return result;
     }
 }
@@ -84,6 +68,15 @@ function convertCoordinate(value, max, fromGroup) {
   value = value + (max/2);
   return value;
 };
+
+
+function getHash(item, dashboard, index, fromGroup) {
+  let modelType = getControlType(item);
+
+  if (modelType == "comment") return getCommentHash(item, dashboard, index, fromGroup);
+  else if (modelType == "group") return getGroupHash(item, dashboard, index, fromGroup);
+  return getControlHash(item, dashboard, index, fromGroup);
+}
 
 
 function getCommentHash(item, dashboard, index, fromGroup) {
@@ -102,15 +95,16 @@ function getCommentHash(item, dashboard, index, fromGroup) {
     }
   }
 
-  return commentHash;
+  return { data: commentHash, included: [] };
 }
 
 
 function getGroupHash(group, dashboard, index, fromGroup) {
   let id = "group-" + uuid();
   let includedData = [];
+  let controlRelationshipData = [];
 
-  let groupHash =  { 
+  let data =  { 
     "id": id, 
     "type": 'group', 
     "attributes": { 
@@ -129,51 +123,32 @@ function getGroupHash(group, dashboard, index, fromGroup) {
     }
   }
 
-  var controlRelationshipData = [];
 
   if (group.items) {
     group.items.forEach(function(item, index) {
-      let type = item.type;
-      let isGroup = (item.items != undefined);
-      let isComment = (item.text != undefined);
-      let hash = {};
+      let { data, included } = getHash(item, dashboard, index, true);
+      controlRelationshipData.push({ "id": data.id, "type": data.type });
+      includedData.push(data);
 
-      if (isGroup) {
-        let groupHash = getGroupHash(item, group, index, true);
-
-        controlRelationshipData.push({ "id": groupHash.hash.id, "type": groupHash.hash.type });
-        
-        groupHash.included.forEach(function(i) {
-          includedData.push(i);
-        });
-      } else if (isComment) {
-        hash = getCommentHash(item, group, index, true);
-        
-        controlRelationshipData.push({ "id": hash.id, "type": hash.type });
-        includedData.push(hash);
-      } else {
-        hash = getControlHash(item, group, true);
-
-        controlRelationshipData.push({ "id": hash.id, "type": hash.type });
-        includedData.push(hash);
-      }
+      included.forEach(function(i) {
+        includedData.push(i);
+      });
     });
-  }
-  
-  groupHash.relationships.controls.data = controlRelationshipData;
 
+    data.relationships.controls.data = controlRelationshipData;
+  }
   return {
-    hash: groupHash,
+    data: data,
     included: includedData
   };
 }
 
-function getControlHash(item, dashboard, fromGroup) {
-  // let id = dashboard.id + "-" + item.id; 
-  let id = uuid();
-  let type = getControlType(item);
 
-  let controlHash =  { 
+function getControlHash(item, dashboard, index, fromGroup) {
+  let type = getControlType(item);
+  let id = type + "-" + uuid();
+
+  let data =  { 
     "id": id, 
     "type":type, 
     "attributes": { 
@@ -192,56 +167,56 @@ function getControlHash(item, dashboard, fromGroup) {
   }
 
   if (type == "point2d-control") {
-    controlHash.attributes.value = item.value[0];
-    controlHash.attributes.value2 = item.value[1];
+    data.attributes.value = item.value[0];
+    data.attributes.value2 = item.value[1];
 
-    if (controlHash.attributes.minVal) {
-      controlHash.attributes.minVal = item.minVal[0];
-      controlHash.attributes.minVal2 = item.minVal[1];
+    if (data.attributes.minVal) {
+      data.attributes.minVal = item.minVal[0];
+      data.attributes.minVal2 = item.minVal[1];
     }
     
-    if (controlHash.attributes.maxVal) {
-      controlHash.attributes.maxVal = item.maxVal[0];
-      controlHash.attributes.maxVal2 = item.maxVal[1];
+    if (data.attributes.maxVal) {
+      data.attributes.maxVal = item.maxVal[0];
+      data.attributes.maxVal2 = item.maxVal[1];
     }
   }
 
   if (type == "point3d-control") {
-    controlHash.attributes.value = item.value[0];
-    controlHash.attributes.value2 = item.value[1];
-    controlHash.attributes.value3 = item.value[2];
+    data.attributes.value = item.value[0];
+    data.attributes.value2 = item.value[1];
+    data.attributes.value3 = item.value[2];
 
     if (item.minVal) {
-      controlHash.attributes.minVal = item.minVal[0];
-      controlHash.attributes.minVal2 = item.minVal[1];
-      controlHash.attributes.minVal3 = item.minVal[2];
+      data.attributes.minVal = item.minVal[0];
+      data.attributes.minVal2 = item.minVal[1];
+      data.attributes.minVal3 = item.minVal[2];
     }
     
     if (item.maxVal) {
-      controlHash.attributes.maxVal = item.maxVal[0];
-      controlHash.attributes.maxVal2 = item.maxVal[1];
-      controlHash.attributes.maxVal3 = item.maxVal[2];
+      data.attributes.maxVal = item.maxVal[0];
+      data.attributes.maxVal2 = item.maxVal[1];
+      data.attributes.maxVal3 = item.maxVal[2];
     }
   }
 
   if (type == "color-control") {
-    controlHash.attributes.red = item.value[0];
-    controlHash.attributes.green = item.value[1];
-    controlHash.attributes.blue = item.value[2];
-    controlHash.attributes.alpha = item.value[3];
+    data.attributes.red = item.value[0];
+    data.attributes.green = item.value[1];
+    data.attributes.blue = item.value[2];
+    data.attributes.alpha = item.value[3];
   }
 
   if (type == "enum-control") {
-    controlHash.attributes.value = item.value
+    data.attributes.value = item.value
 
     var options = item.options.map(function(o) {
       return o.key;
     });
 
-    controlHash.attributes.options = options;
+    data.attributes.options = options;
   }
 
-  return controlHash;
+  return { data: data, included: [] };
 }
 
 
@@ -267,6 +242,10 @@ function getControlType(item) {
           type = "color-control"; break;
     case "Enum":
           type = "enum-control"; break;
+    case "DashboardCommentItem":
+          type = "comment"; break;
+    case "DashboardGroupItem":
+          type = "group"; break;
     default:
       type = "control";
     }
