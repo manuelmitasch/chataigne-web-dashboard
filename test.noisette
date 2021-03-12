@@ -23,7 +23,7 @@
   "dashboardManager": {
     "parameters": [
       {
-        "value": false,
+        "value": true,
         "controlAddress": "/editMode"
       }
     ],
@@ -56,7 +56,7 @@
               "parameters": [
                 {
                   "value": [
-                    -399.0,
+                    -381.0,
                     -47.0
                   ],
                   "controlAddress": "/viewUIPosition"
@@ -74,10 +74,10 @@
                 },
                 {
                   "value": [
-                    0.800000011920929,
-                    0.800000011920929,
-                    0.800000011920929,
-                    1
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
                   ],
                   "controlAddress": "/textColor",
                   "enabled": false
@@ -85,17 +85,34 @@
                 {
                   "value": [
                     0.3803921639919281,
-                    0.3803921639919281,
-                    0.3803921639919281,
-                    1
+                    0.0,
+                    0.0,
+                    1.0
                   ],
                   "controlAddress": "/contourColor",
                   "enabled": false
                 },
                 {
-                  "value": "",
+                  "value": 13.09999084472656,
+                  "controlAddress": "/contourThickness"
+                },
+                {
+                  "value": true,
+                  "controlAddress": "/opaqueBackground"
+                },
+                {
+                  "value": "asdf",
                   "controlAddress": "/customText",
-                  "enabled": false
+                  "enabled": true
+                },
+                {
+                  "value": "asdfasdfd",
+                  "controlAddress": "/customDescription",
+                  "enabled": true
+                },
+                {
+                  "value": true,
+                  "controlAddress": "/showValue"
                 },
                 {
                   "value": [
@@ -105,17 +122,17 @@
                     1.0
                   ],
                   "controlAddress": "/backgroundColor",
-                  "enabled": true
+                  "enabled": false
                 },
                 {
                   "value": [
                     0.9215686321258545,
-                    0.9215686321258545,
-                    0.9215686321258545,
+                    0.0,
+                    0.0,
                     1.0
                   ],
                   "controlAddress": "/foregroundColor",
-                  "enabled": true
+                  "enabled": false
                 },
                 {
                   "value": "Default",
@@ -135,8 +152,8 @@
               "parameters": [
                 {
                   "value": [
-                    -373,
-                    -183
+                    -351.0,
+                    -182.0
                   ],
                   "controlAddress": "/viewUIPosition"
                 },
@@ -150,6 +167,44 @@
                 {
                   "value": true,
                   "controlAddress": "/showLabel"
+                },
+                {
+                  "value": [
+                    0.800000011920929,
+                    0.0,
+                    0.0,
+                    1.0
+                  ],
+                  "controlAddress": "/textColor",
+                  "enabled": false
+                },
+                {
+                  "value": [
+                    0.09411764889955521,
+                    0.0,
+                    1.0,
+                    1.0
+                  ],
+                  "controlAddress": "/contourColor",
+                  "enabled": true
+                },
+                {
+                  "value": 10.90000152587891,
+                  "controlAddress": "/contourThickness"
+                },
+                {
+                  "value": false,
+                  "controlAddress": "/opaqueBackground"
+                },
+                {
+                  "value": [
+                    0.3490196168422699,
+                    0.3490196168422699,
+                    0.3490196168422699,
+                    1.0
+                  ],
+                  "controlAddress": "/backgroundColor",
+                  "enabled": false
                 }
               ],
               "niceName": "Dashboard Item 4",
@@ -226,6 +281,30 @@
                   "controlAddress": "/showLabel"
                 },
                 {
+                  "value": [
+                    0.800000011920929,
+                    0.0,
+                    0.0,
+                    1.0
+                  ],
+                  "controlAddress": "/textColor",
+                  "enabled": true
+                },
+                {
+                  "value": [
+                    0.3803921639919281,
+                    0.0,
+                    0.0,
+                    1.0
+                  ],
+                  "controlAddress": "/contourColor",
+                  "enabled": true
+                },
+                {
+                  "value": 11.70000267028809,
+                  "controlAddress": "/contourThickness"
+                },
+                {
                   "value": "asdf",
                   "controlAddress": "/customText",
                   "enabled": false
@@ -236,10 +315,20 @@
                 },
                 {
                   "value": [
+                    0.3176470696926117,
+                    0.2862745225429535,
+                    0.0,
+                    1.0
+                  ],
+                  "controlAddress": "/backgroundColor",
+                  "enabled": false
+                },
+                {
+                  "value": [
                     0.7058823704719543,
-                    0,
-                    0,
-                    1
+                    0.0,
+                    0.0,
+                    1.0
                   ],
                   "controlAddress": "/foregroundColor",
                   "enabled": false
@@ -265,6 +354,30 @@
                     106
                   ],
                   "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": true,
+                  "controlAddress": "/showLabel"
+                },
+                {
+                  "value": [
+                    0.800000011920929,
+                    0.0,
+                    0.0,
+                    1.0
+                  ],
+                  "controlAddress": "/textColor",
+                  "enabled": false
+                },
+                {
+                  "value": [
+                    0.1372549086809158,
+                    0.0,
+                    0.9490196108818054,
+                    1.0
+                  ],
+                  "controlAddress": "/backgroundColor",
+                  "enabled": false
                 }
               ],
               "niceName": "Dashboard Item 3",
@@ -276,8 +389,8 @@
               "parameters": [
                 {
                   "value": [
-                    3,
-                    0
+                    3.0,
+                    0.0
                   ],
                   "controlAddress": "/viewUIPosition"
                 },
@@ -291,6 +404,26 @@
                 {
                   "value": true,
                   "controlAddress": "/showLabel"
+                },
+                {
+                  "value": [
+                    0.800000011920929,
+                    0.0,
+                    0.0,
+                    1.0
+                  ],
+                  "controlAddress": "/textColor",
+                  "enabled": false
+                },
+                {
+                  "value": [
+                    0.1333333402872086,
+                    0.0,
+                    0.0,
+                    1.0
+                  ],
+                  "controlAddress": "/backgroundColor",
+                  "enabled": false
                 }
               ],
               "niceName": "Dashboard Item 5",
@@ -319,8 +452,52 @@
                   "controlAddress": "/showLabel"
                 },
                 {
+                  "value": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                  ],
+                  "controlAddress": "/textColor",
+                  "enabled": true
+                },
+                {
+                  "value": [
+                    1.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ],
+                  "controlAddress": "/contourColor",
+                  "enabled": true
+                },
+                {
+                  "value": 8.999999046325684,
+                  "controlAddress": "/contourThickness"
+                },
+                {
                   "value": true,
                   "controlAddress": "/showValue"
+                },
+                {
+                  "value": [
+                    0.04313725605607033,
+                    0.0,
+                    1.0,
+                    1.0
+                  ],
+                  "controlAddress": "/backgroundColor",
+                  "enabled": true
+                },
+                {
+                  "value": [
+                    0.7058823704719543,
+                    0.0,
+                    0.0,
+                    1.0
+                  ],
+                  "controlAddress": "/foregroundColor",
+                  "enabled": true
                 }
               ],
               "niceName": "Dashboard Item 6",
@@ -343,6 +520,58 @@
                     40
                   ],
                   "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": true,
+                  "controlAddress": "/showLabel"
+                },
+                {
+                  "value": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                  ],
+                  "controlAddress": "/textColor",
+                  "enabled": true
+                },
+                {
+                  "value": [
+                    0.0,
+                    1.0,
+                    0.239215686917305,
+                    1.0
+                  ],
+                  "controlAddress": "/contourColor",
+                  "enabled": true
+                },
+                {
+                  "value": 6.299999713897705,
+                  "controlAddress": "/contourThickness"
+                },
+                {
+                  "value": false,
+                  "controlAddress": "/showValue"
+                },
+                {
+                  "value": [
+                    0.0470588244497776,
+                    0.0,
+                    0.6509804129600525,
+                    1.0
+                  ],
+                  "controlAddress": "/backgroundColor",
+                  "enabled": true
+                },
+                {
+                  "value": [
+                    0.0,
+                    1.0,
+                    0.9882352948188782,
+                    1.0
+                  ],
+                  "controlAddress": "/foregroundColor",
+                  "enabled": false
                 }
               ],
               "niceName": "Dashboard Item 8",
@@ -365,6 +594,50 @@
                     34
                   ],
                   "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": [
+                    0.800000011920929,
+                    0.0,
+                    0.0,
+                    1.0
+                  ],
+                  "controlAddress": "/textColor",
+                  "enabled": true
+                },
+                {
+                  "value": [
+                    0.105882354080677,
+                    0.0,
+                    0.3803921639919281,
+                    1.0
+                  ],
+                  "controlAddress": "/contourColor",
+                  "enabled": true
+                },
+                {
+                  "value": 5.699999809265137,
+                  "controlAddress": "/contourThickness"
+                },
+                {
+                  "value": [
+                    0.1411764770746231,
+                    0.7176470756530762,
+                    0.0,
+                    1.0
+                  ],
+                  "controlAddress": "/backgroundColor",
+                  "enabled": false
+                },
+                {
+                  "value": [
+                    0.7058823704719543,
+                    0.196078434586525,
+                    0.1294117718935013,
+                    1.0
+                  ],
+                  "controlAddress": "/foregroundColor",
+                  "enabled": false
                 }
               ],
               "niceName": "Dashboard Item 9",
@@ -387,6 +660,44 @@
                     56
                   ],
                   "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": true,
+                  "controlAddress": "/showLabel"
+                },
+                {
+                  "value": [
+                    0.800000011920929,
+                    0.0,
+                    0.0,
+                    1.0
+                  ],
+                  "controlAddress": "/textColor",
+                  "enabled": true
+                },
+                {
+                  "value": [
+                    0.0,
+                    0.3803921639919281,
+                    0.3450980484485626,
+                    1.0
+                  ],
+                  "controlAddress": "/contourColor",
+                  "enabled": true
+                },
+                {
+                  "value": 10.49999713897705,
+                  "controlAddress": "/contourThickness"
+                },
+                {
+                  "value": [
+                    0.2196078449487686,
+                    0.168627455830574,
+                    0.0,
+                    1.0
+                  ],
+                  "controlAddress": "/backgroundColor",
+                  "enabled": true
                 }
               ],
               "niceName": "Dashboard Item 10",
@@ -413,6 +724,26 @@
                 {
                   "value": true,
                   "controlAddress": "/showLabel"
+                },
+                {
+                  "value": [
+                    0.0,
+                    0.0470588244497776,
+                    0.800000011920929,
+                    1.0
+                  ],
+                  "controlAddress": "/textColor",
+                  "enabled": false
+                },
+                {
+                  "value": [
+                    0.0,
+                    0.1333333402872086,
+                    0.0313725508749485,
+                    1.0
+                  ],
+                  "controlAddress": "/backgroundColor",
+                  "enabled": false
                 }
               ],
               "niceName": "Dashboard Item 11",
@@ -424,8 +755,8 @@
               "parameters": [
                 {
                   "value": [
-                    -95,
-                    136
+                    -73.0,
+                    140.0
                   ],
                   "controlAddress": "/viewUIPosition"
                 },
@@ -457,6 +788,44 @@
                     35.0
                   ],
                   "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": true,
+                  "controlAddress": "/showLabel"
+                },
+                {
+                  "value": [
+                    0.800000011920929,
+                    0.0,
+                    0.0,
+                    1.0
+                  ],
+                  "controlAddress": "/textColor",
+                  "enabled": true
+                },
+                {
+                  "value": [
+                    0.0,
+                    0.3372549116611481,
+                    0.3803921639919281,
+                    1.0
+                  ],
+                  "controlAddress": "/contourColor",
+                  "enabled": true
+                },
+                {
+                  "value": 12.89999866485596,
+                  "controlAddress": "/contourThickness"
+                },
+                {
+                  "value": [
+                    0.0,
+                    0.0,
+                    0.1333333402872086,
+                    1.0
+                  ],
+                  "controlAddress": "/backgroundColor",
+                  "enabled": true
                 }
               ],
               "niceName": "Dashboard Item 13",
@@ -479,6 +848,54 @@
                     43
                   ],
                   "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": true,
+                  "controlAddress": "/showLabel"
+                },
+                {
+                  "value": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                  ],
+                  "controlAddress": "/textColor",
+                  "enabled": true
+                },
+                {
+                  "value": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                  ],
+                  "controlAddress": "/contourColor",
+                  "enabled": true
+                },
+                {
+                  "value": 5.300009250640869,
+                  "controlAddress": "/contourThickness"
+                },
+                {
+                  "value": [
+                    0.0,
+                    0.2823529541492462,
+                    0.294117659330368,
+                    1.0
+                  ],
+                  "controlAddress": "/backgroundColor",
+                  "enabled": true
+                },
+                {
+                  "value": [
+                    0.0,
+                    0.7058823704719543,
+                    0.007843137718737125,
+                    1.0
+                  ],
+                  "controlAddress": "/foregroundColor",
+                  "enabled": true
                 }
               ],
               "niceName": "Dashboard Item 14",
@@ -1114,21 +1531,21 @@
                 "Controls": {
                   "parameters": [
                     {
-                      "value": 0.7039999961853027,
+                      "value": 0.1650000065565109,
                       "controlAddress": "/Myfloat"
                     },
                     {
                       "value": [
-                        "0.536",
-                        "59.833"
+                        "0.758",
+                        "83.838"
                       ],
                       "controlAddress": "/Myxy"
                     },
                     {
                       "value": [
-                        0.2220000028610229,
-                        85.18499755859375,
-                        1.0
+                        0.5970000028610229,
+                        47.61899948120117,
+                        0.6240000128746033
                       ],
                       "controlAddress": "/My3d"
                     },
@@ -1137,7 +1554,7 @@
                       "controlAddress": "/Mytoggle"
                     },
                     {
-                      "value": "asdf",
+                      "value": "ADFC",
                       "controlAddress": "/Mystring"
                     },
                     {
@@ -1458,7 +1875,7 @@
             "controlAddress": "/totalTime"
           },
           {
-            "value": 35,
+            "value": 172,
             "hexMode": false,
             "controlAddress": "/fps"
           },
