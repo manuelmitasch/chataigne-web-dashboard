@@ -33,6 +33,11 @@
                 @max={{ @control.maxVal }}
                 
                 @step={{ this.step }} 
+
+                @fgColor={{ this.fgColorRgba }}
+                @bgColor={{ this.bgColorRgba }}
+                @textColor={{ this.args.control.textColorRgba }}
+                @mixBlendMode={{ this.args.control.mixBlendMode }}
                 
                 @onInput={{ this.input }} 
                 @onUpdate={{ this.update }} 
@@ -44,6 +49,7 @@
                     class="secondary time"
                     {{on "change" (fn this.input "time") }} 
                     {{on "change" this.update}} 
+                    {{ style this.customizeStyles }}
                 />
             {{else}}
                 <Input 
@@ -51,6 +57,7 @@
                     class="secondary" 
                     {{ on "change" this.input }} 
                     {{ on "change" this.update }} 
+                    {{ style this.customizeStyles }}
                 />
             {{/if}}
         {{/if}}

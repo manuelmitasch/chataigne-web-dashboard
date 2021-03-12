@@ -3,6 +3,15 @@
     @showLabel={{ false }}
 >
     <div class="clear"></div>
-    <button {{on "touchstart" this.update}} {{on "mousedown" this.update}} class="{{ if @control.triggered "triggered" }}">{{@control.label}}</button>
+    <button 
+        {{on "touchstart" this.update}} 
+        {{on "mousedown" this.update}} 
+        class="{{ if @control.triggered "triggered" }}"
+    >   
+        {{#if @control.showLabel }}
+            {{@control.label}}
+        {{/if}}
+    </button>
+
     {{yield}}
 </ControlContainer>

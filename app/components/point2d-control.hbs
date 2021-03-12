@@ -22,6 +22,11 @@
                 
                 @step={{ this.step }} 
                 
+                @fgColor={{ this.fgColorRgba }}
+                @bgColor={{ this.bgColorRgba }}
+                @textColor={{ this.args.control.textColorRgba }}
+                @mixBlendMode={{ this.args.control.mixBlendMode }}
+                
                 @onInput={{ this.input }} 
                 @onUpdate={{ this.update }} 
             />
@@ -31,6 +36,7 @@
                 class="secondary" 
                 {{ on "change" this.input }} 
                 {{ on "change" this.update }} 
+                {{ style this.customizeStyles }}
             />
         {{/if}}
         
@@ -41,6 +47,11 @@
 
                 @min={{ @control.minVal2 }}
                 @max={{ @control.maxVal2 }}
+
+                @fgColor={{ this.fgColorRgba }}
+                @bgColor={{ this.bgColorRgba }}
+                @textColor={{ this.args.control.textColorRgba }}
+                @mixBlendMode={{ this.args.control.mixBlendMode }}
                 
                 @step={{ this.step }} 
                 @class="no-top-margin"
@@ -54,6 +65,7 @@
                 class="secondary" 
                 {{ on "change" (fn this.input "2") }} 
                 {{ on "change" (fn this.update "2") }} 
+                {{ style this.customizeStyles }}
             />
         {{/if}}
     </div>

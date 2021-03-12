@@ -13,6 +13,8 @@ $thumb-d: 0em;
 		.js & {
 			background: linear-gradient($active, $active)
 				0/ var(--sx) 100% no-repeat $not-active;
+			background: linear-gradient(var(--fgColor), var(--fgColor))
+				0/ var(--sx) 100% no-repeat var(--bgColor);
 		}
 	}
 }

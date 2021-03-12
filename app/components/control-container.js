@@ -35,6 +35,28 @@ export default class ControlContainerComponent extends Component {
       return {}
     }
   }
+  
+  get customizeStyles() {
+    let control = this.args.control;
+    let styles = {
+      ...((control.bgColor) && { background: control.bgColorRgba }),
+      ...((control.textColor) && { color: control.textColorRgba }),
+      ...((control.textColor) && { mixBlendMode: "normal" }),
+      ...((control.contourColor) && { borderColor: control.contourColorRgba }),
+      ...((control.contourThickness) && { borderWidth: control.contourThickness/2 + "px" }),
+    };
+
+    return styles;
+  }
+    
+  get fontStyles() {
+    let control = this.args.control;
+    let styles = {
+      ...((control.textColor) && { color: control.textColorRgba }),
+    };
+
+    return styles;
+  }
 
   get showLabel() {
     return this.args.showLabel || !this.settings.displayLayout;

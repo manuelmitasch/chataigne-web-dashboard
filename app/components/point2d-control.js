@@ -59,5 +59,29 @@ export default class Point2DControlComponent extends ControlComponent {
   toggleCanvas() {
     this.showCanvas = !this.showCanvas;
   }
+
+  
+  get customizeStyles() {
+    let control = this.args.control;
+    let styles = {
+      ...((control.bgColor) && { background: control.bgColorRgba }),
+      ...((control.textColor) && { color: control.textColorRgba }),
+      ...((control.contourColor) && { borderColor: control.contourColorRgba }),
+      ...((control.contourThickness) && { borderWidth: control.contourThickness/2 + "px" }),
+    };
+
+    return styles;
+  }
+
+  
+  get fgColorRgba() {
+    if (this.args.control.fgColor) return this.args.control.fgColorRgba;
+    return "#7eb357";
+  }
+
+  get bgColorRgba() {
+      if (this.args.control.bgColor) return this.args.control.bgColorRgba;
+      return "#303030";
+  }
   
 }

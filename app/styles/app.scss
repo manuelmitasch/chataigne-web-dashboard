@@ -144,6 +144,8 @@ h1 {
         border: none;
         margin: 0;
         overflow: hidden;
+        border-style: solid;
+        border-width: 0;
     }
 
     label.control-label {
@@ -152,6 +154,8 @@ h1 {
         max-width: none;
         margin-right: 0px;
         color: #c0c0c057;
+        z-index: 30;
+        position: absolute;
     }
 
     .group {
@@ -183,6 +187,8 @@ h1 {
         width: 100%;
         height: 100%;
         background: $button-background;
+        color: silver;
+        font-size: 16px;
     }
 
     button:active {
@@ -190,7 +196,7 @@ h1 {
     }
 
     button.triggered {
-        background: orange;
+        background: #bd7a00;
     }
 
     .clear {
@@ -208,6 +214,8 @@ h1 {
         label.control-label {
             position: absolute;
             mix-blend-mode: color-dodge;
+            z-index: 20;
+            position: absolute;
         }
 
         input[type=range] {
@@ -251,8 +259,14 @@ h1 {
         background: none;
         padding: 0;
 
+        label.control-label {
+            mix-blend-mode: normal;
+        }
+
         input.secondary {
             background: $control-background;
+            border-style: solid;
+            border-width: 0;
         }
 
         .secondary-container {
@@ -462,7 +476,6 @@ h1 {
     .string-control {
         background: none;
         padding: 0;
-        border: none;
 
         label.control-label {
             padding: 5px;
@@ -481,7 +494,6 @@ h1 {
     .trigger-control {
         background: none;
         padding: 0;
-        border: none;
     }
 
     .boolean-control {
@@ -494,6 +506,7 @@ h1 {
             position: absolute;
             top: 0;
             right: 0;
+            border-style: none;
         }
     }
 
@@ -705,7 +718,7 @@ select:focus{
 }
 
 button.triggered {
-    background: orange !important;
+    background: #bd7a00 !important;
 }
 
 .canvas {
@@ -753,6 +766,10 @@ button.triggered {
     */
     -ms-user-select: none;
     user-select: none;
+}
+
+.normalMixBlendMode {
+    mix-blend-mode: normal !important;
 }
 
 .layout-toggle {

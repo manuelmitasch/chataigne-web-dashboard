@@ -9,13 +9,17 @@
         min={{@min}} 
         max={{@max}} 
         
-        style="--min: {{@min}}; --max: {{@max}}; --val: {{@value}};"
+        style="--min: {{@min}}; --max: {{@max}}; --val: {{@value}}; --fgColor: {{ @fgColor }}; --bgColor: {{ @bgColor }}"
         
         {{on "input" this.input}} 
         {{on "input" this.update}} 
     />
 
-    <label for={{ @name }} class="range-slider-label">
+    <label 
+        for={{ @name }} 
+        class="range-slider-label"
+        style="mix-blend-mode: {{ @mixBlendMode }}; color: {{ @textColor }}"
+    >
         {{#if @showLabel}}
             {{ @label }}: 
         {{/if}}

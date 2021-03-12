@@ -19,6 +19,11 @@
                 @max={{ @control.maxVal }}
                 
                 @step={{ this.step }} 
+
+                @fgColor={{ this.fgColorRgba }}
+                @bgColor={{ this.bgColorRgba }}
+                @textColor={{ this.args.control.textColorRgba }}
+                @mixBlendMode={{ this.args.control.mixBlendMode }}
                 
                 @onInput={{ this.input }} 
                 @onUpdate={{ this.update }} 
@@ -29,6 +34,7 @@
                 class="secondary" 
                 {{ on "change" this.input }} 
                 {{ on "change" this.update }} 
+                {{ style this.customizeStyles }}
             />
         {{/if}}
 
@@ -43,6 +49,11 @@
                 @step={{ this.step }} 
                 @class="no-top-margin"
                 
+                @fgColor={{ this.fgColorRgba }}
+                @bgColor={{ this.bgColorRgba }}
+                @textColor={{ this.args.control.textColorRgba }}
+                @mixBlendMode={{ this.args.control.mixBlendMode }}
+                
                 @onInput={{ fn this.input "2" }} 
                 @onUpdate={{ fn this.update "2" }} 
             />
@@ -53,6 +64,7 @@
                 class="secondary" 
                 {{ on "change" (fn this.input "2") }} 
                 {{ on "change" (fn this.update "2") }} 
+                {{ style this.customizeStyles }}
             />
         {{/if}}
 
@@ -67,6 +79,11 @@
                 @step={{ this.step }} 
                 @class="no-top-margin"
                 
+                @fgColor={{ this.fgColorRgba }}
+                @bgColor={{ this.bgColorRgba }}
+                @textColor={{ this.args.control.textColorRgba }}
+                @mixBlendMode={{ this.args.control.mixBlendMode }}
+                
                 @onInput={{ fn this.input "3" }} 
                 @onUpdate={{ fn this.update "3" }} 
             />
@@ -76,7 +93,8 @@
                 value={{ this.roundedValue3 }} 
                 class="secondary" 
                 {{ on "change" (fn this.input "3") }} 
-                {{ on "change" (fn this.update "3") }} 
+                {{ on "change" (fn this.update "3") }}                     
+                {{ style this.customizeStyles }}
             />
         {{/if}}
     </div>

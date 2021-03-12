@@ -152,14 +152,24 @@ function getControlHash(item, dashboard, index, fromGroup) {
     "type":type, 
     "attributes": { 
         "label": item.label, 
+        "showLabel": item.showLabel,
         "value": item.value, 
         "minVal": item.minVal, 
         "maxVal": item.maxVal,
         "controlAddress": item.controlAddress,
+
         "positionX": convertCoordinate(item.position[0], dashboard.size[0], fromGroup),
         "positionY": convertCoordinate(item.position[1], dashboard.size[1], fromGroup),
         "width": item.size[0],
         "height": item.size[1],
+
+        "textColor": item.textColor,
+        "bgColor": item.bgColor,
+        "fgColor": item.fgColor,
+        "contourColor": item.contourColor,
+        "contourThickness": item.contourThickness,
+        "opaqueBackground": item.opaqueBackground,
+
         "defaultUI": item.defaultUI,
         "style": item.style,
     }

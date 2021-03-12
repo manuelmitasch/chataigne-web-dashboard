@@ -14,4 +14,14 @@ export default class BooleanControlComponent extends ControlComponent {
     this.socket.sendFeedback(control.controlAddress, control.value);
     // control.save();
   }
+
+  get customizeStyles() {
+    let control = this.args.control;
+    let styles = {
+      ...((control.bgColor) && { background: control.bgColorRgba }),
+      ...((control.textColor) && { color: control.textColorRgba }),
+    };
+
+    return styles;
+  }
 }

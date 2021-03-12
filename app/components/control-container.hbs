@@ -1,8 +1,17 @@
-<div class="control {{ @extraClass }} {{ @control.modelName }} {{ if @control.hasAllRanges "" "no-range"}} {{ if @control.isVertical "vertical" ""}} {{ if @useWidthSplit "width-split" "" }}" {{ style this.positionStyles }}>
+<div class="control {{ @extraClass }} {{ @control.modelName }} {{ if @control.hasAllRanges "" "no-range"}} {{ if @control.isVertical "vertical" ""}} {{ if @useWidthSplit "width-split" "" }}"
+    {{ style this.positionStyles }}
+    {{ style this.customizeStyles }}
+>
     {{#if this.showLabel }}
-        <label for={{@control.id}} class="control-label unselectable">
-            {{@control.label}}
-        </label>
+        {{#if @control.showLabel }}
+            <label 
+                for={{@control.id}} 
+                class="control-label unselectable {{ if @control.textColor "normalMixBlendMode" "" }}"
+                {{ style this.fontStyles }}
+            >
+                {{@control.label}}
+            </label>
+        {{/if}}
     {{/if}}
 
     {{yield}}
