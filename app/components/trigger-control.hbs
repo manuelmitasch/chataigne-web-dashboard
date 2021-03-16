@@ -6,7 +6,7 @@
     <button 
         {{on "touchstart" this.update}} 
         {{on "mousedown" this.update}} 
-        class="{{ if @control.triggered "triggered" }}"
+        class="unselectable {{ if @control.triggered "triggered" }}"
         {{ style this.customizeStyles }}
     >   
         {{#if @control.showLabel }}

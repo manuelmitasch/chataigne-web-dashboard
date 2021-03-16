@@ -2,14 +2,14 @@
     <div class="menu">
         <button class="menu-close" {{ on "click" this.hideMenu}}></button>
         <h1>Settings</h1>
-        <ul class="settings">
-            <li class="unselectable {{ if this.fullscreen.isEnabled "enabled" "" }}">    
+        <ul class="settings unselectable">
+            <li class="{{ if this.fullscreen.isEnabled "enabled" "" }}">    
                 <a {{on "click" this.toggleFullscreen}}>Fullscreen</a>
             </li>
-            <li class="unselectable {{ if this.settings.displayLayout "enabled" "" }}">    
+            <li class="{{ if this.settings.displayLayout "enabled" "" }}">    
                 <a {{on "click" this.toggleDisplayLayout}}>Layout</a>
             </li>
-            <li class="unselectable {{ if this.settings.scaleLayout "enabled" "" }}">    
+            <li class="{{ if this.settings.scaleLayout "enabled" "" }}">    
                 <a {{on "click" this.toggleScaleLayout}}>Scale Layout</a>
             </li>
         </ul>
@@ -27,9 +27,9 @@
 
 
 <div class="wrapper-main {{ if this.settings.displayLayout "layout" "responsive" }}" {{did-resize this.onResize debounce=10}} {{did-insert this.onResize}}>
-    <ul class="dashboard-list">
+    <ul class="dashboard-list unselectable">
         {{#each @model as |dashboard|}}
-            <li class="unselectable">
+            <li>
                 <LinkTo @route="dashboard" @model={{dashboard}}>{{dashboard.name}}</LinkTo>
             </li>
         {{/each}}

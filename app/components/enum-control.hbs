@@ -7,6 +7,7 @@
         <select 
             {{on "change" this.update}} 
             {{ style this.customizeStyles }}
+            class="unselectable"
         >
             {{#each @control.options as |optionValue| }}
                 <option value={{optionValue}} selected={{ eq @control.value optionValue }}>{{optionValue}}</option>
