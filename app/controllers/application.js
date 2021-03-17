@@ -54,4 +54,21 @@ export default class ApplicationController extends Controller {
         this.settings.menuOpen = true;
     }
 
+    @computed("settings.dashboardScale", "settings.scaleLayout", "settings.displayLayout")
+    get scaleStyle() {
+        if (this.settings.displayLayout) {
+            let scale = this.settings.dashboardScale;
+
+            if (this.settings.scaleLayout) {
+                return {
+                    transformOrigin: 'top left',
+                    transform: 'scale(' + scale + ')'
+                }
+            } else {
+                return {}
+            }
+        } else {
+            return {}
+        }
+    }
 }

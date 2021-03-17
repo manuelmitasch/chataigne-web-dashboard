@@ -10,6 +10,7 @@ export default class SettingsService extends Service {
     @tracked menuOpen = false;
     @tracked viewWidth = 1920;
     @tracked viewHeight = 1080;    
+    @tracked dashboardScale = 1;
     @tracked appName = "Chataigne";
 
     init() {

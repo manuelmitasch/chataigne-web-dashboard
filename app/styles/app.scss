@@ -30,6 +30,12 @@ body {
     max-height: 100vh;
 }
 
+.wrapper-main.responsive {
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
 .menu {
     .logo {
         position: absolute;
@@ -46,20 +52,25 @@ body {
     margin: 5px;
     padding: 0;
     display: inline-block;
+    position: absolute;
+    z-index: 50;
 
     li {
         display: inline-block;
         margin-bottom: 5px;
+        margin-right: 1px;
         font-size: 0.7em;
 
         a {
-            padding: 5px;
+            padding: 10px;
             display: inline-block;
             color: black;
             text-decoration: none;
             background: $control-background;
             color: $font;
             border-radius: $radius;
+            height: 35px;
+            font-size: 14px;
         }
 
         a.active {
@@ -553,6 +564,7 @@ h1 {
 
 .dashboard.responsive {
     margin: 5px 5px 25px 5px;
+    padding-top: 50px;
 
     .clear {
         clear: both;

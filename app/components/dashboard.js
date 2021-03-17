@@ -7,7 +7,7 @@ export default class DashboardComponent extends Component {
     get sizeStyle() {
         if (this.settings.displayLayout) {
             let scaleWidth = this.settings.viewWidth / (this.args.dashboard.width);
-            let scaleHeight = (this.settings.viewHeight - 37) / (this.args.dashboard.height);
+            let scaleHeight = (this.settings.viewHeight) / (this.args.dashboard.height);
 
             let scale = (scaleWidth > scaleHeight) ? scaleHeight : scaleWidth;
 
