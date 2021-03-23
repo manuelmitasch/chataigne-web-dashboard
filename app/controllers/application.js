@@ -1,5 +1,6 @@
 import Controller from '@ember/controller';
 import { inject as service } from '@ember/service';
+import { inject as controller} from '@ember/controller';
 import { tracked } from '@glimmer/tracking';
 import { computed } from '@ember/object';
 import { action } from '@ember/object';
@@ -8,13 +9,15 @@ export default class ApplicationController extends Controller {
     @service('chataigne-websocket') socket
     @service('settings') settings
     @service('fullscreen') fullscreen
+    @controller('dashboard') dashboardController
+    @tracked loaded = false
 
     init() {
         super.init();
+        // this.socket.init();
     }
 
     get isConnected() {
-        return true;
         return this.socket.isConnected;
     }
 
@@ -42,6 +45,22 @@ export default class ApplicationController extends Controller {
     onResize(element) {
         this.settings.viewWidth = document.documentElement.clientWidth;
         this.settings.viewHeight = document.documentElement.clientHeight;
+
+        let selectedDashboard = this.dashboardController.model;
+        let scaleWidth = this.settings.viewWidth / (selectedDashboard.width);
+        let scaleHeight = (this.settings.viewHeight) / (selectedDashboard.height);
+
+        let scale = (scaleWidth > scaleHeight) ? scaleHeight : scaleWidth;
+        this.settings.dashboardScale = scale;
+    }
+
+    @action
+    removePreload() {
+        let self = this;
+
+        setTimeout(function() {
+            self.loaded = true;
+        }, 1000);
     }
 
     @action
@@ -54,7 +73,7 @@ export default class ApplicationController extends Controller {
         this.settings.menuOpen = true;
     }
 
-    @computed("settings.dashboardScale", "settings.scaleLayout", "settings.displayLayout")
+    @computed("settings.dashboardScale", "settings.scaleLayout", "settings.displayLayout", "settings.viewWidth", "settings.viewHeight")
     get scaleStyle() {
         if (this.settings.displayLayout) {
             let scale = this.settings.dashboardScale;

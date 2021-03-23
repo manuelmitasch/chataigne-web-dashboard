@@ -19,6 +19,10 @@ $button-background: #616161;
     box-sizing: border-box;
 }
 
+.preload * {
+    transition: none !important;
+}
+
 body {
     background: $background;
     color: $font;
@@ -54,7 +58,9 @@ body {
     display: inline-block;
     position: absolute;
     z-index: 50;
-    transition: transform 0.3s ease;
+
+    transform-origin: left top;
+    transition: transform 0.2s ease;
     
 
     li {
@@ -144,6 +150,9 @@ h1 {
     background: $container-background;
     border-radius: $radius;
     box-shadow: 0px 0px 10px #191919;
+
+    transform-origin: left top;
+    transition: transform 0.2s ease;
 
     h1 {
         text-align: right;

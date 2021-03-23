@@ -10,8 +10,8 @@ export default class DashboardRoute extends Route {
   
     afterModel(model, transition) {
       if (model == null) {
-          let firstDashboard = this.store.peekAll('dashboard').firstObject;
-          this.transitionTo('dashboard', firstDashboard);
+        let firstDashboard = this.store.peekAll('dashboard').firstObject;
+        this.transitionTo('dashboard', firstDashboard);
       } else {
         let scaleWidth = this.settings.viewWidth / (model.width);
         let scaleHeight = (this.settings.viewHeight) / (model.height);

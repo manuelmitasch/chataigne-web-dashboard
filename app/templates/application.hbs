@@ -26,7 +26,12 @@
 </div>
 
 
-<div class="wrapper-main {{ if this.settings.displayLayout "layout" "responsive" }}" {{did-resize this.onResize debounce=10}} {{did-insert this.onResize}}>
+<div 
+    class="wrapper-main {{ if this.settings.displayLayout "layout" "responsive" }} {{ if this.loaded "" "preload"}}" 
+    {{did-resize this.onResize debounce=10}} 
+    {{did-insert this.onResize}}
+    {{did-insert this.removePreload}}
+>
     <ul class="dashboard-list unselectable" {{ style this.scaleStyle}}>
         {{#each @model as |dashboard|}}
             <li>
