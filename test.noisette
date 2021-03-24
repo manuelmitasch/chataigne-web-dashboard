@@ -29,14 +29,23 @@
     ],
     "items": [
       {
+        "parameters": [
+          {
+            "value": [
+              20.0,
+              20.0
+            ],
+            "controlAddress": "/viewUIPosition"
+          }
+        ],
         "niceName": "Dashboard",
         "type": "BaseItem",
         "itemManager": {
           "parameters": [
             {
               "value": [
-                800,
-                500
+                800.0,
+                550.0
               ],
               "controlAddress": "/canvasSize",
               "enabled": true
@@ -56,8 +65,8 @@
               "parameters": [
                 {
                   "value": [
-                    -381.0,
-                    -47.0
+                    -380.0,
+                    -22.0
                   ],
                   "controlAddress": "/viewUIPosition"
                 },
@@ -152,8 +161,8 @@
               "parameters": [
                 {
                   "value": [
-                    -351.0,
-                    -182.0
+                    -350.0,
+                    -157.0
                   ],
                   "controlAddress": "/viewUIPosition"
                 },
@@ -186,7 +195,7 @@
                     1.0
                   ],
                   "controlAddress": "/contourColor",
-                  "enabled": true
+                  "enabled": false
                 },
                 {
                   "value": 10.90000152587891,
@@ -216,8 +225,8 @@
               "parameters": [
                 {
                   "value": [
-                    181,
-                    -183
+                    157.0,
+                    -165.0
                   ],
                   "controlAddress": "/viewUIPosition"
                 },
@@ -242,8 +251,8 @@
               "parameters": [
                 {
                   "value": [
-                    194,
-                    140
+                    195.0,
+                    165.0
                   ],
                   "controlAddress": "/viewUIPosition"
                 },
@@ -264,8 +273,8 @@
               "parameters": [
                 {
                   "value": [
-                    -141,
-                    -102
+                    -140.0,
+                    -77.0
                   ],
                   "controlAddress": "/viewUIPosition"
                 },
@@ -288,7 +297,7 @@
                     1.0
                   ],
                   "controlAddress": "/textColor",
-                  "enabled": true
+                  "enabled": false
                 },
                 {
                   "value": [
@@ -298,7 +307,7 @@
                     1.0
                   ],
                   "controlAddress": "/contourColor",
-                  "enabled": true
+                  "enabled": false
                 },
                 {
                   "value": 11.70000267028809,
@@ -343,8 +352,8 @@
               "parameters": [
                 {
                   "value": [
-                    -389.0,
-                    80.0
+                    -388.0,
+                    105.0
                   ],
                   "controlAddress": "/viewUIPosition"
                 },
@@ -389,8 +398,8 @@
               "parameters": [
                 {
                   "value": [
-                    3.0,
-                    0.0
+                    4.0,
+                    25.0
                   ],
                   "controlAddress": "/viewUIPosition"
                 },
@@ -435,8 +444,8 @@
               "parameters": [
                 {
                   "value": [
-                    -73.0,
-                    -243.0
+                    -72.0,
+                    -218.0
                   ],
                   "controlAddress": "/viewUIPosition"
                 },
@@ -459,7 +468,7 @@
                     1.0
                   ],
                   "controlAddress": "/textColor",
-                  "enabled": true
+                  "enabled": false
                 },
                 {
                   "value": [
@@ -469,7 +478,7 @@
                     1.0
                   ],
                   "controlAddress": "/contourColor",
-                  "enabled": true
+                  "enabled": false
                 },
                 {
                   "value": 8.999999046325684,
@@ -487,7 +496,7 @@
                     1.0
                   ],
                   "controlAddress": "/backgroundColor",
-                  "enabled": true
+                  "enabled": false
                 },
                 {
                   "value": [
@@ -497,7 +506,7 @@
                     1.0
                   ],
                   "controlAddress": "/foregroundColor",
-                  "enabled": true
+                  "enabled": false
                 }
               ],
               "niceName": "Dashboard Item 6",
@@ -509,8 +518,8 @@
               "parameters": [
                 {
                   "value": [
-                    -373,
-                    -102
+                    -372.0,
+                    -77.0
                   ],
                   "controlAddress": "/viewUIPosition"
                 },
@@ -533,7 +542,7 @@
                     1.0
                   ],
                   "controlAddress": "/textColor",
-                  "enabled": true
+                  "enabled": false
                 },
                 {
                   "value": [
@@ -543,7 +552,7 @@
                     1.0
                   ],
                   "controlAddress": "/contourColor",
-                  "enabled": true
+                  "enabled": false
                 },
                 {
                   "value": 6.299999713897705,
@@ -561,7 +570,7 @@
                     1.0
                   ],
                   "controlAddress": "/backgroundColor",
-                  "enabled": true
+                  "enabled": false
                 },
                 {
                   "value": [
@@ -583,8 +592,8 @@
               "parameters": [
                 {
                   "value": [
-                    83,
-                    -123
+                    84.0,
+                    -98.0
                   ],
                   "controlAddress": "/viewUIPosition"
                 },
@@ -603,7 +612,7 @@
                     1.0
                   ],
                   "controlAddress": "/textColor",
-                  "enabled": true
+                  "enabled": false
                 },
                 {
                   "value": [
@@ -613,7 +622,7 @@
                     1.0
                   ],
                   "controlAddress": "/contourColor",
-                  "enabled": true
+                  "enabled": false
                 },
                 {
                   "value": 5.699999809265137,
@@ -649,8 +658,8 @@
               "parameters": [
                 {
                   "value": [
-                    83,
-                    -79
+                    84.0,
+                    -54.0
                   ],
                   "controlAddress": "/viewUIPosition"
                 },
@@ -673,7 +682,7 @@
                     1.0
                   ],
                   "controlAddress": "/textColor",
-                  "enabled": true
+                  "enabled": false
                 },
                 {
                   "value": [
@@ -683,7 +692,7 @@
                     1.0
                   ],
                   "controlAddress": "/contourColor",
-                  "enabled": true
+                  "enabled": false
                 },
                 {
                   "value": 10.49999713897705,
@@ -697,7 +706,7 @@
                     1.0
                   ],
                   "controlAddress": "/backgroundColor",
-                  "enabled": true
+                  "enabled": false
                 }
               ],
               "niceName": "Dashboard Item 10",
@@ -709,8 +718,8 @@
               "parameters": [
                 {
                   "value": [
-                    1,
-                    60
+                    2.0,
+                    85.0
                   ],
                   "controlAddress": "/viewUIPosition"
                 },
@@ -755,8 +764,8 @@
               "parameters": [
                 {
                   "value": [
-                    -73.0,
-                    140.0
+                    -72.0,
+                    165.0
                   ],
                   "controlAddress": "/viewUIPosition"
                 },
@@ -777,15 +786,15 @@
               "parameters": [
                 {
                   "value": [
-                    -373.0,
-                    215.0
+                    -372.0,
+                    241.0
                   ],
                   "controlAddress": "/viewUIPosition"
                 },
                 {
                   "value": [
-                    422.0,
-                    35.0
+                    405.0,
+                    38.0
                   ],
                   "controlAddress": "/viewUISize"
                 },
@@ -801,7 +810,7 @@
                     1.0
                   ],
                   "controlAddress": "/textColor",
-                  "enabled": true
+                  "enabled": false
                 },
                 {
                   "value": [
@@ -811,7 +820,7 @@
                     1.0
                   ],
                   "controlAddress": "/contourColor",
-                  "enabled": true
+                  "enabled": false
                 },
                 {
                   "value": 12.89999866485596,
@@ -825,7 +834,7 @@
                     1.0
                   ],
                   "controlAddress": "/backgroundColor",
-                  "enabled": true
+                  "enabled": false
                 }
               ],
               "niceName": "Dashboard Item 13",
@@ -837,8 +846,8 @@
               "parameters": [
                 {
                   "value": [
-                    -373,
-                    -243
+                    -372.0,
+                    -218.0
                   ],
                   "controlAddress": "/viewUIPosition"
                 },
@@ -861,7 +870,7 @@
                     1.0
                   ],
                   "controlAddress": "/textColor",
-                  "enabled": true
+                  "enabled": false
                 },
                 {
                   "value": [
@@ -871,7 +880,7 @@
                     1.0
                   ],
                   "controlAddress": "/contourColor",
-                  "enabled": true
+                  "enabled": false
                 },
                 {
                   "value": 5.300009250640869,
@@ -885,7 +894,7 @@
                     1.0
                   ],
                   "controlAddress": "/backgroundColor",
-                  "enabled": true
+                  "enabled": false
                 },
                 {
                   "value": [
@@ -895,7 +904,7 @@
                     1.0
                   ],
                   "controlAddress": "/foregroundColor",
-                  "enabled": true
+                  "enabled": false
                 }
               ],
               "niceName": "Dashboard Item 14",
@@ -907,8 +916,8 @@
               "parameters": [
                 {
                   "value": [
-                    -163.0,
-                    20.0
+                    -162.0,
+                    45.0
                   ],
                   "controlAddress": "/viewUIPosition"
                 },
@@ -986,8 +995,8 @@
               "parameters": [
                 {
                   "value": [
-                    94.0,
-                    -243.0
+                    95.0,
+                    -218.0
                   ],
                   "controlAddress": "/viewUIPosition"
                 },
@@ -1016,8 +1025,8 @@
               "parameters": [
                 {
                   "value": [
-                    211.0,
-                    -243.0
+                    212.0,
+                    -218.0
                   ],
                   "controlAddress": "/viewUIPosition"
                 },
@@ -1046,8 +1055,8 @@
               "parameters": [
                 {
                   "value": [
-                    -52.0,
-                    -183.0
+                    -51.0,
+                    -158.0
                   ],
                   "controlAddress": "/viewUIPosition"
                 },
@@ -1077,6 +1086,1053 @@
         "editing": true
       },
       {
+        "niceName": "Dashboard Styled",
+        "type": "BaseItem",
+        "itemManager": {
+          "parameters": [
+            {
+              "value": [
+                800.0,
+                550.0
+              ],
+              "controlAddress": "/canvasSize",
+              "enabled": true
+            },
+            {
+              "value": "",
+              "controlAddress": "/backroundImage"
+            },
+            {
+              "value": 1.956722617149353,
+              "controlAddress": "/backgroundImageScale"
+            }
+          ],
+          "editorIsCollapsed": true,
+          "items": [
+            {
+              "parameters": [
+                {
+                  "value": [
+                    -379.0,
+                    -22.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    400,
+                    50
+                  ],
+                  "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": true,
+                  "controlAddress": "/showLabel"
+                },
+                {
+                  "value": [
+                    0.01568627543747425,
+                    0.0,
+                    1.0,
+                    1.0
+                  ],
+                  "controlAddress": "/textColor",
+                  "enabled": true
+                },
+                {
+                  "value": [
+                    0.9686274528503418,
+                    1.0,
+                    0.0,
+                    1.0
+                  ],
+                  "controlAddress": "/contourColor",
+                  "enabled": true
+                },
+                {
+                  "value": 13.09999084472656,
+                  "controlAddress": "/contourThickness"
+                },
+                {
+                  "value": true,
+                  "controlAddress": "/opaqueBackground"
+                },
+                {
+                  "value": "asdf",
+                  "controlAddress": "/customText",
+                  "enabled": true
+                },
+                {
+                  "value": "asdfasdfd",
+                  "controlAddress": "/customDescription",
+                  "enabled": true
+                },
+                {
+                  "value": true,
+                  "controlAddress": "/showValue"
+                },
+                {
+                  "value": [
+                    1.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ],
+                  "controlAddress": "/backgroundColor",
+                  "enabled": true
+                },
+                {
+                  "value": [
+                    0.9215686321258545,
+                    0.0,
+                    0.0,
+                    1.0
+                  ],
+                  "controlAddress": "/foregroundColor",
+                  "enabled": false
+                },
+                {
+                  "value": "Default",
+                  "controlAddress": "/style"
+                },
+                {
+                  "value": "",
+                  "controlAddress": "/toggleImage"
+                }
+              ],
+              "niceName": "Dashboard Item",
+              "type": "DashboardParameterItem",
+              "ghostAddress": "/modules/oSCQuery/values/my_effect/Controls/Myfloat",
+              "controllable": "/modules/oSCQuery/values/my_effect/Controls/Myfloat"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    -349.0,
+                    -157.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    200,
+                    50
+                  ],
+                  "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": true,
+                  "controlAddress": "/showLabel"
+                },
+                {
+                  "value": [
+                    0.800000011920929,
+                    0.0,
+                    0.0,
+                    1.0
+                  ],
+                  "controlAddress": "/textColor",
+                  "enabled": false
+                },
+                {
+                  "value": [
+                    0.09411764889955521,
+                    0.0,
+                    1.0,
+                    1.0
+                  ],
+                  "controlAddress": "/contourColor",
+                  "enabled": true
+                },
+                {
+                  "value": 10.90000152587891,
+                  "controlAddress": "/contourThickness"
+                },
+                {
+                  "value": false,
+                  "controlAddress": "/opaqueBackground"
+                },
+                {
+                  "value": [
+                    0.3490196168422699,
+                    0.3490196168422699,
+                    0.3490196168422699,
+                    1.0
+                  ],
+                  "controlAddress": "/backgroundColor",
+                  "enabled": false
+                }
+              ],
+              "niceName": "Dashboard Item 4",
+              "type": "DashboardTriggerItem",
+              "ghostAddress": "/modules/oSCQuery/values/my_effect/Controls/Mypulse",
+              "controllable": "/modules/oSCQuery/values/my_effect/Controls/Mypulse"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    183.0,
+                    -158.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    200,
+                    50
+                  ],
+                  "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": true,
+                  "controlAddress": "/showLabel"
+                }
+              ],
+              "niceName": "Dashboard Item 7",
+              "type": "DashboardParameterItem",
+              "ghostAddress": "/modules/oSCQuery/values/my_effect/Controls/Mycolor",
+              "controllable": "/modules/oSCQuery/values/my_effect/Controls/Mycolor"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    196.0,
+                    165.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    172,
+                    66
+                  ],
+                  "controlAddress": "/viewUISize"
+                }
+              ],
+              "niceName": "Dashboard Item 1",
+              "type": "DashboardParameterItem",
+              "ghostAddress": "/modules/oSCQuery/values/my_effect/Controls/Mymenu",
+              "controllable": "/modules/oSCQuery/values/my_effect/Controls/Mymenu"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    -139.0,
+                    -77.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    142,
+                    45
+                  ],
+                  "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": true,
+                  "controlAddress": "/showLabel"
+                },
+                {
+                  "value": [
+                    0.800000011920929,
+                    0.0,
+                    0.0,
+                    1.0
+                  ],
+                  "controlAddress": "/textColor",
+                  "enabled": true
+                },
+                {
+                  "value": [
+                    0.3803921639919281,
+                    0.0,
+                    0.0,
+                    1.0
+                  ],
+                  "controlAddress": "/contourColor",
+                  "enabled": true
+                },
+                {
+                  "value": 11.70000267028809,
+                  "controlAddress": "/contourThickness"
+                },
+                {
+                  "value": "asdf",
+                  "controlAddress": "/customText",
+                  "enabled": false
+                },
+                {
+                  "value": true,
+                  "controlAddress": "/showValue"
+                },
+                {
+                  "value": [
+                    0.3176470696926117,
+                    0.2862745225429535,
+                    0.0,
+                    1.0
+                  ],
+                  "controlAddress": "/backgroundColor",
+                  "enabled": false
+                },
+                {
+                  "value": [
+                    0.7058823704719543,
+                    0.0,
+                    0.0,
+                    1.0
+                  ],
+                  "controlAddress": "/foregroundColor",
+                  "enabled": false
+                }
+              ],
+              "niceName": "Dashboard Item 2",
+              "type": "DashboardParameterItem",
+              "ghostAddress": "/modules/osc/values/_example",
+              "controllable": "/modules/osc/values/_example"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    -387.0,
+                    105.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    200,
+                    106
+                  ],
+                  "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": true,
+                  "controlAddress": "/showLabel"
+                },
+                {
+                  "value": [
+                    0.800000011920929,
+                    0.0,
+                    0.0,
+                    1.0
+                  ],
+                  "controlAddress": "/textColor",
+                  "enabled": false
+                },
+                {
+                  "value": [
+                    0.1372549086809158,
+                    0.0,
+                    0.9490196108818054,
+                    1.0
+                  ],
+                  "controlAddress": "/backgroundColor",
+                  "enabled": false
+                }
+              ],
+              "niceName": "Dashboard Item 3",
+              "type": "DashboardParameterItem",
+              "ghostAddress": "/modules/oSCQuery/values/my_effect/Controls/Myxy",
+              "controllable": "/modules/oSCQuery/values/my_effect/Controls/Myxy"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    5.0,
+                    25.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    378,
+                    50
+                  ],
+                  "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": true,
+                  "controlAddress": "/showLabel"
+                },
+                {
+                  "value": [
+                    0.800000011920929,
+                    0.0,
+                    0.0,
+                    1.0
+                  ],
+                  "controlAddress": "/textColor",
+                  "enabled": false
+                },
+                {
+                  "value": [
+                    0.1333333402872086,
+                    0.0,
+                    0.0,
+                    1.0
+                  ],
+                  "controlAddress": "/backgroundColor",
+                  "enabled": false
+                }
+              ],
+              "niceName": "Dashboard Item 5",
+              "type": "DashboardParameterItem",
+              "ghostAddress": "/modules/oSCQuery/values/my_effect/Controls/My3d",
+              "controllable": "/modules/oSCQuery/values/my_effect/Controls/My3d"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    -71.0,
+                    -218.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    157.0,
+                    51.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": true,
+                  "controlAddress": "/showLabel"
+                },
+                {
+                  "value": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                  ],
+                  "controlAddress": "/textColor",
+                  "enabled": true
+                },
+                {
+                  "value": [
+                    1.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ],
+                  "controlAddress": "/contourColor",
+                  "enabled": true
+                },
+                {
+                  "value": 8.999999046325684,
+                  "controlAddress": "/contourThickness"
+                },
+                {
+                  "value": true,
+                  "controlAddress": "/showValue"
+                },
+                {
+                  "value": [
+                    0.04313725605607033,
+                    0.0,
+                    1.0,
+                    1.0
+                  ],
+                  "controlAddress": "/backgroundColor",
+                  "enabled": true
+                },
+                {
+                  "value": [
+                    0.7058823704719543,
+                    0.0,
+                    0.0,
+                    1.0
+                  ],
+                  "controlAddress": "/foregroundColor",
+                  "enabled": true
+                }
+              ],
+              "niceName": "Dashboard Item 6",
+              "type": "DashboardParameterItem",
+              "ghostAddress": "/modules/oSCQuery/values/my_effect/Controls/Mytoggle",
+              "controllable": "/modules/oSCQuery/values/my_effect/Controls/Mytoggle"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    -371.0,
+                    -77.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    200,
+                    40
+                  ],
+                  "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": true,
+                  "controlAddress": "/showLabel"
+                },
+                {
+                  "value": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                  ],
+                  "controlAddress": "/textColor",
+                  "enabled": true
+                },
+                {
+                  "value": [
+                    0.0,
+                    1.0,
+                    0.239215686917305,
+                    1.0
+                  ],
+                  "controlAddress": "/contourColor",
+                  "enabled": true
+                },
+                {
+                  "value": 6.299999713897705,
+                  "controlAddress": "/contourThickness"
+                },
+                {
+                  "value": false,
+                  "controlAddress": "/showValue"
+                },
+                {
+                  "value": [
+                    0.0470588244497776,
+                    0.0,
+                    0.6509804129600525,
+                    1.0
+                  ],
+                  "controlAddress": "/backgroundColor",
+                  "enabled": true
+                },
+                {
+                  "value": [
+                    0.0,
+                    1.0,
+                    0.9882352948188782,
+                    1.0
+                  ],
+                  "controlAddress": "/foregroundColor",
+                  "enabled": false
+                }
+              ],
+              "niceName": "Dashboard Item 8",
+              "type": "DashboardParameterItem",
+              "ghostAddress": "/modules/oSCQuery/values/my_effect/Controls/Mystring",
+              "controllable": "/modules/oSCQuery/values/my_effect/Controls/Mystring"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    85.0,
+                    -98.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    298,
+                    34
+                  ],
+                  "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": [
+                    0.800000011920929,
+                    0.0,
+                    0.0,
+                    1.0
+                  ],
+                  "controlAddress": "/textColor",
+                  "enabled": true
+                },
+                {
+                  "value": [
+                    0.105882354080677,
+                    0.0,
+                    0.3803921639919281,
+                    1.0
+                  ],
+                  "controlAddress": "/contourColor",
+                  "enabled": true
+                },
+                {
+                  "value": 5.699999809265137,
+                  "controlAddress": "/contourThickness"
+                },
+                {
+                  "value": [
+                    0.1411764770746231,
+                    0.7176470756530762,
+                    0.0,
+                    1.0
+                  ],
+                  "controlAddress": "/backgroundColor",
+                  "enabled": false
+                },
+                {
+                  "value": [
+                    0.7058823704719543,
+                    0.196078434586525,
+                    0.1294117718935013,
+                    1.0
+                  ],
+                  "controlAddress": "/foregroundColor",
+                  "enabled": false
+                }
+              ],
+              "niceName": "Dashboard Item 9",
+              "type": "DashboardParameterItem",
+              "ghostAddress": "/modules/osc/values/_example2d",
+              "controllable": "/modules/osc/values/_example2d"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    85.0,
+                    -54.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    298,
+                    56
+                  ],
+                  "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": true,
+                  "controlAddress": "/showLabel"
+                },
+                {
+                  "value": [
+                    0.800000011920929,
+                    0.0,
+                    0.0,
+                    1.0
+                  ],
+                  "controlAddress": "/textColor",
+                  "enabled": true
+                },
+                {
+                  "value": [
+                    0.0,
+                    0.3803921639919281,
+                    0.3450980484485626,
+                    1.0
+                  ],
+                  "controlAddress": "/contourColor",
+                  "enabled": true
+                },
+                {
+                  "value": 10.49999713897705,
+                  "controlAddress": "/contourThickness"
+                },
+                {
+                  "value": [
+                    0.2196078449487686,
+                    0.168627455830574,
+                    0.0,
+                    1.0
+                  ],
+                  "controlAddress": "/backgroundColor",
+                  "enabled": true
+                }
+              ],
+              "niceName": "Dashboard Item 10",
+              "type": "DashboardParameterItem",
+              "ghostAddress": "/modules/osc/values/_example2d",
+              "controllable": "/modules/osc/values/_example2d"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    3.0,
+                    85.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    380,
+                    66
+                  ],
+                  "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": true,
+                  "controlAddress": "/showLabel"
+                },
+                {
+                  "value": [
+                    0.0,
+                    0.0470588244497776,
+                    0.800000011920929,
+                    1.0
+                  ],
+                  "controlAddress": "/textColor",
+                  "enabled": false
+                },
+                {
+                  "value": [
+                    0.0,
+                    0.1333333402872086,
+                    0.0313725508749485,
+                    1.0
+                  ],
+                  "controlAddress": "/backgroundColor",
+                  "enabled": false
+                }
+              ],
+              "niceName": "Dashboard Item 11",
+              "type": "DashboardParameterItem",
+              "ghostAddress": "/modules/oSCQuery/values/my_effect/Controls/My3d",
+              "controllable": "/modules/oSCQuery/values/my_effect/Controls/My3d"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    -71.0,
+                    165.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    200,
+                    50
+                  ],
+                  "controlAddress": "/viewUISize"
+                }
+              ],
+              "niceName": "Dashboard Item 12",
+              "type": "DashboardParameterItem",
+              "ghostAddress": "/sequences/sequence/fps",
+              "controllable": "/sequences/sequence/fps"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    -371.0,
+                    240.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    422.0,
+                    35.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": true,
+                  "controlAddress": "/showLabel"
+                },
+                {
+                  "value": [
+                    0.800000011920929,
+                    0.0,
+                    0.0,
+                    1.0
+                  ],
+                  "controlAddress": "/textColor",
+                  "enabled": true
+                },
+                {
+                  "value": [
+                    0.0,
+                    0.3372549116611481,
+                    0.3803921639919281,
+                    1.0
+                  ],
+                  "controlAddress": "/contourColor",
+                  "enabled": true
+                },
+                {
+                  "value": 12.89999866485596,
+                  "controlAddress": "/contourThickness"
+                },
+                {
+                  "value": [
+                    0.0,
+                    0.0,
+                    0.1333333402872086,
+                    1.0
+                  ],
+                  "controlAddress": "/backgroundColor",
+                  "enabled": true
+                }
+              ],
+              "niceName": "Dashboard Item 13",
+              "type": "DashboardParameterItem",
+              "ghostAddress": "/modules/osc/values/_example3donly2ranges",
+              "controllable": "/modules/osc/values/_example3donly2ranges"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    -371.0,
+                    -218.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    277,
+                    43
+                  ],
+                  "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": true,
+                  "controlAddress": "/showLabel"
+                },
+                {
+                  "value": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                  ],
+                  "controlAddress": "/textColor",
+                  "enabled": true
+                },
+                {
+                  "value": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                  ],
+                  "controlAddress": "/contourColor",
+                  "enabled": true
+                },
+                {
+                  "value": 5.300009250640869,
+                  "controlAddress": "/contourThickness"
+                },
+                {
+                  "value": [
+                    0.0,
+                    0.2823529541492462,
+                    0.294117659330368,
+                    1.0
+                  ],
+                  "controlAddress": "/backgroundColor",
+                  "enabled": true
+                },
+                {
+                  "value": [
+                    0.0,
+                    0.7058823704719543,
+                    0.007843137718737125,
+                    1.0
+                  ],
+                  "controlAddress": "/foregroundColor",
+                  "enabled": true
+                }
+              ],
+              "niceName": "Dashboard Item 14",
+              "type": "DashboardParameterItem",
+              "ghostAddress": "/sequences/sequence/layers/mapping/recordSendMode",
+              "controllable": "/sequences/sequence/layers/mapping/recordSendMode"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    -161.0,
+                    45.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    40.0,
+                    160.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": true,
+                  "controlAddress": "/showLabel"
+                },
+                {
+                  "value": [
+                    0.800000011920929,
+                    0.800000011920929,
+                    0.800000011920929,
+                    1
+                  ],
+                  "controlAddress": "/textColor",
+                  "enabled": false
+                },
+                {
+                  "value": [
+                    0.3803921639919281,
+                    0.3803921639919281,
+                    0.3803921639919281,
+                    1
+                  ],
+                  "controlAddress": "/contourColor",
+                  "enabled": false
+                },
+                {
+                  "value": "",
+                  "controlAddress": "/customText",
+                  "enabled": false
+                },
+                {
+                  "value": [
+                    0.1333333402872086,
+                    0.1333333402872086,
+                    0.1333333402872086,
+                    1
+                  ],
+                  "controlAddress": "/backgroundColor",
+                  "enabled": false
+                },
+                {
+                  "value": [
+                    0.9215686274509803,
+                    0,
+                    0,
+                    1
+                  ],
+                  "controlAddress": "/foregroundColor",
+                  "enabled": false
+                },
+                {
+                  "value": "Vertical Slider",
+                  "controlAddress": "/style"
+                },
+                {
+                  "value": "",
+                  "controlAddress": "/toggleImage"
+                }
+              ],
+              "niceName": "Dashboard Item 15",
+              "type": "DashboardParameterItem",
+              "ghostAddress": "/modules/oSCQuery/values/my_effect/Controls/Myfloat",
+              "controllable": "/modules/oSCQuery/values/my_effect/Controls/Myfloat"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    96.0,
+                    -218.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    96.0,
+                    26.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": true,
+                  "controlAddress": "/showLabel"
+                },
+                {
+                  "value": true,
+                  "controlAddress": "/showValue"
+                }
+              ],
+              "niceName": "Dashboard Item 16",
+              "type": "DashboardParameterItem",
+              "ghostAddress": "/modules/oSCQuery/values/my_effect/Controls/Mytoggle",
+              "controllable": "/modules/oSCQuery/values/my_effect/Controls/Mytoggle"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    213.0,
+                    -218.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    45.0,
+                    26.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": true,
+                  "controlAddress": "/showLabel"
+                },
+                {
+                  "value": true,
+                  "controlAddress": "/showValue"
+                }
+              ],
+              "niceName": "Dashboard Item 17",
+              "type": "DashboardParameterItem",
+              "ghostAddress": "/modules/oSCQuery/values/my_effect/Controls/Mytoggle",
+              "controllable": "/modules/oSCQuery/values/my_effect/Controls/Mytoggle"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    -50.0,
+                    -158.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    71.0,
+                    51.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": true,
+                  "controlAddress": "/showLabel"
+                },
+                {
+                  "value": true,
+                  "controlAddress": "/showValue"
+                }
+              ],
+              "niceName": "Dashboard Item 18",
+              "type": "DashboardParameterItem",
+              "ghostAddress": "/modules/oSCQuery/values/my_effect/Controls/Mytoggle",
+              "controllable": "/modules/oSCQuery/values/my_effect/Controls/Mytoggle"
+            }
+          ]
+        }
+      },
+      {
         "niceName": "Dashboard 1",
         "type": "BaseItem",
         "itemManager": {
@@ -1100,8 +2156,8 @@
               "parameters": [
                 {
                   "value": [
-                    -371,
-                    -86
+                    -371.0,
+                    -35.0
                   ],
                   "controlAddress": "/viewUIPosition"
                 },
@@ -1134,8 +2190,8 @@
               "parameters": [
                 {
                   "value": [
-                    -371,
-                    -175
+                    -371.0,
+                    -124.0
                   ],
                   "controlAddress": "/viewUIPosition"
                 },
@@ -1156,8 +2212,8 @@
               "parameters": [
                 {
                   "value": [
-                    -141,
-                    -175
+                    -141.0,
+                    -124.0
                   ],
                   "controlAddress": "/viewUIPosition"
                 },
@@ -1173,6 +2229,116 @@
               "type": "DashboardTriggerItem",
               "ghostAddress": "/sequences/sequence/stop",
               "controllable": "/sequences/sequence/stop"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    -344.0,
+                    75.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    57.0,
+                    15.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                }
+              ],
+              "niceName": "Dashboard Item 3",
+              "type": "DashboardTriggerItem",
+              "ghostAddress": "/sequences/sequence/togglePlay",
+              "controllable": "/sequences/sequence/togglePlay"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    -256.0,
+                    75.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    85.0,
+                    25.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                }
+              ],
+              "niceName": "Dashboard Item 4",
+              "type": "DashboardTriggerItem",
+              "ghostAddress": "/sequences/sequence/togglePlay",
+              "controllable": "/sequences/sequence/togglePlay"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    -141.0,
+                    75.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    85.0,
+                    35.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                }
+              ],
+              "niceName": "Dashboard Item 5",
+              "type": "DashboardTriggerItem",
+              "ghostAddress": "/sequences/sequence/togglePlay",
+              "controllable": "/sequences/sequence/togglePlay"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    -26.0,
+                    75.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    128.0,
+                    45.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                }
+              ],
+              "niceName": "Dashboard Item 6",
+              "type": "DashboardTriggerItem",
+              "ghostAddress": "/sequences/sequence/togglePlay",
+              "controllable": "/sequences/sequence/togglePlay"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    135.0,
+                    75.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    199.0,
+                    72.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                }
+              ],
+              "niceName": "Dashboard Item 7",
+              "type": "DashboardTriggerItem",
+              "ghostAddress": "/sequences/sequence/togglePlay",
+              "controllable": "/sequences/sequence/togglePlay"
             }
           ]
         }
@@ -1197,8 +2363,8 @@
               "parameters": [
                 {
                   "value": [
-                    -45.0,
-                    -180.0
+                    8.0,
+                    -193.0
                   ],
                   "controlAddress": "/viewUIPosition"
                 },
@@ -1235,7 +2401,7 @@
               "parameters": [
                 {
                   "value": [
-                    -264.0,
+                    -273.0,
                     -123.0
                   ],
                   "controlAddress": "/viewUIPosition"
@@ -1349,9 +2515,174 @@
                     "type": "DashboardParameterItem",
                     "ghostAddress": "/modules/oSCQuery/values/my_effect/Controls/Myfloat",
                     "controllable": "/modules/oSCQuery/values/my_effect/Controls/Myfloat"
+                  },
+                  {
+                    "parameters": [
+                      {
+                        "value": [
+                          185.0,
+                          200.0
+                        ],
+                        "controlAddress": "/viewUIPosition"
+                      },
+                      {
+                        "value": [
+                          400.0,
+                          300.0
+                        ],
+                        "controlAddress": "/viewUISize"
+                      },
+                      {
+                        "value": [
+                          0.0,
+                          0.196078434586525,
+                          0.0784313753247261,
+                          1.0
+                        ],
+                        "controlAddress": "/backgroundColor",
+                        "enabled": true
+                      }
+                    ],
+                    "niceName": "Group",
+                    "type": "DashboardGroupItem",
+                    "itemManager": {
+                      "parameters": [
+                        {
+                          "value": [
+                            392.0,
+                            292.0
+                          ],
+                          "controlAddress": "/canvasSize",
+                          "enabled": false
+                        }
+                      ],
+                      "editorIsCollapsed": true,
+                      "items": [
+                        {
+                          "parameters": [
+                            {
+                              "value": [
+                                57.0,
+                                39.0
+                              ],
+                              "controlAddress": "/viewUIPosition"
+                            },
+                            {
+                              "value": [
+                                400.0,
+                                300.0
+                              ],
+                              "controlAddress": "/viewUISize"
+                            }
+                          ],
+                          "niceName": "Comment",
+                          "type": "DashboardCommentItem"
+                        }
+                      ]
+                    }
                   }
                 ]
               }
+            }
+          ]
+        }
+      },
+      {
+        "niceName": "Dashboard 3",
+        "type": "BaseItem",
+        "itemManager": {
+          "parameters": [
+            {
+              "value": [
+                1200.0,
+                800.0
+              ],
+              "controlAddress": "/canvasSize",
+              "enabled": false
+            }
+          ],
+          "editorIsCollapsed": true,
+          "items": [
+            {
+              "parameters": [
+                {
+                  "value": [
+                    200.0,
+                    50.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                }
+              ],
+              "niceName": "Item",
+              "type": "DashboardTriggerItem",
+              "ghostAddress": "/sequences/sequence/togglePlay",
+              "controllable": "/sequences/sequence/togglePlay"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    -168.0,
+                    -384.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    400.0,
+                    300.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                }
+              ],
+              "niceName": "Item 1",
+              "type": "DashboardCCItem",
+              "ghostAddress": "/modules/osc/values",
+              "container": "/modules/osc/values"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    242.0,
+                    -164.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    400.0,
+                    300.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                }
+              ],
+              "niceName": "Item 2",
+              "type": "DashboardCCItem",
+              "ghostAddress": "/sequences/sequence",
+              "container": "/sequences/sequence"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    -555.0,
+                    0.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    400.0,
+                    300.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                }
+              ],
+              "niceName": "Item 3",
+              "type": "DashboardCCItem",
+              "ghostAddress": "/modules/oSCQuery/values/my_effect/Controls",
+              "container": "/modules/oSCQuery/values/my_effect/Controls"
             }
           ]
         }
@@ -1374,19 +2705,19 @@
             {
               "type": 1,
               "width": 1920,
-              "height": 596,
+              "height": 833,
               "direction": 1,
               "shifters": [
                 {
                   "type": 1,
                   "width": 150,
-                  "height": 596,
+                  "height": 833,
                   "direction": 2,
                   "shifters": [
                     {
                       "type": 0,
                       "width": 150,
-                      "height": 297,
+                      "height": 415,
                       "currentContent": "Modules",
                       "tabs": [
                         {
@@ -1397,7 +2728,7 @@
                     {
                       "type": 0,
                       "width": 150,
-                      "height": 293,
+                      "height": 411,
                       "currentContent": "Custom Variables",
                       "tabs": [
                         {
@@ -1410,7 +2741,7 @@
                 {
                   "type": 0,
                   "width": 1405,
-                  "height": 596,
+                  "height": 833,
                   "currentContent": "Dashboard",
                   "tabs": [
                     {
@@ -1430,7 +2761,7 @@
                 {
                   "type": 0,
                   "width": 353,
-                  "height": 596,
+                  "height": 833,
                   "currentContent": "Inspector",
                   "tabs": [
                     {
@@ -1443,13 +2774,13 @@
             {
               "type": 1,
               "width": 1920,
-              "height": 394,
+              "height": 157,
               "direction": 1,
               "shifters": [
                 {
                   "type": 0,
                   "width": 150,
-                  "height": 394,
+                  "height": 157,
                   "currentContent": "Sequences",
                   "tabs": [
                     {
@@ -1460,7 +2791,7 @@
                 {
                   "type": 0,
                   "width": 1234,
-                  "height": 394,
+                  "height": 157,
                   "currentContent": "Sequence Editor",
                   "tabs": [
                     {
@@ -1471,7 +2802,7 @@
                 {
                   "type": 0,
                   "width": 524,
-                  "height": 394,
+                  "height": 157,
                   "currentContent": "Logger",
                   "tabs": [
                     {
@@ -1531,7 +2862,7 @@
                 "Controls": {
                   "parameters": [
                     {
-                      "value": 0.1650000065565109,
+                      "value": 0.8140000104904175,
                       "controlAddress": "/Myfloat"
                     },
                     {
@@ -1543,8 +2874,8 @@
                     },
                     {
                       "value": [
-                        0.5970000028610229,
-                        47.61899948120117,
+                        0.824999988079071,
+                        58.20100021362305,
                         0.6240000128746033
                       ],
                       "controlAddress": "/My3d"
@@ -1803,7 +3134,7 @@
             {
               "value": [
                 "20000",
-                "100000"
+                "10000"
               ],
               "controlAddress": "/_example2d",
               "type": "Point2D",
@@ -1833,7 +3164,7 @@
             },
             {
               "value": [
-                2.0,
+                100.0,
                 3.0,
                 5.0
               ],
@@ -1875,7 +3206,7 @@
             "controlAddress": "/totalTime"
           },
           {
-            "value": 172,
+            "value": 122,
             "hexMode": false,
             "controlAddress": "/fps"
           },
@@ -1919,7 +3250,7 @@
                 "automation": {
                   "parameters": [
                     {
-                      "value": 0.0,
+                      "value": 14.30327892303467,
                       "controlAddress": "/position"
                     },
                     {
