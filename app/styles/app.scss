@@ -79,6 +79,8 @@ body {
             border-radius: $radius;
             height: 35px;
             font-size: 14px;
+
+            transition: all 0.25s ease;
         }
 
         a.active {
