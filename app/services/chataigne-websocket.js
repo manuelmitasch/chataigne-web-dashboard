@@ -9,7 +9,7 @@ export default class WebsocketService extends Service {
     @service('store') store
 
     socket = null
-    address = 'ws://' + location.host + '/ws'
+    address = 'ws://' + location.host
 
     @tracked isConnected = false
 
@@ -34,7 +34,7 @@ export default class WebsocketService extends Service {
         address = address.split(':')[0];
         let port = 9999;
 
-        return 'ws://' + address + ':' + port + '/ws';
+        return 'ws://' + address + ':' + port;
     }
 
     open() {
