@@ -840,7 +840,7 @@ button.triggered {
     top: 5px;
     right: 50px;
     z-index: 100;
-    background: #ff00007d;
+    background: rgba(255,0,0,0.7);
     padding: 10px;
     border-radius: $radius;
     pointer-events: none;
