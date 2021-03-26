@@ -835,11 +835,30 @@ button.triggered {
     display: none;
 }
 
+.connection-warning {
+    position: absolute;
+    top: 5px;
+    right: 50px;
+    z-index: 100;
+    background: #ff00007d;
+    padding: 10px;
+    border-radius: $radius;
+    pointer-events: none;
 
-span.active {
-    color: $active;
+    display: block;
+    opacity: 1;
+    transition: all 0.5s ease;
+
+    .status {
+        font-size: 10px;
+    }
+
+    .slang {
+        font-weight: bold;
+
+    }
 }
 
-span.error {
-    color: red;
+.connection-warning.hidden {
+    opacity: 0;
 }

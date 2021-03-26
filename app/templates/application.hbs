@@ -14,11 +14,20 @@
             </li>
         </ul>
 
-        <ul class="status">
+        <ul class="settings-status">
             <li><span>Websocket</span> <span class="{{ if this.socket.isConnected "active" "error" }}" title="{{ this.socket.address }}">{{ if this.socket.isConnected "Connected" "Disconnected" }}</span></li>
             <li><span>App</span> {{ this.settings.appName}}</li>
             <li><span>Web Dashboard</span> {{app-version versionOnly=true}}</li>
         </ul>
+    </div>
+</div>
+
+<div class="connection-warning {{ if this.socket.isConnected "hidden" "show"}} unselectable">
+    <div class="slang">
+        You're out, bro!
+    </div>
+    <div class="status">
+        Websocket disconnected
     </div>
 </div>
 
