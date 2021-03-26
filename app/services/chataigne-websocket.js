@@ -9,7 +9,7 @@ export default class WebsocketService extends Service {
     @service('store') store
 
     socket = null
-    address = 'ws://' + location.host
+    @tracked address = 'ws://' + location.host
 
     @tracked isConnected = false
 
@@ -19,7 +19,7 @@ export default class WebsocketService extends Service {
         if (ENV.environment == 'development') {
             this.address = this.devAddress();
         }
-
+        
         const socket = this.websockets.socketFor(this.address);
     
         socket.on('open', this.open, this);

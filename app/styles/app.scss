@@ -10,6 +10,7 @@ $bool: #1abc9c;
 $selected: #f19747;
 $control-height: 1.2em;
 $button-background: #616161;
+$error: #ff4700;
 
 @import 'input-range.scss';
 @import 'menu.scss';
@@ -832,4 +833,13 @@ button.triggered {
 
 .hidden {
     display: none;
+}
+
+
+span.active {
+    color: $active;
+}
+
+span.error {
+    color: red;
 }
