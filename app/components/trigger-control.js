@@ -24,13 +24,16 @@ export default class TriggerControlComponent extends ControlComponent {
     } else if (h <= 35) {
       fontSize = 14;
     } else if (h <= 45) {
-      fontSize = 16;
-    } else {
       fontSize = 18;
+    } else {
+      fontSize = 22;
     } 
 
     let styles = {
-      fontSize: fontSize + "px"
+      fontSize: fontSize + "px",
+      ...((control.bgColor) && { background: control.bgColorRgba }),
+      ...((control.textColor) && { color: control.textColorRgba }),
+      ...((control.textColor) && { mixBlendMode: "normal" })
     };
 
     return styles;
