@@ -42,6 +42,18 @@ export default class ApplicationController extends Controller {
     } 
 
     @action
+    toggleHideList(e) {
+        this.settings.toggleHideList();
+        e.stopPropagation();
+    }
+
+    @action
+    toggleHideMenu(e) {
+        this.settings.toggleHideMenu();
+        e.stopPropagation();
+    }
+
+    @action
     onResize(element) {
         this.settings.viewWidth = document.documentElement.clientWidth;
         this.settings.viewHeight = document.documentElement.clientHeight;

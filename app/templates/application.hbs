@@ -1,4 +1,4 @@
-<div class="menu-wrapper {{ if this.settings.menuOpen "open" "" }}" {{ on "click" this.hideMenu}}>
+<div class="menu-wrapper {{ if this.settings.menuOpen "open" "" }} {{ if this.settings.hideMenu "hidden" ""}}" {{ on "click" this.hideMenu}}>
     <div class="menu">
         <button class="menu-close" {{ on "click" this.hideMenu}}></button>
         <h1>Settings</h1>
@@ -11,6 +11,12 @@
             </li>
             <li class="{{ if this.settings.scaleLayout "enabled" "" }}">    
                 <a {{on "click" this.toggleScaleLayout}}>Scale Layout</a>
+            </li>
+            <li class="{{ if this.settings.hideList "enabled" "" }}">    
+                <a {{on "click" this.toggleHideList}}>Hide Dashboard List</a>
+            </li>
+            <li class="{{ if this.settings.hideMenu "enabled" "" }}">    
+                <a {{on "click" this.toggleHideMenu}}>Hide Menu</a>
             </li>
         </ul>
 
@@ -31,7 +37,7 @@
     </div>
 </div>
 
-<div class="open-menu">
+<div class="open-menu {{ if this.settings.hideMenu "hidden" ""}}">
     <button {{ on "click" this.openMenu }}></button>
 </div>
 
@@ -42,7 +48,7 @@
     {{did-insert this.onResize}}
     {{did-insert this.removePreload}}
 >
-    <ul class="dashboard-list unselectable" {{ style this.scaleStyle}}>
+    <ul class="dashboard-list unselectable {{ if this.settings.hideList "hidden" ""}}" {{ style this.scaleStyle}}>
         {{#each @model as |dashboard|}}
             <li>
                 <LinkTo @route="dashboard" @model={{dashboard}}>{{dashboard.name}}</LinkTo>
