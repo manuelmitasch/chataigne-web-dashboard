@@ -1,22 +1,24 @@
 <div class="menu-wrapper {{ if this.settings.menuOpen "open" "" }} {{ if this.settings.hideMenu "hidden" ""}}" {{ on "click" this.hideMenu}}>
     <div class="menu">
-        <button class="menu-close" {{ on "click" this.hideMenu}}></button>
+        <button class="menu-close" {{ on "click" this.hideMenu}}><span class="icon-cross"></span> </button>
         <h1>Settings</h1>
         <ul class="settings unselectable">
             <li class="{{ if this.fullscreen.isEnabled "enabled" "" }}">    
-                <a {{on "click" this.toggleFullscreen}}>Fullscreen</a>
+                <a {{on "click" this.toggleFullscreen}}><span class="icon-enlarge"></span> Fullscreen</a>
             </li>
             <li class="{{ if this.settings.displayLayout "enabled" "" }}">    
-                <a {{on "click" this.toggleDisplayLayout}}>Layout</a>
+                <a {{on "click" this.toggleDisplayLayout}}><span class="icon-newspaper"></span> Layout</a>
             </li>
-            <li class="{{ if this.settings.scaleLayout "enabled" "" }}">    
-                <a {{on "click" this.toggleScaleLayout}}>Scale Layout</a>
-            </li>
+            {{#if this.settings.displayLayout }}
+                <li class="{{ if this.settings.scaleLayout "enabled" "" }}">    
+                    <a {{on "click" this.toggleScaleLayout}}><span class="icon-search"></span> Scale Layout</a>
+                </li>
+            {{/if}}
             <li class="{{ if this.settings.hideList "enabled" "" }}">    
-                <a {{on "click" this.toggleHideList}}>Hide Dashboard List</a>
+                <a {{on "click" this.toggleHideList}}><span class="icon-list"></span> Hide Dashboard List</a>
             </li>
             <li class="{{ if this.settings.hideMenu "enabled" "" }}">    
-                <a {{on "click" this.toggleHideMenu}}>Hide Menu</a>
+                <a {{on "click" this.toggleHideMenu}}><span class="icon-menu"></span> Hide Menu</a>
             </li>
         </ul>
 
@@ -38,7 +40,7 @@
 </div>
 
 <div class="open-menu {{ if this.settings.hideMenu "hidden" ""}}">
-    <button {{ on "click" this.openMenu }}></button>
+    <button {{ on "click" this.openMenu }}><span class="icon-menu"></span></button>
 </div>
 
 

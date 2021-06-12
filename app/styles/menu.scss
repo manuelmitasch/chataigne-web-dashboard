@@ -26,13 +26,12 @@
         transition: transform 0.5s ease;
 
         button.menu-close {
+            color: grey;
             background: $container-background;
             padding: 0;
             margin: 5px;
             width: 20px;
             height: 20px;
-            background-image: url("/close.png");
-            background-size: contain;
             cursor: pointer;
         }
 
@@ -54,12 +53,16 @@
                     width: 100%;
                     padding: 15px;
                     cursor: pointer;
-
+                    
                     transition: background 0.2s ease;
+
+                    [class^="icon-"], [class*=" icon-"] {
+                        padding-right: 15px;
+                    }
                 }
 
                 a:hover {
-                    background: $control-background;
+                    background-color: $control-background;
                 }
 
                 border-bottom: 1px solid #232323;
@@ -68,11 +71,11 @@
             li.enabled {
                 a {
                     color: $background !important;
-                    background: $active;
+                    background-color: $active;
                 }
 
                 a:hover {
-                    background: #638a47;
+                    background-color: #638a47;
                 }
             }
         }
@@ -113,11 +116,14 @@
         padding: 0;
         width: 35px;
         height: 35px;
-        background-image: url("/menu.png");
-        background-size: 75%;
-        background-repeat: no-repeat;
-        background-position: center;
         cursor: pointer;
+        color: grey;
+        font-size: 22px;
+
+        span {
+            display: inline-block;
+            padding-top: 2px;
+        }
     }
 }
 
