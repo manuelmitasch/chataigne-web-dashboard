@@ -1,5 +1,6 @@
 import Model, { attr, hasMany } from '@ember-data/model';
 import { sort } from '@ember/object/computed';
+import ENV from 'chataigne-web-dashboard/config/environment';
 
 export default class DashboardModel extends Model {
     @attr('string') name
@@ -20,7 +21,12 @@ export default class DashboardModel extends Model {
     @sort('controls', 'controlSorting') sortedControls
 
     get bgSrc() {
-        let url = "http://localhost:9999/fileData?controlAddress=" + this.bgImage;
+        let url = "/fileData?controlAddress=" + this.bgImage;
+
+        if (ENV.environment == 'development') {
+            url = "http://localhost:9999" + url;
+        }
+
         let image = new Image();
         image.src = url;
         let self = this;
