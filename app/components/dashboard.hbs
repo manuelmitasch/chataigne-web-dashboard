@@ -1,4 +1,10 @@
 <div class="dashboard {{ if this.settings.displayLayout "layout" "responsive" }}" {{ style this.sizeStyle }}>
+    {{#if @dashboard.bgImage }}
+        <div class="dashboard-background unselectable" {{ style this.backgroundStyle }}>
+            <img src="{{ @dashboard.bgSrc }}" alt="" />
+        </div>
+    {{/if}}
+    
     {{#if @dashboard.name }}
         <h1 class="unselectable">{{@dashboard.name}}</h1>
     {{/if}}

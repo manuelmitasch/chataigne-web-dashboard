@@ -35,6 +35,12 @@ export default class ApplicationSerializer extends Serializer {
                 }
             },
           }
+
+          if (dashboard.bgImage) {
+            dashboardHash.attributes.bgImage = dashboard.bgImage;
+            dashboardHash.attributes.bgImageAlpha = dashboard.bgImageAlpha;
+            dashboardHash.attributes.bgImageScale = dashboard.bgImageScale;
+          }
           
           var controlRelationshipData = [];
 
