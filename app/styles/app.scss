@@ -222,11 +222,11 @@ h1 {
     }
 
     button:active {
-        background: rgb(219, 177, 98);
+        filter: brightness(1.5) sepia(1);
     }
 
     button.triggered {
-        background: #bd7a00;
+        filter: brightness(1.5);
     }
 
     .clear {
@@ -772,7 +772,7 @@ select:focus{
 }
 
 button.triggered {
-    background: #bd7a00 !important;
+    filter: brightness(1.5) !important;
 }
 
 .canvas {

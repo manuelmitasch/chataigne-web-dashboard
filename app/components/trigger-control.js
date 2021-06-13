@@ -15,6 +15,8 @@ export default class TriggerControlComponent extends ControlComponent {
   get customizeStyles() {
     let control = this.args.control;
     let h = control.height;
+    let imageSrc = control.imageSrc;
+    let imageSize = control.width + "px " + control.height + "px";
     let fontSize = 16;
 
     if (h <= 15) {
@@ -33,7 +35,12 @@ export default class TriggerControlComponent extends ControlComponent {
       fontSize: fontSize + "px",
       ...((control.bgColor) && { background: control.bgColorRgba }),
       ...((control.textColor) && { color: control.textColorRgba }),
-      ...((control.textColor) && { mixBlendMode: "normal" })
+      ...((control.textColor) && { mixBlendMode: "normal" }),
+      ...((imageSrc) && { backgroundImage: "url(" + imageSrc + ")" }),
+      ...((imageSrc) && { backgroundRepeat: "no-repeat" }),
+      ...((imageSrc) && { backgroundSize: imageSize }),
+      ...((imageSrc && control.contourColor) && { borderColor: control.contourColorRgba }),
+      ...((imageSrc && control.contourThickness) && { borderWidth: control.contourThickness/2 + "px" })
     };
 
     return styles;

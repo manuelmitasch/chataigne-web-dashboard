@@ -1,7 +1,10 @@
 import Model, { attr, belongsTo } from '@ember-data/model';
 import { computed } from '@ember/object';
+import { inject as service } from '@ember/service';
 
 export default class ControlModel extends Model {
+    @service('url') urlService
+
     @attr('string') label
     @attr('boolean') showLabel
     @attr('string') controlAddress
@@ -17,6 +20,7 @@ export default class ControlModel extends Model {
     @attr() contourColor
     @attr('number') contourThickness
     @attr('boolean') opaqueBackground
+    @attr('string') customImage
 
     @attr('number') defaultUI
     @attr('number') style
@@ -58,6 +62,10 @@ export default class ControlModel extends Model {
     @computed('contourColor')
     get contourColorRgba() {
         return this.transformToRgba('contourColor');
+    }
+
+    get imageSrc() {
+        return this.urlService.imageSrc(this.customImage);
     }
 
     transformToRgba(parameterName) {

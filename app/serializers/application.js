@@ -175,6 +175,7 @@ function getControlHash(item, dashboard, index, fromGroup) {
         "contourColor": item.contourColor,
         "contourThickness": item.contourThickness,
         "opaqueBackground": item.opaqueBackground,
+        "customImage": item.customImage,
 
         "defaultUI": item.defaultUI,
         "style": item.style,

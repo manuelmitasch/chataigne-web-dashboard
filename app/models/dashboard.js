@@ -1,8 +1,10 @@
 import Model, { attr, hasMany } from '@ember-data/model';
 import { sort } from '@ember/object/computed';
-import ENV from 'chataigne-web-dashboard/config/environment';
+import { inject as service } from '@ember/service';
 
 export default class DashboardModel extends Model {
+    @service('url') urlService
+
     @attr('string') name
 
     @attr('number') width
@@ -21,11 +23,7 @@ export default class DashboardModel extends Model {
     @sort('controls', 'controlSorting') sortedControls
 
     get bgSrc() {
-        let url = "/fileData?controlAddress=" + this.bgImage;
-
-        if (ENV.environment == 'development') {
-            url = "http://localhost:9999" + url;
-        }
+        let url = this.urlService.imageSrc(this.bgImage);
 
         let image = new Image();
         image.src = url;
@@ -36,6 +34,6 @@ export default class DashboardModel extends Model {
             self.bgImageHeight = image.height;
         }
 
-        return encodeURI(url);
+        return url;
     }
 }
