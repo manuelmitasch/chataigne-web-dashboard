@@ -1,4 +1,4 @@
-<div class="dashboard {{ if this.settings.displayLayout "layout" "responsive" }}" {{ style this.sizeStyle }}>
+<div class="dashboard {{ if this.settings.displayLayout "layout" "responsive" }}" {{ style this.sizeStyle }} {{ style this.customizeStyles }}>
     {{#if @dashboard.bgImage }}
         <div class="dashboard-background unselectable" {{ style this.backgroundStyle }}>
             <img src="{{ @dashboard.bgSrc }}" alt="" />

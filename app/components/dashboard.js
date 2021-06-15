@@ -27,6 +27,16 @@ export default class DashboardComponent extends Component {
             return {}
         }
     }
+  
+    get customizeStyles() {
+        let dashboard = this.args.dashboard;
+        
+        let styles = {
+          ...((dashboard.bgColor) && { background: dashboard.bgColorRgba }),
+        };
+    
+        return styles;
+    }
 
     get backgroundStyle() {
         if (this.settings.displayLayout && this.args.dashboard.bgImage && this.args.dashboard.bgImageHeight) {

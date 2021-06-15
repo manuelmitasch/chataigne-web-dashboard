@@ -27,7 +27,8 @@ export default class ApplicationSerializer extends Serializer {
             "attributes": {
               "name": dashboard.name,
               "width": dashboard.size[0],
-              "height": dashboard.size[1]
+              "height": dashboard.size[1],
+              "bgColor": dashboard.bgColor
             },
             "relationships": {
                 "controls": {
@@ -41,7 +42,7 @@ export default class ApplicationSerializer extends Serializer {
             dashboardHash.attributes.bgImageAlpha = dashboard.bgImageAlpha;
             dashboardHash.attributes.bgImageScale = dashboard.bgImageScale;
           }
-          
+
           var controlRelationshipData = [];
 
           if (dashboard.items) {
