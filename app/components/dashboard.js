@@ -32,7 +32,7 @@ export default class DashboardComponent extends Component {
         let dashboard = this.args.dashboard;
         
         let styles = {
-          ...((dashboard.bgColor) && { background: dashboard.bgColorRgba }),
+          ...((dashboard.bgColor && dashboard.bgColor[3] != 0) && { background: dashboard.bgColorRgba }),
         };
     
         return styles;
