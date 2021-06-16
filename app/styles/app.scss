@@ -81,12 +81,14 @@ body {
             border-radius: $radius;
             height: 35px;
             font-size: 14px;
+            border-style: solid;
+            border-width: 0px;
 
             transition: all 0.25s ease;
         }
 
         a.active {
-            background: $active;
+            background: $active !important;
             color: black !important;
         }
 

@@ -53,7 +53,7 @@
     <ul class="dashboard-list unselectable {{ if this.settings.hideList "hidden" ""}}" {{ style this.scaleStyle}}>
         {{#each @model as |dashboard|}}
             <li>
-                <LinkTo @route="dashboard" @model={{dashboard}}>{{dashboard.name}}</LinkTo>
+                <LinkTo @route="dashboard" @model={{dashboard}} {{ style this.settings.tabStyles }}>{{dashboard.name}}</LinkTo>
             </li>
         {{/each}}
     </ul>

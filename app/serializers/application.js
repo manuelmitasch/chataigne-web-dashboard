@@ -20,6 +20,13 @@ export default class ApplicationSerializer extends Serializer {
 
         this.settings.appName = payload.appName;
         
+        if (payload.tabs) {
+          this.settings.tabBgColor = payload.tabs.bgColor;
+          this.settings.tabTextColor = payload.tabs.textColor || payload.tabs.labelColor;
+          this.settings.tabBorderColor = payload.tabs.borderColor;
+          this.settings.tabBorderWidth = payload.tabs.borderWidth;
+        }
+
         payload.items.forEach(function(dashboard) {
           let dashboardHash = {
             "type": "dashboard",
