@@ -39,8 +39,8 @@ export default class TriggerControlComponent extends ControlComponent {
       ...((imageSrc) && { backgroundImage: "url(" + imageSrc + ")" }),
       ...((imageSrc) && { backgroundRepeat: "no-repeat" }),
       ...((imageSrc) && { backgroundSize: imageSize }),
-      ...((imageSrc && control.contourColor) && { borderColor: control.contourColorRgba }),
-      ...((imageSrc && control.contourThickness) && { borderWidth: control.contourThickness/2 + "px" })
+      ...((imageSrc && control.borderColor) && { borderColor: control.borderColorRgba }),
+      ...((imageSrc && control.borderWidth) && { borderWidth: control.borderWidth/2 + "px" })
     };
 
     return styles;

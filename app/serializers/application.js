@@ -173,8 +173,8 @@ function getControlHash(item, dashboard, index, fromGroup) {
         "textColor": item.textColor,
         "bgColor": item.bgColor,
         "fgColor": item.fgColor,
-        "contourColor": item.borderColor || item.contourColor,
-        "contourThickness": item.borderWidth || item.contourThickness,
+        "borderColor": item.borderColor || item.contourColor,
+        "borderWidth": item.borderWidth || item.contourThickness,
         "opaqueBackground": item.opaqueBackground,
         "customImage": item.customImage,
 

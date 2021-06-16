@@ -18,8 +18,8 @@ export default class BooleanControlComponent extends ControlComponent {
 
 
   get borderWidth() {
-    let contourThickness = this.args.control.contourThickness;
-    return (contourThickness) ? contourThickness/2 : 0;
+    let width = this.args.control.borderWidth;
+    return (width) ? width/2 : 0;
   }
 
   get sizeStyles() {
@@ -41,8 +41,8 @@ export default class BooleanControlComponent extends ControlComponent {
     let styles = {
       ...((control.bgColor) && { background: control.bgColorRgba }),
       ...((control.textColor) && { color: control.textColorRgba }),
-      ...((control.contourColor) && { borderColor: control.contourColorRgba }),
-      ...((control.contourThickness) && { borderWidth: this.borderWidth + "px" }),
+      ...((control.borderColor) && { borderColor: control.borderColorRgba }),
+      ...((control.borderWidth) && { borderWidth: this.borderWidth + "px" }),
     };
 
     return styles;

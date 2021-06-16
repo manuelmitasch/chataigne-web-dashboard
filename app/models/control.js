@@ -17,8 +17,8 @@ export default class ControlModel extends Model {
     @attr() textColor
     @attr() bgColor
     @attr() fgColor
-    @attr() contourColor
-    @attr('number') contourThickness
+    @attr() borderColor
+    @attr('number') borderWidth
     @attr('boolean') opaqueBackground
     @attr('string') customImage
 
@@ -39,9 +39,9 @@ export default class ControlModel extends Model {
         return this.constructor.modelName;
     }
 
-    @computed('textColor', 'bgColor', 'fgColor', 'contourColor')
+    @computed('textColor', 'bgColor', 'fgColor', 'borderColor')
     get mixBlendMode() {
-        return (this.textColor || this.bgColor || this.fgColor || this.contourColor) ? 'normal' : 'color-dodge';
+        return (this.textColor || this.bgColor || this.fgColor || this.borderColor) ? 'normal' : 'color-dodge';
     }
 
     @computed('textColor')
@@ -59,9 +59,9 @@ export default class ControlModel extends Model {
         return this.transformToRgba('fgColor');
     }
         
-    @computed('contourColor')
-    get contourColorRgba() {
-        return this.transformToRgba('contourColor');
+    @computed('borderColor')
+    get borderColorRgba() {
+        return this.transformToRgba('borderColor');
     }
 
     get imageSrc() {

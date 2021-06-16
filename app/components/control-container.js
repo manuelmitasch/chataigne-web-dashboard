@@ -42,8 +42,8 @@ export default class ControlContainerComponent extends Component {
       ...((control.bgColor) && { background: control.bgColorRgba }),
       ...((control.textColor) && { color: control.textColorRgba }),
       ...((control.textColor) && { mixBlendMode: "normal" }),
-      ...((control.contourColor) && { borderColor: control.contourColorRgba }),
-      ...((control.contourThickness) && { borderWidth: control.contourThickness/2 + "px" }),
+      ...((control.borderColor) && { borderColor: control.borderColorRgba }),
+      ...((control.borderWidth) && { borderWidth: control.borderWidth/2 + "px" }),
     };
 
     return styles;
