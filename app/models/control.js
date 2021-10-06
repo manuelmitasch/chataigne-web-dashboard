@@ -24,6 +24,7 @@ export default class ControlModel extends Model {
 
     @attr('number') defaultUI
     @attr('number') style
+    @attr('boolean') readOnly
 
     @belongsTo('dashboard') dashboard
 

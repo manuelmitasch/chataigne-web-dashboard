@@ -5,6 +5,7 @@
     <div class="clear"></div>
     <Input 
         value={{@control.value}} 
+        disabled={{@control.readOnly}}
         {{on "change" this.input}} 
         {{on "change" this.update}} 
         class="string-input"

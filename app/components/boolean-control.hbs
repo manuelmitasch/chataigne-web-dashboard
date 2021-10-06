@@ -2,10 +2,13 @@
     @control={{@control}} 
     @showLabel={{ true }}
 >
-    <div class="main-input {{ if @control.value "enabled" "disabled"}}"  
+    <div 
+        {{ if @control.value "enabled" "disabled"}} 
+        {{ if @control.readOnly "readOnly" "" }}"  
+        class="main-input 
+        {{ style this.customizeStyles }}
         {{on "touchstart" this.update}} 
         {{on "mousedown" this.update}}  
-        {{ style this.customizeStyles }}
     >
         <div class="checkbox" {{ style this.sizeStyles }} ></div>
     </div>

@@ -187,6 +187,7 @@ function getControlHash(item, dashboard, index, fromGroup) {
 
         "defaultUI": item.defaultUI,
         "style": item.style,
+        "readOnly": item.readOnly
     }
   }
 

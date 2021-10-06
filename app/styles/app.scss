@@ -7,10 +7,12 @@ $radius: 2px;
 $active: #7eb357;
 $not-active: #303030;
 $bool: #1abc9c;
+$bool-readOnly: #1a87bc;
 $selected: #f19747;
 $control-height: 1.2em;
 $button-background: #616161;
 $error: #ff4700;
+$text-readOnly: #18b5ef;
 
 @import 'input-range.scss';
 @import 'menu.scss';
@@ -139,6 +141,26 @@ h1 {
             background-color: $bool !important;
             background-image: url(/tick.png) !important;
             background-size: contain !important;
+        }
+    }
+
+    .main-input.readOnly {
+        cursor: not-allowed;
+    }
+
+    .main-input.disabled.readOnly {
+        .checkbox {
+            background-color: none !important;
+            background-image: none !important;
+            border: 2px dashed #4c667a;
+        }
+    }
+
+    .main-input.enabled.readOnly {
+        .checkbox {
+            background-color: $bool-readOnly !important;
+            background-image: none !important;
+            border: none;
         }
     }
 }
@@ -680,6 +702,10 @@ input[type="range"] {
     cursor: ew-resize;
 }
 
+input:disabled {
+    cursor: not-allowed !important;
+    color: $text-readOnly !important;
+}
 
 input[type="range"].no-top-margin {
     margin-top: 5px;
@@ -702,6 +728,10 @@ input[type="range"].no-top-margin {
         text-align: left;
         display: inline-block;
     }
+}
+
+.range-slider-container.disabled .range-slider-label {
+    color: #9ecdff;
 }
 
 
@@ -752,6 +782,11 @@ button {
     touch-action: manipulation;
 }
 
+button:disabled {
+    cursor: not-allowed !important;
+    color: $text-readOnly !important; 
+}
+
 select {
     background: $not-active;
     border-radius: 3px;
@@ -771,6 +806,11 @@ select {
 select:focus{
     outline:none;
     // box-shadow: 0px 0px 2px 0px $selected !important;
+}
+
+select:disabled {
+    cursor: not-allowed !important;
+    color: $text-readOnly !important;
 }
 
 button.triggered {

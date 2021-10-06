@@ -1,4 +1,4 @@
-<div class="range-slider-container">
+<div class="range-slider-container {{ if @readOnly "disabled" ""}}">
     <Input 
         type="range" 
         name={{@name}}
@@ -9,8 +9,10 @@
         min={{@min}} 
         max={{@max}} 
         
-        style="--min: {{@min}}; --max: {{@max}}; --val: {{@value}}; --fgColor: {{ @fgColor }}; --bgColor: {{ @bgColor }}"
+        disabled={{@readOnly}}
         
+        style="--min: {{@min}}; --max: {{@max}}; --val: {{@value}}; --fgColor: {{ @fgColor }}; --bgColor: {{ @bgColor }}"
+
         {{on "input" this.input}} 
         {{on "input" this.update}} 
     />

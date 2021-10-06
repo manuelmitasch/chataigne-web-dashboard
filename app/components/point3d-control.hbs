@@ -4,9 +4,27 @@
     @useWidthSplit={{ this.useWidthSplit }}
 >
     <div class="secondary-container">
-        <Input value={{this.roundedValue}} {{on "change" this.input}} {{on "change" this.update}} class="secondary" />
-        <Input value={{ this.roundedValue2 }} {{on "change" (fn this.input "2") }} {{ on "change" this.update }} class="secondary" />
-        <Input value={{ this.roundedValue3 }} {{on "change" (fn this.input "3") }} {{ on "change" this.update }} class="secondary" />
+        <Input 
+            value={{this.roundedValue}} 
+            disabled={{@control.readOnly}}
+            {{on "change" this.input}} 
+            {{on "change" this.update}} 
+            class="secondary" 
+        />
+        <Input 
+            value={{ this.roundedValue2 }} 
+            disabled={{@control.readOnly}}
+            {{on "change" (fn this.input "2") }} 
+            {{ on "change" this.update }} 
+            class="secondary" 
+        />
+        <Input 
+            value={{ this.roundedValue3 }} 
+            disabled={{@control.readOnly}}
+            {{on "change" (fn this.input "3") }} 
+            {{ on "change" this.update }} 
+            class="secondary" 
+        />
     </div>
 
     <div class="main-input">
@@ -14,6 +32,7 @@
             <RangeSlider 
                 @name={{ @control.id }}
                 @value={{ @control.value }}
+                @readOnly={{ @control.readOnly }}
 
                 @min={{ @control.minVal }}
                 @max={{ @control.maxVal }}
@@ -31,6 +50,7 @@
         {{else}}
             <Input 
                 value={{ this.roundedValue }} 
+                disabled={{@control.readOnly}}
                 class="secondary" 
                 {{ on "change" this.input }} 
                 {{ on "change" this.update }} 
@@ -42,6 +62,7 @@
             <RangeSlider 
                 @name={{ concat @control.id "2" }}
                 @value={{ @control.value2 }}
+                @readOnly={{ @control.readOnly }}
 
                 @min={{ @control.minVal2 }}
                 @max={{ @control.maxVal2 }}
@@ -61,6 +82,7 @@
         {{else}}
             <Input 
                 value={{ this.roundedValue2 }} 
+                disabled={{@control.readOnly}}
                 class="secondary" 
                 {{ on "change" (fn this.input "2") }} 
                 {{ on "change" (fn this.update "2") }} 
@@ -72,6 +94,7 @@
             <RangeSlider 
                 @name={{ concat @control.id "3" }}
                 @value={{ @control.value3 }}
+                @readOnly={{ @control.readOnly }}
 
                 @min={{ @control.minVal3 }}
                 @max={{ @control.maxVal3 }}
@@ -91,6 +114,7 @@
         {{else}}
             <Input 
                 value={{ this.roundedValue3 }} 
+                disabled={{@control.readOnly}}
                 class="secondary" 
                 {{ on "change" (fn this.input "3") }} 
                 {{ on "change" (fn this.update "3") }}                     

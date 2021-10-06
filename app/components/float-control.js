@@ -104,6 +104,7 @@ export default class FloatControlComponent extends ControlComponent {
 
   get fgColorRgba() {
     if (this.args.control.fgColor) return this.args.control.fgColorRgba;
+    if (this.args.control.readOnly) return "#18b5ef";
     return "#7eb357";
   }
 

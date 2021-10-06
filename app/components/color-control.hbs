@@ -13,7 +13,13 @@
     <div class="clear"></div>
 
     <div class="main-input">
-        <Input value={{ @control.hex }} {{on "input" this.input }} {{on "input" this.update}} type="color" />
+        <Input 
+            value={{ @control.hex }} 
+            disabled={{ @control.readOnly }}
+            {{on "input" this.input }} 
+            {{on "input" this.update}} 
+            type="color" 
+        />
     </div>
     
     {{yield}}

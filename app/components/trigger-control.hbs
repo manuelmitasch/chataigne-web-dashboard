@@ -6,6 +6,7 @@
     <button 
         {{on "touchstart" this.update}} 
         {{on "mousedown" this.update}} 
+        disabled={{@control.readOnly}}
         class="unselectable {{ if @control.triggered "triggered" }}"
         {{ style this.customizeStyles }}
     >   

@@ -9,7 +9,10 @@ export default class BooleanControlComponent extends ControlComponent {
   @action
   update(value, event) {
     const control = this.args.control;
-    this.socket.sendFeedback(control.controlAddress, !control.value);
+
+    if (!control.readOnly) {
+      this.socket.sendFeedback(control.controlAddress, !control.value);
+    }
     // control.save();
 
     event = (event) ? event : value;

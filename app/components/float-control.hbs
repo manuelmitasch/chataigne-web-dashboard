@@ -7,13 +7,15 @@
         {{#if this.isTime }}
             <Input 
                 value={{ this.time }} 
+                disabled={{@control.readOnly}}
                 class="secondary time"
                 {{on "change" (fn this.input "time") }} 
-                {{on "change" this.update}} 
+                {{on "change" this.update}}
             />
         {{else}}
             <Input 
                 value={{ this.roundedValue }} 
+                disabled={{@control.readOnly}}
                 class="secondary" 
                 {{ on "change" this.input }} 
                 {{ on "change" this.update }} 
@@ -41,11 +43,14 @@
                 
                 @onInput={{ this.input }} 
                 @onUpdate={{ this.update }} 
+
+                @readOnly={{ @control.readOnly }}
             />
         {{else}}
             {{#if this.isTime }}
                 <Input 
                     value={{ this.time }} 
+                    disabled={{@control.readOnly}}
                     class="secondary time"
                     {{on "change" (fn this.input "time") }} 
                     {{on "change" this.update}} 
@@ -54,6 +59,7 @@
             {{else}}
                 <Input 
                     value={{ this.roundedValue }} 
+                    disabled={{@control.readOnly}}
                     class="secondary" 
                     {{ on "change" this.input }} 
                     {{ on "change" this.update }} 

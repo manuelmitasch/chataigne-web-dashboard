@@ -6,6 +6,7 @@
     <div class="main-input">
         <select 
             {{on "change" this.update}} 
+            disabled={{@control.readOnly}}
             {{ style this.customizeStyles }}
             class="unselectable"
         >
