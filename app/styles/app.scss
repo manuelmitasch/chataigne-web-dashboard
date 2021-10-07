@@ -86,14 +86,12 @@ body {
             border-style: solid;
             border-width: 0px;
 
-            transition: all 0.25s ease;
         }
 
         a.active {
-            background: $active !important;
-            color: black !important;
+            background: $active;
+            color: black;
         }
-
     }
     
     li.enabled {

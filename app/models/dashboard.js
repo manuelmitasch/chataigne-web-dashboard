@@ -5,6 +5,8 @@ import { inject as service } from '@ember/service';
 
 export default class DashboardModel extends Model {
     @service('url') urlService
+    @service('settings') settings
+    @service('router') router
 
     @attr('string') name
 
@@ -57,5 +59,27 @@ export default class DashboardModel extends Model {
         }
 
         return 'none';
+    }
+
+    @computed('router.currentURL')
+    get isActive() {
+        return this.router.isActive("dashboard", this.id);
+    }
+      
+    get activeStyle() {
+        let bgColor = (!this.isActive) ? this.settings.tabBgColorRgba : this.settings.tabBgColorSelectedRgba;
+        let textColor = (!this.isActive) ? this.settings.tabTextColorRgba : this.settings.tabTextColorSelectedRgba;
+        let borderColor = (!this.isActive) ? this.settings.tabBorderColorRgba : this.settings.tabBorderColorSelectedRgba;
+        let borderWidth = (!this.isActive) ? this.settings.tabBorderWidth : this.settings.tabBorderWidthSelected;
+
+        let styles = {
+            background: bgColor,
+            color: textColor,
+            borderColor: borderColor,
+            padding: (10-borderWidth/2) + "px",
+            borderWidth: borderWidth/2 + "px",
+        };
+        
+        return styles;
     }
 }

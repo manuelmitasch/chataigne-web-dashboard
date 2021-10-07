@@ -19,9 +19,13 @@ export default class SettingsService extends Service {
     @tracked hideMenu = false;
 
     @tracked tabBgColor = [0.18, 0.18, 0.18, 1];
+    @tracked tabBgColorSelected = [0.49, 0.7, 0.34, 1];
     @tracked tabTextColor = [0.82, 0.82, 0.82, 1];
+    @tracked tabTextColorSelected = [0, 0, 0, 1];
     @tracked tabBorderColor = [0, 0, 0, 0];
+    @tracked tabBorderColorSelected = [0, 0, 0, 0];
     @tracked tabBorderWidth = 0;
+    @tracked tabBorderWidthSelected = 0;
 
     init() {
         super.init(...arguments);
@@ -67,32 +71,34 @@ export default class SettingsService extends Service {
     }
 
 
-    /////////// TABS
-    get tabStyles() {
-        let styles = {
-          ...((this.tabBgColor) && { background: this.tabBgColorRgba }),
-          ...((this.tabTextColor) && { color: this.tabTextColorRgba }),
-          ...((this.tabBorderColor) && { borderColor: this.tabBorderColorRgba }),
-          ...((this.tabBorderWidth) && { borderWidth: this.tabBorderWidth/2 + "px" }),
-          ...((this.tabBorderWidth) && { padding: (10-this.tabBorderWidth/2) + "px" }),
-        };
-    
-        return styles;
-    }
-
     @computed('tabBgColor', 'tabBgColor.0')
     get tabBgColorRgba() {
         return this.transformToRgba('tabBgColor');
+    }
+
+    @computed('tabBgColorSelected', 'tabBgColorSelected.0')
+    get tabBgColorSelectedRgba() {
+        return this.transformToRgba('tabBgColorSelected');
     }
 
     @computed('tabTextColor')
     get tabTextColorRgba() {
         return this.transformToRgba('tabTextColor');
     }
+
+    @computed('tabTextColorSelected')
+    get tabTextColorSelectedRgba() {
+        return this.transformToRgba('tabTextColorSelected');
+    }
             
     @computed('tabBorderColor')
     get tabBorderColorRgba() {
         return this.transformToRgba('tabBorderColor');
+    }
+                
+    @computed('tabBorderColorSelected')
+    get tabBorderColorSelectedRgba() {
+        return this.transformToRgba('tabBorderColorSelected');
     }
 
     transformToRgba(parameterName) {

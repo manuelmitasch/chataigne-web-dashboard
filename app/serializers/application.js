@@ -22,9 +22,13 @@ export default class ApplicationSerializer extends Serializer {
         
         if (payload.tabs) {
           this.settings.tabBgColor = payload.tabs.bgColor;
+          this.settings.tabBgColorSelected = payload.tabs.bgColorSelected;
           this.settings.tabTextColor = payload.tabs.textColor || payload.tabs.labelColor;
+          this.settings.tabTextColorSelected = payload.tabs.labelColorSelected;
           this.settings.tabBorderColor = payload.tabs.borderColor;
+          this.settings.tabBorderColorSelected = payload.tabs.borderColorSelected;
           this.settings.tabBorderWidth = payload.tabs.borderWidth;
+          this.settings.tabBorderWidthSelected = payload.tabs.borderWidthSelected;
         }
 
         payload.items.forEach(function(dashboard) {
