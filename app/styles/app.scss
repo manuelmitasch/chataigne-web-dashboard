@@ -121,7 +121,7 @@ h1 {
         margin: 0;
         width: 20px;
         height: 20px;
-        margin-top: 20px;
+        margin-bottom: 20px;
         
         .checkbox {
             margin: 0;
@@ -195,7 +195,6 @@ h1 {
         background: $control-background;
         border: none;
         margin: 0;
-        overflow: hidden;
         border-style: solid;
         border-width: 0;
     }
@@ -229,10 +228,11 @@ h1 {
     .range-slider-container {
         width: 100%;
         height: 100%;
+        cursor: ew-resize;
     }
 
-    .range-slider-label {
-        margin-top: -20px;
+    .range-slider-container.vertical {
+        cursor: ns-resize;
     }
 
     button {
@@ -292,11 +292,13 @@ h1 {
             width: 100%;
             height: 100%;
             margin: 0;
-            padding-left: 60px;
+            padding-left: 30px;
+            padding-right: 30px;
             background: none;
 
-            color: $active;
+            color: $font;
             font-size: 1em;
+            font-weight: bold;
         }
     }
 
@@ -607,11 +609,16 @@ h1 {
     margin: 5px 5px 25px 5px;
     padding-top: 50px;
 
+
+    .control .main-input {
+        padding-top: 20px;
+    }
+
     .clear {
         clear: both;
     }
 
-    .float-control.no-range, .point2d-control.no-range,  .point3d-control.no-range {
+    .float-control.no-range, .integer-control.no-range, .point2d-control.no-range,  .point3d-control.no-range {
         .secondary-container {
             display: none;
         }
@@ -628,7 +635,34 @@ h1 {
     input:focus, button:focus, input[type="color"]:focus {
         box-shadow: 0px 0px 0px 1px $selected;
     }
+
+    .range-slider-container {
+        height: 30px;
+        border-radius: $radius;
+        background: white;
+    
+        .range-slider-background {
+            border-radius: $radius 0 0 $radius;
+        }
+
+        label.range-slider-label {
+            font-size: 0.9em;
+            height: 30px;
+        }
+    }
+
+    .point2d-control {
+        .range-slider-container:nth-of-type(1) {
+            margin-bottom: 5px;
+        }
+    }
+    .point3d-control {
+        .range-slider-container:nth-of-type(1), .range-slider-container:nth-of-type(2) {
+            margin-bottom: 5px;
+        } 
+    }
 }
+
 
 .control {
     background: $container-background;
@@ -710,15 +744,20 @@ input[type="range"].no-top-margin {
 }
 
 .range-slider-label {
-    margin-top: -18px;
-    margin-bottom: 3px;
-    color: #b6d69f;
-    font-size: 0.7em;
+    color: $font;
+    font-size: 0.9em;
     pointer-events: none;
     width: 100%;
     text-align: center;
-    display: block;
-    mix-blend-mode: color-dodge;
+    font-weight: bold;
+    
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    top: 0;
 
     .value {
         font-weight: bold;
@@ -728,8 +767,23 @@ input[type="range"].no-top-margin {
     }
 }
 
+
+.range-slider-container {
+    position: relative;
+}
+
+.range-slider-container.disabled {
+    cursor: not-allowed !important;
+}
+
 .range-slider-container.disabled .range-slider-label {
     color: #9ecdff;
+}
+
+.range-slider-background {
+    width: 50%;
+    height: 100%;
+    background: $active;
 }
 
 
@@ -757,7 +811,7 @@ input[type="color"] {
     width: 100%;
     height: $control-height;
     background: $not-active;
-    color: $active;
+    color: $font;
     border: none;
     text-align: left;
     font-size: 1em;
@@ -906,4 +960,77 @@ button.triggered {
 
 .connection-warning.hidden {
     opacity: 0;
+}
+
+.main-input.readOnly {
+    cursor: not-allowed;
+}
+
+.range-slider-popover {
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    margin-top: 10px;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+
+    input {
+        text-align: center;
+        width: 120px;
+        background: $button-background;
+        border-radius: $radius;
+        border: none;
+        padding: 3px;
+        color: $font;
+    }
+    
+    .arrow_box {
+        position: relative;
+        background: $button-background;
+        border-radius: $radius;
+    }
+    .arrow_box:after, .arrow_box:before {
+        bottom: 100%;
+        left: 50%;
+        border: solid transparent;
+        content: "";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+    }
+    
+    .arrow_box:after {
+        border-color: rgba(255, 0, 0, 0);
+        border-bottom-color: $button-background;
+        border-width: 10px;
+        margin-left: -10px;
+    }
+    .arrow_box:before {
+        // border-color: rgba(0, 0, 0, 0);
+        // border-bottom-color: #000000;
+        border-width: 10px;
+        margin-left: -10px;
+    }
+}
+
+
+button.increment, button.decrement {
+    height: 50% !important;
+    width: 30px !important;
+    position: absolute;
+    display: block;
+    height: 10px;
+    right: 0;
+    margin: 1px;
+}
+button.increment {
+    top: 0;
+    border-radius: $radius $radius 0 0;
+}
+button.decrement {
+    bottom: 0;
+    border-radius: 0 0 $radius $radius;
+    border-top: 1px solid $control-background;
 }

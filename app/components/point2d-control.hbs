@@ -10,6 +10,7 @@
         <Input 
             value={{this.roundedValue}} 
             disabled={{@control.readOnly}}
+            inputmode="decimal"
             {{on "change" this.input}} 
             {{on "change" this.update}} 
             class="secondary" 
@@ -17,6 +18,7 @@
         <Input 
             value={{ this.roundedValue2 }}
             disabled={{@control.readOnly}} 
+            inputmode="decimal"
             {{on "change" (fn this.input "2") }} 
             {{ on "change" this.update }} 
             class="secondary" 
@@ -28,26 +30,25 @@
             <RangeSlider 
                 @name={{ @control.id }}
                 @value={{ @control.value }}
-                @readOnly={{ @control.readOnly }}
 
                 @min={{ @control.minVal }}
                 @max={{ @control.maxVal }}
                 
-                @step={{ this.step }} 
-                
                 @fgColor={{ this.fgColorRgba }}
                 @bgColor={{ this.bgColorRgba }}
                 @textColor={{ this.args.control.textColorRgba }}
-                @mixBlendMode={{ this.args.control.mixBlendMode }}
                 
-                @onInput={{ this.input }} 
-                @onUpdate={{ this.update }} 
+                @onInput={{ this.setValue }} 
+                @onUpdate={{ this.update }}
+
+                @readOnly={{ @control.readOnly }}
             />
         {{else}}
             <Input 
                 value={{ this.roundedValue }} 
                 disabled={{@control.readOnly}}
                 class="secondary" 
+                inputmode="decimal"
                 {{ on "change" this.input }} 
                 {{ on "change" this.update }} 
                 {{ style this.customizeStyles }}
@@ -58,27 +59,27 @@
             <RangeSlider 
                 @name={{ concat @control.id "2" }}
                 @value={{ @control.value2 }}
-                @readOnly={{ @control.readOnly }}
 
                 @min={{ @control.minVal2 }}
                 @max={{ @control.maxVal2 }}
 
+                @class="no-top-margin"
+                
                 @fgColor={{ this.fgColorRgba }}
                 @bgColor={{ this.bgColorRgba }}
                 @textColor={{ this.args.control.textColorRgba }}
-                @mixBlendMode={{ this.args.control.mixBlendMode }}
                 
-                @step={{ this.step }} 
-                @class="no-top-margin"
-                
-                @onInput={{ fn this.input "2" }} 
+                @onInput={{ this.setValue2 }} 
                 @onUpdate={{ fn this.update "2" }} 
+
+                @readOnly={{ @control.readOnly }}
             />
         {{else}}
             <Input 
                 value={{ this.roundedValue2 }} 
                 disabled={{@control.readOnly}}
                 class="secondary" 
+                inputmode="decimal"
                 {{ on "change" (fn this.input "2") }} 
                 {{ on "change" (fn this.update "2") }} 
                 {{ style this.customizeStyles }}

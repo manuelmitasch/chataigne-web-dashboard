@@ -2,10 +2,6 @@ import ControlComponent from './control';
 import { action } from '@ember/object';
 
 export default class FloatControlComponent extends ControlComponent {
-  get step() {
-    return 0.001;
-  }
-
   get roundedValue() {
     let rounded = Number.parseFloat(this.args.control.value).toFixed(3);
     return parseFloat(rounded);
@@ -47,7 +43,12 @@ export default class FloatControlComponent extends ControlComponent {
       control.value = result;
     } else {
       event = type;
-      control.value = event.target.value;
+
+      if (control.modelName == "integer-control") {
+        control.value = Math.round(event.target.value);
+      } else {
+        control.value = event.target.value;
+      }
     }
   }
 
@@ -64,12 +65,33 @@ export default class FloatControlComponent extends ControlComponent {
     this.socket.sendFeedback(control.controlAddress, control.value);
     // control.save();
   }
-  
-  get isTime() {
+
+  @action
+  increment() {
     const control = this.args.control;
-    return control.defaultUI == 4;
+
+    if (control.value == parseInt(control.value)) {
+      control.value = control.value + 1;
+    } else {
+      control.value = Math.ceil(control.value);
+    }
+
+    this.update();
   }
 
+  @action
+  decrement() {
+    const control = this.args.control;
+
+    if (control.value == parseInt(control.value)) {
+      control.value = control.value - 1;
+    } else {
+      control.value = Math.floor(control.value);
+    }
+
+    this.update();
+  }
+  
   get time() {
     const control = this.args.control;
     let hours = Math.floor(control.value / 60 / 60);
@@ -112,5 +134,4 @@ export default class FloatControlComponent extends ControlComponent {
       if (this.args.control.bgColor) return this.args.control.bgColorRgba;
       return "#303030";
   }
-
 }

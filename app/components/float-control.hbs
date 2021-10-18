@@ -4,7 +4,7 @@
 >
     
     <div class="secondary-container">
-        {{#if this.isTime }}
+        {{#if @control.isTime }}
             <Input 
                 value={{ this.time }} 
                 disabled={{@control.readOnly}}
@@ -17,6 +17,7 @@
                 value={{ this.roundedValue }} 
                 disabled={{@control.readOnly}}
                 class="secondary" 
+                inputmode="decimal"
                 {{ on "change" this.input }} 
                 {{ on "change" this.update }} 
             />
@@ -34,14 +35,14 @@
                 @min={{ @control.minVal }}
                 @max={{ @control.maxVal }}
                 
-                @step={{ this.step }} 
-
                 @fgColor={{ this.fgColorRgba }}
                 @bgColor={{ this.bgColorRgba }}
                 @textColor={{ this.args.control.textColorRgba }}
-                @mixBlendMode={{ this.args.control.mixBlendMode }}
+                @borderColor={{ this.args.control.borderColorRgba }}
+                @borderWidth={{ this.args.control.borderWidth }}
+                @isVertical={{ this.args.control.isVertical }}
                 
-                @onInput={{ this.input }} 
+                @onInput={{ this.setValue }} 
                 @onUpdate={{ this.update }} 
 
                 @readOnly={{ @control.readOnly }}
@@ -61,10 +62,19 @@
                     value={{ this.roundedValue }} 
                     disabled={{@control.readOnly}}
                     class="secondary" 
+                    inputmode="decimal"
                     {{ on "change" this.input }} 
                     {{ on "change" this.update }} 
                     {{ style this.customizeStyles }}
                 />
+                <button class="increment" 
+                    {{ on "click" this.increment}} 
+                    disabled={{ @control.readOnly}}
+                >+</button>
+                <button class="decrement" 
+                    {{ on "click" this.decrement}}
+                    disabled={{ @control.readOnly}}
+                >-</button>
             {{/if}}
         {{/if}}
     </div>

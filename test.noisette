@@ -1,7 +1,7 @@
 {
   "metaData": {
-    "version": "1.8.0b17",
-    "versionNumber": 67584
+    "version": "1.9.0b6",
+    "versionNumber": 67840
   },
   "projectSettings": {
     "containers": {
@@ -23,8 +23,61 @@
   "dashboardManager": {
     "parameters": [
       {
-        "value": true,
+        "value": false,
         "controlAddress": "/editMode"
+      },
+      {
+        "value": [
+          0,
+          0.1921568661928177,
+          0.2549019753932953,
+          1
+        ],
+        "controlAddress": "/tabsBGColor"
+      },
+      {
+        "value": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1
+        ],
+        "controlAddress": "/tabsLabelColor"
+      },
+      {
+        "value": [
+          0,
+          0.9882352948188782,
+          1,
+          1
+        ],
+        "controlAddress": "/tabsBorderColor"
+      },
+      {
+        "value": 0.0,
+        "controlAddress": "/tabsBorderWidth"
+      },
+      {
+        "value": [
+          1.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "controlAddress": "/tabsSelectedBGColor"
+      },
+      {
+        "value": [
+          0.8941176533699036,
+          1.0,
+          0.0,
+          1.0
+        ],
+        "controlAddress": "/tabsSelectedBorderColor"
+      },
+      {
+        "value": 1.700000047683716,
+        "controlAddress": "/tabsSelectedBorderWidth"
       }
     ],
     "items": [
@@ -35,6 +88,7 @@
               20.0,
               20.0
             ],
+            "extendedEditor": false,
             "controlAddress": "/viewUIPosition"
           }
         ],
@@ -47,6 +101,7 @@
                 800.0,
                 550.0
               ],
+              "extendedEditor": false,
               "controlAddress": "/canvasSize",
               "enabled": true
             },
@@ -68,13 +123,15 @@
                     -380.0,
                     -22.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUIPosition"
                 },
                 {
                   "value": [
-                    400,
-                    50
+                    400.0,
+                    50.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUISize"
                 },
                 {
@@ -83,27 +140,13 @@
                 },
                 {
                   "value": [
-                    0.0,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    0,
+                    1
                   ],
                   "controlAddress": "/textColor",
                   "enabled": false
-                },
-                {
-                  "value": [
-                    0.3803921639919281,
-                    0.0,
-                    0.0,
-                    1.0
-                  ],
-                  "controlAddress": "/contourColor",
-                  "enabled": false
-                },
-                {
-                  "value": 13.09999084472656,
-                  "controlAddress": "/contourThickness"
                 },
                 {
                   "value": true,
@@ -121,14 +164,18 @@
                 },
                 {
                   "value": true,
+                  "controlAddress": "/readOnly"
+                },
+                {
+                  "value": true,
                   "controlAddress": "/showValue"
                 },
                 {
                   "value": [
-                    1.0,
-                    0.0,
-                    0.0,
-                    1.0
+                    1,
+                    0,
+                    0,
+                    1
                   ],
                   "controlAddress": "/backgroundColor",
                   "enabled": false
@@ -164,13 +211,15 @@
                     -350.0,
                     -157.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUIPosition"
                 },
                 {
                   "value": [
-                    200,
-                    50
+                    200.0,
+                    50.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUISize"
                 },
                 {
@@ -180,37 +229,27 @@
                 {
                   "value": [
                     0.800000011920929,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    1
                   ],
                   "controlAddress": "/textColor",
                   "enabled": false
-                },
-                {
-                  "value": [
-                    0.09411764889955521,
-                    0.0,
-                    1.0,
-                    1.0
-                  ],
-                  "controlAddress": "/contourColor",
-                  "enabled": false
-                },
-                {
-                  "value": 10.90000152587891,
-                  "controlAddress": "/contourThickness"
                 },
                 {
                   "value": false,
                   "controlAddress": "/opaqueBackground"
                 },
                 {
+                  "value": false,
+                  "controlAddress": "/readOnly"
+                },
+                {
                   "value": [
                     0.3490196168422699,
                     0.3490196168422699,
                     0.3490196168422699,
-                    1.0
+                    1
                   ],
                   "controlAddress": "/backgroundColor",
                   "enabled": false
@@ -228,18 +267,24 @@
                     157.0,
                     -165.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUIPosition"
                 },
                 {
                   "value": [
-                    200,
-                    50
+                    200.0,
+                    50.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUISize"
                 },
                 {
                   "value": true,
                   "controlAddress": "/showLabel"
+                },
+                {
+                  "value": false,
+                  "controlAddress": "/readOnly"
                 }
               ],
               "niceName": "Dashboard Item 7",
@@ -254,13 +299,15 @@
                     195.0,
                     165.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUIPosition"
                 },
                 {
                   "value": [
-                    172,
-                    66
+                    172.0,
+                    66.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUISize"
                 }
               ],
@@ -276,13 +323,15 @@
                     -140.0,
                     -77.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUIPosition"
                 },
                 {
                   "value": [
-                    142,
-                    45
+                    142.0,
+                    45.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUISize"
                 },
                 {
@@ -292,31 +341,21 @@
                 {
                   "value": [
                     0.800000011920929,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    1
                   ],
                   "controlAddress": "/textColor",
                   "enabled": false
                 },
                 {
-                  "value": [
-                    0.3803921639919281,
-                    0.0,
-                    0.0,
-                    1.0
-                  ],
-                  "controlAddress": "/contourColor",
-                  "enabled": false
-                },
-                {
-                  "value": 11.70000267028809,
-                  "controlAddress": "/contourThickness"
-                },
-                {
                   "value": "asdf",
                   "controlAddress": "/customText",
                   "enabled": false
+                },
+                {
+                  "value": true,
+                  "controlAddress": "/readOnly"
                 },
                 {
                   "value": true,
@@ -326,8 +365,8 @@
                   "value": [
                     0.3176470696926117,
                     0.2862745225429535,
-                    0.0,
-                    1.0
+                    0,
+                    1
                   ],
                   "controlAddress": "/backgroundColor",
                   "enabled": false
@@ -335,9 +374,9 @@
                 {
                   "value": [
                     0.7058823704719543,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    1
                   ],
                   "controlAddress": "/foregroundColor",
                   "enabled": false
@@ -355,13 +394,15 @@
                     -388.0,
                     105.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUIPosition"
                 },
                 {
                   "value": [
-                    200,
-                    106
+                    200.0,
+                    106.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUISize"
                 },
                 {
@@ -371,19 +412,23 @@
                 {
                   "value": [
                     0.800000011920929,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    1
                   ],
                   "controlAddress": "/textColor",
                   "enabled": false
                 },
                 {
+                  "value": true,
+                  "controlAddress": "/readOnly"
+                },
+                {
                   "value": [
                     0.1372549086809158,
-                    0.0,
+                    0,
                     0.9490196108818054,
-                    1.0
+                    1
                   ],
                   "controlAddress": "/backgroundColor",
                   "enabled": false
@@ -401,13 +446,15 @@
                     4.0,
                     25.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUIPosition"
                 },
                 {
                   "value": [
-                    378,
-                    50
+                    378.0,
+                    50.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUISize"
                 },
                 {
@@ -417,19 +464,23 @@
                 {
                   "value": [
                     0.800000011920929,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    1
                   ],
                   "controlAddress": "/textColor",
                   "enabled": false
                 },
                 {
+                  "value": true,
+                  "controlAddress": "/readOnly"
+                },
+                {
                   "value": [
                     0.1333333402872086,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    1
                   ],
                   "controlAddress": "/backgroundColor",
                   "enabled": false
@@ -447,6 +498,7 @@
                     -72.0,
                     -218.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUIPosition"
                 },
                 {
@@ -454,6 +506,7 @@
                     157.0,
                     51.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUISize"
                 },
                 {
@@ -462,27 +515,17 @@
                 },
                 {
                   "value": [
-                    1.0,
-                    1.0,
-                    1.0,
-                    1.0
+                    1,
+                    1,
+                    1,
+                    1
                   ],
                   "controlAddress": "/textColor",
                   "enabled": false
                 },
                 {
-                  "value": [
-                    1.0,
-                    0.0,
-                    0.0,
-                    1.0
-                  ],
-                  "controlAddress": "/contourColor",
-                  "enabled": false
-                },
-                {
-                  "value": 8.999999046325684,
-                  "controlAddress": "/contourThickness"
+                  "value": true,
+                  "controlAddress": "/readOnly"
                 },
                 {
                   "value": true,
@@ -491,9 +534,9 @@
                 {
                   "value": [
                     0.04313725605607033,
-                    0.0,
-                    1.0,
-                    1.0
+                    0,
+                    1,
+                    1
                   ],
                   "controlAddress": "/backgroundColor",
                   "enabled": false
@@ -501,9 +544,9 @@
                 {
                   "value": [
                     0.7058823704719543,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    1
                   ],
                   "controlAddress": "/foregroundColor",
                   "enabled": false
@@ -521,13 +564,15 @@
                     -372.0,
                     -77.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUIPosition"
                 },
                 {
                   "value": [
-                    200,
-                    40
+                    200.0,
+                    40.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUISize"
                 },
                 {
@@ -537,26 +582,16 @@
                 {
                   "value": [
                     1.0,
-                    1.0,
-                    1.0,
+                    0.0,
+                    0.0,
                     1.0
                   ],
                   "controlAddress": "/textColor",
                   "enabled": false
                 },
                 {
-                  "value": [
-                    0.0,
-                    1.0,
-                    0.239215686917305,
-                    1.0
-                  ],
-                  "controlAddress": "/contourColor",
-                  "enabled": false
-                },
-                {
-                  "value": 6.299999713897705,
-                  "controlAddress": "/contourThickness"
+                  "value": false,
+                  "controlAddress": "/readOnly"
                 },
                 {
                   "value": false,
@@ -565,19 +600,19 @@
                 {
                   "value": [
                     0.0470588244497776,
-                    0.0,
+                    0,
                     0.6509804129600525,
-                    1.0
+                    1
                   ],
                   "controlAddress": "/backgroundColor",
                   "enabled": false
                 },
                 {
                   "value": [
-                    0.0,
-                    1.0,
+                    0,
+                    1,
                     0.9882352948188782,
-                    1.0
+                    1
                   ],
                   "controlAddress": "/foregroundColor",
                   "enabled": false
@@ -595,45 +630,37 @@
                     84.0,
                     -98.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUIPosition"
                 },
                 {
                   "value": [
-                    298,
-                    34
+                    298.0,
+                    34.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUISize"
                 },
                 {
                   "value": [
                     0.800000011920929,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    1
                   ],
                   "controlAddress": "/textColor",
                   "enabled": false
                 },
                 {
-                  "value": [
-                    0.105882354080677,
-                    0.0,
-                    0.3803921639919281,
-                    1.0
-                  ],
-                  "controlAddress": "/contourColor",
-                  "enabled": false
-                },
-                {
-                  "value": 5.699999809265137,
-                  "controlAddress": "/contourThickness"
+                  "value": true,
+                  "controlAddress": "/readOnly"
                 },
                 {
                   "value": [
                     0.1411764770746231,
                     0.7176470756530762,
-                    0.0,
-                    1.0
+                    0,
+                    1
                   ],
                   "controlAddress": "/backgroundColor",
                   "enabled": false
@@ -643,7 +670,7 @@
                     0.7058823704719543,
                     0.196078434586525,
                     0.1294117718935013,
-                    1.0
+                    1
                   ],
                   "controlAddress": "/foregroundColor",
                   "enabled": false
@@ -661,13 +688,15 @@
                     84.0,
                     -54.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUIPosition"
                 },
                 {
                   "value": [
-                    298,
-                    56
+                    298.0,
+                    56.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUISize"
                 },
                 {
@@ -677,33 +706,23 @@
                 {
                   "value": [
                     0.800000011920929,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    1
                   ],
                   "controlAddress": "/textColor",
                   "enabled": false
                 },
                 {
-                  "value": [
-                    0.0,
-                    0.3803921639919281,
-                    0.3450980484485626,
-                    1.0
-                  ],
-                  "controlAddress": "/contourColor",
-                  "enabled": false
-                },
-                {
-                  "value": 10.49999713897705,
-                  "controlAddress": "/contourThickness"
+                  "value": true,
+                  "controlAddress": "/readOnly"
                 },
                 {
                   "value": [
                     0.2196078449487686,
                     0.168627455830574,
-                    0.0,
-                    1.0
+                    0,
+                    1
                   ],
                   "controlAddress": "/backgroundColor",
                   "enabled": false
@@ -721,13 +740,15 @@
                     2.0,
                     85.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUIPosition"
                 },
                 {
                   "value": [
-                    380,
-                    66
+                    380.0,
+                    66.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUISize"
                 },
                 {
@@ -736,20 +757,20 @@
                 },
                 {
                   "value": [
-                    0.0,
+                    0,
                     0.0470588244497776,
                     0.800000011920929,
-                    1.0
+                    1
                   ],
                   "controlAddress": "/textColor",
                   "enabled": false
                 },
                 {
                   "value": [
-                    0.0,
+                    0,
                     0.1333333402872086,
                     0.0313725508749485,
-                    1.0
+                    1
                   ],
                   "controlAddress": "/backgroundColor",
                   "enabled": false
@@ -767,13 +788,15 @@
                     -72.0,
                     165.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUIPosition"
                 },
                 {
                   "value": [
-                    200,
-                    50
+                    200.0,
+                    50.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUISize"
                 }
               ],
@@ -789,6 +812,7 @@
                     -372.0,
                     241.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUIPosition"
                 },
                 {
@@ -796,6 +820,7 @@
                     405.0,
                     38.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUISize"
                 },
                 {
@@ -805,33 +830,23 @@
                 {
                   "value": [
                     0.800000011920929,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    1
                   ],
                   "controlAddress": "/textColor",
                   "enabled": false
                 },
                 {
-                  "value": [
-                    0.0,
-                    0.3372549116611481,
-                    0.3803921639919281,
-                    1.0
-                  ],
-                  "controlAddress": "/contourColor",
-                  "enabled": false
-                },
-                {
-                  "value": 12.89999866485596,
-                  "controlAddress": "/contourThickness"
+                  "value": true,
+                  "controlAddress": "/readOnly"
                 },
                 {
                   "value": [
-                    0.0,
-                    0.0,
+                    0,
+                    0,
                     0.1333333402872086,
-                    1.0
+                    1
                   ],
                   "controlAddress": "/backgroundColor",
                   "enabled": false
@@ -849,13 +864,15 @@
                     -372.0,
                     -218.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUIPosition"
                 },
                 {
                   "value": [
-                    277,
-                    43
+                    277.0,
+                    43.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUISize"
                 },
                 {
@@ -864,44 +881,34 @@
                 },
                 {
                   "value": [
-                    1.0,
-                    1.0,
-                    1.0,
-                    1.0
+                    1,
+                    1,
+                    1,
+                    1
                   ],
                   "controlAddress": "/textColor",
                   "enabled": false
                 },
                 {
-                  "value": [
-                    1.0,
-                    1.0,
-                    1.0,
-                    1.0
-                  ],
-                  "controlAddress": "/contourColor",
-                  "enabled": false
-                },
-                {
-                  "value": 5.300009250640869,
-                  "controlAddress": "/contourThickness"
+                  "value": true,
+                  "controlAddress": "/readOnly"
                 },
                 {
                   "value": [
-                    0.0,
+                    0,
                     0.2823529541492462,
                     0.294117659330368,
-                    1.0
+                    1
                   ],
                   "controlAddress": "/backgroundColor",
                   "enabled": false
                 },
                 {
                   "value": [
-                    0.0,
+                    0,
                     0.7058823704719543,
                     0.007843137718737125,
-                    1.0
+                    1
                   ],
                   "controlAddress": "/foregroundColor",
                   "enabled": false
@@ -919,6 +926,7 @@
                     -162.0,
                     45.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUIPosition"
                 },
                 {
@@ -926,6 +934,7 @@
                     40.0,
                     160.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUISize"
                 },
                 {
@@ -943,19 +952,13 @@
                   "enabled": false
                 },
                 {
-                  "value": [
-                    0.3803921639919281,
-                    0.3803921639919281,
-                    0.3803921639919281,
-                    1
-                  ],
-                  "controlAddress": "/contourColor",
-                  "enabled": false
-                },
-                {
                   "value": "",
                   "controlAddress": "/customText",
                   "enabled": false
+                },
+                {
+                  "value": false,
+                  "controlAddress": "/readOnly"
                 },
                 {
                   "value": [
@@ -998,6 +1001,7 @@
                     95.0,
                     -218.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUIPosition"
                 },
                 {
@@ -1005,6 +1009,7 @@
                     96.0,
                     26.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUISize"
                 },
                 {
@@ -1028,6 +1033,7 @@
                     212.0,
                     -218.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUIPosition"
                 },
                 {
@@ -1035,6 +1041,7 @@
                     45.0,
                     26.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUISize"
                 },
                 {
@@ -1058,6 +1065,7 @@
                     -51.0,
                     -158.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUIPosition"
                 },
                 {
@@ -1065,6 +1073,7 @@
                     71.0,
                     51.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUISize"
                 },
                 {
@@ -1080,10 +1089,89 @@
               "type": "DashboardParameterItem",
               "ghostAddress": "/modules/oSCQuery/values/my_effect/Controls/Mytoggle",
               "controllable": "/modules/oSCQuery/values/my_effect/Controls/Mytoggle"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    -112.0,
+                    45.0
+                  ],
+                  "extendedEditor": false,
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    104.0,
+                    100.0
+                  ],
+                  "extendedEditor": false,
+                  "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": true,
+                  "controlAddress": "/showLabel"
+                },
+                {
+                  "value": [
+                    0.800000011920929,
+                    0.800000011920929,
+                    0.800000011920929,
+                    1
+                  ],
+                  "controlAddress": "/textColor",
+                  "enabled": false
+                },
+                {
+                  "value": "",
+                  "controlAddress": "/customText",
+                  "enabled": false
+                },
+                {
+                  "value": false,
+                  "controlAddress": "/readOnly"
+                },
+                {
+                  "value": [
+                    0.1333333402872086,
+                    0.1333333402872086,
+                    0.1333333402872086,
+                    1
+                  ],
+                  "controlAddress": "/backgroundColor",
+                  "enabled": false
+                },
+                {
+                  "value": [
+                    0.9215686274509803,
+                    0,
+                    0,
+                    1
+                  ],
+                  "controlAddress": "/foregroundColor",
+                  "enabled": false
+                },
+                {
+                  "value": "Rotary Slider",
+                  "controlAddress": "/style"
+                },
+                {
+                  "value": "",
+                  "controlAddress": "/toggleImage"
+                }
+              ],
+              "niceName": "Dashboard Item 19",
+              "type": "DashboardParameterItem",
+              "ghostAddress": "/modules/oSCQuery/values/my_effect/Controls/Myfloat",
+              "controllable": "/modules/oSCQuery/values/my_effect/Controls/Myfloat"
             }
-          ]
-        },
-        "editing": true
+          ],
+          "viewOffset": [
+            126,
+            99
+          ],
+          "viewZoom": 1.0
+        }
       },
       {
         "niceName": "Dashboard Styled",
@@ -1095,8 +1183,18 @@
                 800.0,
                 550.0
               ],
+              "extendedEditor": false,
               "controlAddress": "/canvasSize",
               "enabled": true
+            },
+            {
+              "value": [
+                0,
+                0.407843142747879,
+                0.3803921639919281,
+                0.2196078449487686
+              ],
+              "controlAddress": "/backroundColor"
             },
             {
               "value": "",
@@ -1107,7 +1205,6 @@
               "controlAddress": "/backgroundImageScale"
             }
           ],
-          "editorIsCollapsed": true,
           "items": [
             {
               "parameters": [
@@ -1116,13 +1213,15 @@
                     -379.0,
                     -22.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUIPosition"
                 },
                 {
                   "value": [
-                    400,
-                    50
+                    400.0,
+                    50.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUISize"
                 },
                 {
@@ -1132,26 +1231,12 @@
                 {
                   "value": [
                     0.01568627543747425,
-                    0.0,
-                    1.0,
-                    1.0
+                    0,
+                    1,
+                    1
                   ],
                   "controlAddress": "/textColor",
                   "enabled": true
-                },
-                {
-                  "value": [
-                    0.9686274528503418,
-                    1.0,
-                    0.0,
-                    1.0
-                  ],
-                  "controlAddress": "/contourColor",
-                  "enabled": true
-                },
-                {
-                  "value": 13.09999084472656,
-                  "controlAddress": "/contourThickness"
                 },
                 {
                   "value": true,
@@ -1168,28 +1253,32 @@
                   "enabled": true
                 },
                 {
+                  "value": false,
+                  "controlAddress": "/readOnly"
+                },
+                {
                   "value": true,
                   "controlAddress": "/showValue"
                 },
                 {
                   "value": [
-                    1.0,
-                    0.0,
-                    0.0,
-                    1.0
+                    1,
+                    0,
+                    0,
+                    1
                   ],
                   "controlAddress": "/backgroundColor",
                   "enabled": true
                 },
                 {
                   "value": [
+                    0.6784313917160034,
+                    0.0,
                     0.9215686321258545,
-                    0.0,
-                    0.0,
                     1.0
                   ],
                   "controlAddress": "/foregroundColor",
-                  "enabled": false
+                  "enabled": true
                 },
                 {
                   "value": "Default",
@@ -1212,13 +1301,15 @@
                     -349.0,
                     -157.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUIPosition"
                 },
                 {
                   "value": [
-                    200,
-                    50
+                    200.0,
+                    50.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUISize"
                 },
                 {
@@ -1228,40 +1319,30 @@
                 {
                   "value": [
                     0.800000011920929,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    1
                   ],
                   "controlAddress": "/textColor",
                   "enabled": false
-                },
-                {
-                  "value": [
-                    0.09411764889955521,
-                    0.0,
-                    1.0,
-                    1.0
-                  ],
-                  "controlAddress": "/contourColor",
-                  "enabled": true
-                },
-                {
-                  "value": 10.90000152587891,
-                  "controlAddress": "/contourThickness"
                 },
                 {
                   "value": false,
                   "controlAddress": "/opaqueBackground"
                 },
                 {
+                  "value": true,
+                  "controlAddress": "/readOnly"
+                },
+                {
                   "value": [
                     0.3490196168422699,
-                    0.3490196168422699,
-                    0.3490196168422699,
+                    0.0,
+                    0.0,
                     1.0
                   ],
                   "controlAddress": "/backgroundColor",
-                  "enabled": false
+                  "enabled": true
                 }
               ],
               "niceName": "Dashboard Item 4",
@@ -1276,13 +1357,15 @@
                     183.0,
                     -158.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUIPosition"
                 },
                 {
                   "value": [
-                    200,
-                    50
+                    200.0,
+                    50.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUISize"
                 },
                 {
@@ -1302,13 +1385,15 @@
                     196.0,
                     165.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUIPosition"
                 },
                 {
                   "value": [
-                    172,
-                    66
+                    172.0,
+                    66.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUISize"
                 }
               ],
@@ -1324,13 +1409,15 @@
                     -139.0,
                     -77.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUIPosition"
                 },
                 {
                   "value": [
-                    142,
-                    45
+                    142.0,
+                    45.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUISize"
                 },
                 {
@@ -1340,26 +1427,12 @@
                 {
                   "value": [
                     0.800000011920929,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    1
                   ],
                   "controlAddress": "/textColor",
                   "enabled": true
-                },
-                {
-                  "value": [
-                    0.3803921639919281,
-                    0.0,
-                    0.0,
-                    1.0
-                  ],
-                  "controlAddress": "/contourColor",
-                  "enabled": true
-                },
-                {
-                  "value": 11.70000267028809,
-                  "controlAddress": "/contourThickness"
                 },
                 {
                   "value": "asdf",
@@ -1374,8 +1447,8 @@
                   "value": [
                     0.3176470696926117,
                     0.2862745225429535,
-                    0.0,
-                    1.0
+                    0,
+                    1
                   ],
                   "controlAddress": "/backgroundColor",
                   "enabled": false
@@ -1383,12 +1456,16 @@
                 {
                   "value": [
                     0.7058823704719543,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    1
                   ],
                   "controlAddress": "/foregroundColor",
                   "enabled": false
+                },
+                {
+                  "value": "Default",
+                  "controlAddress": "/style"
                 }
               ],
               "niceName": "Dashboard Item 2",
@@ -1403,13 +1480,15 @@
                     -387.0,
                     105.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUIPosition"
                 },
                 {
                   "value": [
-                    200,
-                    106
+                    200.0,
+                    106.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUISize"
                 },
                 {
@@ -1419,9 +1498,9 @@
                 {
                   "value": [
                     0.800000011920929,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    1
                   ],
                   "controlAddress": "/textColor",
                   "enabled": false
@@ -1429,9 +1508,9 @@
                 {
                   "value": [
                     0.1372549086809158,
-                    0.0,
+                    0,
                     0.9490196108818054,
-                    1.0
+                    1
                   ],
                   "controlAddress": "/backgroundColor",
                   "enabled": false
@@ -1449,13 +1528,15 @@
                     5.0,
                     25.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUIPosition"
                 },
                 {
                   "value": [
-                    378,
-                    50
+                    378.0,
+                    50.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUISize"
                 },
                 {
@@ -1465,9 +1546,9 @@
                 {
                   "value": [
                     0.800000011920929,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    1
                   ],
                   "controlAddress": "/textColor",
                   "enabled": false
@@ -1475,9 +1556,9 @@
                 {
                   "value": [
                     0.1333333402872086,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    1
                   ],
                   "controlAddress": "/backgroundColor",
                   "enabled": false
@@ -1495,6 +1576,7 @@
                     -71.0,
                     -218.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUIPosition"
                 },
                 {
@@ -1502,6 +1584,7 @@
                     157.0,
                     51.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUISize"
                 },
                 {
@@ -1510,27 +1593,17 @@
                 },
                 {
                   "value": [
-                    1.0,
-                    1.0,
-                    1.0,
-                    1.0
+                    1,
+                    1,
+                    1,
+                    1
                   ],
                   "controlAddress": "/textColor",
                   "enabled": true
                 },
                 {
-                  "value": [
-                    1.0,
-                    0.0,
-                    0.0,
-                    1.0
-                  ],
-                  "controlAddress": "/contourColor",
-                  "enabled": true
-                },
-                {
-                  "value": 8.999999046325684,
-                  "controlAddress": "/contourThickness"
+                  "value": false,
+                  "controlAddress": "/readOnly"
                 },
                 {
                   "value": true,
@@ -1539,9 +1612,9 @@
                 {
                   "value": [
                     0.04313725605607033,
-                    0.0,
-                    1.0,
-                    1.0
+                    0,
+                    1,
+                    1
                   ],
                   "controlAddress": "/backgroundColor",
                   "enabled": true
@@ -1549,9 +1622,9 @@
                 {
                   "value": [
                     0.7058823704719543,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    1
                   ],
                   "controlAddress": "/foregroundColor",
                   "enabled": true
@@ -1569,13 +1642,15 @@
                     -371.0,
                     -77.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUIPosition"
                 },
                 {
                   "value": [
-                    200,
-                    40
+                    200.0,
+                    40.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUISize"
                 },
                 {
@@ -1584,27 +1659,13 @@
                 },
                 {
                   "value": [
-                    1.0,
-                    1.0,
-                    1.0,
-                    1.0
+                    1,
+                    1,
+                    1,
+                    1
                   ],
                   "controlAddress": "/textColor",
                   "enabled": true
-                },
-                {
-                  "value": [
-                    0.0,
-                    1.0,
-                    0.239215686917305,
-                    1.0
-                  ],
-                  "controlAddress": "/contourColor",
-                  "enabled": true
-                },
-                {
-                  "value": 6.299999713897705,
-                  "controlAddress": "/contourThickness"
                 },
                 {
                   "value": false,
@@ -1613,19 +1674,19 @@
                 {
                   "value": [
                     0.0470588244497776,
-                    0.0,
+                    0,
                     0.6509804129600525,
-                    1.0
+                    1
                   ],
                   "controlAddress": "/backgroundColor",
                   "enabled": true
                 },
                 {
                   "value": [
-                    0.0,
-                    1.0,
+                    0,
+                    1,
                     0.9882352948188782,
-                    1.0
+                    1
                   ],
                   "controlAddress": "/foregroundColor",
                   "enabled": false
@@ -1643,45 +1704,33 @@
                     85.0,
                     -98.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUIPosition"
                 },
                 {
                   "value": [
-                    298,
-                    34
+                    298.0,
+                    34.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUISize"
                 },
                 {
                   "value": [
                     0.800000011920929,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    1
                   ],
                   "controlAddress": "/textColor",
                   "enabled": true
                 },
                 {
                   "value": [
-                    0.105882354080677,
-                    0.0,
-                    0.3803921639919281,
-                    1.0
-                  ],
-                  "controlAddress": "/contourColor",
-                  "enabled": true
-                },
-                {
-                  "value": 5.699999809265137,
-                  "controlAddress": "/contourThickness"
-                },
-                {
-                  "value": [
                     0.1411764770746231,
                     0.7176470756530762,
-                    0.0,
-                    1.0
+                    0,
+                    1
                   ],
                   "controlAddress": "/backgroundColor",
                   "enabled": false
@@ -1691,7 +1740,7 @@
                     0.7058823704719543,
                     0.196078434586525,
                     0.1294117718935013,
-                    1.0
+                    1
                   ],
                   "controlAddress": "/foregroundColor",
                   "enabled": false
@@ -1709,13 +1758,15 @@
                     85.0,
                     -54.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUIPosition"
                 },
                 {
                   "value": [
-                    298,
-                    56
+                    298.0,
+                    56.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUISize"
                 },
                 {
@@ -1725,33 +1776,19 @@
                 {
                   "value": [
                     0.800000011920929,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    1
                   ],
                   "controlAddress": "/textColor",
                   "enabled": true
                 },
                 {
                   "value": [
-                    0.0,
-                    0.3803921639919281,
-                    0.3450980484485626,
-                    1.0
-                  ],
-                  "controlAddress": "/contourColor",
-                  "enabled": true
-                },
-                {
-                  "value": 10.49999713897705,
-                  "controlAddress": "/contourThickness"
-                },
-                {
-                  "value": [
                     0.2196078449487686,
                     0.168627455830574,
-                    0.0,
-                    1.0
+                    0,
+                    1
                   ],
                   "controlAddress": "/backgroundColor",
                   "enabled": true
@@ -1769,13 +1806,15 @@
                     3.0,
                     85.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUIPosition"
                 },
                 {
                   "value": [
-                    380,
-                    66
+                    380.0,
+                    66.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUISize"
                 },
                 {
@@ -1784,20 +1823,20 @@
                 },
                 {
                   "value": [
-                    0.0,
+                    0,
                     0.0470588244497776,
                     0.800000011920929,
-                    1.0
+                    1
                   ],
                   "controlAddress": "/textColor",
                   "enabled": false
                 },
                 {
                   "value": [
-                    0.0,
+                    0,
                     0.1333333402872086,
                     0.0313725508749485,
-                    1.0
+                    1
                   ],
                   "controlAddress": "/backgroundColor",
                   "enabled": false
@@ -1815,13 +1854,15 @@
                     -71.0,
                     165.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUIPosition"
                 },
                 {
                   "value": [
-                    200,
-                    50
+                    200.0,
+                    50.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUISize"
                 }
               ],
@@ -1837,6 +1878,7 @@
                     -371.0,
                     240.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUIPosition"
                 },
                 {
@@ -1844,6 +1886,7 @@
                     422.0,
                     35.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUISize"
                 },
                 {
@@ -1853,33 +1896,19 @@
                 {
                   "value": [
                     0.800000011920929,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    1
                   ],
                   "controlAddress": "/textColor",
                   "enabled": true
                 },
                 {
                   "value": [
-                    0.0,
-                    0.3372549116611481,
-                    0.3803921639919281,
-                    1.0
-                  ],
-                  "controlAddress": "/contourColor",
-                  "enabled": true
-                },
-                {
-                  "value": 12.89999866485596,
-                  "controlAddress": "/contourThickness"
-                },
-                {
-                  "value": [
-                    0.0,
-                    0.0,
+                    0,
+                    0,
                     0.1333333402872086,
-                    1.0
+                    1
                   ],
                   "controlAddress": "/backgroundColor",
                   "enabled": true
@@ -1897,13 +1926,15 @@
                     -371.0,
                     -218.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUIPosition"
                 },
                 {
                   "value": [
-                    277,
-                    43
+                    277.0,
+                    43.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUISize"
                 },
                 {
@@ -1912,44 +1943,34 @@
                 },
                 {
                   "value": [
-                    1.0,
-                    1.0,
-                    1.0,
-                    1.0
+                    1,
+                    1,
+                    1,
+                    1
                   ],
                   "controlAddress": "/textColor",
                   "enabled": true
                 },
                 {
-                  "value": [
-                    1.0,
-                    1.0,
-                    1.0,
-                    1.0
-                  ],
-                  "controlAddress": "/contourColor",
-                  "enabled": true
-                },
-                {
-                  "value": 5.300009250640869,
-                  "controlAddress": "/contourThickness"
+                  "value": false,
+                  "controlAddress": "/readOnly"
                 },
                 {
                   "value": [
-                    0.0,
+                    0,
                     0.2823529541492462,
                     0.294117659330368,
-                    1.0
+                    1
                   ],
                   "controlAddress": "/backgroundColor",
                   "enabled": true
                 },
                 {
                   "value": [
-                    0.0,
+                    0,
                     0.7058823704719543,
                     0.007843137718737125,
-                    1.0
+                    1
                   ],
                   "controlAddress": "/foregroundColor",
                   "enabled": true
@@ -1967,6 +1988,7 @@
                     -161.0,
                     45.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUIPosition"
                 },
                 {
@@ -1974,6 +1996,7 @@
                     40.0,
                     160.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUISize"
                 },
                 {
@@ -1988,16 +2011,6 @@
                     1
                   ],
                   "controlAddress": "/textColor",
-                  "enabled": false
-                },
-                {
-                  "value": [
-                    0.3803921639919281,
-                    0.3803921639919281,
-                    0.3803921639919281,
-                    1
-                  ],
-                  "controlAddress": "/contourColor",
                   "enabled": false
                 },
                 {
@@ -2046,6 +2059,7 @@
                     96.0,
                     -218.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUIPosition"
                 },
                 {
@@ -2053,6 +2067,7 @@
                     96.0,
                     26.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUISize"
                 },
                 {
@@ -2076,6 +2091,7 @@
                     213.0,
                     -218.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUIPosition"
                 },
                 {
@@ -2083,6 +2099,7 @@
                     45.0,
                     26.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUISize"
                 },
                 {
@@ -2106,6 +2123,7 @@
                     -50.0,
                     -158.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUIPosition"
                 },
                 {
@@ -2113,6 +2131,7 @@
                     71.0,
                     51.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUISize"
                 },
                 {
@@ -2128,9 +2147,43 @@
               "type": "DashboardParameterItem",
               "ghostAddress": "/modules/oSCQuery/values/my_effect/Controls/Mytoggle",
               "controllable": "/modules/oSCQuery/values/my_effect/Controls/Mytoggle"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    64.0,
+                    221.0
+                  ],
+                  "extendedEditor": false,
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    128.0,
+                    54.0
+                  ],
+                  "extendedEditor": false,
+                  "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": "Horizontal Slider",
+                  "controlAddress": "/style"
+                }
+              ],
+              "niceName": "Dashboard Item 19",
+              "type": "DashboardParameterItem",
+              "ghostAddress": "/sequences/sequence/fps",
+              "controllable": "/sequences/sequence/fps"
             }
-          ]
-        }
+          ],
+          "viewOffset": [
+            109,
+            -29
+          ],
+          "viewZoom": 1.0
+        },
+        "editing": true
       },
       {
         "niceName": "Dashboard 1",
@@ -2139,9 +2192,10 @@
           "parameters": [
             {
               "value": [
-                800,
-                400
+                800.0,
+                400.0
               ],
+              "extendedEditor": false,
               "controlAddress": "/canvasSize",
               "enabled": true
             },
@@ -2159,13 +2213,15 @@
                     -371.0,
                     -35.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUIPosition"
                 },
                 {
                   "value": [
-                    741,
-                    50
+                    741.0,
+                    50.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUISize"
                 },
                 {
@@ -2193,13 +2249,15 @@
                     -371.0,
                     -124.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUIPosition"
                 },
                 {
                   "value": [
-                    200,
-                    50
+                    200.0,
+                    50.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUISize"
                 }
               ],
@@ -2215,13 +2273,15 @@
                     -141.0,
                     -124.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUIPosition"
                 },
                 {
                   "value": [
-                    200,
-                    50
+                    200.0,
+                    50.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUISize"
                 }
               ],
@@ -2237,6 +2297,7 @@
                     -344.0,
                     75.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUIPosition"
                 },
                 {
@@ -2244,6 +2305,7 @@
                     57.0,
                     15.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUISize"
                 }
               ],
@@ -2259,6 +2321,7 @@
                     -256.0,
                     75.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUIPosition"
                 },
                 {
@@ -2266,6 +2329,7 @@
                     85.0,
                     25.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUISize"
                 }
               ],
@@ -2281,6 +2345,7 @@
                     -141.0,
                     75.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUIPosition"
                 },
                 {
@@ -2288,6 +2353,7 @@
                     85.0,
                     35.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUISize"
                 }
               ],
@@ -2303,6 +2369,7 @@
                     -26.0,
                     75.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUIPosition"
                 },
                 {
@@ -2310,6 +2377,7 @@
                     128.0,
                     45.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUISize"
                 }
               ],
@@ -2325,6 +2393,7 @@
                     135.0,
                     75.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUIPosition"
                 },
                 {
@@ -2332,6 +2401,7 @@
                     199.0,
                     72.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUISize"
                 }
               ],
@@ -2340,7 +2410,12 @@
               "ghostAddress": "/sequences/sequence/togglePlay",
               "controllable": "/sequences/sequence/togglePlay"
             }
-          ]
+          ],
+          "viewOffset": [
+            0,
+            0
+          ],
+          "viewZoom": 1.0
         }
       },
       {
@@ -2353,6 +2428,7 @@
                 600.0,
                 400.0
               ],
+              "extendedEditor": false,
               "controlAddress": "/canvasSize",
               "enabled": true
             }
@@ -2366,6 +2442,7 @@
                     8.0,
                     -193.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUIPosition"
                 },
                 {
@@ -2373,6 +2450,7 @@
                     98.0,
                     21.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUISize"
                 },
                 {
@@ -2383,9 +2461,9 @@
                 {
                   "value": [
                     0.800000011920929,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    1
                   ],
                   "controlAddress": "/color"
                 },
@@ -2401,16 +2479,18 @@
               "parameters": [
                 {
                   "value": [
-                    -273.0,
-                    -123.0
+                    -274.0,
+                    -125.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUIPosition"
                 },
                 {
                   "value": [
-                    554.0,
-                    300.0
+                    563.0,
+                    302.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUISize"
                 },
                 {
@@ -2420,17 +2500,17 @@
                 {
                   "value": [
                     0.01568627543747425,
-                    0.0,
-                    1.0,
-                    1.0
+                    0,
+                    1,
+                    1
                   ],
                   "controlAddress": "/borderColor"
                 },
                 {
                   "value": [
-                    1.0,
-                    0.0,
-                    0.0,
+                    1,
+                    0,
+                    0,
                     0.2117647081613541
                   ],
                   "controlAddress": "/backgroundColor",
@@ -2443,9 +2523,10 @@
                 "parameters": [
                   {
                     "value": [
-                      546.0,
-                      292.0
+                      555.0,
+                      294.0
                     ],
+                    "extendedEditor": false,
                     "controlAddress": "/canvasSize",
                     "enabled": false
                   }
@@ -2459,6 +2540,7 @@
                           19.0,
                           18.0
                         ],
+                        "extendedEditor": false,
                         "controlAddress": "/viewUIPosition"
                       },
                       {
@@ -2466,6 +2548,7 @@
                           100.0,
                           20.0
                         ],
+                        "extendedEditor": false,
                         "controlAddress": "/viewUISize"
                       }
                     ],
@@ -2479,6 +2562,7 @@
                           116.0,
                           120.0
                         ],
+                        "extendedEditor": false,
                         "controlAddress": "/viewUIPosition"
                       },
                       {
@@ -2486,7 +2570,12 @@
                           299.0,
                           50.0
                         ],
+                        "extendedEditor": false,
                         "controlAddress": "/viewUISize"
+                      },
+                      {
+                        "value": false,
+                        "controlAddress": "/readOnly"
                       }
                     ],
                     "niceName": "Item",
@@ -2501,6 +2590,7 @@
                           46.0,
                           60.0
                         ],
+                        "extendedEditor": false,
                         "controlAddress": "/viewUIPosition"
                       },
                       {
@@ -2508,6 +2598,7 @@
                           200.0,
                           50.0
                         ],
+                        "extendedEditor": false,
                         "controlAddress": "/viewUISize"
                       }
                     ],
@@ -2520,9 +2611,10 @@
                     "parameters": [
                       {
                         "value": [
-                          185.0,
-                          200.0
+                          210.0,
+                          217.0
                         ],
+                        "extendedEditor": false,
                         "controlAddress": "/viewUIPosition"
                       },
                       {
@@ -2530,14 +2622,15 @@
                           400.0,
                           300.0
                         ],
+                        "extendedEditor": false,
                         "controlAddress": "/viewUISize"
                       },
                       {
                         "value": [
-                          0.0,
+                          0,
                           0.196078434586525,
                           0.0784313753247261,
-                          1.0
+                          1
                         ],
                         "controlAddress": "/backgroundColor",
                         "enabled": true
@@ -2552,6 +2645,7 @@
                             392.0,
                             292.0
                           ],
+                          "extendedEditor": false,
                           "controlAddress": "/canvasSize",
                           "enabled": false
                         }
@@ -2565,6 +2659,7 @@
                                 57.0,
                                 39.0
                               ],
+                              "extendedEditor": false,
                               "controlAddress": "/viewUIPosition"
                             },
                             {
@@ -2572,19 +2667,35 @@
                                 400.0,
                                 300.0
                               ],
+                              "extendedEditor": false,
                               "controlAddress": "/viewUISize"
                             }
                           ],
                           "niceName": "Comment",
                           "type": "DashboardCommentItem"
                         }
-                      ]
+                      ],
+                      "viewOffset": [
+                        0,
+                        0
+                      ],
+                      "viewZoom": 1.0
                     }
                   }
-                ]
+                ],
+                "viewOffset": [
+                  -281,
+                  -151
+                ],
+                "viewZoom": 1.0
               }
             }
-          ]
+          ],
+          "viewOffset": [
+            0,
+            0
+          ],
+          "viewZoom": 1.0
         }
       },
       {
@@ -2597,6 +2708,7 @@
                 1200.0,
                 800.0
               ],
+              "extendedEditor": false,
               "controlAddress": "/canvasSize",
               "enabled": false
             }
@@ -2610,6 +2722,7 @@
                     200.0,
                     50.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUISize"
                 }
               ],
@@ -2625,6 +2738,7 @@
                     -168.0,
                     -384.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUIPosition"
                 },
                 {
@@ -2632,6 +2746,7 @@
                     400.0,
                     300.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUISize"
                 }
               ],
@@ -2647,6 +2762,7 @@
                     242.0,
                     -164.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUIPosition"
                 },
                 {
@@ -2654,6 +2770,7 @@
                     400.0,
                     300.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUISize"
                 }
               ],
@@ -2669,6 +2786,7 @@
                     -555.0,
                     0.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUIPosition"
                 },
                 {
@@ -2676,6 +2794,7 @@
                     400.0,
                     300.0
                   ],
+                  "extendedEditor": false,
                   "controlAddress": "/viewUISize"
                 }
               ],
@@ -2684,10 +2803,27 @@
               "ghostAddress": "/modules/oSCQuery/values/my_effect/Controls",
               "container": "/modules/oSCQuery/values/my_effect/Controls"
             }
-          ]
+          ],
+          "viewOffset": [
+            0,
+            0
+          ],
+          "viewZoom": 1.0
         }
       }
-    ]
+    ],
+    "viewOffset": [
+      0,
+      0
+    ],
+    "viewZoom": 1.0
+  },
+  "parrots": {
+    "viewOffset": [
+      0,
+      0
+    ],
+    "viewZoom": 1.0
   },
   "layout": {
     "mainLayout": {
@@ -2705,19 +2841,19 @@
             {
               "type": 1,
               "width": 1920,
-              "height": 833,
+              "height": 716,
               "direction": 1,
               "shifters": [
                 {
                   "type": 1,
                   "width": 150,
-                  "height": 833,
+                  "height": 716,
                   "direction": 2,
                   "shifters": [
                     {
                       "type": 0,
                       "width": 150,
-                      "height": 415,
+                      "height": 358,
                       "currentContent": "Modules",
                       "tabs": [
                         {
@@ -2728,7 +2864,7 @@
                     {
                       "type": 0,
                       "width": 150,
-                      "height": 411,
+                      "height": 352,
                       "currentContent": "Custom Variables",
                       "tabs": [
                         {
@@ -2740,8 +2876,8 @@
                 },
                 {
                   "type": 0,
-                  "width": 1405,
-                  "height": 833,
+                  "width": 1312,
+                  "height": 716,
                   "currentContent": "Dashboard",
                   "tabs": [
                     {
@@ -2760,8 +2896,8 @@
                 },
                 {
                   "type": 0,
-                  "width": 353,
-                  "height": 833,
+                  "width": 446,
+                  "height": 716,
                   "currentContent": "Inspector",
                   "tabs": [
                     {
@@ -2774,13 +2910,13 @@
             {
               "type": 1,
               "width": 1920,
-              "height": 157,
+              "height": 275,
               "direction": 1,
               "shifters": [
                 {
                   "type": 0,
                   "width": 150,
-                  "height": 157,
+                  "height": 275,
                   "currentContent": "Sequences",
                   "tabs": [
                     {
@@ -2791,7 +2927,7 @@
                 {
                   "type": 0,
                   "width": 1234,
-                  "height": 157,
+                  "height": 275,
                   "currentContent": "Sequence Editor",
                   "tabs": [
                     {
@@ -2802,7 +2938,7 @@
                 {
                   "type": 0,
                   "width": 524,
-                  "height": 157,
+                  "height": 275,
                   "currentContent": "Logger",
                   "tabs": [
                     {
@@ -2830,8 +2966,19 @@
         "niceName": "OSCQuery",
         "type": "OSCQuery",
         "scripts": {
+          "viewOffset": [
+            0,
+            0
+          ],
+          "viewZoom": 1.0
         },
         "params": {
+          "parameters": [
+            {
+              "value": "TD OSC Query Server",
+              "controlAddress": "/serverName"
+            }
+          ],
           "containers": {
             "output": {
               "parameters": [
@@ -2854,6 +3001,13 @@
             }
           }
         },
+        "templates": {
+          "viewOffset": [
+            0,
+            0
+          ],
+          "viewZoom": 1.0
+        },
         "values": {
           "containers": {
             "my_effect": {
@@ -2862,21 +3016,27 @@
                 "Controls": {
                   "parameters": [
                     {
-                      "value": 0.8140000104904175,
+                      "value": 0.5774749517440796,
                       "controlAddress": "/Myfloat"
                     },
                     {
+                      "value": 24,
+                      "hexMode": false,
+                      "controlAddress": "/Myint"
+                    },
+                    {
                       "value": [
-                        "0.758",
-                        "83.838"
+                        0.5565696358680725,
+                        30.52017974853516
                       ],
+                      "extendedEditor": false,
                       "controlAddress": "/Myxy"
                     },
                     {
                       "value": [
-                        0.824999988079071,
-                        58.20100021362305,
-                        0.6240000128746033
+                        0.3936020135879517,
+                        90.38314819335938,
+                        0.6794610619544983
                       ],
                       "controlAddress": "/My3d"
                     },
@@ -2885,7 +3045,7 @@
                       "controlAddress": "/Mytoggle"
                     },
                     {
-                      "value": "ADFC",
+                      "value": "asd asdf",
                       "controlAddress": "/Mystring"
                     },
                     {
@@ -2894,9 +3054,9 @@
                     },
                     {
                       "value": [
-                        0.6745098039215687,
-                        0.3607843137254902,
-                        0.2235294117647059,
+                        0,
+                        1,
+                        1,
                         1
                       ],
                       "controlAddress": "/Mycolor"
@@ -2929,12 +3089,12 @@
                       "DESCRIPTION": "Myfloat",
                       "FULL_PATH": "/my_effect/Controls/Myfloat",
                       "VALUE": [
-                        0.372671
+                        0.7279999852180481
                       ],
                       "RANGE": [
                         {
-                          "MAX": 1,
-                          "MIN": 0
+                          "MAX": 1.0,
+                          "MIN": 0.0
                         }
                       ],
                       "ACCESS": 3
@@ -2944,12 +3104,12 @@
                       "DESCRIPTION": "Myint",
                       "FULL_PATH": "/my_effect/Controls/Myint",
                       "VALUE": [
-                        66
+                        24
                       ],
                       "RANGE": [
                         {
-                          "MAX": 100,
-                          "MIN": 0
+                          "MAX": 100.0,
+                          "MIN": 0.0
                         }
                       ],
                       "ACCESS": 3
@@ -2959,17 +3119,17 @@
                       "DESCRIPTION": "Myxy",
                       "FULL_PATH": "/my_effect/Controls/Myxy",
                       "VALUE": [
-                        0.701,
-                        29.742
+                        0.6819999814033508,
+                        5.0
                       ],
                       "RANGE": [
                         {
-                          "MAX": 1,
-                          "MIN": 0
+                          "MAX": 1.0,
+                          "MIN": 0.0
                         },
                         {
-                          "MAX": 100,
-                          "MIN": 0
+                          "MAX": 100.0,
+                          "MIN": 0.0
                         }
                       ],
                       "ACCESS": 3
@@ -2979,22 +3139,52 @@
                       "DESCRIPTION": "My3d",
                       "FULL_PATH": "/my_effect/Controls/My3d",
                       "VALUE": [
-                        1,
-                        78.831,
-                        0.53
+                        0.1780000030994415,
+                        52.90999984741211,
+                        0.4620000123977661
                       ],
                       "RANGE": [
                         {
-                          "MAX": 1,
-                          "MIN": 0
+                          "MAX": 1.0,
+                          "MIN": 0.0
                         },
                         {
-                          "MAX": 100,
-                          "MIN": 0
+                          "MAX": 100.0,
+                          "MIN": 0.0
                         },
                         {
-                          "MAX": 1,
-                          "MIN": 0
+                          "MAX": 1.0,
+                          "MIN": 0.0
+                        }
+                      ],
+                      "ACCESS": 3
+                    },
+                    "My4d": {
+                      "TYPE": "ffff",
+                      "DESCRIPTION": "My4d",
+                      "FULL_PATH": "/my_effect/Controls/My4d",
+                      "VALUE": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0
+                      ],
+                      "RANGE": [
+                        {
+                          "MAX": 1.0,
+                          "MIN": 0.0
+                        },
+                        {
+                          "MAX": 1.0,
+                          "MIN": 0.0
+                        },
+                        {
+                          "MAX": 1.0,
+                          "MIN": 0.0
+                        },
+                        {
+                          "MAX": 1.0,
+                          "MIN": 0.0
                         }
                       ],
                       "ACCESS": 3
@@ -3004,7 +3194,7 @@
                       "DESCRIPTION": "Mytoggle",
                       "FULL_PATH": "/my_effect/Controls/Mytoggle",
                       "VALUE": [
-                        false
+                        true
                       ],
                       "RANGE": [
                         {
@@ -3019,7 +3209,7 @@
                       "DESCRIPTION": "Mystring",
                       "FULL_PATH": "/my_effect/Controls/Mystring",
                       "VALUE": [
-                        "xx"
+                        "xxx"
                       ],
                       "ACCESS": 3
                     },
@@ -3046,7 +3236,7 @@
                       "DESCRIPTION": "Mycolor",
                       "FULL_PATH": "/my_effect/Controls/Mycolor",
                       "VALUE": [
-                        "#ff3d00ff"
+                        "#ffffffff"
                       ],
                       "ACCESS": 3
                     },
@@ -3063,6 +3253,12 @@
                       "TYPE": "N",
                       "DESCRIPTION": "Mypulse",
                       "FULL_PATH": "/my_effect/Controls/Mypulse",
+                      "ACCESS": 3
+                    },
+                    "Mymomentary": {
+                      "TYPE": "N",
+                      "DESCRIPTION": "Mymomentary",
+                      "FULL_PATH": "/my_effect/Controls/Mymomentary",
                       "ACCESS": 3
                     }
                   }
@@ -3089,6 +3285,11 @@
         "niceName": "OSC",
         "type": "OSC",
         "scripts": {
+          "viewOffset": [
+            0,
+            0
+          ],
+          "viewZoom": 1.0
         },
         "params": {
           "containers": {
@@ -3111,11 +3312,23 @@
                   "niceName": "OSC Output",
                   "type": "BaseItem"
                 }
-              ]
+              ],
+              "viewOffset": [
+                0,
+                0
+              ],
+              "viewZoom": 1.0
             },
             "pass_through": {
             }
           }
+        },
+        "templates": {
+          "viewOffset": [
+            0,
+            0
+          ],
+          "viewZoom": 1.0
         },
         "values": {
           "parameters": [
@@ -3133,9 +3346,10 @@
             },
             {
               "value": [
-                "20000",
-                "10000"
+                2000.0,
+                10000.0
               ],
+              "extendedEditor": false,
               "controlAddress": "/_example2d",
               "type": "Point2D",
               "niceName": "/example2d",
@@ -3164,8 +3378,8 @@
             },
             {
               "value": [
-                100.0,
-                3.0,
+                10.0,
+                5.0,
                 5.0
               ],
               "controlAddress": "/_example3donly2ranges",
@@ -3181,14 +3395,41 @@
           ]
         }
       }
-    ]
+    ],
+    "viewOffset": [
+      0,
+      0
+    ],
+    "viewZoom": 1.0
+  },
+  "customVariables": {
+    "viewOffset": [
+      0,
+      0
+    ],
+    "viewZoom": 1.0
   },
   "states": {
+    "viewOffset": [
+      0,
+      0
+    ],
+    "viewZoom": 1.0,
     "transitions": {
-      "hideInEditor": true
+      "hideInEditor": true,
+      "viewOffset": [
+        0,
+        0
+      ],
+      "viewZoom": 1.0
     },
     "comments": {
-      "hideInEditor": true
+      "hideInEditor": true,
+      "viewOffset": [
+        0,
+        0
+      ],
+      "viewZoom": 1.0
     }
   },
   "sequences": {
@@ -3206,7 +3447,7 @@
             "controlAddress": "/totalTime"
           },
           {
-            "value": 122,
+            "value": 144,
             "hexMode": false,
             "controlAddress": "/fps"
           },
@@ -3241,7 +3482,7 @@
                   "controlAddress": "/layerColor"
                 },
                 {
-                  "value": "Do not send",
+                  "value": "Send original value",
                   "controlAddress": "/recordSendMode"
                 }
               ],
@@ -3250,26 +3491,37 @@
                 "automation": {
                   "parameters": [
                     {
-                      "value": 14.30327892303467,
+                      "value": 30.0,
+                      "controlAddress": "/length"
+                    },
+                    {
+                      "value": 20.89361763000488,
                       "controlAddress": "/position"
                     },
                     {
                       "value": [
-                        0,
-                        1
+                        0.0,
+                        1.0
                       ],
+                      "extendedEditor": false,
                       "controlAddress": "/viewValueRange"
                     },
                     {
                       "value": [
-                        0,
-                        1
+                        0.0,
+                        1.0
                       ],
+                      "extendedEditor": false,
                       "controlAddress": "/range",
                       "enabled": true
                     }
                   ],
-                  "hideInEditor": true
+                  "hideInEditor": true,
+                  "viewOffset": [
+                    0,
+                    0
+                  ],
+                  "viewZoom": 1.0
                 },
                 "recorder": {
                   "editorIsCollapsed": true
@@ -3290,7 +3542,12 @@
                         "niceName": "Input Value",
                         "type": "Input Value"
                       }
-                    ]
+                    ],
+                    "viewOffset": [
+                      0,
+                      0
+                    ],
+                    "viewZoom": 1.0
                   },
                   "params": {
                     "parameters": [
@@ -3303,20 +3560,52 @@
                     "editorIsCollapsed": true
                   },
                   "filters": {
+                    "viewOffset": [
+                      0,
+                      0
+                    ],
+                    "viewZoom": 1.0
                   },
                   "outputs": {
+                    "viewOffset": [
+                      0,
+                      0
+                    ],
+                    "viewZoom": 1.0
                   }
                 }
               },
               "type": "Mapping"
             }
-          ]
+          ],
+          "viewOffset": [
+            0,
+            0
+          ],
+          "viewZoom": 1.0
         },
         "cues": {
-          "hideInEditor": true
+          "hideInEditor": true,
+          "viewOffset": [
+            0,
+            0
+          ],
+          "viewZoom": 1.0
         },
         "editing": true
       }
-    ]
+    ],
+    "viewOffset": [
+      0,
+      0
+    ],
+    "viewZoom": 1.0
+  },
+  "routers": {
+    "viewOffset": [
+      0,
+      0
+    ],
+    "viewZoom": 1.0
   }
 }

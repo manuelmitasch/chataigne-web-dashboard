@@ -18,4 +18,9 @@ export default class ControlComponent extends Component {
     this.socket.sendFeedback(control.controlAddress, control.value);
     // control.save();
   }
+
+  @action
+  setValue(value) {
+    this.args.control.value = value;
+  }
 }

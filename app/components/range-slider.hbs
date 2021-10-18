@@ -1,31 +1,44 @@
-<div class="range-slider-container {{ if @readOnly "disabled" ""}}">
-    <Input 
-        type="range" 
-        name={{@name}}
-        
-        value={{@value}} 
-        step={{@step}} 
-
-        min={{@min}} 
-        max={{@max}} 
-        
-        disabled={{@readOnly}}
-        
-        style="--min: {{@min}}; --max: {{@max}}; --val: {{@value}}; --fgColor: {{ @fgColor }}; --bgColor: {{ @bgColor }}"
-
-        {{on "input" this.input}} 
-        {{on "input" this.update}} 
-    />
-
+<div class="range-slider-container unselectable {{ if @readOnly "disabled" ""}} {{ if @isVertical "vertical" ""}}"
+    {{ style this.containerStyles }}
+    {{on "click" this.hidePopover}} 
+    {{on "mousedown" (fn this.updateEditing true)}}
+    {{on "touchstart" (fn this.updateEditing true)}}
+    {{on "mouseup" (fn this.updateEditing false)}}
+    {{on "touchend" (fn this.updateEditing false)}}
+    {{on "dblclick" this.showPopover}}
+    {{did-insert this.registerListener}}
+    {{will-destroy this.unregisterListener}}
+>
+    <div class="range-slider-background" {{ style this.activeStyles }} name={{ @name }}></div>
+    
     <label 
         for={{ @name }} 
         class="range-slider-label unselectable"
-        style="mix-blend-mode: {{ @mixBlendMode }}; color: {{ @textColor }}"
+        style="color: {{ @textColor }}"
     >
         {{#if @showLabel}}
-            {{ @label }}: 
+            {{ @label }} :&nbsp;
         {{/if}}
-        {{ this.roundedValue }}
+        <span>
+            {{ this.roundedValue }}
+        </span>
     </label>
+
     {{yield}}
 </div>
+
+{{#if this.popoverVisible}}
+    <div class="range-slider-popover arrow_box">
+        <div class="arrow_box">
+            <Input 
+                inputmode="decimal"
+                value={{ this.roundedValue2 }} 
+                disabled={{this.args.readOnly}}
+                {{ on "click" this.clickPopover }}
+                {{ on "change" this.setValue }} 
+                {{ autofocus }}
+                {{!-- {{ on "change" this.update }}  --}}
+            />
+        </div>
+    </div>
+{{/if}}

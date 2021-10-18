@@ -69,6 +69,10 @@ export default class ControlModel extends Model {
         return this.urlService.imageSrc(this.customImage);
     }
 
+    get isTime() {
+        return this.defaultUI == 4 || this.style == 3;
+    }
+
     transformToRgba(parameterName) {
         let color = this[parameterName];
 

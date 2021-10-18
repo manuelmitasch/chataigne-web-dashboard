@@ -40,6 +40,16 @@ export default class Point2DControlComponent extends ControlComponent {
   }
 
   @action
+  setValue2(value) {
+    this.args.control.value2 = value;
+  }
+
+  @action
+  setValue3(value) {
+    this.args.control.value3 = value;
+  }
+
+  @action
   update(event) {
     const control = this.args.control;
 
