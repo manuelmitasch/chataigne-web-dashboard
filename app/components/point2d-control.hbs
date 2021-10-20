@@ -1,11 +1,13 @@
 <ControlContainer 
     @control={{@control}} 
-    @showLabel={{ true }}
+    @showLabel={{ this.showLabel }}
     @useWidthSplit={{ this.useWidthSplit }}
 >
     <div class="secondary-container">
         {{#if @control.hasAllRanges }}
-            <button {{on "click" this.toggleCanvas}}>2D Canvas</button>
+            {{#unless @control.is2DCanvas}}
+                <button {{on "click" this.toggleCanvas}}>2D Canvas</button>
+            {{/unless}}
         {{/if}}
         <Input 
             value={{this.roundedValue}} 
@@ -26,69 +28,115 @@
     </div>
 
     <div class="main-input">
-        {{#if @control.hasRange}}
-            <RangeSlider 
-                @name={{ @control.id }}
+        {{#if @control.is2DCanvas}}
+            <CanvasPoint2d 
                 @value={{ @control.value }}
-
                 @min={{ @control.minVal }}
                 @max={{ @control.maxVal }}
-                
-                @fgColor={{ this.fgColorRgba }}
-                @bgColor={{ this.bgColorRgba }}
-                @textColor={{ this.args.control.textColorRgba }}
-                
-                @onInput={{ this.setValue }} 
-                @onUpdate={{ this.update }}
 
-                @readOnly={{ @control.readOnly }}
+                @value2={{ @control.value2 }}
+                @min2={{ @control.minVal2 }}
+                @max2={{ @control.maxVal2 }}
+
+                @label={{ @control.label }}
+                @width={{ @control.width }}
+                @height={{ @control.height }}
+
+                @onInput={{this.setValue}}
+                @onInput2={{this.setValue2}}
+
+                @onUpdate={{ fn this.update }} 
+                @onUpdate2={{ fn this.update "2" }} 
+
+                @readOnly={{ @control.readOnly }} 
             />
         {{else}}
-            <Input 
-                value={{ this.roundedValue }} 
-                disabled={{@control.readOnly}}
-                class="secondary" 
-                inputmode="decimal"
-                {{ on "change" this.input }} 
-                {{ on "change" this.update }} 
-                {{ style this.customizeStyles }}
-            />
-        {{/if}}
+            {{#if @control.hasRange}}
+                <RangeSlider 
+                    @name={{ @control.id }}
+                    @value={{ @control.value }}
+
+                    @min={{ @control.minVal }}
+                    @max={{ @control.maxVal }}
+                    
+                    @fgColor={{ this.fgColorRgba }}
+                    @bgColor={{ this.bgColorRgba }}
+                    @textColor={{ this.args.control.textColorRgba }}
+                    
+                    @onInput={{ this.setValue }} 
+                    @onUpdate={{ this.update }}
+
+                    @readOnly={{ @control.readOnly }}
+                />
+            {{else}}
+                <Input 
+                    value={{ this.roundedValue }} 
+                    disabled={{@control.readOnly}}
+                    class="secondary" 
+                    inputmode="decimal"
+                    {{ on "change" this.input }} 
+                    {{ on "change" this.update }} 
+                    {{ style this.customizeStyles }}
+                />
+            {{/if}}
+            {{#if @control.hasRange2}}
+                <RangeSlider 
+                    @name={{ concat @control.id "2" }}
+                    @value={{ @control.value2 }}
+
+                    @min={{ @control.minVal2 }}
+                    @max={{ @control.maxVal2 }}
+
+                    @class="no-top-margin"
+                    
+                    @fgColor={{ this.fgColorRgba }}
+                    @bgColor={{ this.bgColorRgba }}
+                    @textColor={{ this.args.control.textColorRgba }}
+                    
+                    @onInput={{ this.setValue2 }} 
+                    @onUpdate={{ fn this.update "2" }} 
+
+                    @readOnly={{ @control.readOnly }}
+                />
+            {{else}}
+                <Input 
+                    value={{ this.roundedValue2 }} 
+                    disabled={{@control.readOnly}}
+                    class="secondary" 
+                    inputmode="decimal"
+                    {{ on "change" (fn this.input "2") }} 
+                    {{ on "change" (fn this.update "2") }} 
+                    {{ style this.customizeStyles }}
+                />
+            {{/if}}
         
-        {{#if @control.hasRange2}}
-            <RangeSlider 
-                @name={{ concat @control.id "2" }}
-                @value={{ @control.value2 }}
-
-                @min={{ @control.minVal2 }}
-                @max={{ @control.maxVal2 }}
-
-                @class="no-top-margin"
-                
-                @fgColor={{ this.fgColorRgba }}
-                @bgColor={{ this.bgColorRgba }}
-                @textColor={{ this.args.control.textColorRgba }}
-                
-                @onInput={{ this.setValue2 }} 
-                @onUpdate={{ fn this.update "2" }} 
-
-                @readOnly={{ @control.readOnly }}
-            />
-        {{else}}
-            <Input 
-                value={{ this.roundedValue2 }} 
-                disabled={{@control.readOnly}}
-                class="secondary" 
-                inputmode="decimal"
-                {{ on "change" (fn this.input "2") }} 
-                {{ on "change" (fn this.update "2") }} 
-                {{ style this.customizeStyles }}
-            />
         {{/if}}
     </div>
 
     {{#if this.showCanvas}}
-        <CanvasPoint2d @control={{@control}}></CanvasPoint2d>
+        <CanvasPoint2d 
+            @value={{ @control.value }}
+            @min={{ @control.minVal }}
+            @max={{ @control.maxVal }}
+
+            @value2={{ @control.value2 }}
+            @min2={{ @control.minVal2 }}
+            @max2={{ @control.maxVal2 }}
+
+            @label={{ @control.label }}
+            @width="300"
+            @height="300"
+            @marginTop="5"
+
+            @onInput={{this.setValue}}
+            @onInput2={{this.setValue2}}
+
+            @onUpdate={{ fn this.update }} 
+            @onUpdate2={{ fn this.update "2" }} 
+
+            
+            @readOnly={{ @control.readOnly }} 
+        />
     {{/if}}
 
     {{yield}}

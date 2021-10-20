@@ -16,4 +16,8 @@ export default class FloatControlModel extends Control {
     get hasAllRanges() {
         return (this.hasRange && this.hasRange2);
     }
+
+    get is2DCanvas() {
+        return this.style == 12;
+    }
 }

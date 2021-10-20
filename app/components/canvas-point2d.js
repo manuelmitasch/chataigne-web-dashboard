@@ -4,121 +4,206 @@ import { tracked } from '@glimmer/tracking';
 
 export default class CanvasPoint2dComponent extends ControlComponent {
     @tracked editing = false
-    canvasWidth = 300
-    canvasHeight = 300
+    @tracked editingElement
+    @tracked startDiffX = 0
+    @tracked startDiffY = 0
+    @tracked popoverVisible = false
     
     get pointX () {
-        const control = this.args.control;
-        const result = this.remapValue(control.value, control.minVal, control.maxVal, -2.5, this.canvasWidth-3.5); 
-        return result;
+        return this.remapValue(this.args.value, this.args.min, this.args.max, 0, this.width-12); 
     }    
 
     get pointY () {
-        const control = this.args.control;
-        const result = this.remapValue(control.value2, control.minVal2, control.maxVal2, this.canvasHeight-3.5, -2.5); 
-        return result;
+        return this.remapValue(this.args.value2, this.args.min2, this.args.max2, this.height-12, 0); 
     }
 
     get crosshairX() {
-        return this.pointX + 2;
+        return this.pointX + 4.5;
     }
 
     get crosshairY() {
-        return this.pointY - 3;
+        return this.pointY - 5.5;
+    }
+    
+    get roundedX() {
+        let rounded = Number.parseFloat(this.args.value).toFixed(4);
+        return rounded;
+    }
+
+    get roundedX2() {
+        let rounded = Number.parseFloat(this.args.value).toFixed(4);
+        return parseFloat(rounded);
+    }
+    
+    get roundedY() {
+        let rounded = Number.parseFloat(this.args.value2).toFixed(4);
+        return rounded;
+    }
+        
+    get roundedY2() {
+        let rounded = Number.parseFloat(this.args.value2).toFixed(4);
+        return parseFloat(rounded);
+    }
+
+    get width() {
+        return (this.settings.displayLayout) ? this.args.width : 300;
+    }
+
+    get height() {
+        return (this.settings.displayLayout) ? this.args.height : 300;
     }
 
     @action
     updateEditing(value, event) {
         this.editing = value;
+        this.editingElement = event.srcElement;
+
+        if (value && !this.args.readOnly) {
+            let srcElement = this.editingElement;
+
+            let valueX = this.calculateX(event, srcElement);
+            this.startDiffX = this.args.value - valueX;
+
+            let valueY = this.calculateY(event, srcElement);
+            this.startDiffY = this.args.value2 - valueY;
+        }
+    }
+
+    
+    @action
+    disableEditing() {
+        this.editing = false;
     }
 
     @action
     updatePosition(event) {
-        let pageX = event.pageX;
-        let pageY = event.pageY;
-        let srcElement = event.srcElement;
-        
+        if (!this.args.readOnly) {
+            let pageX = event.pageX;
+            let pageY = event.pageY;
+            let srcElement = event.srcElement;
+
+            let valueX = this.calculateX(pageX, srcElement);
+            let relValueX = valueX + this.startDiffX;
+
+            let valueY = this.calculateY(pageY, srcElement);
+            let relValueY = valueY + this.startDiffY;
+
+            this.args.onInput(relValueX);
+            this.args.onInput2(relValueY);
+        }
+    }
+
+    calculateX(event, srcElement) {
+        let pageX = (event.type.includes("touch")) ? event.changedTouches[0].pageX : event.pageX;
+
         if (!srcElement.classList.contains("canvas")) {
             srcElement = srcElement.parentElement;
         }
-        
-        let offsetTop = srcElement.getBoundingClientRect().top + window.scrollY;
-        let offsetLeft = srcElement.getBoundingClientRect().left + window.scrollX;
-     
-        this.calculateXY(pageX, pageY, offsetLeft, offsetTop, srcElement);
 
+        let offsetLeft = srcElement.getBoundingClientRect().left + window.scrollX;
+        let elementWidth = srcElement.getBoundingClientRect().width;
+
+        let clickX = pageX - offsetLeft;    
+        let value = this.remapValue(clickX, 0, elementWidth, this.args.min, this.args.max); 
+
+        return value;
+    } 
+
+    calculateY(event, srcElement) {
+        let pageY = (event.type.includes("touch")) ? event.changedTouches[0].pageY : event.pageY;
+
+        if (!srcElement.classList.contains("canvas")) {
+            srcElement = srcElement.parentElement;
+        }
+
+        let offsetTop = srcElement.getBoundingClientRect().top + window.scrollY;
+        let elementHeight = srcElement.getBoundingClientRect().height;
+
+        let clickY = pageY - offsetTop;    
+        let value = this.remapValue(clickY, elementHeight, 0, this.args.min2, this.args.max2); 
+
+        return value;
     }
 
-    calculateXY(pageX, pageY, offsetLeft, offsetTop, canvasElement) {
-        const control = this.args.control;
+    @action 
+    input(event) {
+        if (this.args.onInput && !this.args.readOnly) {
+            if (this.value < this.args.min) {
+                this.value = this.args.min;
+            } else if (this.value > this.args.max) {
+                this.value = this.args.max;
+            }
 
-        let clickX = pageX - offsetLeft;
-        let clickY = pageY - offsetTop;
+            this.args.onInput(this.value);
+        }
 
-        let valueX = this.remapValue(clickX, 0, this.canvasWidth, control.minVal, control.maxVal); 
-        let valueY = this.remapValue(clickY, 0, this.canvasHeight+1, control.maxVal2, control.minVal2); 
+        if (this.args.onInput2 && !this.args.readOnly) {
+            if (this.value2 < this.args.min2) {
+                this.value2 = this.args.min2;
+            } else if (this.value2 > this.args.max2) {
+                this.value2 = this.args.max2;
+            }
 
-        control.value = valueX;
-        control.value2 = valueY;
-
-        this.update();
+            this.args.onInput2(this.value2);
+        }
     }
 
     @action
     update(event) {
-      const control = this.args.control;
-  
-      if (control.value < control.minVal) {
-        control.value = control.minVal;
-      } else if (control.value > control.maxVal) {
-        control.value = control.maxVal;
-      }
-  
-      if (control.value2 < control.minVal2) {
-        control.value2 = control.minVal2;
-      } else if (control.value2 > control.maxVal2) {
-        control.value2 = control.maxVal2;
-      }
-  
-      this.socket.sendFeedback(control.controlAddress, [control.value, control.value2]);
-      // control.save();
-    }
-
-    @action
-    moveListener(event) {
-        if (this.editing) {
-            let pageX = event.pageX;
-            let pageY = event.pageY;
-            let srcElement = event.srcElement;
-            
-            if (!srcElement.classList.contains("canvas")) {
-                srcElement = srcElement.parentElement;
+        if (this.args.onUpdate && !this.args.readOnly) {
+            if (this.value < this.args.min) {
+                this.value = this.args.min;
+            } else if (this.value > this.args.max) {
+                this.value = this.args.max;
             }
-            
-            let offsetTop = srcElement.getBoundingClientRect().top + window.scrollY;
-            let offsetLeft = srcElement.getBoundingClientRect().left + window.scrollX;
-         
-            this.calculateXY(pageX, pageY, offsetLeft, offsetTop, srcElement);
+
+            this.args.onUpdate(this.value);
+        }
+
+        if (this.args.onUpdate2 && !this.args.readOnly) {
+            if (this.value2 < this.args.min2) {
+                this.value2 = this.args.min2;
+            } else if (this.value2 > this.args.max2) {
+                this.value2 = this.args.max2;
+            }
+        
+            this.args.onUpdate2(this.value2);
         }
     }
 
     @action
-    touchListener(event) {
-        if (this.editing) {
-            let pageX = event.changedTouches[0].pageX;
-            let pageY = event.changedTouches[0].pageY;
-            let srcElement = event.srcElement;
-            
-            if (!srcElement.classList.contains("canvas")) {
-                srcElement = srcElement.parentElement;
-            }
-            
-            let offsetTop = srcElement.getBoundingClientRect().top + window.scrollY;
-            let offsetLeft = srcElement.getBoundingClientRect().left + window.scrollX;
-         
-            this.calculateXY(pageX, pageY, offsetLeft, offsetTop, srcElement);
+    showPopover(event) {
+        if (!this.args.readOnly) {
+            this.popoverVisible = true;
+        }
+    }
 
-            event.preventDefault();
+    @action
+    hidePopover(event) {
+        this.popoverVisible = false;
+    }
+
+    @action
+    clickPopover(event) {
+        event.stopPropagation();
+    }
+    
+    @action
+    moveListener(event) {
+        if (this.editing && !this.args.readOnly && !this.popoverVisible) {
+            let srcElement = this.editingElement;
+
+            let valueX = this.calculateX(event, srcElement)
+            let relValueX = valueX + this.startDiffX;
+            this.args.onInput(relValueX);
+
+            let valueY = this.calculateY(event, srcElement)
+            let relValueY = valueY + this.startDiffY;
+            this.args.onInput2(relValueY);
+
+            this.update();
+
+            if (event.type.includes("touch")) event.preventDefault();
         }
     }
 
@@ -129,17 +214,92 @@ export default class CanvasPoint2dComponent extends ControlComponent {
   
     @action
     registerListener(element) {
-      element.addEventListener('mousemove', this.moveListener);
-      element.addEventListener('touchmove', this.touchListener);
-      element.addEventListener('mouseleave', this.leaveListener);
+        document.addEventListener('mousemove', this.moveListener);
+        element.addEventListener('touchmove', this.moveListener);
+        document.addEventListener('mouseup', this.disableEditing)
+        document.addEventListener('click', this.hidePopover);
     }
   
     @action
     unregisterListener(element) {
-      element.removeEventListener('movemove', this.moveListener);
-      element.removeEventListener('touchmove', this.touchListener);
-      element.removeEventListener('mouseleave', this.leaveListener);
+        document.removeEventListener('movemove', this.moveListener);
+        element.removeEventListener('touchmove', this.moveListener);
+        document.removeEventListener('mouseup', this.disableEditing)
+        document.removeEventListener('click', this.hidePopover);
     }
+
+    get containerStyles() {
+        let styles = {
+            width: this.width + "px",
+            height: this.height + "px",
+            marginTop: this.args.marginTop + "px"
+        };
+        
+        return styles;
+    }
+
+    get pointStyles() {
+        let styles = {
+            left: this.pointX + "px",
+            top: this.pointY + "px"
+        }
+
+        return styles;
+    }
+
+    get crosshairXStyles() {
+        let styles = {
+            top: this.crosshairY + "px"
+        }
+
+        return styles;
+    }
+
+    get crosshairYStyles() {
+        let styles = {
+            left: this.crosshairX + "px"
+        }
+
+        return styles;
+    }
+
+    @action
+    setValue(event) {
+        var value = parseFloat(event.srcElement.value);
+
+        if (this.args.onInput && !this.args.readOnly) {
+            if (value < this.args.min) {
+                value = this.args.min;
+            } else if (value > this.args.max) {
+                value = this.args.max;
+            }
+        
+            this.args.onInput(value);
+            this.args.onUpdate(value);
+        }
+
+        // this.hidePopover();
+    }
+
+    @action
+    setValue2(event) {
+        var value = parseFloat(event.srcElement.value);
+
+        if (this.args.onInput2 && !this.args.readOnly) {
+            if (value < this.args.min2) {
+                value = this.args.min2;
+            } else if (value > this.args.max2) {
+                value = this.args.max2;
+            }
+        
+            this.args.onInput2(value);
+            this.args.onUpdate2(value);
+        }
+
+        // this.hidePopover();
+    }
+    
+    
 
     remapValue (value, in_min, in_max, out_min, out_max) {
         return (value - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;

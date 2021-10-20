@@ -7,8 +7,8 @@ import { inject as service } from '@ember/service';
 export default class RangeSliderComponent extends Component {
     @service('settings') settings
     @tracked editing = false
-    @tracked startDiff = 0
     @tracked editingElement
+    @tracked startDiff = 0
     @tracked popoverVisible = false
 
     get roundedValue() {
@@ -77,7 +77,6 @@ export default class RangeSliderComponent extends Component {
             let relValue = value + this.startDiff;
 
             this.args.onInput(relValue);
-            // this.update();
         }
     }
 
@@ -124,16 +123,16 @@ export default class RangeSliderComponent extends Component {
     @action
     registerListener(element) {
       document.addEventListener('mousemove', this.moveListener);
-      document.addEventListener('mouseup', this.disableEditing)
       element.addEventListener('touchmove', this.moveListener);
+      document.addEventListener('mouseup', this.disableEditing)
       document.addEventListener('click', this.hidePopover);
     }
   
     @action
     unregisterListener(element) {
       document.removeEventListener('movemove', this.moveListener);
-      document.removeEventListener('mouseup', this.disableEditing)
       element.removeEventListener('touchmove', this.moveListener);
+      document.removeEventListener('mouseup', this.disableEditing)
       document.removeEventListener('click', this.hidePopover);
     }
 

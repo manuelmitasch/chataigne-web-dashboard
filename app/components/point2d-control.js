@@ -3,7 +3,15 @@ import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 
 export default class Point2DControlComponent extends ControlComponent {
-  @tracked showCanvas = false
+  @tracked displayCanvas = false
+
+  get showCanvas() {
+    return this.displayCanvas && !this.settings.displayLayout;
+  }
+
+  get showLabel() {
+    return !this.args.control.is2DCanvas;
+  }
 
   get step() {
     return 0.001;
@@ -62,7 +70,7 @@ export default class Point2DControlComponent extends ControlComponent {
 
   @action
   toggleCanvas() {
-    this.showCanvas = !this.showCanvas;
+    this.displayCanvas = !this.displayCanvas;
   }
 
   
