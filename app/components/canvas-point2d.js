@@ -82,6 +82,7 @@ export default class CanvasPoint2dComponent extends ControlComponent {
     @action
     disableEditing() {
         this.editing = false;
+        this.args.onFinishEditing();
     }
 
     @action

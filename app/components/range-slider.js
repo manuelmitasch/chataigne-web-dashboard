@@ -69,6 +69,7 @@ export default class RangeSliderComponent extends Component {
     @action
     disableEditing() {
         this.editing = false;
+        this.args.onFinishEditing();
     }
 
     @action
