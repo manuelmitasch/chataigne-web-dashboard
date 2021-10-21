@@ -46,11 +46,15 @@ export default class CanvasPoint2dComponent extends ControlComponent {
     }
 
     get width() {
-        return (this.settings.displayLayout) ? this.args.width : 300;
+        let borderWidth = this.args.borderWidth;
+        let width = (this.settings.displayLayout) ? this.args.width : 300;
+        return (borderWidth) ? width - this.args.borderWidth * 2 : width;
     }
 
     get height() {
-        return (this.settings.displayLayout) ? this.args.height : 300;
+        let borderWidth = this.args.borderWidth;
+        let height = (this.settings.displayLayout) ? this.args.height : 300;
+        return (borderWidth) ? height - this.args.borderWidth * 2 : height;
     }
 
     @action
@@ -232,7 +236,9 @@ export default class CanvasPoint2dComponent extends ControlComponent {
         let styles = {
             width: this.width + "px",
             height: this.height + "px",
-            marginTop: this.args.marginTop + "px"
+            marginTop: this.args.marginTop + "px",
+            background: this.args.bgColor,
+            borderColor: this.args.borderColor,
         };
         
         return styles;
@@ -241,7 +247,8 @@ export default class CanvasPoint2dComponent extends ControlComponent {
     get pointStyles() {
         let styles = {
             left: this.pointX + "px",
-            top: this.pointY + "px"
+            top: this.pointY + "px",
+            background: this.args.fgColor
         }
 
         return styles;

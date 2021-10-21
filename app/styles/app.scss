@@ -921,7 +921,7 @@ button.triggered {
     .crosshair.y {
         height: 100%;
         width: 1px;
-        top: -10px;
+        top: -11px;
     }
 
     label, .value-x, .value-y {
@@ -1012,7 +1012,7 @@ button.triggered {
 
 .canvas.active {
     .point {
-        background: $selected;
+        background: $selected !important; 
     }
 }
 

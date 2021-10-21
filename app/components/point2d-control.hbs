@@ -42,6 +42,11 @@
                 @width={{ @control.width }}
                 @height={{ @control.height }}
 
+                @fgColor={{ this.fgColorRgba }}
+                @bgColor={{ this.bgColorRgba }}
+                @textColor={{ this.args.control.textColorRgba }}
+                @borderWidth={{ this.args.control.borderWidth }}
+
                 @onInput={{this.setValue}}
                 @onInput2={{this.setValue2}}
 
@@ -127,6 +132,9 @@
             @width="300"
             @height="300"
             @marginTop="5"
+            @fgColor={{ this.fgColorRgba }}
+            @bgColor={{ this.bgColorRgba }}
+            @textColor={{ this.args.control.textColorRgba }}
 
             @onInput={{this.setValue}}
             @onInput2={{this.setValue2}}
