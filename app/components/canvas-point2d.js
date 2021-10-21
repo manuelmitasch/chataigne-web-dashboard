@@ -8,6 +8,8 @@ export default class CanvasPoint2dComponent extends ControlComponent {
     @tracked startDiffX = 0
     @tracked startDiffY = 0
     @tracked popoverVisible = false
+    @tracked xAxisLocked = false
+    @tracked YAxisLocked = false
     
     get pointX () {
         return this.remapValue(this.args.value, this.args.min, this.args.max, 0, this.width-12); 
@@ -199,11 +201,13 @@ export default class CanvasPoint2dComponent extends ControlComponent {
 
             let valueX = this.calculateX(event, srcElement)
             let relValueX = valueX + this.startDiffX;
-            this.args.onInput(relValueX);
+
+            if (!this.xAxisLocked) this.args.onInput(relValueX);
 
             let valueY = this.calculateY(event, srcElement)
             let relValueY = valueY + this.startDiffY;
-            this.args.onInput2(relValueY);
+            
+            if (!this.YAxisLocked) this.args.onInput2(relValueY);
 
             this.update();
 
@@ -222,6 +226,8 @@ export default class CanvasPoint2dComponent extends ControlComponent {
         element.addEventListener('touchmove', this.moveListener);
         document.addEventListener('mouseup', this.disableEditing)
         document.addEventListener('click', this.hidePopover);
+        document.addEventListener('keydown', this.keyListener);
+        document.addEventListener('keyup', this.keyListener);
     }
   
     @action
@@ -230,6 +236,8 @@ export default class CanvasPoint2dComponent extends ControlComponent {
         element.removeEventListener('touchmove', this.moveListener);
         document.removeEventListener('mouseup', this.disableEditing)
         document.removeEventListener('click', this.hidePopover);
+        document.removeEventListener('keydown', this.keyListener);
+        document.removeEventListener('keyup', this.keyListener);
     }
 
     get containerStyles() {
@@ -284,8 +292,6 @@ export default class CanvasPoint2dComponent extends ControlComponent {
             this.args.onInput(value);
             this.args.onUpdate(value);
         }
-
-        // this.hidePopover();
     }
 
     @action
@@ -302,11 +308,24 @@ export default class CanvasPoint2dComponent extends ControlComponent {
             this.args.onInput2(value);
             this.args.onUpdate2(value);
         }
-
-        // this.hidePopover();
     }
-    
-    
+
+    @action
+    keyListener(event) {
+        if (event.type == "keydown") {
+            if (event.shiftKey) {
+                this.YAxisLocked = true;
+            } else if (event.altKey) {
+                this.xAxisLocked = true;
+            }
+        } else if (event.type == "keyup") {
+            if (event.key == "Shift") {
+                this.YAxisLocked = false;
+            } else if (event.key == "Alt") {
+                this.xAxisLocked = false;
+            }
+        }
+    }
 
     remapValue (value, in_min, in_max, out_min, out_max) {
         return (value - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
