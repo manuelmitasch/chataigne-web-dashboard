@@ -50,8 +50,8 @@
                 @onInput={{this.setValue}}
                 @onInput2={{this.setValue2}}
 
-                @onUpdate={{ fn this.update }} 
-                @onUpdate2={{ fn this.update "2" }} 
+                @onUpdate={{ this.update }}
+                @onFinishEditing={{ this.onFinishEditing }}
 
                 @readOnly={{ @control.readOnly }} 
             />
@@ -70,6 +70,7 @@
                     
                     @onInput={{ this.setValue }} 
                     @onUpdate={{ this.update }}
+                    @onFinishEditing={{ this.onFinishEditing }}
 
                     @readOnly={{ @control.readOnly }}
                 />
@@ -100,6 +101,7 @@
                     
                     @onInput={{ this.setValue2 }} 
                     @onUpdate={{ fn this.update "2" }} 
+                    @onFinishEditing={{ this.onFinishEditing }}
 
                     @readOnly={{ @control.readOnly }}
                 />
@@ -140,8 +142,7 @@
             @onInput2={{this.setValue2}}
 
             @onUpdate={{ fn this.update }} 
-            @onUpdate2={{ fn this.update "2" }} 
-
+            @onFinishEditing={{ this.onFinishEditing }}
             
             @readOnly={{ @control.readOnly }} 
         />

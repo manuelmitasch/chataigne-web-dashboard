@@ -60,6 +60,10 @@ export default class RangeSliderComponent extends Component {
             let value = this.calculateValue(event, srcElement);
             this.startDiff = this.args.value - value;
         }
+
+        if (!value) {
+            this.args.onFinishEditing();
+        }
     }
 
     @action

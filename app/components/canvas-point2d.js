@@ -73,8 +73,11 @@ export default class CanvasPoint2dComponent extends ControlComponent {
             let valueY = this.calculateY(event, srcElement);
             this.startDiffY = this.args.value2 - valueY;
         }
-    }
 
+        if (!value) {
+            this.args.onFinishEditing();
+        }
+    }
     
     @action
     disableEditing() {
@@ -163,17 +166,12 @@ export default class CanvasPoint2dComponent extends ControlComponent {
                 this.value = this.args.max;
             }
 
-            this.args.onUpdate(this.value);
-        }
-
-        if (this.args.onUpdate2 && !this.args.readOnly) {
             if (this.value2 < this.args.min2) {
                 this.value2 = this.args.min2;
             } else if (this.value2 > this.args.max2) {
                 this.value2 = this.args.max2;
             }
-        
-            this.args.onUpdate2(this.value2);
+            this.args.onUpdate(this.value, this.value);
         }
     }
 

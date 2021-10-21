@@ -81,7 +81,9 @@ export default class WebsocketService extends Service {
         
         this.store.peekAll('float-control').forEach(function(item) {
             if (item.controlAddress == payload.controlAddress) {
-                item.value = payload.value;
+                if (!item.isEditing) {
+                    item.value = payload.value;
+                }
             }
         });
 
@@ -117,8 +119,10 @@ export default class WebsocketService extends Service {
 
         this.store.peekAll('point2d-control').forEach(function(item) {
             if (item.controlAddress == payload.controlAddress) {
-                item.value = payload.value[0];
-                item.value2 = payload.value[1];
+                if (!item.isEditing) {
+                    item.value = payload.value[0];
+                    item.value2 = payload.value[1];
+                }
             }
         });
 

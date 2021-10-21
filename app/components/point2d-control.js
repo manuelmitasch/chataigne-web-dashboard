@@ -44,8 +44,15 @@ export default class Point2DControlComponent extends ControlComponent {
   }
 
   @action
+  setValue(value) {
+    super.setValue(value);
+    this.args.control.isEditing = true;
+  }
+
+  @action
   setValue2(value) {
     this.args.control.value2 = value;
+    this.args.control.isEditing = true;
   }
 
   @action
@@ -65,7 +72,11 @@ export default class Point2DControlComponent extends ControlComponent {
     }
 
     this.socket.sendFeedback(control.controlAddress, [control.value, control.value2]);
-    // control.save();
+  }
+
+  @action
+  onFinishEditing(event) {
+    this.args.control.isEditing = false;
   }
 
   @action
