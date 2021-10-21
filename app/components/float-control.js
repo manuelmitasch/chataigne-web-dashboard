@@ -134,4 +134,8 @@ export default class FloatControlComponent extends ControlComponent {
       if (this.args.control.bgColor) return this.args.control.bgColorRgba;
       return "#303030";
   }
+
+  get showLabel() {
+    return !this.args.control.isRotarySlider;
+  }
 }

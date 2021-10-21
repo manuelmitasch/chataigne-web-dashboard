@@ -1,6 +1,6 @@
 <ControlContainer 
     @control={{@control}} 
-    @showLabel={{ true }}
+    @showLabel={{ this.showLabel }}
 >
     
     <div class="secondary-container">
@@ -26,27 +26,55 @@
     
     <div class="main-input">
         {{#if @control.hasRange}}
-            <RangeSlider 
-                @name={{ @control.id }}
-                @value={{ @control.value }}
+            {{#if @control.isRotarySlider }}
+                <RotarySlider 
+                    @name={{ @control.id }}
+                    @value={{ @control.value }}
 
-                @label={{ @control.label }}
-                
-                @min={{ @control.minVal }}
-                @max={{ @control.maxVal }}
-                
-                @fgColor={{ this.fgColorRgba }}
-                @bgColor={{ this.bgColorRgba }}
-                @textColor={{ this.args.control.textColorRgba }}
-                @borderColor={{ this.args.control.borderColorRgba }}
-                @borderWidth={{ this.args.control.borderWidth }}
-                @isVertical={{ this.args.control.isVertical }}
-                
-                @onInput={{ this.setValue }} 
-                @onUpdate={{ this.update }} 
+                    @label={{ @control.label }}
+                    @showLabel={{ @control.label }}
+                    
+                    @min={{ @control.minVal }}
+                    @max={{ @control.maxVal }}
 
-                @readOnly={{ @control.readOnly }}
-            />
+                    @width={{ @control.width }}
+                    @height={{ @control.height }}
+                    
+                    @fgColor={{ this.fgColorRgba }}
+                    @bgColor={{ this.bgColorRgba }}
+                    @textColor={{ this.args.control.textColorRgba }}
+                    @borderColor={{ this.args.control.borderColorRgba }}
+                    @borderWidth={{ this.args.control.borderWidth }}
+                    @isVertical={{ this.args.control.isVertical }}
+                    
+                    @onInput={{ this.setValue }} 
+                    @onUpdate={{ this.update }} 
+
+                    @readOnly={{ @control.readOnly }}
+                />
+            {{else}}
+                <RangeSlider 
+                    @name={{ @control.id }}
+                    @value={{ @control.value }}
+
+                    @label={{ @control.label }}
+                    
+                    @min={{ @control.minVal }}
+                    @max={{ @control.maxVal }}
+                    
+                    @fgColor={{ this.fgColorRgba }}
+                    @bgColor={{ this.bgColorRgba }}
+                    @textColor={{ this.args.control.textColorRgba }}
+                    @borderColor={{ this.args.control.borderColorRgba }}
+                    @borderWidth={{ this.args.control.borderWidth }}
+                    @isVertical={{ this.args.control.isVertical }}
+                    
+                    @onInput={{ this.setValue }} 
+                    @onUpdate={{ this.update }} 
+
+                    @readOnly={{ @control.readOnly }}
+                />
+            {{/if}}
         {{else}}
             {{#if this.isTime }}
                 <Input 

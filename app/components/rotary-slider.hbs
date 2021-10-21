@@ -1,0 +1,50 @@
+<div class="range-slider-container rotary-slider-container unselectable {{ if @readOnly "disabled" ""}} {{ if @isVertical "vertical" ""}}"
+    {{ style this.containerStyles }}
+    {{ style this.fontStyles }}
+    {{on "click" this.hidePopover}} 
+    {{on "mousedown" (fn this.updateEditing true)}}
+    {{on "touchstart" (fn this.updateEditing true)}}
+    {{on "mouseup" (fn this.updateEditing false)}}
+    {{on "touchend" (fn this.updateEditing false)}}
+    {{on "dblclick" this.showPopover}}
+    {{did-insert this.registerListener}}
+    {{will-destroy this.unregisterListener}}
+>
+    <svg>
+        <path fill="none" stroke="#383838" stroke-width={{ this.strokeWidth2 }} d={{ this.arcDataBorder }} />
+        <path fill="none" stroke="{{ @bgColor }}" stroke-width={{ this.strokeWidth }} d={{ this.arcDataBg }} />
+        <path fill="none" stroke="{{ @fgColor }}" stroke-width={{ this.strokeWidth }} d={{ this.arcData }} />
+    </svg>
+
+    <label 
+        for={{ @name }} 
+        class="range-slider-label rotary-slider-label unselectable"
+        style="color: {{ @textColor }}"
+    >
+        {{#if @showLabel}}
+            <span>
+                {{ @label }}
+            </span>
+        {{/if}}
+        <span>
+            {{ this.roundedValue }}
+        </span>
+    </label>
+
+    {{yield}}
+</div>
+
+{{#if this.popoverVisible}}
+    <div class="range-slider-popover rotary-slider-popover arrow_box">
+        <div class="arrow_box">
+            <Input 
+                inputmode="decimal"
+                value={{ this.roundedValue2 }} 
+                disabled={{this.args.readOnly}}
+                {{ on "click" this.clickPopover }}
+                {{ on "change" this.setValue }} 
+                {{ autofocus }}
+            />
+        </div>
+    </div>
+{{/if}}
