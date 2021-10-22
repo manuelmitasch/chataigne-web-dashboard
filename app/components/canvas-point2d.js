@@ -83,6 +83,8 @@ export default class CanvasPoint2dComponent extends ControlComponent {
     disableEditing() {
         this.editing = false;
         this.args.onFinishEditing();
+        this.xAxisLocked = false;
+        this.yAxisLocked = false;
     }
 
     @action
@@ -223,7 +225,8 @@ export default class CanvasPoint2dComponent extends ControlComponent {
 
         document.addEventListener('mousemove', this.moveListener, options);
         element.addEventListener('touchmove', this.moveListener, options);
-        document.addEventListener('mouseup', this.disableEditing, options)
+        document.addEventListener('mouseup', this.disableEditing, options);
+        window.addEventListener('focus', this.disableEditing, options);
         document.addEventListener('click', this.hidePopover, options);
         document.addEventListener('keydown', this.keyListener, options);
         document.addEventListener('keyup', this.keyListener, options);
@@ -236,6 +239,7 @@ export default class CanvasPoint2dComponent extends ControlComponent {
         document.removeEventListener('movemove', this.moveListener, options);
         element.removeEventListener('touchmove', this.moveListener, options);
         document.removeEventListener('mouseup', this.disableEditing, options)
+        window.removeEventListener('focus', this.disableEditing, options);
         document.removeEventListener('click', this.hidePopover, options);
         document.removeEventListener('keydown', this.keyListener, options);
         document.removeEventListener('keyup', this.keyListener, options);
