@@ -57,11 +57,6 @@ export default class FloatControlComponent extends ControlComponent {
     super.setValue(value);
     this.args.control.isEditing = true;
   }
-  
-  @action
-  onFinishEditing(event) {
-    this.args.control.isEditing = false;
-  }
 
   @action
   update(type, event) {

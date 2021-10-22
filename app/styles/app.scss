@@ -775,6 +775,11 @@ input[type="range"].no-top-margin {
 .range-slider-container {
     position: relative;
     cursor: ew-resize;
+    touch-action: pan-y
+}
+
+.range-slider-container.vertical {
+    touch-action: pan-x;
 }
 
 .range-slider-container.disabled {

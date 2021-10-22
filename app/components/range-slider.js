@@ -127,18 +127,22 @@ export default class RangeSliderComponent extends Component {
 
     @action
     registerListener(element) {
-      document.addEventListener('mousemove', this.moveListener);
-      element.addEventListener('touchmove', this.moveListener);
-      document.addEventListener('mouseup', this.disableEditing)
-      document.addEventListener('click', this.hidePopover);
+        let options = { "passive": true };
+
+        document.addEventListener('mousemove', this.moveListener, options);
+        element.addEventListener('touchmove', this.moveListener, options);
+        document.addEventListener('mouseup', this.disableEditing, options);
+        document.addEventListener('click', this.hidePopover, options);
     }
   
     @action
     unregisterListener(element) {
-      document.removeEventListener('movemove', this.moveListener);
-      element.removeEventListener('touchmove', this.moveListener);
-      document.removeEventListener('mouseup', this.disableEditing)
-      document.removeEventListener('click', this.hidePopover);
+        let options = { "passive": true };
+
+        document.removeEventListener('movemove', this.moveListener, options);
+        element.removeEventListener('touchmove', this.moveListener,options);
+        document.removeEventListener('mouseup', this.disableEditing, options)
+        document.removeEventListener('click', this.hidePopover, options);
     }
 
     @action
@@ -151,8 +155,6 @@ export default class RangeSliderComponent extends Component {
 
             this.args.onInput(relValue);
             this.update();
-
-            if (event.type.includes("touch")) event.preventDefault();
         }
     }
 

@@ -23,4 +23,9 @@ export default class ControlComponent extends Component {
   setValue(value) {
     this.args.control.value = value;
   }
+
+  @action
+  onFinishEditing(event) {
+    this.args.control.isEditing = false;
+  }
 }
