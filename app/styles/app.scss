@@ -901,6 +901,7 @@ button.triggered {
     box-sizing: border-box;
     position: relative;
     cursor: grab;
+    touch-action: pinch-zoom;
 
     .point {
         //border-radius: 50%;

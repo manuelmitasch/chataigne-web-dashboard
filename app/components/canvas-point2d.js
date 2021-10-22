@@ -209,8 +209,6 @@ export default class CanvasPoint2dComponent extends ControlComponent {
             if (!this.YAxisLocked) this.args.onInput2(relValueY);
 
             this.update();
-
-            if (event.type.includes("touch")) event.preventDefault();
         }
     }
 
@@ -221,22 +219,26 @@ export default class CanvasPoint2dComponent extends ControlComponent {
   
     @action
     registerListener(element) {
-        document.addEventListener('mousemove', this.moveListener);
-        element.addEventListener('touchmove', this.moveListener);
-        document.addEventListener('mouseup', this.disableEditing)
-        document.addEventListener('click', this.hidePopover);
-        document.addEventListener('keydown', this.keyListener);
-        document.addEventListener('keyup', this.keyListener);
+        let options = { "passive": true };
+
+        document.addEventListener('mousemove', this.moveListener, options);
+        element.addEventListener('touchmove', this.moveListener, options);
+        document.addEventListener('mouseup', this.disableEditing, options)
+        document.addEventListener('click', this.hidePopover, options);
+        document.addEventListener('keydown', this.keyListener, options);
+        document.addEventListener('keyup', this.keyListener, options);
     }
   
     @action
     unregisterListener(element) {
-        document.removeEventListener('movemove', this.moveListener);
-        element.removeEventListener('touchmove', this.moveListener);
-        document.removeEventListener('mouseup', this.disableEditing)
-        document.removeEventListener('click', this.hidePopover);
-        document.removeEventListener('keydown', this.keyListener);
-        document.removeEventListener('keyup', this.keyListener);
+        let options = { "passive": true };
+
+        document.removeEventListener('movemove', this.moveListener, options);
+        element.removeEventListener('touchmove', this.moveListener, options);
+        document.removeEventListener('mouseup', this.disableEditing, options)
+        document.removeEventListener('click', this.hidePopover, options);
+        document.removeEventListener('keydown', this.keyListener, options);
+        document.removeEventListener('keyup', this.keyListener, options);
     }
 
     get containerStyles() {
