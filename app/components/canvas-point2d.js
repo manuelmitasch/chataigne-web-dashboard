@@ -311,7 +311,7 @@ export default class CanvasPoint2dComponent extends ControlComponent {
             }
         
             this.args.onInput2(value);
-            this.args.onUpdate2(value);
+            this.args.onUpdate();
         }
     }
 
