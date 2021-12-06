@@ -8,6 +8,8 @@ export default class ControlModel extends Model {
     @attr('string') label
     @attr('boolean') showLabel
     @attr('string') controlAddress
+    @attr('string') itemControlAddress
+    @attr('string') name
 
     @attr('number') positionX
     @attr('number') positionY

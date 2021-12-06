@@ -79,6 +79,12 @@ export default class WebsocketService extends Service {
     handleFeedback(payload) {
         console.log('Updating ' + payload.controlAddress + ': ' + payload.value);
         
+        this.store.peekAll('texture').forEach(function(item) {
+            if (item.itemControlAddress == payload.controlAddress) {
+                    item.imgBlob = payload.value;
+            }
+        });
+
         this.store.peekAll('float-control').forEach(function(item) {
             if (item.controlAddress == payload.controlAddress) {
                 if (!item.isEditing) {

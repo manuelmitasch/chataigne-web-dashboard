@@ -1153,3 +1153,15 @@ button.decrement {
     border-radius: 0 0 $radius $radius;
     border-top: 1px solid $control-background;
 }
+
+
+.texture {
+    text-align: center;
+    padding: 0;
+    background: black !important;
+
+    img.texture-canvas {
+        height: 100%;
+        width: 100%;
+    }
+}

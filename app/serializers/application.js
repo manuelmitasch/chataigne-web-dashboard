@@ -175,6 +175,8 @@ function getControlHash(item, dashboard, index, fromGroup) {
         "minVal": item.minVal, 
         "maxVal": item.maxVal,
         "controlAddress": item.controlAddress,
+        "itemControlAddress": item.itemControlAddress,
+        "name": item.name,
 
         "positionX": convertCoordinate(item.position[0], dashboard.size[0], fromGroup),
         "positionY": convertCoordinate(item.position[1], dashboard.size[1], fromGroup),
@@ -275,6 +277,8 @@ function getControlType(item) {
           type = "comment"; break;
     case "DashboardGroupItem":
           type = "group"; break;
+    case "Shared Texture":
+          type = "texture"; break;
     default:
       type = "control";
     }
