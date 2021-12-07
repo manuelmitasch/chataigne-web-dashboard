@@ -82,6 +82,7 @@ export default class WebsocketService extends Service {
         this.store.peekAll('texture').forEach(function(item) {
             if (item.itemControlAddress == payload.controlAddress) {
                     item.imgBlob = payload.value;
+                    item.imgRatio = payload.ratio;
             }
         });
 

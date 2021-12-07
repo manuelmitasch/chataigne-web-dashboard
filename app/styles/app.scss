@@ -1160,10 +1160,10 @@ button.decrement {
     padding: 0;
     background: black !important;
     display: flex;
+    align-items: center;
+    justify-content: center;
     
     img.texture-canvas {
-        height: 100%;
-        width: 100%;
         display: none;
     }
     
@@ -1172,7 +1172,6 @@ button.decrement {
     }
     
     .no-data {
-        align-self: center;
         width: 100%;
         color: $error;
     }

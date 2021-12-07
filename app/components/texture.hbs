@@ -2,7 +2,7 @@
     @control={{@control}} 
     @showLabel={{ this.showLabel }}
 >
-    <img src={{this.srcBlob}} class="texture-canvas" />    
+    <img src={{this.srcBlob}} class="texture-canvas" {{ style this.imgStyles }} />    
     {{#unless this.srcBlob}}
         <div class="no-data">
             <b>No texture received.</b><br>
