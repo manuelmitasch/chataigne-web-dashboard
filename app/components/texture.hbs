@@ -3,5 +3,11 @@
     @showLabel={{ this.showLabel }}
 >
     <img src={{this.srcBlob}} class="texture-canvas" />    
+    {{#unless this.srcBlob}}
+        <div class="no-data">
+            <b>No texture received.</b><br>
+            Did you activate <i>"Expose on Web"</i> option on the Shared Texture item?
+        </div>
+    {{/unless}}
     {{yield}}
 </ControlContainer>

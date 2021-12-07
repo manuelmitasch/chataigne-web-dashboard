@@ -1159,9 +1159,21 @@ button.decrement {
     text-align: center;
     padding: 0;
     background: black !important;
-
+    display: flex;
+    
     img.texture-canvas {
         height: 100%;
         width: 100%;
+        display: none;
+    }
+    
+    img.texture-canvas[src] {
+        display: block;
+    }
+    
+    .no-data {
+        align-self: center;
+        width: 100%;
+        color: $error;
     }
 }
