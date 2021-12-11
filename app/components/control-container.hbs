@@ -1,6 +1,7 @@
 <div class="control {{ @extraClass }} {{ @control.modelName }} {{ if @control.hasAllRanges "" "no-range"}} {{ if @control.isVertical "vertical" ""}} {{ if @useWidthSplit "width-split" "" }}"
     {{ style this.positionStyles }}
     {{ style this.customizeStyles }}
+    alt={{ @control.customDescription }}
 >
     {{#if this.showLabel }}
         {{#if @control.showLabel }}

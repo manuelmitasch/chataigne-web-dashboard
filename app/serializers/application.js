@@ -19,6 +19,8 @@ export default class ApplicationSerializer extends Serializer {
         var includedData = [];
 
         this.settings.appName = payload.appName;
+        this.settings.appVersion = payload.appVersion;
+        this.settings.osName = payload.osName;
         
         if (payload.tabs) {
           this.settings.tabBgColor = payload.tabs.bgColor;
@@ -103,12 +105,14 @@ function getCommentHash(item, dashboard, index, fromGroup) {
     "id": id, 
     "type": 'comment', 
     "attributes": { 
-        "positionX": convertCoordinate(item.position[0], dashboard.size[0], fromGroup),
-        "positionY": convertCoordinate(item.position[1], dashboard.size[1], fromGroup),
+        "nativePositionX": item.position[0],
+        "nativePositionY": item.position[1],
         "text": item.text,
         "size": item.size,
         "backgroundAlpha": item.backgroundAlpha,
         "color": item.color,
+        "itemControlAddress": item.itemControlAddress,
+        "inGroup": fromGroup
     }
   }
 
@@ -125,13 +129,15 @@ function getGroupHash(group, dashboard, index, fromGroup) {
     "id": id, 
     "type": 'group', 
     "attributes": { 
-        "positionX": convertCoordinate(group.position[0], dashboard.size[0], fromGroup),
-        "positionY": convertCoordinate(group.position[1], dashboard.size[1], fromGroup),
+        "nativePositionX": group.position[0],
+        "nativePositionY": group.position[1],
         "width": group.size[0],
         "height": group.size[1],
         "backgroundColor": group.backgroundColor,
         "borderColor": group.borderColor,
         "borderWidth": group.borderWidth,
+        "itemControlAddress": group.itemControlAddress,
+        "inGroup": fromGroup
     },
     "relationships": {
       "controls": {
@@ -171,17 +177,20 @@ function getControlHash(item, dashboard, index, fromGroup) {
     "attributes": { 
         "label": item.label, 
         "showLabel": item.showLabel,
+        "customDescription": item.customDescription,
         "value": item.value, 
         "minVal": item.minVal, 
         "maxVal": item.maxVal,
+        "showValue": (item.showValue == undefined) ? true : item.showValue,
         "controlAddress": item.controlAddress,
         "itemControlAddress": item.itemControlAddress,
         "name": item.name,
 
-        "positionX": convertCoordinate(item.position[0], dashboard.size[0], fromGroup),
-        "positionY": convertCoordinate(item.position[1], dashboard.size[1], fromGroup),
         "width": item.size[0],
         "height": item.size[1],
+        
+        "nativePositionX": item.position[0],
+        "nativePositionY": item.position[1],
 
         "textColor": item.textColor,
         "bgColor": item.bgColor,
@@ -193,7 +202,9 @@ function getControlHash(item, dashboard, index, fromGroup) {
 
         "defaultUI": item.defaultUI,
         "style": item.style,
-        "readOnly": item.readOnly
+        "readOnly": item.readOnly,
+
+        "inGroup": fromGroup
     }
   }
 
@@ -268,17 +279,17 @@ function getControlType(item) {
     case "Point2D":
       type = "point2d-control"; break;
     case "Point3D":
-        type = "point3d-control"; break;
+      type = "point3d-control"; break;
     case "Color":
-          type = "color-control"; break;
+      type = "color-control"; break;
     case "Enum":
-          type = "enum-control"; break;
+      type = "enum-control"; break;
     case "DashboardCommentItem":
-          type = "comment"; break;
+      type = "comment"; break;
     case "DashboardGroupItem":
-          type = "group"; break;
+      type = "group"; break;
     case "Shared Texture":
-          type = "texture"; break;
+      type = "texture"; break;
     default:
       type = "control";
     }

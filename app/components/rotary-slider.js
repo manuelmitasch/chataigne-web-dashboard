@@ -112,7 +112,6 @@ export default class RotarySliderComponent extends RangeSlider {
         return styles;
     }
 
-    
     get width() {
         return (this.settings.displayLayout) ? this.args.width : 125;
     }

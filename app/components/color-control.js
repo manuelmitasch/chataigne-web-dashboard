@@ -26,7 +26,6 @@ export default class ColorControlComponent extends ControlComponent {
   
   @action
   update(event) {
-    console.log("update from update method");
     const control = this.args.control;
 
     this.socket.sendFeedback(control.controlAddress, [control.red, control.green, control.blue, control.alpha]);

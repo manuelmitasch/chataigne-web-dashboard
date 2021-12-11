@@ -15,6 +15,8 @@ export default class SettingsService extends Service {
     @tracked viewHeight = 1080;    
     @tracked dashboardScale = 1;
     @tracked appName = "Chataigne";
+    @tracked appVersion = ""
+    @tracked osName = ""
     @tracked hideList = false;
     @tracked hideMenu = false;
 

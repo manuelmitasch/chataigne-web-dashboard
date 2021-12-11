@@ -26,9 +26,11 @@
                 {{ @label }}
             </span>
         {{/if}}
-        <span>
-            {{ this.roundedValue }}
-        </span>
+        {{#if @showValue }}
+            <span>
+                {{ this.roundedValue }}
+            </span>
+        {{/if}}
     </label>
 
     {{yield}}

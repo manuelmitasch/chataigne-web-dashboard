@@ -25,6 +25,7 @@
         <ul class="settings-status">
             <li><span>Websocket</span> <span class="{{ if this.socket.isConnected "active" "error" }}" title="{{ this.socket.address }}">{{ if this.socket.isConnected "Connected" "Disconnected" }}</span></li>
             <li><span>App</span> {{ this.settings.appName}}</li>
+            <li><span>App Version</span> {{ this.settings.appVersion }}</li>
             <li><span>Web Dashboard</span> {{app-version versionOnly=true}}</li>
         </ul>
     </div>
