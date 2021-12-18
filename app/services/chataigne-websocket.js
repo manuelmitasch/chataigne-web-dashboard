@@ -182,6 +182,7 @@ export default class WebsocketService extends Service {
 
             case "customText":
                 this.store.peekAll(type).forEach(flexibleUpdateHandler(payload, itemAddress, "label"));
+                break;
 
             case "backgroundColor":
                 this.store.peekAll(type).forEach(flexibleUpdateHandler(payload, itemAddress, "bgColor"));
