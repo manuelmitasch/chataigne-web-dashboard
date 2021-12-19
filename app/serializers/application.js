@@ -198,6 +198,7 @@ function getControlHash(item, dashboard, index, fromGroup) {
         "bgColor": item.bgColor,
         "fgColor": item.fgColor,
         "borderColor": item.borderColor || item.contourColor,
+        "borderColorEnabled": item.borderColorEnabled,
         "borderWidth": item.borderWidth || item.contourThickness,
         "opaqueBackground": item.opaqueBackground,
         "customImage": item.customImage,

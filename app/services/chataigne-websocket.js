@@ -175,9 +175,15 @@ export default class WebsocketService extends Service {
                 break;
 
             case "textColor":
-            case "borderColor":
             case "borderWidth":
                 this.store.peekAll(type).forEach(flexibleUpdateHandler(payload, itemAddress, uiParameter));
+                break;
+
+            case "borderColor":
+                if (payload.enabled) {
+                    this.store.peekAll(type).forEach(flexibleUpdateHandler(payload, itemAddress, "borderColor"));
+                }
+                this.store.peekAll(type).forEach(moreFlexibleUpdateHandler(payload, itemAddress, "borderColorEnabled", "enabled"));
                 break;
 
             case "customText":

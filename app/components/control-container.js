@@ -42,9 +42,9 @@ export default class ControlContainerComponent extends Component {
       ...((control.bgColor) && { background: control.bgColorRgba }),
       ...((control.textColor) && { color: control.textColorRgba }),
       ...((control.textColor) && { mixBlendMode: "normal" }),
-      ...((control.borderColor) && { borderColor: control.borderColorRgba }),
-      ...((control.borderWidth) && { borderWidth: (control.borderWidth /2) + "px" }),
-      ...((control.borderWidth && control.borderColor) && { borderStyle: "solid" }),
+      ...((control.borderColorEnabled) && { borderColor: control.borderColorRgba }),
+      ...((control.borderColorEnabled) && { borderWidth: parseInt(control.borderWidth /2) + "px" }),
+      ...((control.borderColorEnabled) && { borderStyle: "solid" }),
       cursor: (control.readOnly) ? "not-allowed" : ""
     };
 

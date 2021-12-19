@@ -123,9 +123,6 @@ export default class FloatControlComponent extends ControlComponent {
     let styles = {
       ...((control.bgColor) && { background: control.bgColorRgba }),
       ...((control.textColor) && { color: control.textColorRgba }),
-      ...((control.borderColor) && { borderColor: control.borderColorRgba }),
-      ...((control.borderWidth) && { borderWidth: control.borderWidth/2 + "px" }),
-      ...((control.borderWidth && control.borderColor) && { borderStyle: "solid" }),
     };
 
     return styles;

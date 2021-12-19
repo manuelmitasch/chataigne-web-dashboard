@@ -25,6 +25,7 @@ export default class ControlModel extends Model {
     @attr() bgColor
     @attr() fgColor
     @attr() borderColor
+    @attr('boolean') borderColorEnabled
     @attr('number') borderWidth
     @attr('boolean') opaqueBackground
     @attr('string') customImage

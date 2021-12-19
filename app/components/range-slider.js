@@ -28,8 +28,7 @@ export default class RangeSliderComponent extends Component {
     get containerStyles() {
         let styles = {
             background: this.args.bgColor,
-            color: this.args.textColor,
-            border: this.getBorder()
+            color: this.args.textColor
         };
         
         return styles;
@@ -42,11 +41,6 @@ export default class RangeSliderComponent extends Component {
         };
     
         return styles;
-    }
-
-    getBorder() {
-        if (!this.settings.displayLayout) return "";
-        return this.args.borderWidth + "px solid " + this.args.borderColor;
     }
 
     @action
