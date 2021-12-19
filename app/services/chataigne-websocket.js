@@ -181,7 +181,10 @@ export default class WebsocketService extends Service {
                 break;
 
             case "customText":
-                this.store.peekAll(type).forEach(flexibleUpdateHandler(payload, itemAddress, "label"));
+                if (payload.enabled) {
+                    this.store.peekAll(type).forEach(flexibleUpdateHandler(payload, itemAddress, "customText"));
+                }
+                this.store.peekAll(type).forEach(moreFlexibleUpdateHandler(payload, itemAddress, "customTextEnabled", "enabled"));
                 break;
 
             case "backgroundColor":
@@ -337,6 +340,14 @@ function flexibleUpdateHandler(payload, itemAddress, parameterName) {
     return function(item) {
         if (item.itemControlAddress == itemAddress) {
             item[parameterName] = payload.value;
+        }
+    }
+};
+
+function moreFlexibleUpdateHandler(payload, itemAddress, parameterName, payloadParameterName) {
+    return function(item) {
+        if (item.itemControlAddress == itemAddress) {
+            item[parameterName] = payload[payloadParameterName];
         }
     }
 };

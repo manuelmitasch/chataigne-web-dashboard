@@ -5,10 +5,12 @@ import { inject as service } from '@ember/service';
 export default class ControlModel extends Model {
     @service('url') urlService
 
-    @attr('string') label
+    @attr('string') labelRaw
+    @attr('string') customText
+    @attr('boolean') customTextEnabled
+    @attr('string') customDescription
     @attr('boolean') showLabel
     @attr('boolean') showValue
-    @attr('string') customDescription
 
     @attr('string') controlAddress
     @attr('string') itemControlAddress
@@ -35,6 +37,10 @@ export default class ControlModel extends Model {
     @attr('boolean') inGroup
 
     isEditing = false
+
+    get label() {
+        return (this.customTextEnabled) ? this.customText : this.labelRaw
+    }
 
     get positionX() {
         let value = this.nativePositionX;

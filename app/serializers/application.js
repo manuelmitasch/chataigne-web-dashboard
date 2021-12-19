@@ -175,7 +175,9 @@ function getControlHash(item, dashboard, index, fromGroup) {
     "id": id, 
     "type":type, 
     "attributes": { 
-        "label": item.label, 
+        "labelRaw": item.label, 
+        "customText": item.customText, 
+        "customTextEnabled": item.customTextEnabled, 
         "showLabel": item.showLabel,
         "customDescription": item.customDescription,
         "value": item.value, 
