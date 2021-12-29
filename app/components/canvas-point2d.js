@@ -49,14 +49,18 @@ export default class CanvasPoint2dComponent extends ControlComponent {
 
     get width() {
         let borderWidth = this.args.borderWidth;
+        let borderEnabled = this.args.borderEnabled;
         let width = (this.settings.displayLayout) ? this.args.width : 300;
-        return (borderWidth) ? width - this.args.borderWidth * 2 : width;
+        
+        return (borderEnabled) ? width - this.args.borderWidth : width;
     }
 
     get height() {
         let borderWidth = this.args.borderWidth;
+        let borderEnabled = this.args.borderEnabled;
         let height = (this.settings.displayLayout) ? this.args.height : 300;
-        return (borderWidth) ? height - this.args.borderWidth * 2 : height;
+        
+        return (borderEnabled) ? height - this.args.borderWidth : height;
     }
 
     @action
