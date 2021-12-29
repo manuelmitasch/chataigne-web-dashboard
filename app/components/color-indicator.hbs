@@ -1,0 +1,18 @@
+<div class="color-indicator-container unselectable {{ if @readOnly "disabled" ""}} {{ if @isVertical "vertical" ""}}"
+    {{ style this.containerStyles }}
+    {{on "click" this.hidePopover}} 
+    {{on "dblclick" this.showPopover}}
+    {{did-insert this.registerListener}}
+    {{will-destroy this.unregisterListener}}
+>
+    <div class="color-indicator" {{ style this.colorStyles }} name={{ @name }}></div>
+
+</div>
+
+{{#if this.popoverVisible}}
+    <div class="color-indicator-popover arrow_box">
+        <div class="arrow_box">
+            {{yield}}
+        </div>
+    </div>
+{{/if}}

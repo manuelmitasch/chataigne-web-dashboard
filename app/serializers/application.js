@@ -202,6 +202,7 @@ function getControlHash(item, dashboard, index, fromGroup) {
         "borderWidth": item.borderWidth || item.contourThickness,
         "opaqueBackground": item.opaqueBackground,
         "customImage": item.customImage,
+        "colorMap": getColorMap(item.colorMap, type),
 
         "defaultUI": item.defaultUI,
         "style": item.style,
@@ -297,4 +298,17 @@ function getControlType(item) {
       type = "control";
     }
     return type;
+}
+
+function getColorMap(map, type) {
+  if (!map) return [];
+  if (type != "integer-control" && type != "float-control") return map;
+  
+  let result = [];
+ 
+  for (const [key, value] of Object.entries(map)) {
+    result[parseFloat(key)] = value;
+  }
+   
+  return result;
 }

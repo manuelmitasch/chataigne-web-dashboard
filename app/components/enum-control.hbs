@@ -1,18 +1,39 @@
 <ControlContainer 
     @control={{@control}} 
-    @showLabel={{ true }}
+    @showLabel={{ this.showLabel }}
 >
     <div class="main-input">
-        <select 
-            {{on "change" this.update}} 
-            disabled={{@control.readOnly}}
-            {{ style this.customizeStyles }}
-            class="unselectable"
-        >
-            {{#each @control.options as |optionValue| }}
-                <option value={{optionValue}} selected={{ eq @control.value optionValue }}>{{optionValue}}</option>
-            {{/each}}
-        </select>
+        {{#if @control.isColorIndicator}}
+            <ColorIndicator 
+                @colorValue={{ @control.colorValue }}
+                @size={{ @control.smallerSize }}
+                @showCircle={{ @control.isColorCircle }}
+            >
+                <select 
+                    {{on "change" this.update}} 
+                    disabled={{@control.readOnly}}
+                    {{ style this.customizeStyles }}
+                    class="unselectable"
+                    {{ on "click" this.clickPopover }}
+                    {{ autofocus }}
+                >
+                    {{#each @control.options as |optionValue| }}
+                        <option value={{optionValue}} selected={{ eq @control.value optionValue }}>{{optionValue}}</option>
+                    {{/each}}
+                </select>
+            </ColorIndicator>
+        {{else}}
+            <select 
+                {{on "change" this.update}} 
+                disabled={{@control.readOnly}}
+                {{ style this.customizeStyles }}
+                class="unselectable"
+            >
+                {{#each @control.options as |optionValue| }}
+                    <option value={{optionValue}} selected={{ eq @control.value optionValue }}>{{optionValue}}</option>
+                {{/each}}
+            </select>
+        {{/if}}
     </div>
     {{yield}}
 </ControlContainer>

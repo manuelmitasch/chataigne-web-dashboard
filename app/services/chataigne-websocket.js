@@ -221,6 +221,15 @@ export default class WebsocketService extends Service {
                 this.store.peekAll(type).forEach(flexibleUpdateHandler(payload, itemAddress, "size"));
                 break;
 
+            case "style":
+                this.store.peekAll(type).forEach(function(item) {
+                    if (item.itemControlAddress == itemAddress) {
+                        item["style"] = payload.value;
+                        if ((payload.value == 10 || payload.value == 11) && item.colorMap.length < 1) location.reload();
+                    }
+                });
+                break;
+
             default:
                 console.log('Ui feedback type not handled : ' + uiParameter);
         }

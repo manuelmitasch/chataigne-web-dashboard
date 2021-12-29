@@ -23,4 +23,8 @@ export default class EnumControlComponent extends ControlComponent {
 
     return styles;
   }
+
+  get showLabel() {
+    return (this.args.control.isColorIndicator) ? this.args.control.showValue : false;
+  }
 }

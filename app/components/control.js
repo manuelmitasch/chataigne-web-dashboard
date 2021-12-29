@@ -28,4 +28,9 @@ export default class ControlComponent extends Component {
   onFinishEditing(event) {
     this.args.control.isEditing = false;
   }
+
+  @action
+  clickPopover(event) {
+      event.stopPropagation();
+  }
 }

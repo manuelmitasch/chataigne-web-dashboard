@@ -29,6 +29,7 @@ export default class ControlModel extends Model {
     @attr('number') borderWidth
     @attr('boolean') opaqueBackground
     @attr('string') customImage
+    @attr() colorMap
 
     @attr('number') defaultUI
     @attr('number') style
@@ -100,6 +101,28 @@ export default class ControlModel extends Model {
 
     get isTime() {
         return this.defaultUI == 4 || this.style == 3;
+    }
+
+    get isColorIndicator() {
+        return this.style == 10 || this.style == 11;
+    }
+
+    get isColorCircle() {
+        return this.style == 10;
+    }
+
+    get colorValue() {
+        if (this.style != 10 && this.style != 11) return "rgba(0,0,0,0)";
+
+        let c = this.colorMap[this.value];
+
+        if (c) return "rgba(" + c[0] + "," + c[1] + "," + c[2] + "," + c[3]/255 + ")";
+        
+        return "rgba(0,0,0,0)";
+    }
+
+    get smallerSize() {
+        return (this.width > this.height) ? this.height : this.width;
     }
 
     transformToRgba(parameterName) {

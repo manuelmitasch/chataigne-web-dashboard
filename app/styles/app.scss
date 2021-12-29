@@ -590,9 +590,6 @@ h1 {
     .enum-control {
         padding: 0; 
 
-        label {
-            display: none;
-        }
         .main-input {
             height: 100%;
             width: 100%;
@@ -664,6 +661,18 @@ h1 {
 
     .rotary-slider-popover {
         width: 125px;
+    }
+
+    .color-indicator-container {
+        align-items: start;
+    }
+
+    .color-indicator-popover {
+        width: auto;
+
+        input {
+            margin-left: 0;
+        }
     }
 }
 
@@ -1085,7 +1094,7 @@ button.triggered {
     cursor: not-allowed;
 }
 
-.range-slider-popover {
+.range-slider-popover, .color-indicator-popover {
     text-align: center;
     position: absolute;
     width: 100%;
@@ -1135,6 +1144,7 @@ button.triggered {
 }
 
 
+
 button.increment, button.decrement {
     height: 50% !important;
     width: 30px !important;
@@ -1175,5 +1185,27 @@ button.decrement {
         width: 100%;
         color: $error;
         padding: 0 15px;
+    }
+}
+
+.color-indicator-container {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .color-indicator {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+}
+
+.color-indicator-popover {
+    select {
+        background: $button-background;
     }
 }
