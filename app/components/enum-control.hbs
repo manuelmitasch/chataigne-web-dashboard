@@ -23,16 +23,23 @@
                 </select>
             </ColorIndicator>
         {{else}}
-            <select 
-                {{on "change" this.update}} 
-                disabled={{@control.readOnly}}
-                {{ style this.customizeStyles }}
-                class="unselectable"
-            >
-                {{#each @control.options as |optionValue| }}
-                    <option value={{optionValue}} selected={{ eq @control.value optionValue }}>{{optionValue}}</option>
-                {{/each}}
-            </select>
+            {{#if @control.isEnumBar}}
+                <EnumBar 
+                    @control={{@control}} 
+                    @onUpdate={{ this.update }}
+                />
+            {{else}}
+                <select 
+                    {{on "change" this.update}} 
+                    disabled={{@control.readOnly}}
+                    {{ style this.customizeStyles }}
+                    class="unselectable"
+                >
+                    {{#each @control.options as |optionValue| }}
+                        <option value={{optionValue}} selected={{ eq @control.value optionValue }}>{{optionValue}}</option>
+                    {{/each}}
+                </select>
+            {{/if}}
         {{/if}}
     </div>
     {{yield}}

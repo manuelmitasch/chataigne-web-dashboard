@@ -1,0 +1,13 @@
+<div class="enum-bar-container unselectable {{ if @readOnly "disabled" ""}} {{ if @control.isVerticalEnumBar "vertical" ""}}"
+    {{ style this.containerStyles }}
+>
+     {{#each @control.options as |optionValue| }}
+        <div 
+            class="enum-bar-option {{if (eq optionValue @control.value) "selected" ""}}"
+            {{ on "click" (fn this.setValue optionValue)}}
+            {{ style this.optionStyles }}
+        >
+            <span class="enum-bar-label">{{optionValue}}</span>
+        </div>
+    {{/each}}
+</div>

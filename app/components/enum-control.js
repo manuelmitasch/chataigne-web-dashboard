@@ -9,7 +9,11 @@ export default class EnumControlComponent extends ControlComponent {
   @action
   update(event) {
     const control = this.args.control;
-    control.value = event.target.value;
+    
+    if (event.target) { // assume it's an event object
+      control.value = event.target.value;
+    } 
+
     this.socket.sendFeedback(control.controlAddress, control.value);
     // control.save();
   }

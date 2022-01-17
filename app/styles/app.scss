@@ -1209,3 +1209,56 @@ button.decrement {
         background: $button-background;
     }
 }
+
+.enum-bar-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    
+    .enum-bar-option {
+        height: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        border-right: 1px solid $canvas-background;
+        box-sizing: border-box; 
+        cursor: pointer;
+        overflow: hidden;
+    }
+    
+    .enum-bar-option:first-child {
+        border-radius: $radius 0 0 $radius;
+    }
+    .enum-bar-option:last-child {
+        border-radius: 0 $radius $radius 0;
+        border-right: none;
+    }
+}
+
+
+.enum-bar-option.selected {
+    background: $selected;
+    color: $background;
+}
+
+.enum-bar-container.vertical {
+    flex-direction: column;
+
+    .enum-bar-option {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid $canvas-background;
+    }
+
+    .enum-bar-option:first-child {
+        border-radius: $radius $radius 0 0;
+    }
+    .enum-bar-option:last-child {
+        border-radius: 0 0 $radius $radius;
+        border-bottom: none;
+    }
+}
