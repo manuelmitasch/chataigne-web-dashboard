@@ -88,7 +88,7 @@ export default class RangeSliderComponent extends Component {
     }
 
     calculateValueX(event, srcElement) {
-        let pageX = (event.type.includes("touch")) ? event.changedTouches[0].pageX : event.pageX;
+        let pageX = (event.type.includes("touch")) ? event.targetTouches[0].pageX : event.pageX;
 
         if (!srcElement.classList.contains("range-slider-container")) {
             srcElement = srcElement.parentElement;
@@ -104,7 +104,7 @@ export default class RangeSliderComponent extends Component {
     } 
 
     calculateValueY(event, srcElement) {
-        let pageY = (event.type.includes("touch")) ? event.changedTouches[0].pageY : event.pageY;
+        let pageY = (event.type.includes("touch")) ? event.targetTouches[0].pageY : event.pageY;
 
         if (!srcElement.classList.contains("range-slider-container")) {
             srcElement = srcElement.parentElement;
