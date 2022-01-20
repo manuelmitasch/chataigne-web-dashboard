@@ -46,7 +46,7 @@
 
 
 <div 
-    class="wrapper-main {{ if this.settings.displayLayout "layout" "responsive" }} {{ if this.loaded "" "preload"}}" 
+    class="wrapper-main {{ if this.settings.displayLayout "layout" "responsive" }} {{ if this.loaded "" "preload"}} {{ if this.fullscreen.isEnabled "fullscreen" "" }}" 
     {{did-resize this.onResize debounce=10}} 
     {{did-insert this.onResize}}
     {{did-insert this.removePreload}}

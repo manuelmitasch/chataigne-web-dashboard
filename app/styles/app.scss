@@ -1262,3 +1262,14 @@ button.decrement {
         border-bottom: none;
     }
 }
+
+
+.fullscreen {
+    .dashboard {
+        touch-action: none;
+    }
+    
+    html {
+        -webkit-text-size-adjust: none;
+    }
+}
