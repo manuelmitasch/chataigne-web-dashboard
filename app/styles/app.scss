@@ -1265,11 +1265,6 @@ button.decrement {
 
 
 .fullscreen {
-    .dashboard {
-        touch-action: none;
-    }
-    
-    html {
-        -webkit-text-size-adjust: none;
-    }
+    touch-action: none;
+    -webkit-text-size-adjust: none;
 }
