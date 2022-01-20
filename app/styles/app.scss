@@ -4,7 +4,7 @@ $container-border: #383838;
 $control-background: #303030;
 $canvas-background: #222222;
 $font: #d1d1d1;
-$radius: 2px;
+$radius: 4px;
 $active: #7eb357;
 $not-active: #303030;
 $bool: #1abc9c;
@@ -229,6 +229,7 @@ h1 {
     .range-slider-container {
         width: 100%;
         height: 100%;
+        box-shadow:inset 0 0 20px rgba(0 0 0 / 20%);
     }
 
     .range-slider-container.vertical {
@@ -262,6 +263,8 @@ h1 {
     .float-control, .integer-control {
         border: none;
         padding: 0;
+        border-radius: $radius;
+        overflow:hidden;
 
         label.control-label {
             position: absolute;
@@ -351,6 +354,7 @@ h1 {
         .range-slider-container {
             width: 100%;
             height: 50%;
+            
         }
 
         .main-input {
@@ -639,7 +643,7 @@ h1 {
         background: white;
     
         .range-slider-background {
-            border-radius: $radius 0 0 $radius;
+            border-radius: $radius;
         }
 
         label.range-slider-label {
@@ -803,6 +807,9 @@ input[type="range"].no-top-margin {
     width: 50%;
     height: 100%;
     background: $active;
+    border-radius:$radius;
+    box-shadow:0 0 8px rgba(0 0 0 / 50%);
+    overflow:visible;
 }
 
 .rotary-slider-container {
