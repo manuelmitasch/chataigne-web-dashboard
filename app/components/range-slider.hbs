@@ -1,6 +1,5 @@
 <div class="range-slider-container unselectable {{ if @readOnly "disabled" ""}} {{ if @isVertical "vertical" ""}}"
     {{ style this.containerStyles }}
-    {{on "click" this.hidePopover}} 
     {{on "mousedown" (fn this.updateEditing true)}}
     {{on "touchstart" (fn this.updateEditing true)}}
     {{on "mouseup" (fn this.updateEditing false)}}

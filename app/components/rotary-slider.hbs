@@ -1,7 +1,6 @@
 <div class="range-slider-container rotary-slider-container unselectable {{ if @readOnly "disabled" ""}} {{ if @isVertical "vertical" ""}}"
     {{ style this.containerStyles }}
     {{ style this.fontStyles }}
-    {{on "click" this.hidePopover}} 
     {{on "mousedown" (fn this.updateEditing true)}}
     {{on "touchstart" (fn this.updateEditing true)}}
     {{on "mouseup" (fn this.updateEditing false)}}

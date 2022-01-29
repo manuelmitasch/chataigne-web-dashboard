@@ -10,6 +10,7 @@ export default class RangeSliderComponent extends Component {
     @tracked editingElement
     @tracked startDiff = 0
     @tracked popoverVisible = false
+    lastTap = 0
 
     get roundedValue() {
         let rounded = Number.parseFloat(this.args.value).toFixed(3);
@@ -45,6 +46,22 @@ export default class RangeSliderComponent extends Component {
 
     @action
     updateEditing(value, event) {
+        if (event.type.includes("touch")) {
+            event.preventDefault(); // stop click delay
+            
+            if (value) { // emulate dblclick
+                var delta = Date.now() - this.lastTap;
+
+                if (delta < 200) {
+                    this.showPopover();
+                } else {
+                    if (value) this.hidePopover();
+                }
+
+                this.lastTap = Date.now();
+            }
+        }
+
         this.editing = value;
         this.editingElement = event.srcElement;
 
