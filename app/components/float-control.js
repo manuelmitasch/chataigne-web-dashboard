@@ -136,7 +136,7 @@ export default class FloatControlComponent extends ControlComponent {
 
   get bgColorRgba() {
       if (this.args.control.bgColor) return this.args.control.bgColorRgba;
-      return "#303030";
+      return "#222222";
   }
 
   get showLabel() {

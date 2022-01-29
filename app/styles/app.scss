@@ -1,7 +1,7 @@
 $background: #0d0d0d;
 $container-background: #1a1a1a;
 $container-border: #383838;
-$control-background: #303030;
+$control-background: #222222;
 $canvas-background: #222222;
 $font: #d1d1d1;
 $radius: 2px;
@@ -873,7 +873,7 @@ button:disabled {
 }
 
 select {
-    background: $not-active;
+    background: $control-background;
     border-radius: 3px;
     color: $font;
     border: none;
