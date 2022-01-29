@@ -10,6 +10,7 @@ export default class CanvasPoint2dComponent extends ControlComponent {
     @tracked popoverVisible = false
     @tracked xAxisLocked = false
     @tracked YAxisLocked = false
+    lastTap = 0
     
     get pointX () {
         return this.remapValue(this.args.value, this.args.min, this.args.max, 0, this.width-12); 
@@ -65,6 +66,22 @@ export default class CanvasPoint2dComponent extends ControlComponent {
 
     @action
     updateEditing(value, event) {
+        if (event.type.includes("touch")) {
+            if (!this.popoverVisible) {
+                event.preventDefault(); // stop click delay
+            }
+            
+            if (value) { // emulate dblclick
+                var delta = Date.now() - this.lastTap;
+
+                if (delta < 200) {
+                    this.showPopover();
+                }
+
+                this.lastTap = Date.now();
+            }
+        }
+
         this.editing = value;
         this.editingElement = event.srcElement;
 
