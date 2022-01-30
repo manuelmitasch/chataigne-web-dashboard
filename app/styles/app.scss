@@ -589,6 +589,7 @@ h1 {
 
     .enum-control {
         padding: 0; 
+        touch-action: auto;
 
         .main-input {
             height: 100%;
@@ -606,6 +607,10 @@ h1 {
     margin: 5px 5px 25px 5px;
     padding-top: 50px;
 
+
+    .control {
+        min-height: 1.7em;
+    }
 
     .control .main-input {
         padding-top: 20px;
@@ -683,7 +688,6 @@ h1 {
     border-radius: $radius;
     margin: 5px 0;
     padding: 5px;
-    min-height: 1.7em;
     position: relative;
 }
 
@@ -878,6 +882,8 @@ select {
     color: $font;
     border: none;
     padding: 2px;
+    touch-action: auto;
+
     
     option {
         color: $font;
