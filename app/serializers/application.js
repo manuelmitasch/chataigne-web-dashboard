@@ -262,6 +262,11 @@ function getControlHash(item, dashboard, index, fromGroup) {
     data.attributes.options = options;
   }
 
+  if (type == "link-control") {
+    data.attributes.target = item.target;
+    data.attributes.setInClients = item.setInClients;
+  }
+
   return { data: data, included: [] };
 }
 
@@ -294,6 +299,8 @@ function getControlType(item) {
       type = "group"; break;
     case "Shared Texture":
       type = "texture"; break;
+    case "DashboardLinkItem":
+      type = "link-control"; break;
     default:
       type = "control";
     }

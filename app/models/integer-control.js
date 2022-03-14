@@ -1,7 +1,7 @@
 import Model, { attr, belongsTo } from '@ember-data/model';
 import FloatControl from './float-control';
 
-export default class ControlModel extends FloatControl {
+export default class IntegerControlModel extends FloatControl {
     
     get hasRange() {
         if (this.style == -1 || this.style == 2) return false;

@@ -8,6 +8,7 @@ export default class WebsocketService extends Service {
     @service('websockets') websockets
     @service('settings') settings
     @service('store') store
+    @service router
 
     socket = null
     @tracked address = 'ws://' + location.host
@@ -57,6 +58,10 @@ export default class WebsocketService extends Service {
         const payload = JSON.parse(msg.data);
 
         if (payload.refresh) location.reload();
+        if (payload.setDashboard) {
+            this.router.transitionTo('dashboard', payload.setDashboard);
+            return;
+        }
 
         switch(payload.dataType) {
             case 'all':
@@ -81,6 +86,11 @@ export default class WebsocketService extends Service {
     sendFeedback(address, value) {
         const data = { 'controlAddress' : address, 'value': value };
         console.log('Sending feedback for ' + address + ': ' + value);
+        this.socket.send(JSON.stringify(data));
+    }
+
+    send(data) {
+        console.log('Sending feedback : ' + JSON.stringify(data));
         this.socket.send(JSON.stringify(data));
     }
 
@@ -219,6 +229,10 @@ export default class WebsocketService extends Service {
 
             case "size":
                 this.store.peekAll(type).forEach(flexibleUpdateHandler(payload, itemAddress, "size"));
+                break;
+
+            case "setInClients":
+                this.store.peekAll('link-control').forEach(flexibleUpdateHandler(payload, itemAddress, "setInClients"));
                 break;
 
             case "style":
