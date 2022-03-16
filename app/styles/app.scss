@@ -1274,3 +1274,82 @@ button.decrement {
     touch-action: none;
     -webkit-text-size-adjust: none;
 }
+
+.password-container {
+    margin: auto;
+    padding-top: 100px;
+}
+
+.password-form {
+    // padding: 100px 20px 20px 20px;
+    margin: auto;
+    padding: 15px;
+    background: $control-background;
+    border-radius: $radius;
+    width: 300px;
+
+    .prompt {
+        margin-bottom: 10px;
+    }
+
+    input {
+        margin-bottom: 5px;
+        transition: background 0.5s ease-in-out;
+    }
+
+    button.password-button {
+        width: 100%;
+        height: 100%;
+        background: #616161;
+        color: silver;
+        font-size: 16px;
+        border-radius: 2px;
+        border: none;
+        padding: 2px 5px;
+        outline: none;
+        touch-action: manipulation;
+    }
+}
+
+.bounce {
+    background: #a50000;
+    animation-name: bounce;
+    animation-duration: .5s;
+    animation-delay: 0.25s;
+  }
+  
+  @keyframes bounce {
+    0% {
+      transform: translateX(0px);
+      timing-function: ease-in;
+    }
+    37% {
+      transform: translateX(5px);
+      timing-function: ease-out;
+    }
+    55% {
+      transform: translateX(-5px);
+      timing-function: ease-in;
+    }
+    73% {
+      transform: translateX(4px);
+      timing-function: ease-out;
+    }
+    82% {
+      transform: translateX(-4px);
+      timing-function: ease-in;
+    }
+    91% {
+      transform: translateX(2px);
+      timing-function: ease-out;
+    }
+    96% {
+      transform: translateX(-2px);
+      timing-function: ease-in;
+    }
+    100% {
+      transform: translateX(0px);
+      timing-function: ease-in;
+    }
+  }
+  

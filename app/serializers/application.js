@@ -21,6 +21,7 @@ export default class ApplicationSerializer extends Serializer {
         this.settings.appName = payload.appName;
         this.settings.appVersion = payload.appVersion;
         this.settings.osName = payload.osName;
+        this.settings.password = payload.password || "";
         
         if (payload.tabs) {
           this.settings.tabBgColor = payload.tabs.bgColor;
@@ -39,6 +40,8 @@ export default class ApplicationSerializer extends Serializer {
             "id": dashboard.id,
             "attributes": {
               "name": dashboard.name,
+              "password": dashboard.password || "",
+              "passwordEntered": "",
               "width": dashboard.size[0],
               "height": dashboard.size[1],
               "bgColor": dashboard.bgColor

@@ -4,6 +4,14 @@ import { inject as service } from '@ember/service';
 export default class DashboardRoute extends Route {
     @service('settings') settings
 
+    beforeModel(transition) {
+      if (!this.settings.unlocked) {
+        let pwdController = this.controllerFor('password');
+        pwdController.previousTransition = transition;
+        this.transitionTo('password');
+      } 
+    }
+
     model(params) {
       return this.store.peekRecord('dashboard', params.dashboard_id)
     }

@@ -59,11 +59,14 @@ export default class ApplicationController extends Controller {
         this.settings.viewHeight = document.documentElement.clientHeight;
 
         let selectedDashboard = this.dashboardController.model;
-        let scaleWidth = this.settings.viewWidth / (selectedDashboard.width);
-        let scaleHeight = (this.settings.viewHeight) / (selectedDashboard.height);
 
-        let scale = (scaleWidth > scaleHeight) ? scaleHeight : scaleWidth;
-        this.settings.dashboardScale = scale;
+        if (selectedDashboard) {
+            let scaleWidth = this.settings.viewWidth / (selectedDashboard.width);
+            let scaleHeight = (this.settings.viewHeight) / (selectedDashboard.height);
+    
+            let scale = (scaleWidth > scaleHeight) ? scaleHeight : scaleWidth;
+            this.settings.dashboardScale = scale;
+        }
     }
 
     @action

@@ -1,4 +1,5 @@
 <div class="dashboard {{ if this.settings.displayLayout "layout" "responsive" }}" {{ style this.sizeStyle }} {{ style this.customizeStyles }}>
+{{#if @dashboard.unlocked}}
     {{#if @dashboard.bgImage }}
         <div class="dashboard-background unselectable" {{ style this.backgroundStyle }}>
             <img src="{{ @dashboard.bgSrc }}" alt="" />
@@ -14,4 +15,10 @@
     {{/each}}
 
     {{yield}}
+{{else}}
+    <PasswordForm @dashboard={{ @dashboard }}>
+         Please enter password to unlock {{ @dashboard.name }}    
+    </PasswordForm>
+{{/if}}
 </div>
+    

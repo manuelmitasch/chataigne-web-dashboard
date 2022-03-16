@@ -29,6 +29,9 @@ export default class SettingsService extends Service {
     @tracked tabBorderWidth = 0;
     @tracked tabBorderWidthSelected = 0;
 
+    @tracked password = ""
+    @tracked passwordEntered = ""
+
     init() {
         super.init(...arguments);
 
@@ -116,5 +119,9 @@ export default class SettingsService extends Service {
         }
 
         return 'none';
+    }
+
+    get unlocked() {
+        return this.password == this.passwordEntered;
     }
 }

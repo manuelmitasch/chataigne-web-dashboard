@@ -20,10 +20,17 @@ export default class DashboardModel extends Model {
     @attr('number') bgImageWidth;
     @attr('number') bgImageHeight;
 
+    @attr('string') password
+    @attr('string') passwordEntered
+
     @hasMany('control', { polymorphic: true }) controls
 
     controlSorting = ['positionY', 'positionX']
     @sort('controls', 'controlSorting') sortedControls
+
+    get unlocked() {
+        return this.password == this.passwordEntered;
+    }
 
     get bgSrc() {
         let url = this.urlService.imageSrc(this.bgImage);
