@@ -42,6 +42,7 @@ export default class ApplicationSerializer extends Serializer {
               "name": dashboard.name,
               "password": dashboard.password || "",
               "passwordEntered": "",
+              "unlockOnce": dashboard.unlockOnce || false,
               "width": dashboard.size[0],
               "height": dashboard.size[1],
               "bgColor": dashboard.bgColor

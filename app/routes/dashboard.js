@@ -1,5 +1,6 @@
 import Route from '@ember/routing/route';
 import { inject as service } from '@ember/service';
+import { action } from '@ember/object';
 
 export default class DashboardRoute extends Route {
     @service('settings') settings
@@ -28,4 +29,16 @@ export default class DashboardRoute extends Route {
         this.settings.dashboardScale = scale;
       }
     }
+
+    @action
+    willTransition(transition) {
+      let currentDashboard = this.get('controller.model');
+      let password = currentDashboard.password;
+      let unlocked = currentDashboard.unlocked;
+      let unlockOnce = currentDashboard.unlockOnce;
+
+      if (password && password != '' && unlocked && !unlockOnce) {
+          this.set('controller.model.passwordEntered', ''); 
+      }
+  }
 }

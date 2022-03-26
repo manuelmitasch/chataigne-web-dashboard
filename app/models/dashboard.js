@@ -22,7 +22,8 @@ export default class DashboardModel extends Model {
 
     @attr('string') password
     @attr('string') passwordEntered
-
+    @attr('boolean') unlockOnce
+    
     @hasMany('control', { polymorphic: true }) controls
 
     controlSorting = ['positionY', 'positionX']
