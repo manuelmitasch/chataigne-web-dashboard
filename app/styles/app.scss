@@ -200,6 +200,10 @@ h1 {
         border-width: 0;
     }
 
+    .float-control {
+        background: none !important;
+    }
+
     label.control-label {
         padding: 5px;
         min-width: auto;
@@ -683,7 +687,6 @@ h1 {
 
 
 .control {
-    background: $container-background;
     border: 1px solid $container-border;
     border-radius: $radius;
     margin: 5px 0;

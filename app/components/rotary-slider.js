@@ -107,7 +107,7 @@ export default class RotarySliderComponent extends RangeSlider {
         let styles = super.containerStyles;
         styles.width = this.width + "px";
         styles.height = this.height +"px";
-        styles.background = "#222222";
+        styles.background = "none";
 
         return styles;
     }
