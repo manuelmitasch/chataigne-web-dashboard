@@ -117,6 +117,8 @@
                         {{ on "change" this.update }} 
                         {{ style this.customizeStyles }}
                     />
+                    {{#if @control.readOnly}}
+                    {{else}}                    
                     <button class="increment" 
                         {{ on "click" this.increment}} 
                         disabled={{ @control.readOnly}}
@@ -125,6 +127,7 @@
                         {{ on "click" this.decrement}}
                         disabled={{ @control.readOnly}}
                     >-</button>
+                    {{/if}}
                 {{/if}}
             {{/if}}
         {{/if}}
