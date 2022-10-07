@@ -77,8 +77,12 @@ export default class WebsocketService extends Service {
                 }
                 break;
 
+            case 'dashboardFeedback':
+                this.handleDashboardFeedback(payload);
+                break;
+
             default:
-                console.log('Type not handled : '+payload.type);
+                console.log('Type not handled : '+payload.dataType);
                 break;
       }
     }
@@ -164,16 +168,44 @@ export default class WebsocketService extends Service {
       }
     }
 
+    handleDashboardFeedback(payload) {
+        let a = getUiFeedbackName(payload.controlAddress);
+        let itemAddress = a.itemAddress;
+        let uiParameter = a.uiParameter;
+
+        switch(uiParameter) {
+            case "backgroundImage":
+                location.reload();
+                break;
+
+            case "backgroundImageScale":
+                this.store.peekAll("dashboard").forEach(flexibleUpdateHandler(payload, itemAddress, "bgImageScale"));
+                break;
+
+            case "backgroundImageAlpha":
+                this.store.peekAll("dashboard").forEach(flexibleUpdateHandler(payload, itemAddress, "bgImageAlpha"));
+                break;
+
+            case "canvasSize":
+                this.store.peekAll("dashboard").forEach(sizeUpdateHandler(payload, itemAddress));
+                break;
+
+            case "backgroundColor":
+                this.store.peekAll("dashboard").forEach(flexibleUpdateHandler(payload, itemAddress, "bgColor"));
+                break;
+        }
+
+    }
+ 
     handleUiFeedback(payload) {
         console.log('Updating uiFeedback ' + payload.controlAddress + ': ' + payload.value);
-
+        
         if (!payload.targetType) return;
 
         let a = getUiFeedbackName(payload.controlAddress);
         let itemAddress = a.itemAddress;
         let uiParameter = a.uiParameter;
         let type = getControlType(payload.targetType);
-
 
         switch(uiParameter) {
             case "viewUIPosition":

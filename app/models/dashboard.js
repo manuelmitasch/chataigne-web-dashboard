@@ -29,12 +29,20 @@ export default class DashboardModel extends Model {
     controlSorting = ['positionY', 'positionX']
     @sort('controls', 'controlSorting') sortedControls
 
+    get controlAddress() {
+        return "/dashboard/" + this.id;
+    }
+
+    get itemControlAddress() {
+        return this.controlAddress;
+    }
+
     get unlocked() {
         return this.password == this.passwordEntered;
     }
 
     get bgSrc() {
-        let url = this.urlService.imageSrc(this.bgImage);
+        let url = this.urlService.imageSrc(this.bgImage)+ "&" + (new Date()).getTime();
 
         let image = new Image();
         image.src = url;
