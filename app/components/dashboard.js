@@ -40,15 +40,18 @@ export default class DashboardComponent extends Component {
 
     get backgroundStyle() {
         if (this.settings.displayLayout && this.args.dashboard.bgImage && this.args.dashboard.bgImageHeight) {
-            let marginTop = (this.args.dashboard.height - this.args.dashboard.bgImageHeight) / 2;
 
+            let marginTop = (this.args.dashboard.height - (this.args.dashboard.bgImageHeight * this.args.dashboard.bgImageScale)) / 2;
+            let marginLeft = (this.args.dashboard.width - (this.args.dashboard.bgImageWidth * this.args.dashboard.bgImageScale)) / 2;
+            
             return {
                 width: this.args.dashboard.bgImageWidth + "px",
                 height: this.args.dashboard.bgImageHeight + "px",
                 display: "block",
-                margin: "auto",
                 marginTop: marginTop.toString() + "px",
+                marginLeft: marginLeft.toString() + "px",
                 transform: "scale(" + this.args.dashboard.bgImageScale + ")",
+                transformOrigin: "top left",
                 zIndex: "-300",
                 opacity: this.args.dashboard.bgImageAlpha.toString()
             }
