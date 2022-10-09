@@ -1,0 +1,7 @@
+<ControlContainer 
+    @control={{@control}} 
+    @showLabel={{ this.showLabel }}
+>
+    <iframe src={{@control.url}} width={{@control.width}} height={{@control.height}} />    
+    {{yield}}
+</ControlContainer>

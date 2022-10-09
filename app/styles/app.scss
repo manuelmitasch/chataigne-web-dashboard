@@ -168,6 +168,15 @@ h1 {
     font-family: Verdana, sans-serif;
 }
 
+
+.iframe-container {
+    padding: 0 !important;
+
+    iframe {
+        border: none;
+    }
+}
+
 .dashboard.layout {
     overflow: hidden;
     position: relative;

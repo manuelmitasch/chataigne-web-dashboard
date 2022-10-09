@@ -271,6 +271,10 @@ function getControlHash(item, dashboard, index, fromGroup) {
     data.attributes.setInClients = item.setInClients;
   }
 
+  if (type == "iframe-container") {
+    data.attributes.url = item.url;
+  }
+
   return { data: data, included: [] };
 }
 
@@ -305,6 +309,8 @@ function getControlType(item) {
       type = "texture"; break;
     case "DashboardLinkItem":
       type = "link-control"; break;
+    case "IFrame":
+      type = "iframe-container"; break;
     default:
       type = "control";
     }

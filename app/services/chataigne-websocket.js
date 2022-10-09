@@ -267,6 +267,10 @@ export default class WebsocketService extends Service {
                 this.store.peekAll('link-control').forEach(flexibleUpdateHandler(payload, itemAddress, "setInClients"));
                 break;
 
+            case "url":
+                this.store.peekAll(type).forEach(flexibleUpdateHandler(payload, itemAddress, "url"));
+                break;
+
             case "style":
                 this.store.peekAll(type).forEach(function(item) {
                     if (item.itemControlAddress == itemAddress) {
@@ -441,6 +445,8 @@ function getControlType(type) {
         type = "group"; break;
       case "Shared Texture":
         type = "texture"; break;
+      case "IFrame":
+        type = "iframe-container"; break;
       default:
         type = "control";
       }
