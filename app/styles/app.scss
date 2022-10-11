@@ -11,9 +11,11 @@ $bool: #1abc9c;
 $bool-readOnly: #1a87bc;
 $selected: #ff922f;
 $control-height: 1.2em;
-$button-background: #616161;
+$button-background: radial-gradient(#656565, #444444);
+$button-background-active: radial-gradient(#fa8f2e, #ab621f);
 $error: #ff4700;
 $text-readOnly: #18b5ef;
+$label-color: #dadada;
 
 @import 'input-range.scss';
 @import 'menu.scss';
@@ -177,6 +179,26 @@ h1 {
     }
 }
 
+.boolean-control .main-input,
+.trigger-control {    
+    button {
+        background: $button-background;
+        color: silver;
+        width: 100%;
+        height: 100%;
+        font-size: 16px;
+    }
+
+    button:hover {
+        filter: brightness(1.1);
+    }
+
+    button.triggered {
+        background: $button-background-active;
+        color: #e3e3e3;
+    }
+}
+
 .dashboard.layout {
     overflow: hidden;
     position: relative;
@@ -218,9 +240,9 @@ h1 {
         min-width: auto;
         max-width: none;
         margin-right: 0px;
-        color: #c0c0c057;
+        color: $label-color;
         z-index: 30;
-        position: absolute;
+        text-overflow: ellipsis;
     }
 
     .group {
@@ -246,22 +268,6 @@ h1 {
 
     .range-slider-container.vertical {
         cursor: ns-resize;
-    }
-
-    button {
-        width: 100%;
-        height: 100%;
-        background: $button-background;
-        color: silver;
-        font-size: 16px;
-    }
-
-    button:active {
-        filter: brightness(1.5) sepia(1);
-    }
-
-    button.triggered {
-        filter: brightness(1.5);
     }
 
     .clear {
@@ -299,6 +305,9 @@ h1 {
         .main-input {
             width: 100%;
             height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
         }
         
         input.secondary {
@@ -310,7 +319,6 @@ h1 {
             background: none;
 
             color: $font;
-            font-size: 1em;
             font-weight: bold;
         }
     }
@@ -322,7 +330,7 @@ h1 {
         }
     }
 
-    .float-control.no-range {
+    .float-control.no-range, .integer-control.no-range {
         background: none;
         padding: 0;
 
@@ -334,10 +342,22 @@ h1 {
             background: $control-background;
             border-style: solid;
             border-width: 0;
+            padding-right: 50px;
+            text-align: right;
         }
 
         .secondary-container {
             display: none;
+        }
+                
+        .label-container {
+            width: 50%;
+
+            label {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                width: 60%;
+            }
         }
     }
 
@@ -345,7 +365,6 @@ h1 {
         padding: 0;
 
         label.control-label {
-            position: absolute;
             mix-blend-mode: color-dodge;
         }
 
@@ -369,6 +388,9 @@ h1 {
         .main-input {
             width: 100%;
             height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
         }
         
         input.secondary {
@@ -381,6 +403,10 @@ h1 {
             background: none;
             color: $active;
             font-size: 1em;
+        }
+
+        .label-container {
+            width: 40%;
         }
     }
 
@@ -429,6 +455,10 @@ h1 {
             padding-left: 5px;
             padding-right: 5px;
         }
+
+        .label-container {
+            align-items: start;
+        }
     }
 
     .point2d-control.no-range {
@@ -442,7 +472,6 @@ h1 {
         padding: 0;
 
         label.control-label {
-            position: absolute;
             mix-blend-mode: color-dodge;
         }
 
@@ -467,6 +496,9 @@ h1 {
         .main-input {
             width: 100%;
             height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
         }
         
         input.secondary {
@@ -479,6 +511,10 @@ h1 {
             background: none;
             color: $active;
             font-size: 1em;
+        }
+
+        .label-container {
+            width: 40%;
         }
     }
 
@@ -527,6 +563,10 @@ h1 {
             padding-left: 5px;
             padding-left: 5px;
         }
+
+        .label-container {
+            align-items: start;
+        }
     }
 
     .color-control {
@@ -543,7 +583,8 @@ h1 {
         .main-input {
             width: 100%;
             height: 100%;
-
+            position: absolute;
+            top: 0;
 
             input[type=color] {
                 width: 100%;
@@ -560,6 +601,15 @@ h1 {
                 }
             }
 
+        }
+
+        .label-container {
+            justify-content: center;
+
+            label {
+                width: 100%;
+                text-align: center;
+            }
         }
     }
 
@@ -579,6 +629,14 @@ h1 {
             text-align: center;
             background: $control-background;
         }
+
+        .main-input {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
     }
 
     .trigger-control {
@@ -588,6 +646,7 @@ h1 {
 
     .boolean-control {
         padding: 0;
+        box-sizing: border-box;
         
         .main-input {
             margin: 0;
@@ -607,12 +666,35 @@ h1 {
         .main-input {
             height: 100%;
             width: 100%;
+            position: absolute;
+            top: 0;
 
             select {
                 height: 100%;
                 width: 100%;
+                background: #656565;
             }
         }
+    }
+    
+    .color-indicator-control {
+        background: none;
+
+        .label-container {
+            justify-content: center;
+
+            label {
+                mix-blend-mode: normal !important;
+            }
+        }
+    }
+
+    .label-container {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        width: 100%;
+        height: 100%;
     }
 }
 
@@ -620,6 +702,10 @@ h1 {
     margin: 5px 5px 25px 5px;
     padding-top: 50px;
 
+    button {
+        width: auto;
+        height: auto;
+    }
 
     .control {
         min-height: 1.7em;
@@ -701,6 +787,7 @@ h1 {
     margin: 5px 0;
     padding: 5px;
     position: relative;
+    box-sizing: border-box;
 }
 
 label.control-label {
@@ -715,7 +802,6 @@ label.control-label {
     text-overflow: clip;
     float: left;
     margin-left: 3px;
-    margin-bottom: 0.3em;
     margin-right: 1em;
     pointer-events: none;
 }
@@ -765,6 +851,10 @@ input[type="range"] {
 
 input:disabled {
     cursor: not-allowed !important;
+    color: $text-readOnly !important;
+}
+
+label.readOnly {
     color: $text-readOnly !important;
 }
 
@@ -881,6 +971,8 @@ button {
     padding: 2px 5px;
     outline: none;
     touch-action: manipulation;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 button:disabled {
@@ -914,10 +1006,6 @@ select:focus{
 select:disabled {
     cursor: not-allowed !important;
     color: $text-readOnly !important;
-}
-
-button.triggered {
-    filter: brightness(1.5) !important;
 }
 
 .canvas {
@@ -1124,7 +1212,7 @@ button.triggered {
     input {
         text-align: center;
         width: 120px;
-        background: $button-background;
+        background: #656565;
         border-radius: $radius;
         border: none;
         padding: 3px;
@@ -1133,7 +1221,7 @@ button.triggered {
     
     .arrow_box {
         position: relative;
-        background: $button-background;
+        background: #656565;
         border-radius: $radius;
     }
     .arrow_box:after, .arrow_box:before {
@@ -1149,7 +1237,7 @@ button.triggered {
     
     .arrow_box:after {
         border-color: rgba(255, 0, 0, 0);
-        border-bottom-color: $button-background;
+        border-bottom-color: #656565;
         border-width: 10px;
         margin-left: -10px;
     }

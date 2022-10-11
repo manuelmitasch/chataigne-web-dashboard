@@ -218,6 +218,7 @@ export default class WebsocketService extends Service {
 
             case "textColor":
             case "borderWidth":
+            case "textSize":
                 this.store.peekAll(type).forEach(flexibleUpdateHandler(payload, itemAddress, uiParameter));
                 break;
 

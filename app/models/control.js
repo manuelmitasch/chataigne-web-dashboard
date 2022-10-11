@@ -21,6 +21,7 @@ export default class ControlModel extends Model {
     @attr('number') width
     @attr('number') height
 
+    @attr('number') textSize
     @attr() textColor
     @attr() bgColor
     @attr() fgColor
@@ -30,6 +31,7 @@ export default class ControlModel extends Model {
     @attr('boolean') opaqueBackground
     @attr('string') customImage
     @attr() colorMap
+    @attr() options
 
     @attr('number') defaultUI
     @attr('number') style

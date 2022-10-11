@@ -9,14 +9,21 @@ export default class BooleanControlComponent extends ControlComponent {
   @action
   update(value, event) {
     const control = this.args.control;
+    event = (event) ? event : value;
 
     if (!control.readOnly) {
-      this.socket.sendFeedback(control.controlAddress, !control.value);
+      if(event.type == "mousedown" || event.type == "touchstart") {
+        this.socket.sendFeedback(control.controlAddress, !control.value);
+      } else if (control.momentaryMode && (event.type == "mouseup" || event.type == "touchend")) {
+        this.socket.sendFeedback(control.controlAddress, !control.value);
+      }
     }
-    // control.save();
 
-    event = (event) ? event : value;
     event.preventDefault();
+  }
+
+  get showLabel() {
+    return this.args.control.showLabel && ! this.args.control.buttonUI;
   }
 
 
@@ -46,6 +53,7 @@ export default class BooleanControlComponent extends ControlComponent {
       ...((control.textColor) && { color: control.textColorRgba }),
       ...((control.borderColor) && { borderColor: control.borderColorRgba }),
       ...((control.borderWidth) && { borderWidth: this.borderWidth + "px" }),
+      ...((control.value && control.bgColor)) && { filter: "brightness(1.5)" },
     };
 
     return styles;

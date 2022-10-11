@@ -20,7 +20,7 @@ export default class ColorIndicatorComponent extends Component {
 
     @action
     showPopover(event) {
-        if (!this.args.readOnly) {
+        if (!this.args.readOnly && this.args.showPopover) {
             this.popoverVisible = true;
         }
     }

@@ -1,6 +1,7 @@
 <ControlContainer 
     @control={{@control}} 
     @showLabel={{ this.showLabel }}
+    @readOnly={{@control.readOnly}}
 >
     
     <div class="secondary-container">
@@ -30,6 +31,8 @@
                 @colorValue={{ @control.colorValue }}
                 @size={{ @control.smallerSize }}
                 @showCircle={{ @control.isColorCircle }}
+                @readOnly={{@control.readOnly}}
+                @showPopover={{ true }}
             >
                 <Input 
                     value={{ this.roundedValue }} 
@@ -77,6 +80,7 @@
                         @name={{ @control.id }}
                         @value={{ @control.value }}
                         @showValue={{ @control.showValue }}
+                        @showLabel={{ @control.showLabel }}
 
                         @label={{ @control.label }}
                         

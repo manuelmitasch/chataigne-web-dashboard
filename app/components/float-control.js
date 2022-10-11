@@ -140,6 +140,6 @@ export default class FloatControlComponent extends ControlComponent {
   }
 
   get showLabel() {
-    return !this.args.control.isRotarySlider;
+    return (this.args.control.isColorIndicator && !this.args.control.isRotarySlider) || !this.args.control.hasRange;
   }
 }

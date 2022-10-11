@@ -198,6 +198,7 @@ function getControlHash(item, dashboard, index, fromGroup) {
         "nativePositionX": item.position[0],
         "nativePositionY": item.position[1],
 
+        "textSize": item.textSize,
         "textColor": item.textColor,
         "bgColor": item.bgColor,
         "fgColor": item.fgColor,
@@ -273,6 +274,11 @@ function getControlHash(item, dashboard, index, fromGroup) {
 
   if (type == "iframe-container") {
     data.attributes.url = item.url;
+  }
+
+  if (type == "boolean-control") {
+    data.attributes.momentaryMode = item.momentaryMode;
+    data.attributes.buttonUI = item.buttonUI;
   }
 
   return { data: data, included: [] };

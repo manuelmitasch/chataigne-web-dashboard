@@ -1,14 +1,50 @@
 <ControlContainer 
     @control={{@control}} 
-    @showLabel={{ true }}
+    @showLabel={{ this.showLabel }}
 >
     <div 
         class="main-input {{ if @control.value "enabled" "disabled"}} {{ if @control.readOnly "readOnly" "" }}"  
-        {{ style this.customizeStyles }}
         {{on "touchstart" this.update}} 
+        {{on "touchend" this.update}} 
         {{on "mousedown" this.update}}  
+        {{on "mouseup" this.update}} 
     >
-        <div class="checkbox" {{ style this.sizeStyles }} ></div>
+        {{#if @control.buttonUI }}
+            <button 
+                disabled={{@control.readOnly}}
+                class="unselectable {{ if @control.value "triggered" }}"
+                {{ style this.customizeStyles }}
+            >   
+                {{#if @control.showLabel }}
+                    {{@control.label}}
+                {{/if}}
+            </button>
+        {{else}}
+            {{#if @control.isColorIndicator}}
+                <ColorIndicator 
+                    @colorValue={{ @control.colorValue }}
+                    @size={{ @control.smallerSize }}
+                    @showCircle={{ @control.isColorCircle }}
+                    @readOnly={{ @control.readOnly }}
+                    @showPopover={{ false }}
+                >
+                    <select 
+                        {{on "change" this.update}} 
+                        disabled={{@control.readOnly}}
+                        {{ style this.customizeStyles }}
+                        class="unselectable"
+                        {{ on "click" this.clickPopover }}
+                        {{ autofocus }}
+                    >
+                        {{#each @control.options as |optionValue| }}
+                            <option value={{optionValue}} selected={{ eq @control.value optionValue }}>{{optionValue}}</option>
+                        {{/each}}
+                    </select>
+                </ColorIndicator>
+            {{else}}
+                <div class="checkbox" {{ style this.sizeStyles }} ></div>
+            {{/if}}
+        {{/if}}
     </div>
     {{yield}}
 </ControlContainer>
