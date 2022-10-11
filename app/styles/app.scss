@@ -799,6 +799,17 @@ h1 {
             margin-left: 0;
         }
     }
+
+    .boolean-control {
+        .main-input {
+            height: 100%;
+            margin-bottom: 0;
+
+            button {
+                position: absolute;
+            }
+        }
+    }
 }
 
 

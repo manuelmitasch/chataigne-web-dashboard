@@ -5,7 +5,6 @@
     alt={{ @control.customDescription }}
 >
     {{#if this.showLabel }}
-        {{#if @control.showLabel }}
             <div class="label-container unselectable">
                 <label 
                     for={{@control.id}} 
@@ -15,7 +14,6 @@
                     {{@control.label}}
                 </label>
             </div>
-        {{/if}}
     {{/if}}
 
     {{yield}}
