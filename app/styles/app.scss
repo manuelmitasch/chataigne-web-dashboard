@@ -626,7 +626,8 @@ h1 {
             width: 100%;
             height: 100%;
             padding-left: 60px;
-            text-align: center;
+            padding-right: 10px;
+            text-align: right;
             background: $control-background;
         }
 
@@ -656,6 +657,10 @@ h1 {
             top: 0;
             right: 0;
             border-style: none;
+
+            button {
+                position: absolute;
+            }
         }
     }
 
@@ -672,7 +677,7 @@ h1 {
             select {
                 height: 100%;
                 width: 100%;
-                background: #656565;
+                position: absolute;
             }
         }
     }
@@ -749,6 +754,8 @@ h1 {
         label.range-slider-label {
             font-size: 0.9em;
             height: 30px;
+            text-overflow: ellipsis;
+            overflow: hidden;
         }
     }
 
@@ -877,6 +884,9 @@ input[type="range"].no-top-margin {
     height: 100%;
     width: 100%;
     top: 0;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
 
     .value {
         font-weight: bold;
@@ -1223,6 +1233,11 @@ select:disabled {
         position: relative;
         background: #656565;
         border-radius: $radius;
+
+        select {
+            background: #656565;
+            position: relative !important;
+        }
     }
     .arrow_box:after, .arrow_box:before {
         bottom: 100%;

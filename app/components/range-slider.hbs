@@ -16,12 +16,10 @@
         style="color: {{ @textColor }}"
     >
         {{#if @showLabel}}
-            {{ @label }} :&nbsp;
+            {{ @label }} :&nbsp;        
         {{/if}}
         {{#if @showValue}}
-            <span>
-                    {{ this.roundedValue }}
-            </span>
+            {{ this.roundedValue }}
         {{/if}}
     </label>
 

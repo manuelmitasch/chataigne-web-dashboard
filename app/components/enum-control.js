@@ -20,7 +20,18 @@ export default class EnumControlComponent extends ControlComponent {
 
   get customizeStyles() {
     let control = this.args.control;
+    let h = control.height;
+    let fontSize;
+
+    if (control.textSize) {
+      fontSize = control.textSize;
+    } else {
+      if (h < 25) fontSize = 9;
+      else fontSize = 14;
+    }
+
     let styles = {
+      fontSize: fontSize + "px",
       ...((control.bgColor) && { background: control.bgColorRgba }),
       ...((control.textColor) && { color: control.textColorRgba }),
     };

@@ -48,7 +48,27 @@ export default class BooleanControlComponent extends ControlComponent {
   
   get customizeStyles() {
     let control = this.args.control;
+    let h = control.height;
+    let fontSize = 14;
+
+    if (control.textSize) {
+      fontSize = control.textSize;
+    } else {
+      if (h <= 15) {
+        fontSize = 9;
+      } else if (h <= 25) {
+        fontSize = 10;
+      } else if (h <= 35) {
+        fontSize = 12;
+      } else if (h <= 45) {
+        fontSize = 16;
+      } else {
+        fontSize = 22;
+      } 
+    }
+
     let styles = {
+      fontSize: fontSize + "px",
       ...((control.bgColor) && { background: control.bgColorRgba }),
       ...((control.textColor) && { color: control.textColorRgba }),
       ...((control.borderColor) && { borderColor: control.borderColorRgba }),
