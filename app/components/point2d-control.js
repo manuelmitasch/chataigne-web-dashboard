@@ -10,7 +10,8 @@ export default class Point2DControlComponent extends ControlComponent {
   }
 
   get showLabel() {
-    return !this.args.control.is2DCanvas;
+    if (this.args.control.is2DCanvas) return false;
+    return this.args.control.showLabel;
   }
 
   get step() {

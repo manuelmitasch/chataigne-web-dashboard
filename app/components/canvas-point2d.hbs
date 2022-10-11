@@ -11,7 +11,9 @@
     <div class="point" {{ style this.pointStyles }}></div>
     <div class="crosshair x" {{ style this.crosshairXStyles }}></div>
     <div class="crosshair y" {{ style this.crosshairYStyles }}></div>
-    <label>{{ this.args.label }}</label>
+    {{#if this.args.showLabel }}
+        <label>{{ this.args.label }}</label>
+    {{/if}}
     <div class="value-x">{{ this.roundedX }}</div>
     <div class="value-y">
         <div class="rotate90">{{ this.roundedY }}</div>

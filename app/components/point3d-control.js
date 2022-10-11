@@ -97,6 +97,9 @@ export default class Point2DControlComponent extends ControlComponent {
       if (this.args.control.bgColor) return this.args.control.bgColorRgba;
       return "#222222";
   }
-
+  
+  get showLabel() {
+    return this.args.control.showLabel;
+  }
   
 }
