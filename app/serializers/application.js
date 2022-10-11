@@ -220,6 +220,9 @@ function getControlHash(item, dashboard, index, fromGroup) {
   if (type == "point2d-control") {
     data.attributes.value = item.value[0];
     data.attributes.value2 = item.value[1];
+    data.attributes.invertX = item.invertX;
+    data.attributes.invertY = item.invertY;
+    data.attributes.stretchMode = item.stretchMode;
 
     if (data.attributes.minVal) {
       data.attributes.minVal = item.minVal[0];

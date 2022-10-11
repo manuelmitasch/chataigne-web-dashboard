@@ -13,11 +13,19 @@ export default class CanvasPoint2dComponent extends ControlComponent {
     lastTap = 0
     
     get pointX () {
-        return this.remapValue(this.args.value, this.args.min, this.args.max, 0, this.width-12); 
+        if (this.args.invertX) {
+            return this.remapValue(this.args.value, this.args.min, this.args.max, this.width-12, 0); 
+        } else {
+            return this.remapValue(this.args.value, this.args.min, this.args.max, 0, this.width-12); 
+        }
     }    
 
     get pointY () {
-        return this.remapValue(this.args.value2, this.args.min2, this.args.max2, this.height-12, 0); 
+        if (this.args.invertY) {
+            return this.remapValue(this.args.value2, this.args.min2, this.args.max2, 0, this.height-12); 
+        } else {
+            return this.remapValue(this.args.value2, this.args.min2, this.args.max2, this.height-12, 0); 
+        }
     }
 
     get crosshairX() {
@@ -137,9 +145,12 @@ export default class CanvasPoint2dComponent extends ControlComponent {
         let elementWidth = srcElement.getBoundingClientRect().width;
 
         let clickX = pageX - offsetLeft;    
-        let value = this.remapValue(clickX, 0, elementWidth, this.args.min, this.args.max); 
 
-        return value;
+        if (this.args.invertX) {
+            return this.remapValue(clickX, 0, elementWidth, this.args.max, this.args.min); 
+        } else {
+            return this.remapValue(clickX, 0, elementWidth, this.args.min, this.args.max); 
+        }    
     } 
 
     calculateY(event, srcElement) {
@@ -153,9 +164,12 @@ export default class CanvasPoint2dComponent extends ControlComponent {
         let elementHeight = srcElement.getBoundingClientRect().height;
 
         let clickY = pageY - offsetTop;    
-        let value = this.remapValue(clickY, elementHeight, 0, this.args.min2, this.args.max2); 
-
-        return value;
+        
+        if (this.args.invertY) {
+            return this.remapValue(clickY, elementHeight, 0, this.args.max2, this.args.min2); 
+        } else {
+            return this.remapValue(clickY, elementHeight, 0, this.args.min2, this.args.max2); 
+        }
     }
 
     @action 

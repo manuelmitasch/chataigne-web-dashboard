@@ -8,6 +8,9 @@ export default class FloatControlModel extends Control {
     @attr("number") value2
     @attr("number") minVal2
     @attr("number") maxVal2
+    @attr("bool") invertX
+    @attr("bool") invertY
+    @attr("bool") stretchMode
 
     get hasRange2() {
         return (this.maxVal2 != undefined && this.minVal2 != undefined) && (this.maxVal2 != 2147483648 && this.minVal2 != -2147483648);
