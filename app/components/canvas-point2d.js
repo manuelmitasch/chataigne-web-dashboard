@@ -65,7 +65,15 @@ export default class CanvasPoint2dComponent extends ControlComponent {
             if (this.rangeXIsBigger || this.args.stretchMode) {
                 width = this.args.width;
             } else {
-                width = this.args.height / this.rangeY * this.rangeX;
+                if (this.rangeX == this.rangeY) {
+                    if (this.args.height > this.args.width) {
+                        width = this.height;
+                    } else {
+                        width = this.args.height / this.rangeY * this.rangeX;
+                    }
+                } else {
+                    width = this.args.height / this.rangeY * this.rangeX;
+                }
             }
         } else {
             width = 300;
@@ -80,10 +88,18 @@ export default class CanvasPoint2dComponent extends ControlComponent {
         let height;
 
         if (this.settings.displayLayout) {
-            if (!this.rangeXIsBigger || this.args.stretchMode) {
+            if ((this.rangeYIsBigger) || this.args.stretchMode) {
                 height = this.args.height;
             } else {
-                height = this.args.width / this.rangeX * this.rangeY;
+                if (this.rangeX == this.rangeY) {
+                    if (this.args.width > this.args.height) {
+                        height = this.width;
+                    } else {
+                        height = this.args.width / this.rangeX * this.rangeY;
+                    }
+                } else {
+                    height = this.args.width / this.rangeX * this.rangeY;
+                }
             }
         } else {
             height = 300;
@@ -348,6 +364,10 @@ export default class CanvasPoint2dComponent extends ControlComponent {
 
     get rangeXIsBigger() {
         return this.rangeX > this.rangeY;
+    } 
+    
+    get rangeYIsBigger() {
+        return this.rangeY > this.rangeX;
     } 
 
     @action
