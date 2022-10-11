@@ -59,16 +59,36 @@ export default class CanvasPoint2dComponent extends ControlComponent {
     get width() {
         let borderWidth = this.args.borderWidth;
         let borderEnabled = this.args.borderEnabled;
-        let width = (this.settings.displayLayout) ? this.args.width : 300;
+        let width;
         
+        if (this.settings.displayLayout) {
+            if (this.rangeXIsBigger || this.args.stretchMode) {
+                width = this.args.width;
+            } else {
+                width = this.args.height / this.rangeY * this.rangeX;
+            }
+        } else {
+            width = 300;
+        }
+
         return (borderEnabled) ? width - this.args.borderWidth : width;
     }
 
     get height() {
         let borderWidth = this.args.borderWidth;
         let borderEnabled = this.args.borderEnabled;
-        let height = (this.settings.displayLayout) ? this.args.height : 300;
-        
+        let height;
+
+        if (this.settings.displayLayout) {
+            if (!this.rangeXIsBigger || this.args.stretchMode) {
+                height = this.args.height;
+            } else {
+                height = this.args.width / this.rangeX * this.rangeY;
+            }
+        } else {
+            height = 300;
+        }
+
         return (borderEnabled) ? height - this.args.borderWidth : height;
     }
 
@@ -317,6 +337,18 @@ export default class CanvasPoint2dComponent extends ControlComponent {
 
         return styles;
     }
+
+    get rangeX() {
+        return this.args.max - this.args.min;
+    }
+
+    get rangeY() {
+        return this.args.max2 - this.args.min2;
+    }
+
+    get rangeXIsBigger() {
+        return this.rangeX > this.rangeY;
+    } 
 
     @action
     setValue(event) {

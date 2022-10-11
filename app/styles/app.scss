@@ -404,9 +404,23 @@ h1 {
             color: $active;
             font-size: 1em;
         }
-
+        
         .label-container {
             width: 40%;
+        }
+    }
+    
+    .canvas2d {
+        background: none;
+
+        .main-input {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .canvas {
+                background: $control-background;
+            }
         }
     }
 
