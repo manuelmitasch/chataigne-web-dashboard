@@ -701,9 +701,12 @@ h1 {
 
         .label-container {
             justify-content: center;
+            width: 100% !important;
 
             label {
                 mix-blend-mode: normal !important;
+                width: 100% !important;
+                text-align: center;
             }
         }
     }

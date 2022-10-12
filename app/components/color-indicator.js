@@ -8,10 +8,18 @@ export default class ColorIndicatorComponent extends Component {
     @tracked popoverVisible = false
 
     get colorStyles() {
+        let width = this.args.size + "px";
+        let height = this.args.size + "px";
+
+        if (!this.args.showCircle) {
+            width = "100%";
+            height = "100%";
+        }
+
         let styles = {
             background: this.args.colorValue,
-            width: this.args.size + "px",
-            height: this.args.size + "px",
+            width: width,
+            height: height,
             borderRadius: (this.args.showCircle) ? this.args.size + "px" : "5px"
         };
     
