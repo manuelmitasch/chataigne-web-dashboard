@@ -810,6 +810,10 @@ h1 {
             }
         }
     }
+
+    label.control-label {
+        font-weight: bold;
+    }
 }
 
 
@@ -826,7 +830,6 @@ label.control-label {
     display: block;
     float: left;
     font-size: 0.8em;
-    font-weight: bold;
     min-width: 80px;
     max-width: 150px;
     white-space: nowrap;
