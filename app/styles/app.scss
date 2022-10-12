@@ -912,7 +912,7 @@ input:disabled {
 }
 
 label.readOnly {
-    color: $text-readOnly !important;
+    color: $text-readOnly;
 }
 
 input[type="range"].no-top-margin {

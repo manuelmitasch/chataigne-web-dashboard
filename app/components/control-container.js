@@ -54,7 +54,14 @@ export default class ControlContainerComponent extends Component {
   get fontStyles() {
     let control = this.args.control;
     let h = control.height;
+    let textColor;
     let fontSize;
+
+    if (control.textColor) {
+      textColor = control.textColorRgba;
+    } else if (control.readOnly) {
+      textColor = "#18b5ef";
+    }
 
     if (!this.settings.displayLayout) {
       fontSize = 12;
@@ -67,7 +74,7 @@ export default class ControlContainerComponent extends Component {
 
     let styles = {
       fontSize: fontSize + "px",
-      ...((control.textColor) && { color: control.textColorRgba }),
+      ...((control.textColor || control.readOnly) && { color: textColor }),
     };
 
     return styles;
