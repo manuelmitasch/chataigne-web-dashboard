@@ -31,7 +31,6 @@
     </div>
 
     <div class="main-input">
-        {{#if @control.hasRange}}
             <RangeSlider 
                 @name={{ @control.id }}
                 @value={{ @control.value }}
@@ -52,19 +51,6 @@
 
                 @readOnly={{ @control.readOnly }}
             />
-        {{else}}
-            <Input 
-                value={{ this.roundedValue }} 
-                disabled={{@control.readOnly}}
-                inputmode="decimal"
-                class="secondary" 
-                {{ on "change" this.input }} 
-                {{ on "change" this.update }} 
-                {{ style this.customizeStyles }}
-            />
-        {{/if}}
-
-        {{#if @control.hasRange2}}
             <RangeSlider 
                 @name={{ concat @control.id "2" }}
                 @value={{ @control.value2 }}
@@ -86,19 +72,6 @@
                 @readOnly={{ @control.readOnly }}
             />
 
-        {{else}}
-            <Input 
-                value={{ this.roundedValue2 }} 
-                disabled={{@control.readOnly}}
-                inputmode="decimal"
-                class="secondary" 
-                {{ on "change" (fn this.input "2") }} 
-                {{ on "change" (fn this.update "2") }} 
-                {{ style this.customizeStyles }}
-            />
-        {{/if}}
-
-        {{#if @control.hasRange3}}
             <RangeSlider 
                 @name={{ concat @control.id "3" }}
                 @value={{ @control.value3 }}
@@ -119,18 +92,6 @@
 
                 @readOnly={{ @control.readOnly }}
             />
-
-        {{else}}
-            <Input 
-                value={{ this.roundedValue3 }} 
-                disabled={{@control.readOnly}}
-                inputmode="decimal"
-                class="secondary" 
-                {{ on "change" (fn this.input "3") }} 
-                {{ on "change" (fn this.update "3") }}                     
-                {{ style this.customizeStyles }}
-            />
-        {{/if}}
     </div>
     
     {{yield}}

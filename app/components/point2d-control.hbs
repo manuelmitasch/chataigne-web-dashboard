@@ -62,7 +62,6 @@
                 @readOnly={{ @control.readOnly }} 
             />
         {{else}}
-            {{#if @control.hasRange}}
                 <RangeSlider 
                     @name={{ @control.id }}
                     @value={{ @control.value }}
@@ -81,18 +80,6 @@
 
                     @readOnly={{ @control.readOnly }}
                 />
-            {{else}}
-                <Input 
-                    value={{ this.roundedValue }} 
-                    disabled={{@control.readOnly}}
-                    class="secondary" 
-                    inputmode="decimal"
-                    {{ on "change" this.input }} 
-                    {{ on "change" this.update }} 
-                    {{ style this.customizeStyles }}
-                />
-            {{/if}}
-            {{#if @control.hasRange2}}
                 <RangeSlider 
                     @name={{ concat @control.id "2" }}
                     @value={{ @control.value2 }}
@@ -113,18 +100,6 @@
 
                     @readOnly={{ @control.readOnly }}
                 />
-            {{else}}
-                <Input 
-                    value={{ this.roundedValue2 }} 
-                    disabled={{@control.readOnly}}
-                    class="secondary" 
-                    inputmode="decimal"
-                    {{ on "change" (fn this.input "2") }} 
-                    {{ on "change" (fn this.update "2") }} 
-                    {{ style this.customizeStyles }}
-                />
-            {{/if}}
-        
         {{/if}}
     </div>
 

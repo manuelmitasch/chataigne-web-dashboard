@@ -330,7 +330,7 @@ h1 {
         }
     }
 
-    .float-control.no-range, .integer-control.no-range {
+    .integer-control.no-range {
         background: none;
         padding: 0;
 
@@ -475,13 +475,6 @@ h1 {
         }
     }
 
-    .point2d-control.no-range {
-        .main-input {
-            width: 66%;
-            margin-left: 34%;
-        }
-    }
-
     .point3d-control {
         padding: 0;
 
@@ -529,13 +522,6 @@ h1 {
 
         .label-container {
             width: 40%;
-        }
-    }
-
-    .point3d-control.no-range {
-        .main-input {
-            width: 66%;
-            margin-left: 34%;
         }
     }
 
@@ -741,7 +727,7 @@ h1 {
         clear: both;
     }
 
-    .float-control.no-range, .integer-control.no-range, .point2d-control.no-range,  .point3d-control.no-range {
+    .integer-control.no-range {
         .secondary-container {
             display: none;
         }
@@ -898,6 +884,12 @@ input.secondary.time {
     width: 150px;
 }
 
+.main-input {
+    input.secondary {
+        font-size: 1em;
+    }
+}
+
 input[type="range"] {
     display: block;
     box-sizing: border-box;
@@ -966,7 +958,7 @@ input[type="range"].no-top-margin {
 }
 
 .range-slider-background {
-    width: 50%;
+    width: 0;
     height: 100%;
     background: $active;
 }

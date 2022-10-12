@@ -46,6 +46,7 @@
                 />
             </ColorIndicator>
         {{else}}
+            {{#if @control.hasRange}}
                 {{#if @control.isRotarySlider }}
                     <RotarySlider 
                         @name={{ @control.id }}
@@ -100,6 +101,36 @@
                         @readOnly={{ @control.readOnly }}
                     />
                 {{/if}}
+            {{else}}
+                {{#if this.isTime }}
+                    <Input 
+                        value={{ this.time }} 
+                        disabled={{@control.readOnly}}
+                        class="secondary time"
+                        {{on "change" (fn this.input "time") }} 
+                        {{on "change" this.update}} 
+                        {{ style this.customizeStyles }}
+                    />
+                {{else}}
+                    <Input 
+                        value={{ this.roundedValue }} 
+                        disabled={{@control.readOnly}}
+                        class="secondary" 
+                        inputmode="decimal"
+                        {{ on "change" this.input }} 
+                        {{ on "change" this.update }} 
+                        {{ style this.customizeStyles }}
+                    />
+                    <button class="increment" 
+                        {{ on "click" this.increment}} 
+                        disabled={{ @control.readOnly}}
+                    >+</button>
+                    <button class="decrement" 
+                        {{ on "click" this.decrement}}
+                        disabled={{ @control.readOnly}}
+                    >-</button>
+                {{/if}}
+            {{/if}}
         {{/if}}
         
     </div>

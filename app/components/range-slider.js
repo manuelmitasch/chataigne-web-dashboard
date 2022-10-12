@@ -67,7 +67,6 @@ export default class RangeSliderComponent extends Component {
 
         if (value && !this.args.readOnly) {
             let srcElement = this.editingElement;
-
             let value = this.calculateValue(event, srcElement);
             this.startDiff = this.args.value - value;
         }
@@ -106,16 +105,22 @@ export default class RangeSliderComponent extends Component {
 
     calculateValueX(event, srcElement) {
         let pageX = (event.type.includes("touch")) ? event.targetTouches[0].pageX : event.pageX;
-
+        
         if (!srcElement.classList.contains("range-slider-container")) {
             srcElement = srcElement.parentElement;
         }
-
+        
         let offsetLeft = srcElement.getBoundingClientRect().left + window.scrollX;
         let elementWidth = srcElement.getBoundingClientRect().width;
+        
+        let clickX = pageX - offsetLeft;  
+        let value; 
 
-        let clickX = pageX - offsetLeft;    
-        let value = this.remapValue(clickX, 0, elementWidth, this.args.min, this.args.max); 
+        if (this.hasRange) {
+            value = this.remapValue(clickX, 0, elementWidth, this.args.min, this.args.max); 
+        } else {
+            value = clickX / 10;
+        }
 
         return value;
     } 
@@ -161,7 +166,7 @@ export default class RangeSliderComponent extends Component {
         if (this.editing && !this.args.readOnly) {
             let srcElement = this.editingElement;
 
-            let value = this.calculateValue(event, srcElement)
+            let value = this.calculateValue(event, srcElement);
             let relValue = value + this.startDiff;
 
             this.args.onInput(relValue);
@@ -237,6 +242,10 @@ export default class RangeSliderComponent extends Component {
     
     get isVertical() {
         return this.args.isVertical && this.settings.displayLayout;
+    }
+
+    get hasRange() {
+        return this.args.min != undefined && this.args.max != undefined;
     }
 
     remapValue (value, in_min, in_max, out_min, out_max) {
