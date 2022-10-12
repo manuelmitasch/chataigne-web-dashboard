@@ -56,7 +56,9 @@ export default class ControlContainerComponent extends Component {
     let h = control.height;
     let fontSize;
 
-    if (control.textSize) {
+    if (!this.settings.displayLayout) {
+      fontSize = 12;
+    } else if (control.textSize) {
       fontSize = control.textSize;
     } else {
       if (h < 25) fontSize = 9;

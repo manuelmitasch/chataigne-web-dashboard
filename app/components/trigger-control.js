@@ -20,7 +20,9 @@ export default class TriggerControlComponent extends ControlComponent {
     let h = control.height;
     let fontSize = 16;
 
-    if (control.textSize) {
+    if (!this.settings.displayLayout) {
+      fontSize = 14;
+    } else if (control.textSize) {
       fontSize = control.textSize;
     } else {
       if (h <= 15) {

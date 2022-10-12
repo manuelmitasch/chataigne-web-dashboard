@@ -811,12 +811,31 @@ h1 {
             button {
                 position: absolute;
             }
+
+            .checkbox {
+                position: relative;
+            }
         }
     }
 
     label.control-label {
         font-weight: bold;
     }
+
+    .color-indicator-control {
+        .main-input {
+            width: 35px;
+            height: 35px;
+            box-sizing: content-box;
+        }
+    }
+
+    .color-control, .string-control {
+        .main-input {
+            padding-top: 5px;
+        }
+    }
+
 }
 
 

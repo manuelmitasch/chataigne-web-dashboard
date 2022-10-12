@@ -6,14 +6,15 @@ import { inject as service } from '@ember/service';
 
 export default class ColorIndicatorComponent extends Component {
     @tracked popoverVisible = false
+    @service('settings') settings
 
     get colorStyles() {
-        let width = this.args.size + "px";
-        let height = this.args.size + "px";
-
-        if (!this.args.showCircle) {
-            width = "100%";
-            height = "100%";
+        let width = "100%";
+        let height = "100%";
+        
+        if (this.args.showCircle && this.settings.displayLayout) {
+            width = this.args.size + "px";
+            height = this.args.size + "px";
         }
 
         let styles = {
