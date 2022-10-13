@@ -139,7 +139,7 @@ export default class RangeSliderComponent extends Component {
         let value;
 
         if (this.hasRange) {
-            let value = this.remapValue(clickY, elementHeight, 0, this.args.min, this.args.max); 
+            value = this.remapValue(clickY, elementHeight, 0, this.args.min, this.args.max); 
         } else {
             value = - (clickY / 10);
         }
