@@ -33,4 +33,8 @@ export default class ControlComponent extends Component {
   clickPopover(event) {
       event.stopPropagation();
   }
+
+  get hasSmallHeight() {
+    return this.args.control.height < 36;
+  }
 }

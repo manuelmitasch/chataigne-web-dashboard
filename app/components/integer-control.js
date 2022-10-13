@@ -43,17 +43,39 @@ export default class IntegerControlComponent extends FloatControlComponent {
       this.editing = false;
   }
 
-  @action
   calculateValue(event, srcElement) {
-    let pageY = (event.type.includes("touch")) ? event.targetTouches[0].pageY : event.pageY;
+    if (this.hasSmallHeight) {
+      return this.calculateValueX(event, srcElement);
+    } else {
+      return this.calculateValueY(event, srcElement);
+    }
+  }
 
+  calculateValueX(event, srcElement) {
+      let pageX = (event.type.includes("touch")) ? event.targetTouches[0].pageX : event.pageX;
+      
+      let offsetLeft = srcElement.getBoundingClientRect().left + window.scrollX;
+      
+      let value; 
+      let clickX = pageX - offsetLeft;  
+
+      if (this.hasRange) {
+          value = this.remapValue(clickX, 0, 110, this.args.control.minVal, this.args.control.maxVal); 
+      } else {
+          value = parseInt(clickX);
+      }
+
+      return value;
+  } 
+
+  @action
+  calculateValueY(event, srcElement) {
+    let pageY = (event.type.includes("touch")) ? event.targetTouches[0].pageY : event.pageY;
     let offsetTop = srcElement.getBoundingClientRect().top + window.scrollY;
-    let elementHeight = srcElement.getBoundingClientRect().height;
 
     let value;
     let clickY = pageY - offsetTop;    
 
-    console.log(this.hasRange);
     if (this.hasRange) {
       value = this.remapValue(clickY, 110, 0, this.args.control.minVal, this.args.control.maxVal); 
     } else {
