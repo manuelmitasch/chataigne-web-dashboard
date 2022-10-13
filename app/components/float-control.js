@@ -144,4 +144,8 @@ export default class FloatControlComponent extends ControlComponent {
     if (!this.args.control.showLabel) return false;
     return (this.args.control.isColorIndicator && !this.args.control.isRotarySlider);
   }
+
+  get hasRange() {
+    return this.args.control.minVal != undefined && this.args.control.maxVal != undefined;
+  }
 }

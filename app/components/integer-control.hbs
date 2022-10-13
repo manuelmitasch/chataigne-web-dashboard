@@ -124,10 +124,22 @@
                     <button class="increment" 
                         {{ on "click" this.increment}} 
                         disabled={{ @control.readOnly}}
+                        {{on "mousedown" (fn this.updateEditing true)}}
+                        {{on "touchstart" (fn this.updateEditing true)}}
+                        {{on "mouseup" (fn this.updateEditing false)}}
+                        {{on "touchend" (fn this.updateEditing false)}}
+                        {{did-insert this.registerListener}}
+                        {{will-destroy this.unregisterListener}}
                     >+</button>
                     <button class="decrement" 
                         {{ on "click" this.decrement}}
                         disabled={{ @control.readOnly}}
+                        {{on "mousedown" (fn this.updateEditing true)}}
+                        {{on "touchstart" (fn this.updateEditing true)}}
+                        {{on "mouseup" (fn this.updateEditing false)}}
+                        {{on "touchend" (fn this.updateEditing false)}}
+                        {{did-insert this.registerListener}}
+                        {{will-destroy this.unregisterListener}}
                     >-</button>
                 {{/if}}
             {{/if}}

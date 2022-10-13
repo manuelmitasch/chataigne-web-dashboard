@@ -1310,17 +1310,20 @@ select:disabled {
 
 button.increment, button.decrement {
     height: 50% !important;
-    width: 30px !important;
+    width: 40px !important;
     position: absolute;
     display: block;
     height: 10px;
     right: 0;
     margin: 1px;
+    color: $font;
 }
+
 button.increment {
     top: 0;
     border-radius: $radius $radius 0 0;
 }
+
 button.decrement {
     bottom: 0;
     border-radius: 0 0 $radius $radius;
