@@ -44,7 +44,7 @@ export default class IntegerControlComponent extends FloatControlComponent {
   }
 
   calculateValue(event, srcElement) {
-    if (this.hasSmallHeight) {
+    if (this.hasSmallHeight && this.settings.displayLayout) {
       return this.calculateValueX(event, srcElement);
     } else {
       return this.calculateValueY(event, srcElement);
