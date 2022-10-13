@@ -6,6 +6,10 @@ import { computed } from '@ember/object';
 import { action } from '@ember/object';
 
 export default class ApplicationController extends Controller {
+    queryParams = ['disableMenu', 'disableList']
+    @tracked disableMenu = false
+    @tracked disableList = false
+
     @service('chataigne-websocket') socket
     @service('settings') settings
     @service('fullscreen') fullscreen
@@ -19,6 +23,14 @@ export default class ApplicationController extends Controller {
 
     get isConnected() {
         return this.socket.isConnected;
+    }
+
+    get disableMenuComputed() {
+        return this.disableMenu || this.settings.hideMenu;
+    }
+
+    get disableListComputed() {
+        return this.disableList || this.settings.hideList;
     }
 
     @action
