@@ -1354,6 +1354,10 @@ button.decrement {
     border-top: 1px solid $control-background;
 }
 
+button.increment:disabled, button.decrement:disabled {
+    background: #404040;
+    color: #7d7d7d !important;
+}
 
 .texture {
     text-align: center;
