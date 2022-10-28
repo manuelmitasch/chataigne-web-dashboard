@@ -10,6 +10,8 @@ export default class RangeSliderComponent extends Component {
     @tracked editingElement
     @tracked startDiff = 0
     @tracked popoverVisible = false
+    @tracked altKeyPressed = false
+    @tracked shiftKeyPressed = false
     lastTap = 0
 
     get roundedValue() {
@@ -117,9 +119,12 @@ export default class RangeSliderComponent extends Component {
         let value; 
 
         if (this.hasRange) {
+            if (this.altKeyPressed) clickX = clickX / 2;
             value = this.remapValue(clickX, 0, elementWidth, this.args.min, this.args.max); 
         } else {
-            value = clickX / 10;
+            if (this.altKeyPressed) value = clickX / 1000;
+            else if (this.shiftKeyPressed) value = clickX;
+            else value = clickX / 10;
         }
 
         return value;
@@ -139,9 +144,12 @@ export default class RangeSliderComponent extends Component {
         let value;
 
         if (this.hasRange) {
+            if (this.altKeyPressed) clickY = clickY / 2;
             value = this.remapValue(clickY, elementHeight, 0, this.args.min, this.args.max); 
         } else {
-            value = - (clickY / 10);
+            if (this.altKeyPressed) value = -(clickY / 1000);
+            else if (this.shiftKeyPressed) value = -clickY;
+            else value = -(clickY / 10);
         }
 
         return value;
@@ -155,6 +163,8 @@ export default class RangeSliderComponent extends Component {
         element.addEventListener('touchmove', this.moveListener, options);
         document.addEventListener('mouseup', this.disableEditing, options);
         document.addEventListener('click', this.hidePopover, options);
+        document.addEventListener('keydown', this.keyListener, options);
+        document.addEventListener('keyup', this.keyListener, options);
     }
   
     @action
@@ -165,6 +175,14 @@ export default class RangeSliderComponent extends Component {
         element.removeEventListener('touchmove', this.moveListener,options);
         document.removeEventListener('mouseup', this.disableEditing, options)
         document.removeEventListener('click', this.hidePopover, options);
+        document.removeEventListener('keydown', this.keyListener, options);
+        document.removeEventListener('keyup', this.keyListener, options);
+    }
+
+    @action
+    keyListener(event) {
+        this.altKeyPressed = event.altKey;
+        this.shiftKeyPressed = event.shiftKey;
     }
 
     @action
