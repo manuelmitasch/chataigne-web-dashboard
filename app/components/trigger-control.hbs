@@ -9,6 +9,7 @@
         disabled={{@control.readOnly}}
         class="unselectable {{ if @control.triggered "triggered" }}"
         {{ style this.customizeStyles }}
+        {{ style this.customImageStyles }}
     >   
         {{#if @control.showLabel }}
             {{@control.label}}

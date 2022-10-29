@@ -48,4 +48,20 @@ export default class TriggerControlComponent extends ControlComponent {
 
     return styles;
   }
+
+  get customImageStyles() {
+    let control = this.args.control;
+
+    if (control.customImage) {
+      return {
+        backgroundImage: 'url(' + control.imageSrc + ') !important',
+        backgroundSize: '100% 100%',
+        border: 'none',
+        backgroundColor: 'unset !important',
+        ...((!control.triggered) && { filter: 'grayscale(100%)' }),
+      }
+    } else {
+      return {}
+    }
+  }
 }
