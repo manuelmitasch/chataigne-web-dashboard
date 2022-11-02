@@ -180,7 +180,8 @@ h1 {
 }
 
 .boolean-control .main-input,
-.trigger-control {    
+.trigger-control,
+.link-control {    
     button {
         background: $button-background;
         color: silver;
@@ -663,7 +664,8 @@ h1 {
         }
     }
 
-    .trigger-control {
+    .trigger-control,
+    .link-control {
         background: none;
         padding: 0;
     }
