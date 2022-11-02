@@ -265,7 +265,8 @@ export default class WebsocketService extends Service {
                 break;
 
             case "setInClients":
-                this.store.peekAll('link-control').forEach(flexibleUpdateHandler(payload, itemAddress, "setInClients"));
+            case "setInNative":
+                this.store.peekAll('link-control').forEach(flexibleUpdateHandler(payload, itemAddress, uiParameter));
                 break;
 
             case "url":

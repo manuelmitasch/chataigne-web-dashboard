@@ -273,6 +273,7 @@ function getControlHash(item, dashboard, index, fromGroup) {
   if (type == "link-control") {
     data.attributes.target = item.target;
     data.attributes.setInClients = item.setInClients;
+    data.attributes.setInNative = item.setInNative;
   }
 
   if (type == "iframe-container") {
