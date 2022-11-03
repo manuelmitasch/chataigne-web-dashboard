@@ -39,7 +39,23 @@ export default class BooleanControlComponent extends ControlComponent {
       return {
         width: size + 'px',
         height: size + 'px',
-        right: '0px'
+        ...((this.args.control.showLabel) && { right: '0px' })
+      }
+    } else {
+      return {}
+    }
+  }
+
+  get customImageStyles() {
+    let control = this.args.control;
+
+    if (control.customImage) {
+      return {
+        backgroundImage: 'url(' + control.imageSrc + ') !important',
+        backgroundSize: 'contain',
+        border: 'none',
+        backgroundColor: 'unset !important',
+        ...((!control.value) && { filter: 'grayscale(100%)' }),
       }
     } else {
       return {}
