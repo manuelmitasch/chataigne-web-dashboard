@@ -89,17 +89,17 @@ export default class WebsocketService extends Service {
 
     sendFeedback(address, value) {
         const data = { 'controlAddress' : address, 'value': value };
-        console.log('Sending feedback for ' + address + ': ' + value);
+        devLog('Sending feedback for ' + address + ': ' + value);
         this.socket.send(JSON.stringify(data));
     }
 
     send(data) {
-        console.log('Sending feedback : ' + JSON.stringify(data));
+        devLog('Sending feedback : ' + JSON.stringify(data));
         this.socket.send(JSON.stringify(data));
     }
 
     handleFeedback(payload) {
-        console.log('Updating feedback ' + payload.controlAddress + ': ' + payload.value);
+        devLog('Updating feedback ' + payload.controlAddress + ': ' + payload.value);
         if (!payload.type) return;
         
         let type = getControlType(payload.type);
@@ -198,7 +198,7 @@ export default class WebsocketService extends Service {
     }
  
     handleUiFeedback(payload) {
-        console.log('Updating uiFeedback ' + payload.controlAddress + ': ' + payload.value);
+        devLog('Updating uiFeedback ' + payload.controlAddress + ': ' + payload.value);
         
         if (!payload.targetType) return;
 
@@ -301,7 +301,7 @@ export default class WebsocketService extends Service {
     }
 
     legacyHandleFeedback(payload) {
-        console.log('Legacy Updating ' + payload.controlAddress + ': ' + payload.value);
+        devLog('Legacy Updating ' + payload.controlAddress + ': ' + payload.value);
         
         this.store.peekAll('texture').forEach(function(item) {
             if (item.itemControlAddress == payload.controlAddress) {
@@ -468,3 +468,8 @@ function getControlType(type) {
       return type;
   }
   
+  function devLog(s) {
+    if (ENV.environment == 'development') {
+        console.log(s);
+    }
+  }
