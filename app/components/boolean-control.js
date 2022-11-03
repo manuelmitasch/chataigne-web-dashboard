@@ -34,11 +34,13 @@ export default class BooleanControlComponent extends ControlComponent {
 
   get sizeStyles() {
     if (this.settings.displayLayout) {
-      let size = this.args.control.height - this.borderWidth*2;
+      let height = this.args.control.height - this.borderWidth*2;
+      let width = this.args.control.width - this.borderWidth*2;
+      width = (height > width) ? width : height;
 
       return {
-        width: size + 'px',
-        height: size + 'px',
+        width: width + 'px',
+        height: height + 'px',
         ...((this.args.control.showLabel) && { right: '0px' })
       }
     } else {
