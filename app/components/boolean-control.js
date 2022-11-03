@@ -52,7 +52,8 @@ export default class BooleanControlComponent extends ControlComponent {
     if (control.customImage) {
       return {
         backgroundImage: 'url(' + control.imageSrc + ') !important',
-        backgroundSize: 'contain',
+        backgroundSize: '100% 100% !important',
+        backgroundRepeat: 'no-repeat',
         border: 'none',
         backgroundColor: 'unset !important',
         ...((!control.value) && { filter: 'grayscale(100%)' }),

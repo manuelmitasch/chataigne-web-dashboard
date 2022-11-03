@@ -141,7 +141,7 @@ h1 {
         .checkbox {
             background-color: $bool !important;
             background-image: url(/tick.png) !important;
-            background-size: contain !important;
+            background-size: 100% 100% !important;
         }
     }
 
@@ -673,6 +673,7 @@ h1 {
     .boolean-control {
         padding: 0;
         box-sizing: border-box;
+        background-color: unset;
         
         .main-input {
             margin: 0;

@@ -238,7 +238,15 @@ export default class WebsocketService extends Service {
 
             case "customImage":
             case "toggleImage":
-                this.store.peekAll(type).forEach(flexibleUpdateHandler(payload, itemAddress, "customImage"));
+                this.store.peekAll(type).forEach(function(item) {
+                    if (item.itemControlAddress == itemAddress) {
+                        if (payload.value) {
+                            item["customImage"] = "/dashboards" + payload.controlAddress + "&" + Date.now();
+                        } else {
+                            item["customImage"] = null;
+                        }
+                    }
+                });
                 break;
 
             case "backgroundColor":
