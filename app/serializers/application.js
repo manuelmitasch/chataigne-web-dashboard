@@ -300,6 +300,7 @@ function getControlType(item) {
     case "Boolean": 
       type = "boolean-control"; break;
     case "String":
+    case "File":
       type = "string-control"; break;
     case "Trigger":
       type = "trigger-control"; break;
