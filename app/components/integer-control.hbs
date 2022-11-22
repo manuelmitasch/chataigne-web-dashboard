@@ -55,6 +55,7 @@
 
                         @label={{ @control.label }}
                         @showLabel={{ @control.showLabel }}
+                        @isTime={{ @control.isTime }}
                         
                         @min={{ @control.minVal }}
                         @max={{ @control.maxVal }}
@@ -81,6 +82,7 @@
                         @value={{ @control.value }}
                         @showValue={{ @control.showValue }}
                         @showLabel={{ @control.showLabel }}
+                        @isTime={{ @control.isTime }}
 
                         @label={{ @control.label }}
                         
@@ -102,46 +104,35 @@
                     />
                 {{/if}}
             {{else}}
-                {{#if this.isTime }}
-                    <Input 
-                        value={{ this.time }} 
-                        disabled={{@control.readOnly}}
-                        class="secondary time"
-                        {{on "change" (fn this.input "time") }} 
-                        {{on "change" this.update}} 
-                        {{ style this.customizeStyles }}
-                    />
-                {{else}}
-                    <Input 
-                        value={{ this.roundedValue }} 
-                        disabled={{@control.readOnly}}
-                        class="secondary" 
-                        inputmode="decimal"
-                        {{ on "change" this.input }} 
-                        {{ on "change" this.update }} 
-                        {{ style this.customizeStyles }}
-                    />
-                    <button class="increment" 
-                        {{ on "click" this.increment}} 
-                        disabled={{ @control.readOnly}}
-                        {{on "mousedown" (fn this.updateEditing true)}}
-                        {{on "touchstart" (fn this.updateEditing true)}}
-                        {{on "mouseup" (fn this.updateEditing false)}}
-                        {{on "touchend" (fn this.updateEditing false)}}
-                        {{did-insert this.registerListener}}
-                        {{will-destroy this.unregisterListener}}
-                    >+</button>
-                    <button class="decrement" 
-                        {{ on "click" this.decrement}}
-                        disabled={{ @control.readOnly}}
-                        {{on "mousedown" (fn this.updateEditing true)}}
-                        {{on "touchstart" (fn this.updateEditing true)}}
-                        {{on "mouseup" (fn this.updateEditing false)}}
-                        {{on "touchend" (fn this.updateEditing false)}}
-                        {{did-insert this.registerListener}}
-                        {{will-destroy this.unregisterListener}}
-                    >-</button>
-                {{/if}}
+                <Input 
+                    value={{ this.computedValue }} 
+                    disabled={{@control.readOnly}}
+                    class="secondary" 
+                    inputmode="decimal"
+                    {{ on "change" this.input }} 
+                    {{ on "change" this.update }} 
+                    {{ style this.customizeStyles }}
+                />
+                <button class="increment" 
+                    {{ on "click" this.increment}} 
+                    disabled={{ @control.readOnly}}
+                    {{on "mousedown" (fn this.updateEditing true)}}
+                    {{on "touchstart" (fn this.updateEditing true)}}
+                    {{on "mouseup" (fn this.updateEditing false)}}
+                    {{on "touchend" (fn this.updateEditing false)}}
+                    {{did-insert this.registerListener}}
+                    {{will-destroy this.unregisterListener}}
+                >+</button>
+                <button class="decrement" 
+                    {{ on "click" this.decrement}}
+                    disabled={{ @control.readOnly}}
+                    {{on "mousedown" (fn this.updateEditing true)}}
+                    {{on "touchstart" (fn this.updateEditing true)}}
+                    {{on "mouseup" (fn this.updateEditing false)}}
+                    {{on "touchend" (fn this.updateEditing false)}}
+                    {{did-insert this.registerListener}}
+                    {{will-destroy this.unregisterListener}}
+                >-</button>
             {{/if}}
         {{/if}}
         

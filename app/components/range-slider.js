@@ -14,6 +14,11 @@ export default class RangeSliderComponent extends Component {
     @tracked shiftKeyPressed = false
     lastTap = 0
 
+    get computedValue() {
+        if (this.args.isTime) return this.time;
+        else return this.roundedValue;
+    }
+
     get roundedValue() {
         let rounded = Number.parseFloat(this.args.value).toFixed(3);
         return rounded;
@@ -271,6 +276,27 @@ export default class RangeSliderComponent extends Component {
     get hasRange() {
         return this.args.min != undefined && this.args.max != undefined;
     }
+
+    get time() {
+        const value = this.args.value;
+        let hours = Math.floor(value / 60 / 60);
+        let minutes = Math.floor(value / 60 - hours * 60);
+        let seconds = Math.floor(value - hours * 60 * 60 - minutes * 60);
+        let ms = (value - hours*60*60 - minutes*60 - seconds) * 1000;
+        ms = parseInt(Math.round(ms));
+        hours = (hours < 10) ? "0"+hours : hours;
+        minutes = (minutes < 10) ? "0"+minutes : minutes;
+        seconds = (seconds < 10) ? "0"+seconds : seconds;
+    
+        if (ms < 10) {
+          ms = "00" + ms;
+        } else if (ms < 100) {
+          ms = "0" + ms;
+        }
+     
+        return hours + ":" + minutes + ":" + seconds + "." + ms;
+    }
+
 
     remapValue (value, in_min, in_max, out_min, out_max) {
         return (value - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;

@@ -10,9 +10,11 @@ export default class FloatControlComponent extends ControlComponent {
   @action
   input(type, event) {
     const control = this.args.control;
+    event = (event) ? event : type; 
     
-    if (type == "time") {
+    if (type == "time" || control.isTime) {
       let time = event.target.value;
+
       time = time.split(".");
       let ms = time.length > 1 ? time[1] : "0";
       if (ms.length < 2) {
@@ -39,6 +41,11 @@ export default class FloatControlComponent extends ControlComponent {
       } else if (time.length == 1) {
         seconds = time[0] ? parseInt(time[0]) : 0;
       }
+
+      if (control.modelName == "integer-control") {
+        ms = 0;
+      }
+
       const result = hours*60*60 + minutes*60 + seconds + ms/1000;
       control.value = result;
     } else {

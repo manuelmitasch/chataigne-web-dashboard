@@ -15,6 +15,31 @@ export default class IntegerControlComponent extends FloatControlComponent {
     return parseInt(this.args.control.value);
   }
 
+  get computedValue() {
+    if (this.args.control.isTime) return this.time;
+    else return this.roundedValue;
+  }
+
+  get time() {
+    const value = this.args.control.value;
+    let hours = Math.floor(value / 60 / 60);
+    let minutes = Math.floor(value / 60 - hours * 60);
+    let seconds = Math.floor(value - hours * 60 * 60 - minutes * 60);
+    let ms = (value - hours*60*60 - minutes*60 - seconds) * 1000;
+    ms = parseInt(Math.round(ms));
+    hours = (hours < 10) ? "0"+hours : hours;
+    minutes = (minutes < 10) ? "0"+minutes : minutes;
+    seconds = (seconds < 10) ? "0"+seconds : seconds;
+
+    if (ms < 10) {
+      ms = "00" + ms;
+    } else if (ms < 100) {
+      ms = "0" + ms;
+    }
+ 
+    return hours + ":" + minutes + ":" + seconds + "." + ms;
+  }
+
   @action
   setValue(value) {
     this.args.control.value = Math.round(value);
