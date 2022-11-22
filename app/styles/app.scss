@@ -663,6 +663,13 @@ h1 {
             height: 100%;
         }
     }
+    
+    .string-control.hideLabel {
+        input.string-input {
+            text-align: center;
+            padding-left: 10px;
+        }
+    }
 
     .trigger-control,
     .link-control {
