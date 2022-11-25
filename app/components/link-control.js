@@ -11,7 +11,11 @@ export default class LinkControlComponent extends TriggerControlComponent {
     let dashboardName = control.target;
 
     if (dashboardName && (control.setInClients || control.setInNative)) {
-      this.socket.send({"setDashboard": dashboardName});
+      this.socket.send({
+        "setDashboard": dashboardName,
+        "setInNative": control.setInNative,
+        "setInClient": control.setInClient
+      });
     }
 
     event = (event) ? event : value;
