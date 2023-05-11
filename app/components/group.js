@@ -12,7 +12,8 @@ export default class GroupComponent extends Component {
                 left: this.args.control.positionX + 'px',
                 top: this.args.control.positionY + 'px',
                 border: this.args.control.borderWidth + 'px solid ' + this.borderColor,
-                background: this.backgroundColor
+                background: this.backgroundColor,
+                ...((this.args.control.isVisible == false) && { display: "none"})
             }
         } else {
             return {

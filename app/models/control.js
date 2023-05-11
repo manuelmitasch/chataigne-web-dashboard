@@ -36,6 +36,7 @@ export default class ControlModel extends Model {
     @attr('number') defaultUI
     @attr('number') style
     @attr('boolean') readOnly
+    @attr('boolean') isVisible
 
     @belongsTo('dashboard') dashboard
     @attr('boolean') inGroup

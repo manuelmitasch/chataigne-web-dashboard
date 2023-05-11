@@ -18,7 +18,8 @@ export default class CommentComponent extends Component {
     get colorStyles() {
         return {
             color: this.color,
-            fontSize: this.args.control.size + "px"
+            fontSize: this.args.control.size + "px",
+            ...((this.args.control.isVisible == false) && { display: "none"}), 
         }
     }
 

@@ -141,7 +141,8 @@ function getGroupHash(group, dashboard, index, fromGroup) {
         "borderColor": group.borderColor,
         "borderWidth": group.borderWidth,
         "itemControlAddress": group.itemControlAddress,
-        "inGroup": fromGroup
+        "inGroup": fromGroup,
+        "isVisible": group.isVisible
     },
     "relationships": {
       "controls": {
@@ -212,6 +213,7 @@ function getControlHash(item, dashboard, index, fromGroup) {
         "defaultUI": item.defaultUI,
         "style": item.style,
         "readOnly": item.readOnly,
+        "isVisible": item.isVisible,
 
         "inGroup": fromGroup
     }
