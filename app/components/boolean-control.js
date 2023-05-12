@@ -2,6 +2,8 @@ import ControlComponent from './control';
 import { action } from '@ember/object';
 
 export default class BooleanControlComponent extends ControlComponent {  
+  valueOnStart = false;
+
   @action
   input(event) {
   }
@@ -13,9 +15,10 @@ export default class BooleanControlComponent extends ControlComponent {
 
     if (!control.readOnly) {
       if(event.type == "mousedown" || event.type == "touchstart") {
-        this.socket.sendFeedback(control.controlAddress, !control.value);
+        this.valueOnStart = !control.value;
+        this.socket.sendFeedback(control.controlAddress, this.valueOnStart);
       } else if (control.momentaryMode && (event.type == "mouseup" || event.type == "touchend")) {
-        this.socket.sendFeedback(control.controlAddress, !control.value);
+        this.socket.sendFeedback(control.controlAddress, !this.valueOnStart);
       }
     }
 
