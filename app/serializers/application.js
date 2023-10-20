@@ -265,11 +265,13 @@ function getControlHash(item, dashboard, index, fromGroup) {
   if (type == "enum-control") {
     data.attributes.value = item.value
 
-    var options = item.options.map(function(o) {
-      return o.key;
-    });
-
-    data.attributes.options = options;
+    if (item.options) {
+      var options = item.options.map(function(o) {
+        return o.key;
+      });
+  
+      data.attributes.options = options;
+    }
   }
 
   if (type == "link-control") {
