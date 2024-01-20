@@ -30,6 +30,10 @@ $label-color: #dadada;
     transition: none !important;
 }
 
+html, body {
+  overscroll-behavior-x: none;
+}
+
 body {
     background: $background;
     color: $font;
