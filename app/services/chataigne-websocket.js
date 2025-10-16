@@ -223,6 +223,10 @@ export default class WebsocketService extends Service {
                 this.store.peekAll(type).forEach(flexibleUpdateHandler(payload, itemAddress, uiParameter));
                 break;
 
+            case "target":
+                this.store.peekAll(type).forEach(flexibleUpdateHandler(payload, itemAddress, "controlAddress"));
+                break;
+
             case "borderColor":
                 if (payload.enabled) {
                     this.store.peekAll(type).forEach(flexibleUpdateHandler(payload, itemAddress, "borderColor"));
@@ -290,8 +294,7 @@ export default class WebsocketService extends Service {
             case "style":
                 this.store.peekAll(type).forEach(function(item) {
                     if (item.itemControlAddress == itemAddress) {
-                        item["style"] = payload.value;
-                        if ((payload.value == 10 || payload.value == 11) && item.colorMap.length < 1) location.reload();
+                        location.reload();
                     }
                 });
                 break;
